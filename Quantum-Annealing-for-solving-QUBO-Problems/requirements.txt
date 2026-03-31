@@ -1,0 +1,6 @@
+dimod>=0.9.12
+networkx>=2.5
+decorator>=4.4.2
+dwave_networkx>=0.8.8
+numpy>=1.18.5
+datetime>=4.3

@@ -1,0 +1,3 @@
+ABOUT PYTHON CODE
+  - not available API for QPU
+  - create a local env for simulating the QC
