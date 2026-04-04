@@ -1,0 +1,168 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian,english]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{emptypage}
+\usepackage{hyperref}
+
+\geometry{
+    top=3cm,
+    bottom=3cm,
+    left=3cm,
+    right=3cm
+}
+
+\setstretch{1.2}
+
+\begin{document}
+
+%========================
+% PRIMA PAGINA
+%========================
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        {\Large \textbf{UNIVERSIT\`A DI TRENTO}}\\[0.4cm]
+        {\large Dipartimento di Ingegneria e Scienza dell'Informazione}\\[1.5cm]
+
+        {\large Corso di Laurea in Informatica}\\[2cm]
+
+        {\large \textbf{Tesi di Laurea}}\\[1.8cm]
+
+        {\Huge \textbf{Quantum Annealing Learning Search}}\\[0.4cm]
+        {\Large per la risoluzione di problemi QUBO}\\[0.8cm]
+
+        {\large
+        Studio teorico e implementativo dell'algoritmo QALS
+        }\\[2.5cm]
+
+        \begin{flushleft}
+            \textbf{Relatore:}\\
+            Prof.\ Nome Cognome\\[1cm]
+
+            \textbf{Laureando:}\\
+            Tuo Nome Cognome\\
+            Matricola: 123456
+        \end{flushleft}
+
+        \vfill
+
+        {\large Anno Accademico 2025/2026}
+    \end{center}
+\end{titlepage}
+
+%========================
+% SECONDA PAGINA (RETRO FRONTESPIZIO)
+%========================
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+    \textit{A chi mi ha supportato durante questo percorso.}
+\end{center}
+\vspace*{\fill}
+\clearpage
+
+%========================
+% ABSTRACT
+%========================
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Questa tesi analizza l'algoritmo \emph{Quantum Annealing Learning Search} (QALS),
+proposto come strategia ibrida quantum-classical per la risoluzione di problemi
+di ottimizzazione quadratica binaria non vincolata (QUBO).
+L'obiettivo del lavoro \`e comprendere il funzionamento teorico dell'approccio,
+studiare il ruolo del \emph{tabu matrix}, della permutazione delle variabili e
+dell'interazione con il quantum annealer, e approfondire le principali scelte
+implementative presenti nella letteratura.
+
+La tesi parte dall'introduzione al modello QUBO e al quantum annealing, con
+particolare attenzione all'architettura D-Wave e ai limiti imposti dalla topologia
+hardware. Successivamente viene presentato QALS come metodo capace di affrontare
+problemi che non possono essere direttamente mappati sull'architettura del dispositivo,
+attraverso un processo iterativo di apprendimento della codifica del problema e
+di penalizzazione delle soluzioni gi\`a esplorate.
+
+Infine, vengono discusse le implementazioni esistenti dell'algoritmo e i risultati
+sperimentali riportati in letteratura, evidenziando punti di forza, limiti pratici
+e possibili sviluppi futuri.
+
+\clearpage
+
+%========================
+% RINGRAZIAMENTI
+%========================
+\chapter*{Ringraziamenti}
+\addcontentsline{toc}{chapter}{Ringraziamenti}
+
+Desidero ringraziare il mio relatore per il supporto, la disponibilit\`a e i consigli
+forniti durante lo sviluppo di questo lavoro.
+
+Un ringraziamento speciale va alla mia famiglia e alle persone a me vicine, che mi
+hanno sostenuto nel corso di tutto il percorso universitario.
+
+Ringrazio inoltre i colleghi e gli amici con cui ho condiviso studio, dubbi e momenti
+difficili, contribuendo a rendere questo percorso pi\`u leggero e significativo.
+
+\clearpage
+
+%========================
+% INDICE
+%========================
+\tableofcontents
+\clearpage
+
+%========================
+% CAPITOLI
+%========================
+\chapter{Introduzione}
+Testo...
+
+\chapter{Background teorico}
+Testo...
+
+\chapter{Quantum Annealing Learning Search}
+Testo...
+
+\chapter{Implementazione e analisi}
+Testo...
+
+\chapter{Conclusioni}
+Testo...
+
+%========================
+% BIBLIOGRAFIA
+%========================
+\begin{thebibliography}{9}
+
+\bibitem{pastorello2019}
+D. Pastorello, E. Blanzieri,
+\textit{Quantum annealing learning search for solving QUBO problems},
+Quantum Information Processing, 2019.
+
+\bibitem{bonomi2022}
+A. Bonomi, T. De Min, E. Zardini, E. Blanzieri, V. Cavecchia, D. Pastorello,
+\textit{Quantum Annealing Learning Search Implementations},
+Quantum Information and Computation, 2022.
+
+\end{thebibliography}
+
+%========================
+% ULTIMA PAGINA
+%========================
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+    \textit{Fine}
+\end{center}
+\vspace*{\fill}
+
+\end{document}V

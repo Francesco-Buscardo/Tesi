@@ -237,7 +237,6 @@ def main(nn):
     else:
         string += log_write("Z", "Too big to print, see " + _DIR + "_solution.csv for the complete result")
 
-    # Aggiunge il valore minimo trovato della funzione QUBO
     string += log_write("fQ", round(min_z, 2))
 
     # =========================
