@@ -112,7 +112,7 @@ def g(Q, A, oldperm, p, sim):
     inversed = inverse(perm, n)
     
     Theta = dict()
-
+    
     if sim:
         for row, col in A:
             k = inversed[row]
@@ -195,7 +195,7 @@ def now():
 def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, log_DIR, sim):
     
     try:
-        if (not sim):
+        if (not sim):  # ? REAL QUANTUM MODE
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.HEADER + "Started Algorithm in Quantum Mode" + colors.ENDC)
             
             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -208,12 +208,11 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             A = get_active(sampler, n)
             
             log_DIR.replace("TSP_", "TSP_QA_")
-        else:
+        else: # ? SIMULATED MODE
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.OKCYAN + "Started Algorithm in Simulating Mode" + colors.ENDC)
             
             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             sampler = neal.SimulatedAnnealingSampler()
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             # sampler = dimod.ExactSolver()
             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

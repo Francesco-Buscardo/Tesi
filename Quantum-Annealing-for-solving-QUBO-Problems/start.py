@@ -8,11 +8,17 @@ import sys
 from os import listdir, mkdir, system, name
 from os.path import isfile, join, exists
 
-from QA4QUBO import matrix, vector, solver, tsp
+from QA4QUBO import matrix, vector, solver, tsp, ksp
 from QA4QUBO.colors import colors
 
-# qap: lista dei problemi
+# qap: lista dei problemi QAP
 qap = [f for f in listdir("QA4QUBO/qap/") if isfile(join("QA4QUBO/qap/", f))]
+
+# ksp: lista dei problemi KNAPSACK
+ksp_files = sorted(
+    f for f in listdir("QA4QUBO/ksp/")
+    if isfile(join("QA4QUBO/ksp/", f)) and f.startswith("ksp_") and f.endswith(".txt")
+)
 
 np.set_printoptions(threshold = sys.maxsize)
 
@@ -99,6 +105,24 @@ def generate_file_qap(name):
 
     return DIR
 
+def generate_file_ksp(n_items, C):
+    nok = True
+    i = 0
+    _dir = "KSP_" + str(n_items)+ "_" + str(C)
+
+    while(nok):
+        try:
+            with open("outputs/" + _dir.replace("KSP", "KSP_LOG") + ".csv", "r") as file:
+                pass
+            i += 1
+            _dir = "KSP_" + str(n_items) + "_" + str(C) + "_" + str(i)
+        except FileNotFoundError:
+            nok = False
+        
+    DIR = "outputs/" + _dir
+
+    return DIR
+
 def convert_qubo_to_Q(qubo, n):
     # ? Converte il dizionario qubo nella matrice Q di f(z) = z^T Q z
 
@@ -112,20 +136,28 @@ def convert_qubo_to_Q(qubo, n):
 def main(nn):    
 
     print("\t\t" + colors.BOLD + colors.WARNING + "  BUILDING PROBLEM..." + colors.ENDC)
-    pr = input(colors.OKCYAN + "Which problem would you like to run? (NPP, QAP, TSP)  " + colors.ENDC)
-
+    # pr = input(colors.OKCYAN + "Which problem would you like to run? (NPP, QAP, TSP, KSP)  " + colors.ENDC)
+    pr = "KSP"
     if pr == "NPP":
         NPP = True
         QAP = False
         TSP = False
+        KSP = False
     elif pr == "QAP":
         NPP = False
         QAP = True
         TSP = False
+        KSP = False
     elif pr == "TSP":
         NPP = False
         QAP = False
         TSP = True
+        KSP = False
+    elif pr == "KSP":
+        NPP = False
+        QAP = False
+        TSP = False
+        KSP = True
     else:
         print("[" + colors.FAIL + "ERROR" + colors.ENDC + "] string " + colors.BOLD + pr + colors.ENDC + " is not valid, exiting...")
         exit(2)
@@ -138,11 +170,16 @@ def main(nn):
     tsp_matrix = []
     df = pd.DataFrame()
 
+    # Knapsack problem parameters
+    capacity = 0
+    items    = []
+
     # =========================
     # COSTRUZIONE DEL PROBLEMA (Q): 
     #   - QAP 
     #   - NPP
     #   - TLS
+    #   - KSP
     # =========================
     if QAP:
         # fa scegliere un file di istanza
@@ -170,7 +207,7 @@ def main(nn):
         _Q, c = matrix.generate_QUBO_problem(S)
          
         log_DIR = _DIR.replace("NPP","NPP_LOG") + ".csv"
-    else:
+    elif TSP:
         while nn <= 0 or nn > 12:
             nn = int(input("[" + colors.FAIL + colors.BOLD + "Invalid n" + colors.ENDC + "] Insert n: "))
 
@@ -184,10 +221,23 @@ def main(nn):
             index = ['Bruteforce', 'D-Wave', 'Hybrid', 'QALS']
         )
         
-        # crea la fomrmulazione QUBO/Hamiltoniana del TSP 
+        # crea la formulazione QUBO/Hamiltoniana del TSP 
         tsp_matrix, qubo = tsp.tsp(nn, _DIR + "_solution.csv" , _DIR[:-1] + "DATA.csv", df) 
         
         _Q = convert_qubo_to_Q(qubo, nn ** 2)
+    else:
+        # while nn <= 0 or nn > 10:
+        #     nn = int(input("[" + colors.FAIL + colors.BOLD + "Invalid n" + colors.ENDC + "] Insert n: "))
+        
+        # ksp_file = join("QA4QUBO/ksp/", ksp_files[nn])
+
+        nn, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_1.txt")
+
+        _DIR = generate_file_ksp(nn, capacity)
+        log_DIR = _DIR.replace("KSP","KSP_LOG") + ".csv"
+
+        # costruisce il QUBO del problema
+        _Q = ksp.generate_QUBO_knapsack(nn, capacity, items)
     
     print("\t\t" + colors.BOLD + colors.OKGREEN + "   PROBLEM BUILDED" + colors.ENDC + "\n\n\t\t" + colors.BOLD + colors.OKGREEN + "   START ALGORITHM" + colors.ENDC + "\n")
     
@@ -197,48 +247,117 @@ def main(nn):
     start = time.time()
 
     # Chiama il solver QALS
-    # Parametri principali:
-    # - d_min, eta, i_max, k, lambda_zero, ...
-    # - n è la dimensione del problema
-    #     nn^2 per TSP, perché il TSP viene codificato con n^2 variabili binarie
-    # - topology = topologia hardware/logica usata
-    # - sim = False indica che non sta usando la modalità simulata del solver QALS
-    z, r_time = solver.solve(
-        d_min = 70,
-        eta = 0.01,
-        i_max = 10,
-        k = 1,
-        lambda_zero = 3/2,
-        n = nn if NPP or QAP else nn ** 2,
-        N = 10,
-        N_max = 100,
-        p_delta = 0.1,
-        q = 0.2,
-        topology = 'pegasus',
-        Q = _Q,
-        log_DIR = log_DIR,
-        sim = True
-    )
+    # Parametri:
+    # - d_min:       conta quante volte trovi una soluzione diversa ma peggiore della migliore corrente
+    # - p_delta:     prob modifica permutazione
+    # - eta:         controlla quanto velocemente decresce p_delta
+    # - q:           prob di perturbazione della soluz candidata  
+    # - N:           numero di iterazioni per cui p rimane costante 
+    # - N_max:       numero massimo di iterazioni se l'alg non migliora
+    # - lambda_zero: fattore di penalita iniziale della tabu matrix
+    # - n:           è la dimensione del problema
+    #                (nn^2 per TSP, perché viene codificato con n^2 var binarie)
+    # - k:           numero di soluzioni candidate generate ad ogni iterazione all'annealing
+    # - topology:    topologia hardware/logica usata
+    # - sim:         False indica che non sta usando la modalità simulata del solver QALS
+    # ??????????????????????????????????????????????????????????????????
+    # NPP according to the paper
+    # z, r_time = solver.solve(
+    #     d_min = 70,
+    #     eta = 0.01,
+    #     i_max = 10,
+    #     k = 1,
+    #     lambda_zero = 3/2,
+    #     n = nn if NPP or QAP or KSP else nn ** 2,
+    #     N = 10,
+    #     N_max = 100,
+    #     p_delta = 0.1,
+    #     q = 0.2,
+    #     topology = 'pegasus',
+    #     Q = _Q,
+    #     log_DIR = log_DIR,
+    #     sim = True
+    # )
+    # TSP according to the paper
+    # z, r_time = solver.solve(
+    #     d_min = 70,
+    #     eta = 0.2,
+    #     i_max = 5,
+    #     k = 1,
+    #     lambda_zero = 3/2,
+    #     n = nn if NPP or QAP or KSP else nn ** 2,
+    #     N = 5,
+    #     N_max = 100,
+    #     p_delta = 0.1,
+    #     q = 0.2,
+    #     topology = 'pegasus',
+    #     Q = _Q,
+    #     log_DIR = log_DIR,
+    #     sim = True
+    # )
 
-    conv = datetime.timedelta(seconds = int(time.time() - start))
+    # conv = datetime.timedelta(seconds = int(time.time() - start))
 
     # Calcola il valore della funzione obiettivo
-    min_z = solver.function_f(_Q, z).item()
+    # min_z = solver.function_f(_Q, z).item()
 
-    print("\t\t\t" + colors.BOLD + colors.OKGREEN + "RESULTS" + colors.ENDC + "\n")
+    # print("\t\t\t" + colors.BOLD + colors.OKGREEN + "RESULTS" + colors.ENDC + "\n")
 
     # stringa con i risultati finali
-    string = str()
+    # string = str()
 
     # Se il problema è piccolo, stampa la soluzione z
     # altrimenti rimanda al file csv
-    if nn < 16:
-        string += log_write("Z", z)
-    else:
-        string += log_write("Z", "Too big to print, see " + _DIR + "_solution.csv for the complete result")
+    # if nn < 16:
+    # string += log_write("Z", z)
+    # else:
+    #     string += log_write("Z", "Too big to print, see " + _DIR + "_solution.csv for the complete result")
 
-    string += log_write("fQ", round(min_z, 2))
+    # string += log_write("fQ", round(min_z, 2))
+    # ??????????????????????????????????????????????????????????????????
 
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    TIMES = 1
+
+    zz = []
+    r_times = [] 
+    mins_z = [] 
+
+    for i in range(TIMES):
+        zz.append([])
+        r_times.append([])
+
+    for i in range(TIMES):
+        zz[i], r_times[i] = solver.solve(
+            d_min = 70,
+            eta = 0.01,
+            i_max = 10,
+            k = 1,
+            lambda_zero = 3/2,
+            n = nn if NPP or QAP or KSP else nn ** 2,
+            N = 10,
+            N_max = 100,
+            p_delta = 0.1,
+            q = 0.2,
+            topology = 'pegasus',
+            Q = _Q,
+            log_DIR = log_DIR,
+            sim = True
+        )
+    
+    print("\t\t\t" + colors.BOLD + colors.OKGREEN + "RESULTS" + colors.ENDC + "\n")
+
+    string = str()
+
+    conv = datetime.timedelta(seconds = int(time.time() - start))
+    
+    for i in range(50):
+        mins_z.append(solver.function_f(_Q, zz[i]).item())
+
+        string += log_write("Z", zz[i])
+        string += log_write("fQ", round(mins_z[i], 2))
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
     # =========================
     # POST-PROCESSING
     # =========================
@@ -251,14 +370,14 @@ def main(nn):
         csv_write(DIR = _DIR + "_solution.csv", l = [c, c ** 2, diff2, np.sqrt(diff2), S, z, _Q  if nn < 5 else "too big"])   
         csv_write(DIR = _DIR + "_solution.csv", l = ["c", "c ** 2", "diff ** 2", "diff", "S", "z", "Q"])
     elif QAP:
-        # y: termine costante / offset della formulazione
-        # penalty: penalità usata nella costruzione del QUBO
+        # y:         termine costante / offset della formulazione
+        # penalty:   penalità usata nella costruzione del QUBO
         # y + min_z: costo complessivo ricostruito della soluzione
         string += log_write("y", y) + log_write("Penalty", penalty) + log_write("Difference", round(y + min_z, 2)) 
 
         csv_write(DIR = _DIR + "_solution.csv", l = ["problem", "y", "penalty", "difference (y+minimum)", "z", "Q" ])
         csv_write(DIR = _DIR + "_solution.csv", l = [name, y, penalty, y + min_z,np.atleast_2d(z).T, _Q])
-    else:
+    elif TSP:
         # Crea un dizionario che rappresenta il risultato di QALS per il TSP
         DW = dict()
         DW['type'] = 'QALS'
@@ -266,7 +385,7 @@ def main(nn):
 
         # Divide il vettore binario z in nn blocchi, ciascuno di lunghezza nn
         # Ogni blocco rappresenta una "riga" della matrice binaria del TSP
-        res = np.split(z,nn)
+        res = np.split(z, nn)
 
         # Controlla se la soluzione è valida:
         # ogni riga deve avere esattamente un 1
@@ -311,7 +430,56 @@ def main(nn):
         tsp.write_TSP_csv(df, DW)
 
         df.to_csv(_DIR + "_solution.csv")
+    else:
+        # ??????????????????????????????????????????????????????????????????
+        # Calcola il peso totale e il profitto totale della soluzione trovata
+        # total_weight = sum(items[i][0] for i in range(nn) if z[i] == 1)
+        # total_profit = sum(items[i][1] for i in range(nn) if z[i] == 1)
+
+        # best_profit, best_weight = ksp.ksp_solve(nn, capacity, items)
+
+        # string += log_write("Total weight", total_weight) + log_write("Total profit", total_profit)
+        # string += log_write("Best profit", best_profit) + log_write("Best weight", best_weight)
+
+        # def percentage_gap(best, my):
+        #     return ((best - my) / best) * 100
         
+        # gap = percentage_gap(best_profit, total_profit)
+
+        # string += log_write("Weight GAP", abs(best_weight - total_weight))
+        # string += log_write("Profit GAP", round(abs(gap), 1))
+
+        # csv_write(DIR = _DIR + "_solution.csv", l = ["n_items", "capacity", "total_weight", "total_profit", "z", "Q"])
+        # csv_write(DIR = _DIR + "_solution.csv", l = [nn, capacity, total_weight, total_profit, z, _Q if nn < 5 else "too big"])
+        # ??????????????????????????????????????????????????????????????????
+
+        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        string += log_write("Status", "In " + str(TIMES) + " runs")
+        
+        def percentage_gap(best, my):
+            return ((best - my) / best) * 100
+
+        best_profit, best_weight = ksp.ksp_solve(nn, capacity, items)
+        
+        gaps          = []
+        w_gaps        = []
+        total_weights = []
+        total_profits = []
+        
+        for i in range(TIMES):
+            total_weights.append(sum(items[j][0] for j in range(nn) if zz[i][j] == 1))
+            total_profits.append(sum(items[j][1] for j in range(nn) if zz[i][j] == 1))
+
+            w_gaps.append(abs(best_weight - total_weights[i]))
+            gaps.append(percentage_gap(best_profit, total_profits[i]))
+        
+        avg_w_gap = round(sum(w_gaps) / len(w_gaps), 1)
+        avg_p_gap = round(sum(gaps) / len(gaps), 1)
+
+        string += log_write("Avg Weight GAP", avg_w_gap)
+        string += log_write("Avg Profit GAP", abs(avg_p_gap))
+        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
     print(string)
 
 if __name__ == '__main__':
