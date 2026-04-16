@@ -1,4 +1,4 @@
-#!/home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/.venv/bin/python
+#!/home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/.venv/bin/python3
 import sys
 from numpy._configtool import main
 if __name__ == '__main__':

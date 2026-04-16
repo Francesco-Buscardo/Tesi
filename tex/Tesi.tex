@@ -28,7 +28,7 @@
     \begin{center}
         \vspace*{1cm}
 
-        {\Large \textbf{UNIVERSIT\`A DI TRENTO}}\\[0.4cm]
+        {\Large \textbf{UNIVERSIT\`A DEGLI STUDI DI TRENTO}}\\[0.4cm]
         {\large Dipartimento di Ingegneria e Scienza dell'Informazione}\\[1.5cm]
 
         {\large Corso di Laurea in Informatica}\\[2cm]
@@ -36,21 +36,25 @@
         {\large \textbf{Tesi di Laurea}}\\[1.8cm]
 
         {\Huge \textbf{Quantum Annealing Learning Search}}\\[0.4cm]
-        {\Large per la risoluzione di problemi QUBO}\\[0.8cm]
+        {\Large \textbf{per la risoluzione di problemi QUBO}}\\[0.8cm]
 
         {\large
-        Studio teorico e implementativo dell'algoritmo QALS
+        Studio dell'algoritmo QALS su problemi QUBO
         }\\[2.5cm]
 
-        \begin{flushleft}
-            \textbf{Relatore:}\\
-            Prof.\ Nome Cognome\\[1cm]
-
+       \noindent
+        \begin{minipage}[t]{0.45\textwidth}
+            \vspace{0pt}
             \textbf{Laureando:}\\
-            Tuo Nome Cognome\\
-            Matricola: 123456
-        \end{flushleft}
-
+            Francesco Buscardo\\
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.45\textwidth}
+            \vspace{0pt}
+            \raggedleft
+            \textbf{Relatore:}\\
+            Prof.\ Enrico Blanzieri
+        \end{minipage}
         \vfill
 
         {\large Anno Accademico 2025/2026}
@@ -63,9 +67,18 @@
 \clearpage
 \thispagestyle{empty}
 \vspace*{\fill}
+
 \begin{center}
-    \textit{A chi mi ha supportato durante questo percorso.}
+\begin{minipage}{0.5\textwidth}
+\begin{ttfamily}
+\raggedright
+while\ (task\_is\_not\_completed) \{\\
+\hspace*{1.5em}try\_to\_solve\_problem();\\
+\}
+\end{ttfamily}
+\end{minipage}
 \end{center}
+
 \vspace*{\fill}
 \clearpage
 
@@ -75,24 +88,15 @@
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-Questa tesi analizza l'algoritmo \emph{Quantum Annealing Learning Search} (QALS),
-proposto come strategia ibrida quantum-classical per la risoluzione di problemi
-di ottimizzazione quadratica binaria non vincolata (QUBO).
-L'obiettivo del lavoro \`e comprendere il funzionamento teorico dell'approccio,
-studiare il ruolo del \emph{tabu matrix}, della permutazione delle variabili e
-dell'interazione con il quantum annealer, e approfondire le principali scelte
-implementative presenti nella letteratura.
+L'obiettivo del lavoro è esplorare come \emph{Quantum Annealing Learning Search} (QALS) riesca
+a risolvere problemi di \emph{ottimizzazione quadratica binaria} (QUBO) e confrontare le sue prestazioni
+con altri metodi classici.
 
-La tesi parte dall'introduzione al modello QUBO e al quantum annealing, con
-particolare attenzione all'architettura D-Wave e ai limiti imposti dalla topologia
-hardware. Successivamente viene presentato QALS come metodo capace di affrontare
-problemi che non possono essere direttamente mappati sull'architettura del dispositivo,
-attraverso un processo iterativo di apprendimento della codifica del problema e
-di penalizzazione delle soluzioni gi\`a esplorate.
+In particolare i problemi su cui si concentrerà lo studio saranno le seguenti varianti del knapsack problem con soft constraints:
+\emph{{0/1} Knapsack Problem}, \emph{Multidimensional Knapsack Problem} e
+\emph{Quadratic Knapsack Problem}.
 
-Infine, vengono discusse le implementazioni esistenti dell'algoritmo e i risultati
-sperimentali riportati in letteratura, evidenziando punti di forza, limiti pratici
-e possibili sviluppi futuri.
+La tesi è strutturata in tal modo:
 
 \clearpage
 
@@ -122,20 +126,8 @@ difficili, contribuendo a rendere questo percorso pi\`u leggero e significativo.
 %========================
 % CAPITOLI
 %========================
-\chapter{Introduzione}
-Testo...
-
-\chapter{Background teorico}
-Testo...
-
-\chapter{Quantum Annealing Learning Search}
-Testo...
-
-\chapter{Implementazione e analisi}
-Testo...
 
 \chapter{Conclusioni}
-Testo...
 
 %========================
 % BIBLIOGRAFIA
@@ -152,6 +144,49 @@ A. Bonomi, T. De Min, E. Zardini, E. Blanzieri, V. Cavecchia, D. Pastorello,
 \textit{Quantum Annealing Learning Search Implementations},
 Quantum Information and Computation, 2022.
 
+
+\bibitem{demin2021qalscpp}
+T.~De Min,
+\newblock \emph{C++ Quantum Annealing Learning Search},
+\newblock 2021,
+\newblock \url{https://github.com/tdemin16/QALS-cpp}.
+
+\bibitem{bonomi2021qalspython}
+A.~Bonomi,
+\newblock \emph{Python Quantum Annealing Learning Search},
+\newblock 2021,
+\newblock \url{https://github.com/bonom/Quantum-Annealing-for-solving-QUBO-Problems}.
+
+\bibitem{wikipedia_multiple_constraints}
+Wikipedia contributors,
+\newblock \emph{List of knapsack problems --- Multiple constraints},
+\newblock Wikipedia,
+\newblock \url{https://en.wikipedia.org/wiki/List_of_knapsack_problems#Multiple_constraints}.
+
+\bibitem{wikipedia_quadratic_knapsack}
+Wikipedia contributors,
+\newblock \emph{Quadratic knapsack problem},
+\newblock Wikipedia,
+\newblock \url{https://en.wikipedia.org/wiki/Quadratic_knapsack_problem}.
+
+\bibitem{ieee_qals}
+Evren G\"{u}ney, Joachim Ehrenthal, Thomas Hanne,
+\newblock \emph{QUBO Formulations and Characterization of Penalty Parameters for the Multi-Knapsack Problem},
+\newblock \url{https://ieeexplore.ieee.org/abstract/document/10924197}
+
+\bibitem{pymhlib}
+\newblock \emph{pymhlib --- Python Metaheuristics Library},
+\newblock \url{https://github.com/ac-tuwien/pymhlib.git}.
+
+\bibitem{pysolution}
+\newblock \emph{pysolution --- Python Knapsack Solution},
+\newblock \url{https://github.com/mohitsingla123/Dynamic-Programming-java/blob/master/0-1%20knapsack/pysolution.py}
+
+\bibitem{pisinger_generator}
+D. Pisinger,
+\newblock \emph{Generator for the Knapsack Problem},
+\newblock \url{https://hjemmesider.diku.dk/~pisinger/generator.c}
+
 \end{thebibliography}
 
 %========================
@@ -165,4 +200,4 @@ Quantum Information and Computation, 2022.
 \end{center}
 \vspace*{\fill}
 
-\end{document}V
+\end{document}

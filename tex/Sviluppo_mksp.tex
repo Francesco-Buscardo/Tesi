@@ -1,0 +1,113 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\section*{Sviluppo della formulazione QUBO per il Multi-Dimensional Knapsack Problem}
+
+Siano:
+\[
+x_i \in \{0,1\}, \qquad i=1,\dots,n,
+\]
+dove \(x_i = 1\) indica che l'oggetto \(i\) viene selezionato, mentre \(x_i = 0\) indica il contrario.
+
+Indichiamo con:
+\begin{itemize}
+    \item \(p_i\) il profitto dell'oggetto \(i\);
+    \item \(w_{id}\) il peso dell'oggetto \(i\) rispetto al vincolo \(d\);
+    \item \(C_d\) la capacità associata al vincolo \(d\);
+    \item \(\lambda_d\) il coefficiente di penalità associato al vincolo \(d\), con \(d=1,\dots,D\).
+\end{itemize}
+
+Per ogni vincolo \(d = 1, \dots, D\):
+
+\begin{itemize}
+    \item \(w_{id} \in \mathbb{R}_{\ge 0}\) rappresenta il consumo di capacità dell'oggetto \(i\) rispetto alla dimensione \(d\);
+    \item \(C_d \in \mathbb{R}_{>0}\) è la capacità disponibile per il vincolo \(d\);
+    \item \(\lambda_d \in \mathbb{R}_{>0}\) è il coefficiente di penalità associato al vincolo \(d\).
+\end{itemize}
+
+Dove \(\lambda_d\) è stato fissato come rapporto tra la somma dei profitti degli oggetti e la capacità del vincolo \(d\)-esimo, ossia:
+\begin{equation}
+\lambda_d = \frac{\sum_{i=1}^{n} p_i}{C_d},
+\tag{*}
+\end{equation}
+per ogni \(d = 1, \dots, D\).
+
+Il problema multidimensional knapsack consiste nel massimizzare il profitto totale rispettando simultaneamente tutti i vincoli di capacità.  
+Una corrispondente formulazione penalizzata, espressa come problema di minimizzazione, è la seguente:
+\begin{equation}
+Q(x)= -\sum_{i=1}^{n} p_i x_i + \sum_{d=1}^{D} \lambda_d \left(\sum_{i=1}^{n} w_{id}x_i - C_d\right)^2.
+\end{equation}
+
+Sviluppiamo il termine quadratico relativo a un generico vincolo \(d\):
+\begin{align}
+\left(\sum_{i=1}^{n} w_{id}x_i - C_d\right)^2
+&= \left(\sum_{i=1}^{n} w_{id}x_i\right)^2 - 2C_d\sum_{i=1}^{n} w_{id}x_i + C_d^2 \\
+&= \sum_{i=1}^{n} w_{id}^2 x_i^2 + 2\sum_{i<j} w_{id}w_{jd}x_ix_j - 2C_d\sum_{i=1}^{n} w_{id}x_i + C_d^2.
+\end{align}
+
+Poiché \(x_i \in \{0,1\}\), vale la proprietà
+\[
+x_i^2 = x_i.
+\]
+Inoltre, il termine costante \(C_d^2\) può essere trascurato nella formulazione QUBO, in quanto non influenza l'argomento di minimo. Pertanto:
+\begin{equation}
+\left(\sum_{i=1}^{n} w_{id}x_i - C_d\right)^2
+\sim
+\sum_{i=1}^{n} w_{id}^2 x_i + 2\sum_{i<j} w_{id}w_{jd}x_ix_j - 2C_d\sum_{i=1}^{n} w_{id}x_i,
+\end{equation}
+dove il simbolo \(\sim\) indica equivalenza a meno di una costante additiva.
+
+Sostituendo tale sviluppo nella funzione obiettivo, si ottiene:
+\begin{align}
+Q(x)
+&\sim -\sum_{i=1}^{n} p_i x_i
++ \sum_{d=1}^{D} \lambda_d \left(
+\sum_{i=1}^{n} w_{id}^2 x_i
++ 2\sum_{i<j} w_{id}w_{jd}x_ix_j
+- 2C_d\sum_{i=1}^{n} w_{id}x_i
+\right) \\
+&= -\sum_{i=1}^{n} p_i x_i
++ \sum_{d=1}^{D}\sum_{i=1}^{n} \lambda_d w_{id}^2 x_i
++ 2\sum_{d=1}^{D}\sum_{i<j} \lambda_d w_{id}w_{jd}x_ix_j
+- 2\sum_{d=1}^{D}\sum_{i=1}^{n} \lambda_d C_d w_{id}x_i.
+\end{align}
+
+Raccogliendo i termini lineari in \(x_i\), segue:
+\begin{align}
+Q(x)
+&\sim
+\sum_{i=1}^{n}
+\left[
+-p_i + \sum_{d=1}^{D} \lambda_d w_{id}^2 - 2\sum_{d=1}^{D} \lambda_d C_d w_{id}
+\right]x_i
++ 2\sum_{d=1}^{D}\sum_{i<j} \lambda_d w_{id}w_{jd}x_ix_j \\
+&=
+\sum_{i=1}^{n}
+\left[
+-p_i + \sum_{d=1}^{D} \lambda_d w_{id}(w_{id}-2C_d)
+\right]x_i
++ 2\sum_{d=1}^{D}\sum_{i<j} \lambda_d w_{id}w_{jd}x_ix_j.
+\end{align}
+
+Di conseguenza, la formulazione QUBO assume la forma standard:
+\begin{equation}
+Q(x)=\sum_{i=1}^{n} Q_{ii}x_i + \sum_{i<j} Q_{ij}x_ix_j,
+\end{equation}
+con coefficienti:
+\begin{equation}
+Q_{ij}=
+\begin{cases}
+-p_i + \displaystyle\sum_{d=1}^{D} \lambda_d w_{id}(w_{id}-2C_d), & i=j, \\[1.2ex]
+2\displaystyle\sum_{d=1}^{D} \lambda_d w_{id}w_{jd}, & i\neq j.
+\end{cases}
+\end{equation}
+
+\end{document}

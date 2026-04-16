@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from random import SystemRandom
-import numpy as np
+import numpy as np # type: ignore
 import time
 import datetime
 import sys
@@ -246,11 +246,16 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         start = time.time()
         z_one = map_back(annealer(Theta_one, sampler, k), m_one)
         convert_1 = datetime.timedelta(seconds = (time.time() - start))
-        print("Ended in " + str(convert_1) + "\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "ANN" + colors.ENDC + "] Working on z2...", end = ' ')
         
+        print("Ended in " + str(convert_1) + "\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "ANN" + colors.ENDC + "] Working on z2...", end = ' ')
         start = time.time()
+        
+        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         z_two = map_back(annealer(Theta_two, sampler, k), m_two)
+        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        
         convert_2 = datetime.timedelta(seconds = (time.time() - start))
+        
         print("Ended in " + str(convert_2) + "\n")
 
         f_one = function_f(Q, z_one).item()
@@ -305,7 +310,9 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             start = time.time()
             
             z_prime = map_back(annealer(Theta_prime, sampler, k), m)
+
             convert_z = datetime.timedelta(seconds = (time.time() - start))
+            
             print("Ended in " + str(convert_z))
 
             if make_decision(q):

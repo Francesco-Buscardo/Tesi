@@ -1,0 +1,301 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\section*{Formulazione QUBO del problema Knapsack}
+
+Siano:
+\[
+x_i \in \{0,1\}, \qquad i=1,\dots,n,
+\]
+dove \(x_i = 1\) indica che l'oggetto \(i\) viene selezionato, mentre \(x_i = 0\) indica il contrario.
+
+Indichiamo con:
+\[
+p_i \text{ il profitto dell'oggetto } i, \qquad
+w_i \text{ il peso dell'oggetto } i, \qquad
+C \text{ la capacità dello zaino.}
+\]
+
+\paragraph{}
+Dove \(\lambda\) è stato fissato come rapporto tra la somma dei profitti degli oggetti e la capacità dello zaino, ossia:
+\[
+\lambda = \frac{\sum_{i=1}^{n} p_i}{C}.
+\]
+oppure
+\[
+\lambda = \frac{\sum_{i=1}^{n} p_i}{3}
+\]
+
+\paragraph{}
+L'obiettivo è massimizzare il profitto totale rispettando il vincolo sulla capacità:
+\[
+\max \sum_{i=1}^{n} p_i x_i
+\qquad \text{s.t.} \qquad
+\sum_{i=1}^{n} w_i x_i = C.
+\]
+
+Per ottenere una formulazione QUBO, il problema viene riscritto come minimizzazione introducendo un termine di penalità quadratico:
+\begin{equation}
+Q(x) = -\sum_{i=1}^{n} p_i x_i + \lambda \left( \sum_{i=1}^{n} w_i x_i - C \right)^2 .
+\end{equation}
+
+Sviluppando il quadrato si ottiene:
+\begin{equation}
+Q(x) =
+-\sum_{i=1}^{n} p_i x_i
++ \lambda \left[
+\left(\sum_{i=1}^{n} w_i x_i\right)^2
+- 2C \sum_{i=1}^{n} w_i x_i
++ C^2
+\right].
+\end{equation}
+
+Espandendo il termine quadratico:
+\begin{equation}
+\left(\sum_{i=1}^{n} w_i x_i\right)^2
+=
+\sum_{i=1}^{n} w_i^2 x_i^2
++
+2\sum_{i<j} w_i w_j x_i x_j.
+\end{equation}
+
+Poiché le variabili sono binarie, vale la proprietà
+\[
+x_i^2 = x_i.
+\]
+
+Pertanto:
+\begin{equation}
+Q(x) =
+-\sum_{i=1}^{n} p_i x_i
++ \lambda \sum_{i=1}^{n} w_i^2 x_i
++ 2\lambda \sum_{i<j} w_i w_j x_i x_j
+- 2\lambda C \sum_{i=1}^{n} w_i x_i
++ \lambda C^2.
+\end{equation}
+
+Trascurando il termine costante \(\lambda C^2\), che non influenza la posizione del minimo, si ottiene:
+\begin{equation}
+Q(x) \sim
+-\sum_{i=1}^{n} p_i x_i
++ \lambda \sum_{i=1}^{n} w_i^2 x_i
+- 2\lambda C \sum_{i=1}^{n} w_i x_i
++ 2\lambda \sum_{i<j} w_i w_j x_i x_j.
+\end{equation}
+
+Raccogliendo i termini lineari e quadratici:
+\begin{equation}
+Q(x) \sim
+\sum_{i=1}^{n} x_i \left(-p_i + \lambda w_i^2 - 2\lambda C w_i \right)
++
+\sum_{i<j} x_i x_j \left(2\lambda w_i w_j\right).
+\end{equation}
+
+Da questa espressione si ricava la matrice QUBO \(Q = [Q_{ij}]\), definita da:
+\begin{equation}
+Q_{ij} =
+\begin{cases}
+-p_i + \lambda w_i^2 - 2\lambda C w_i, & i=j, \\[6pt]
+\lambda w_i w_j, & i\neq j.
+\end{cases}
+\end{equation}
+
+La formulazione finale del problema è quindi:
+\begin{equation}
+\min \; x^T Q x.
+\end{equation}
+
+\paragraph{}
+Si osservi che questa formulazione utilizza un termine di penalità quadratico che favorisce soluzioni 
+il cui peso totale sia vicino alla capacità \(C\). Di conseguenza, essa rappresenta una penalizzazione 
+\emph{soft} del vincolo \(\sum_i w_i x_i \leq C\), e non una sua imposizione esatta.
+
+\subsection*{Istanza sperimentale \texttt{ksp\_1.txt} utilizzando QALS}
+
+Si consideri la seguente istanza del problema knapsack:
+
+\[
+n = 10, \qquad C = 101
+\]
+
+con oggetti descritti dalle coppie \((w_i, p_i)\):
+\[
+(42,81),\,
+(42,42),\,
+(68,56),\,
+(68,25),\,
+(77,14),\,
+(57,63),\,
+(17,75),\,
+(19,41),\,
+(94,19),\,
+(34,12).
+\]
+
+L'istanza è stata valutata eseguendo QALS per \(1000\) run. I risultati ottenuti sono i seguenti:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -74.4 \\
+Avg Profit GAP & 13.7\% \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -76.5 \\
+Avg Profit GAP & 13.8\% \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{C}$}
+\end{table}
+
+\subsection*{Discussione dei risultati su \texttt{ksp\_1.txt}}
+
+In \(1000\) esecuzioni sull'istanza \texttt{ksp\_1.txt}, QALS ha prodotto circa 
+gli stessi risulatati utlizzando due $\lambda$ diversi.
+
+Il profit gap medio pari al \(13.75\%\) mostra che 
+il profitto ottenuto risulta circa 1/10 rispetto a quello ottimo. Parallelamente, 
+il weight gap medio di \(-75.5\) unità indica che le soluzioni trovate tendono a 
+superare la capacità dello zaino.
+
+\subsection*{Istanza sperimentale \texttt{ksp\_2.txt} utilizzando QALS}
+
+Si consideri la seguente istanza del problema knapsack:
+\[
+n = 50, \qquad C = 1001
+\]
+con oggetti descritti dalle coppie \((w_i, p_i)\) riportate nel file \texttt{ksp\_2.txt}.
+
+L'istanza è stata valutata eseguendo QALS per \(1000\) run.
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -8604.6 \\
+Avg Profit GAP & -74.1\% \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -8646.7 \\
+Avg Profit GAP & -75\% \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{C}$}
+\end{table}
+
+\subsection*{Discussione dei risultati su \texttt{ksp\_2.txt}}
+In \(1000\) esecuzioni sull'istanza \texttt{ksp\_1.txt}, QALS ha prodotto circa 
+gli stessi risulatati utlizzando due $\lambda$ diversi.
+
+Il profit gap medio pari al \(-74.5\%\) mostra che 
+il profitto ottenuto risulta più della metà di quello ottimo. Parallelamente, 
+il weight gap medio di \(-8626.65\) unità indica che le soluzioni trovate tendono a 
+superare di molto la capacità dello zaino.
+
+\subsection*{Istanza sperimentale \texttt{ksp\_1.txt} NON utilizzando QALS}
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -0.6 \\
+Avg Profit GAP & 42.2\% \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -0.8 \\
+Avg Profit GAP & 41\% \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{C}$}
+\end{table}
+
+\subsection*{Discussione dei risultati su \texttt{ksp\_1.txt}}
+Le conclusioni per qaunto riguarda lambda sono sempre le stesse: non cambia molto utlizzare
+una versione piuttosto di un'altra.
+Per quanto riguarda i pesi e i profitti si può notare come le soluzioni che si trovano 
+tendono a definre un gap nel peso minore.
+
+\subsection*{Istanza sperimentale \texttt{ksp\_2.txt} NON utilizzando QALS}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -24.5 \\
+Avg Profit GAP & 53.0\% \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -25.1 \\
+Avg Profit GAP & 53.5\% \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{C}$}
+\end{table}
+
+\subsection*{Discussione dei risultati su \texttt{ksp\_2.txt}}
+Le conclusioni per qaunto riguarda lambda sono sempre le stesse: non cambia molto utlizzare
+una versione piuttosto di un'altra.
+Per quanto riguarda i pesi e i profitti si può notare come le soluzioni che si trovano 
+tendono a definre un gap nel peso minore.
+Si noti come aumentando di complessità il problema il \(Avg\ Profit\_ GAP\) risulti maggiore.
+
+\end{document}

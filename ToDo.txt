@@ -1,4 +1,0 @@
-contraints di alvoro sono soft 
-knapsack 
-test 
-linea obbiettivi tesi
