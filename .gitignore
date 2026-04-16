@@ -1,1 +1,16 @@
 Quantum-Annealing-for-solving-QUBO-Problems/outputs/
+Quantum-Annealing-for-solving-QUBO-Problems/.venv/
+__pycache__/
+*.pyc
+*.csv
+solux.txt
+tex/*.aux
+tex/*.fls
+tex/*.out
+tex/*.log
+tex/*.gz
+tex/*.fdb_latexmk
+./tex/*.toc
+*.out
+*.in
+.vscode
