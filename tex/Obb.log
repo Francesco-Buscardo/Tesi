@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.3)  4 APR 2026 18:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.3)  17 APR 2026 12:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -315,18 +315,18 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `Obb.out' has not changed.
-(rerunfilecheck)             Checksum: D582599AD38EC2CB208CA902E79607B7;155.
+(rerunfilecheck)             Checksum: 219E04CEEF716F50A734CF4F6864463D;170.
  ) 
 Here is how much of TeX's memory you used:
  10529 strings out of 474222
  164943 string characters out of 5748734
- 1925975 words of memory out of 5000000
+ 1924975 words of memory out of 5000000
  32668 multiletter control sequences out of 15000+600000
  561361 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,5n,79p,267b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Obb.pdf (1 page, 56816 bytes).
+Output written on Obb.pdf (1 page, 55318 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  24 compressed objects within 1 object stream
