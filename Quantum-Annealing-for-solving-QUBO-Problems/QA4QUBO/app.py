@@ -1,6 +1,13 @@
 import time
 import datetime
 
+# - minimizzre formulazione qubo in un altro modo
+# - calcolare tutto in funzione di energia Q(x)  
+# - minimizzare classicamente la funzione non tramite l'annealer -> GUROBI
+# - ore 11 venerdì prossimo 
+
+# - correzione metodi classici 
+
 import neal # type: ignore
 
 from QA4QUBO.colors import colors
