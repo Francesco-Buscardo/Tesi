@@ -1,12 +1,7 @@
 import time
 import datetime
 
-# - minimizzre formulazione qubo in un altro modo
 # - calcolare tutto in funzione di energia Q(x)  
-# - minimizzare classicamente la funzione non tramite l'annealer -> GUROBI
-# - ore 11 venerdì prossimo 
-
-# - correzione metodi classici 
 
 import neal # type: ignore
 
@@ -22,10 +17,11 @@ def percentage_gap(best, my):
         return 0
     return ((best - my) / best) * 100
 
-def app1(TIMES, nn, _Q, log_DIR, capacity, items):
+def app1(TIMES, nn, _Q, log_DIR, capacity, items, gurobi_sol):
     zz      = []
     r_times = [] 
-    mins_z  = [] 
+    mins_z  = []
+
 
     string = str()
 
@@ -55,8 +51,8 @@ def app1(TIMES, nn, _Q, log_DIR, capacity, items):
         fz = solver.function_f(_Q, z).item()
         mins_z.append(fz)
 
-        string += log_write("Z", z)
-        string += log_write("fQ", round(fz, 2))
+        string += log_write(f"Z[{i}]", z)
+        # string += log_write("fQ", round(fz, 2))
 
     print("\t\t\t" + colors.BOLD + colors.OKGREEN + "RESULTS" + colors.ENDC + "\n")
 
@@ -64,9 +60,7 @@ def app1(TIMES, nn, _Q, log_DIR, capacity, items):
     
     # =========================
     # POST-PROCESSING
-    # =========================
-    string += log_write("Status", "In " + str(TIMES) + " runs")
-    
+    # =========================    
     ksp_dp_profit, ksp_dp_weight = ksp.ksp_dp(capacity, [item[0] for item in items], [item[1] for item in items], nn)
     # ksp_bf_profit, choosen       = ksp.ksp_bf(nn, capacity, items)
 
@@ -78,27 +72,31 @@ def app1(TIMES, nn, _Q, log_DIR, capacity, items):
     string += log_write("Weight", ksp_dp_weight)
     # string += log_write("Choosen items", choosen)
 
-    p_gap = []
-    w_gap = []
+    p_gap  = []
+    w_gap  = []
     
     for t in range(TIMES):
         sol_w = sum(items[j][0] for j in range(nn) if zz[t][j] == 1)
         sol_p = sum(items[j][1] for j in range(nn) if zz[t][j] == 1)
         
         w_gap.append(ksp_dp_weight - sol_w)
-        p_gap.append(percentage_gap(ksp_dp_profit, sol_p))
+        p_gap.append(ksp_dp_profit - sol_p)
     
     avg_w_gap = round(sum(w_gap) / len(w_gap), 1)
     avg_p_gap = round(sum(p_gap) / len(p_gap), 1)
+    avg_fz    = round((sum(mins_z[i] for i in range(TIMES)) / len(mins_z)), 2)
     
     string += log_write("", "")
 
     string += log_write("Avg Weight GAP", avg_w_gap)
     string += log_write("Avg Profit GAP", avg_p_gap)
+    string += log_write("Avg fQ        ", avg_fz)
     
     print(string)
 
-def app2(TIMES, k, _Q, nn, capacity, items):
+    return avg_fz
+
+def app2(TIMES, k, _Q, nn, capacity, items, gurobi_sol):
     string = str()
 
     sampler = neal.SimulatedAnnealingSampler()
@@ -140,7 +138,7 @@ def app2(TIMES, k, _Q, nn, capacity, items):
         # string += log_write("Sol Profit:", sol_p)
 
         w_gap.append(ksp_dp_weight - sol_w)
-        p_gap.append(percentage_gap(ksp_dp_profit, sol_p))
+        p_gap.append(ksp_dp_profit - sol_p)
 
         with open("./solux.txt", "a") as soluz_file:
             line = f'{" ".join(map(str, z))}\n'

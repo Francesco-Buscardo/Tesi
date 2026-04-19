@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np # type: ignore
 
 # items[n_items][2]: 
 #    | w |  p 
@@ -54,7 +54,7 @@ def compute_penalty(C, items):
 
     # ? OPT 1 - mediamente meglio
     A = sum(p for _, p in items)
-    return  A / 3
+    return  A / C
 
     # ? OPT 2
     # A = sum(p for _, p in items)
