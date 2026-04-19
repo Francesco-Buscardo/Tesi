@@ -1,8 +1,6 @@
 import time
 import datetime
 
-# - calcolare tutto in funzione di energia Q(x)  
-
 import neal # type: ignore
 
 from QA4QUBO.colors import colors
@@ -17,7 +15,7 @@ def percentage_gap(best, my):
         return 0
     return ((best - my) / best) * 100
 
-def app1(TIMES, nn, _Q, log_DIR, capacity, items, gurobi_sol):
+def app1(TIMES, nn, _Q, log_DIR, capacity, items):
     zz      = []
     r_times = [] 
     mins_z  = []
@@ -96,7 +94,7 @@ def app1(TIMES, nn, _Q, log_DIR, capacity, items, gurobi_sol):
 
     return avg_fz
 
-def app2(TIMES, k, _Q, nn, capacity, items, gurobi_sol):
+def app2(TIMES, k, _Q, nn, capacity, items):
     string = str()
 
     sampler = neal.SimulatedAnnealingSampler()

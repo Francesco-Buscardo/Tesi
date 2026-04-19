@@ -80,8 +80,8 @@ def main():
     gurobi_sol = {
         "profit": gurobi_profit,
         "weight": gurobi_weight,
-        "x": gurobi_x,
-        "fQ": fQ
+        "x":      gurobi_x,
+        "fQ":     fQ
     }
 
     TIMES       = 10
@@ -99,10 +99,10 @@ def main():
     # =========================
     fz = 0
     if QALS:
-        fz = app.app1(TIMES, nn, _Q, log_DIR, capacity, items, gurobi_sol)
+        fz = app.app1(TIMES, nn, _Q, log_DIR, capacity, items)
     else:
         k = 1
-        app.app2(TIMES, k, _Q, nn, capacity, items, gurobi_sol)
+        app.app2(TIMES, k, _Q, nn, capacity, items)
     
     print(colors.BOLD + colors.HEADER + "\nGUROBI Solution" + colors.ENDC)
     print("profit:              ", gurobi_sol["profit"])
