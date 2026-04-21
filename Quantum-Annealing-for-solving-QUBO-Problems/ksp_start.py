@@ -84,8 +84,10 @@ def main():
         "fQ":     fQ
     }
 
-    TIMES       = 10
-    QALS        = 1
+    # k: z che ritorna l'annealer
+    k     = 10
+    TIMES = 1000
+    QALS  = 1
 
     _DIR = generate_file_ksp(nn, capacity)
     log_DIR = _DIR.replace("KSP","KSP_LOG") + ".csv"
@@ -97,20 +99,16 @@ def main():
     # =========================
     # ESECUZIONE DI QALS
     # =========================
-    fz = 0
     if QALS:
-        fz = app.app1(TIMES, nn, _Q, log_DIR, capacity, items)
+        app.app1(TIMES, k, nn, _Q, log_DIR, capacity, items)
     else:
-        k = 1
         app.app2(TIMES, k, _Q, nn, capacity, items)
     
     print(colors.BOLD + colors.HEADER + "\nGUROBI Solution" + colors.ENDC)
-    print("profit:              ", gurobi_sol["profit"])
-    print("weight:              ", gurobi_sol["weight"])
-    # for i in range(nn):
-    #     print(f"x[{i}]: {gurobi_x[i]}")
-    print("fQ:                  ", gurobi_sol["fQ"])
-    print(f"fQ_QALS - fQ_GUROBI:  {abs(fz) - abs(gurobi_sol["fQ"])}")
+    print("profit:", gurobi_sol["profit"])
+    print("weight:", gurobi_sol["weight"])
+    print(", ".join(f"{xi}" for i, xi in enumerate(gurobi_x))) 
+    print("fQ:    ", gurobi_sol["fQ"])
 
 
 if __name__ == '__main__':

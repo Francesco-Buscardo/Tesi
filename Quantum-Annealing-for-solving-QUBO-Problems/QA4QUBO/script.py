@@ -9,7 +9,7 @@ def annealer(theta, sampler, k, time=False):
     if sampler.__class__.__name__ == "ExactSolver":
         response = sampler.sample_qubo(theta)
     else:
-        response = sampler.sample_qubo(theta, num_reads= k)   
+        response = sampler.sample_qubo(theta, num_reads = k)   
     
     if time:
         print(f"Time: {tm.time() - start}")
