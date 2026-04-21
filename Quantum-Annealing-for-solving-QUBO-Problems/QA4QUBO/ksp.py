@@ -53,16 +53,16 @@ def compute_penalty(C, items):
     # (sum pesi) / 3 e quello che già usavi.
 
     # ? OPT 1 - mediamente meglio
-    # A = sum(p for _, p in items)
-    # return  A / 3
+    A = sum(p for _, p in items)
+    return  A / 3
 
     # ? OPT 2
     # A = sum(p for _, p in items)
     # return A / C
 
     # ? OPT 3
-    A = sum(p for _, p in items)
-    return A / (650 * C)
+    # A = sum(p for _, p in items)
+    # return A / (650 * C)
 
 def generate_QUBO_knapsack(n_items, C, items):
     # Generate the matrix -Q for the knapsack problem

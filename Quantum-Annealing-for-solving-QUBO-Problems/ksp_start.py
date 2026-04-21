@@ -73,7 +73,7 @@ def main():
     
     # ksp_file = join("QA4QUBO/ksp/", ksp_files[nn])
 
-    nn, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_2.txt")
+    nn, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_1.txt")
 
     gurobi_profit, gurobi_weight, gurobi_x, fQ = test_gurobi_optimizer(nn, capacity, items)
 
@@ -87,7 +87,7 @@ def main():
     # k: z che ritorna l'annealer
     k     = 10
     TIMES = 1000
-    QALS  = 1
+    QALS  = 0
 
     _DIR = generate_file_ksp(nn, capacity)
     log_DIR = _DIR.replace("KSP","KSP_LOG") + ".csv"
