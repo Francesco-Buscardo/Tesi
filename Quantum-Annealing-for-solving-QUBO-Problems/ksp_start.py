@@ -6,11 +6,6 @@ from gurobipy import Model, GRB, quicksum # type: ignore
 from QA4QUBO import ksp, app
 from QA4QUBO.colors import colors
 
-ksp_files = sorted(
-    f for f in listdir("QA4QUBO/ksp/")
-    if path.isfile(path.join("QA4QUBO/ksp/", f)) and f.startswith("ksp_") and f.endswith(".txt")
-)
-
 def generate_file_ksp(n_items, C):
     nok = True
     i = 0
@@ -84,7 +79,8 @@ def generate_match_k_TIMES():
         (100, 1000)
     ]
 
-    folder = "./match_k_TIMES"
+    # folder = "./match_k_TIMES_lambda_div_3"
+    folder = "./match_k_TIMES_lambda_650_dot_C"
     makedirs(folder, exist_ok=True)
 
     for k, t in match_k_t:
@@ -100,7 +96,7 @@ def generate_match_k_TIMES():
     print("\t\t" + colors.BOLD + colors.OKGREEN + "   END GENERATING MATCH" + colors.ENDC + "\n\n\t\t")
     return match_k_t, folder
 
-def run_match_k_TIMES(n, capacity, items, _Q, log_DIR):
+def run_match_k_TIMES(QALS, n, capacity, items, _Q, log_DIR):
     match_k_t, folder = generate_match_k_TIMES()
 
     # for (k, TIMES) in match_k_t:
@@ -131,11 +127,6 @@ def main():
     capacity = 0
     items    = []
 
-    # while nn <= 0 or nn > 10:
-    #     nn = int(input("[" + colors.FAIL + colors.BOLD + "Invalid n" + colors.ENDC + "] Insert n: "))
-    
-    # ksp_file = join("QA4QUBO/ksp/", ksp_files[nn])
-
     n, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_1.txt")
 
     # gurobi_profit, gurobi_weight, gurobi_x, fQ = test_gurobi_optimizer(nn, capacity, items)
@@ -156,7 +147,8 @@ def main():
     # =========================
     # ESECUZIONE DI QALS
     # =========================
-    run_match_k_TIMES(n, capacity, items, _Q, log_DIR)
+    QALS = 0
+    run_match_k_TIMES(QALS, n, capacity, items, _Q, log_DIR)
 
 
 if __name__ == '__main__':

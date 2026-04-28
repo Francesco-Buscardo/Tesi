@@ -1,0 +1,298 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+
+\title{Report 2}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Disclaimer}
+Il seguente report è da considerarsi un' estensione del file \emph{Sviluppo\_Classical\_ksp.pdf}. 
+Come test sono stati usati ancora \texttt{ksp\_1.txt} e \texttt{ksp\_2.txt} . 
+
+\section{Introduzione}\label{sec:Introduzione}
+Nel seguente documento sono esposti i risultati ottenuti con i seguenti cambiamenti:
+
+\begin{itemize}
+    \item Aggiunto un nuovo metodo per il calcolo di
+    \[
+    \lambda = \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}
+    \]
+
+    \item Modificato il parametro \texttt{k} nelle funzioni \texttt{script.annealer()} e \texttt{solver.solve()}.
+    
+    \item Aggiunto test con un altro tipo di ottimizzatore: \texttt{Gurobi}.
+    
+    \item Modifica come e quali dati stampare in output.
+\end{itemize}
+
+\subsection{Soluzioni trovate con Gurobi}
+Su test case \texttt{ksp\_1.txt}, considerando i due valori di
+\[
+\lambda = \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}
+\qquad \text{e} \qquad
+\lambda = \frac{\sum_{i=1}^{n} p_i}{3},
+\]
+si ottengono i seguenti risultati:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Gurobi Weight & 101 \\
+Gurobi Profit & 198 \\
+fQ & -1455540.67 \\
+Items & \texttt{[1, 1, 0, 0, 0, 0, 1, 0, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\label{tab:tab1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Gurobi Weight & 177 \\
+Gurobi Profit & 302 \\
+fQ & -330.85 \\
+Items & \texttt{[1, 1, 0, 0, 0, 1, 1, 1, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$}
+\label{tab:tab2}
+\end{table}
+
+In questo caso Gurobi sembra trovare la soluzione migliore solo nel caso si utilizzi $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$.
+
+Su test case \texttt{ksp\_2.txt} invece:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Gurobi Weight & 1001 \\
+Gurobi Profit & 6288 \\
+fQ & -10200710468.33 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\label{tab:tab3}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Gurobi Weight & 978 \\
+Gurobi Profit & 7740 \\
+fQ & -54748.31 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$}
+\label{tab:tab4}
+\end{table}
+
+Nel secondo test case invece è il contrario: trova la soluzione con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$.
+
+\section{Soluzioni trovate con l'annealer}
+Negli esempi, come anticipato in Sezione~\ref{sec:Introduzione}, ho cambiato il parametro \texttt{k = 10}.
+
+\subsection{NON utilizzando QALS}
+
+Per \texttt{ksp\_1.txt} si ha:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -0.5 \\
+Avg Profit GAP & 67.2 \\
+Avg fQ & -1455294.95 \\
+fQ Min Fuound & -1455540.67 \\
+n of fQ Min Found & 424 \\
+Items & \texttt{[1, 1, 0, 0, 0, 0, 1, 0, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$ \ref{tab:tab1}}
+\end{table}
+
+Nel primo test pare l'annealer riesca a trovare la soluzione corretta con una percentuale del 42\% (il 
+confronto è fatto con Gurobi/soluzione ottima).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -76.0 \\
+Avg Profit GAP & -104.0 \\
+Avg fQ & -330.85 \\
+fQ Min Fuound & -330.85 \\
+n of fQ Min Found & 1000 \\
+Items & \texttt{[1, 1, 0, 0, 0, 1, 1, 1, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$ \ref{tab:tab2}}
+\end{table}
+
+Nel secondo invece le solzioni trovate dall'ennealer sono tutte uguali tra loro e a quelle trovate 
+da Gurobi.
+
+Per quanto riguarda \texttt{ksp\_2.txt}:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -23.0 \\
+Avg Profit GAP & 3885.4 \\
+Avg fQ & -10200678481.45 \\
+fQ Min Fuound & -10200710468.33 \\
+n of fQ Min Found & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$ \ref{tab:tab3}}
+\end{table}
+
+L'unica solzione trovata (non ottima) anche in questo caso è la stessa di quella trovata da
+Gurobi.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -32.1 \\
+Avg Profit GAP & 72.6 \\
+Avg fQ & -54603.47 \\
+fQ Min Fuound & -54748.31 \\
+n of fQ Min Found & 617 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$ \ref{tab:tab4}}
+\end{table}
+
+In questo le soluzioni ottime trovate sono il 61\% e corrispondono a quelle trovate anche da Gurobi.
+
+\subsection{Utilizzando QALS}
+
+\texttt{ksp\_1.txt}:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -75.1 \\
+Avg Profit GAP & 22.7 \\
+Avg fQ & -332380.35 \\
+fQ Min Fuound & -1455540.67 \\
+n of fQ Min Found & 2 \\
+Items & \texttt{[1, 1, 0, 0, 0, 0, 1, 0, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$ \ref{tab:tab1}}
+\end{table}
+
+Per questo caso di $\lambda$\ QALS riesce a trovare la stessa soluzione di Gurobi e quella ottima.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -41 \\
+Avg Profit GAP & 60.8 \\
+Avg fQ & -126.04 \\
+fQ Min Fuound & -284.04 \\
+n of fQ Min Found & 3 \\
+Items & \texttt{[1, 0, 0, 0, 0, 1, 1, 0, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$}
+\end{table}
+
+Per il secondo valore di $\lambda$\ invece sembra ancora non riuscire a trovare la soluzione migliore
+ma alcune con dei GAP non trascurabili.
+
+
+\texttt{ksp\_2.txt}:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -8703.8 \\
+Avg Profit GAP & -5790.5 \\
+Avg fQ & 770684171363.27 \\
+fQ Min Fuound & 170922927950.67 \\
+n of fQ Min Found & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$ \ref{tab:tab3}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -8433.1 \\
+Avg Profit GAP & -5337.1 \\
+Avg fQ & 3340506.07 \\
+fQ Min Fuound & 961014.64 \\
+n of fQ Min Found & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$ \ref{tab:tab4}}
+\end{table}
+
+In entrambi i casi le soluzioni trovate sono ben distanti sia da quella ottima che da quella trovata da Gurobi.
+
+\end{document}

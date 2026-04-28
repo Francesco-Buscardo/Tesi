@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1776354076.46311 "/home/francesco-buscardo/uni/Tesi/tex/Sviluppo_Classical_ksp.tex" "Sviluppo_Classical_ksp.pdf" "Sviluppo_Classical_ksp" 1776354076.95144 0
+["pdflatex"] 1776712473.30971 "/home/francesco-buscardo/uni/Tesi/tex/Sviluppo_Classical_ksp.tex" "Sviluppo_Classical_ksp.pdf" "Sviluppo_Classical_ksp" 1776712473.73294 0
   "/etc/texmf/web2c/texmf.cnf" 1775214102.38668 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/francesco-buscardo/uni/Tesi/tex/Sviluppo_Classical_ksp.tex" 1776354076.23658 8016 56c3833f9ec08ad849d9b2c8a7882fe8 ""
+  "/home/francesco-buscardo/uni/Tesi/tex/Sviluppo_Classical_ksp.tex" 1776712472.5893 8016 56c3833f9ec08ad849d9b2c8a7882fe8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -73,8 +73,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1775214117.12528 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1775214165 8216107 2edb52ea74eda7475674a5d7568ca387 ""
-  "Sviluppo_Classical_ksp.aux" 1776354076.88012 1887 9ab4bcc38e249c6ae5d395bc390766d9 "pdflatex"
-  "Sviluppo_Classical_ksp.tex" 1776354076.23658 8016 56c3833f9ec08ad849d9b2c8a7882fe8 ""
+  "Sviluppo_Classical_ksp.aux" 1776712473.66258 1887 9ab4bcc38e249c6ae5d395bc390766d9 "pdflatex"
+  "Sviluppo_Classical_ksp.tex" 1776712472.5893 8016 56c3833f9ec08ad849d9b2c8a7882fe8 ""
   (generated)
   "Sviluppo_Classical_ksp.aux"
   "Sviluppo_Classical_ksp.log"

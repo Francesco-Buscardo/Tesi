@@ -1,0 +1,185 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{float}
+\geometry{margin=2.5cm}
+
+\geometry{margin=2.5cm}
+
+\title{Report 3 -- Swap(k, TIMES)}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Disclaimer}
+Negli esempi ho cambiato il parametro \texttt{k} (quante volte
+risolvo il problema QUBO) con il parametro \texttt{TIMES} (quante volte chiamo QALS o l'annealer 
+nei casi in cui non si utilizza QALS).
+
+\section{QALS}
+
+\subsection{\texttt{ksp\_1.txt}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 10 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -52 .0\\
+Avg Profit GAP & 30.2 \\
+Avg fQ & -719521.67 \\
+fQ Min Fuound & -1380069.0 \\
+n of fQ Min Found & 1 \\
+Items & \texttt{[1, 0, 0, 0, 0, 0, 1, 1, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 10 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -98.8 \\
+Avg Profit GAP & -20.4 \\
+Avg fQ & -129.51 \\
+fQ Min Fuound & -229.94.85 \\
+n of fQ Min Found & 1 \\
+Items & \texttt{[1, 1, 1, 0, 0, 1, 1, 1, 0, 1]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$}
+\end{table}
+
+\subsection{\texttt{ksp\_2.txt}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 10 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -8567.7 \\
+Avg Profit GAP & -4773.7 \\
+Avg fQ & 742120534297.07 \\
+fQ Min Fuound & -486215642301.0 \\
+n of fQ Min Found & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 10 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -8719.1 \\
+Avg Profit GAP & -5643.4 \\
+Avg fQ & 3562405.49 \\
+fQ Min Fuound & 1727774.13 \\
+n of fQ Min Found & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$}
+\end{table}
+
+\section{NON QALS}
+
+\subsection{\texttt{ksp\_1.txt}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 10 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & 0 \\
+Avg Profit GAP & 0 \\
+Avg fQ & -1455540.67 \\
+fQ Min Fuound & -1455540.67 \\
+n of fQ Min Found & 10 \\
+Items & \texttt{[1, 1, 0, 0, 0, 0, 1, 0, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 10 \\
+Best Weight & 101 \\
+Best Profit & 198 \\
+Avg Weight GAP & -76.0 \\
+Avg Profit GAP & -104.0 \\
+Avg fQ & -330.85 \\
+fQ Min Fuound & -330.85 \\
+n of fQ Min Found & 10 \\
+Items & \texttt{[1, 1, 0, 0, 0, 1, 1, 1, 0, 0]} \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$}
+\end{table}
+
+In entrambi i casi i risultati sempre uguali e uguali pure a quelli di Gurobi.
+
+\subsection{\texttt{ksp\_2.txt}}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 10 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & -23.0 \\
+Avg Profit GAP & 1861.8 \\
+Avg fQ & -10200710058.53 \\
+fQ Min Fuound & -10200710468.33 \\
+n of fQ Min Found & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{3}$}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Numero totale di run & 1000 \\
+Best Weight & 978 \\
+Best Profit & 7740 \\
+Avg Weight GAP & 0 \\
+Avg Profit GAP & 0 \\
+Avg fQ & -54748.31 \\
+fQ Min Fuound & -54748.31 \\
+n of fQ Min Found & 10 \\
+\bottomrule
+\end{tabular}
+\caption{Risultati con $\lambda = \displaystyle \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$}
+\end{table}
+
+Anche in questo caso i risultati trovati da due ottimizzatori corrispondono.
+
+\end{document}
