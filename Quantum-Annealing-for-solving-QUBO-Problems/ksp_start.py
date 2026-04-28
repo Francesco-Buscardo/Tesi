@@ -1,6 +1,5 @@
-from os import system, name
-from os.path import isfile, join
-from os import listdir
+from os import system, name, listdir, path, makedirs
+import re
 
 from gurobipy import Model, GRB, quicksum # type: ignore
 
@@ -9,7 +8,7 @@ from QA4QUBO.colors import colors
 
 ksp_files = sorted(
     f for f in listdir("QA4QUBO/ksp/")
-    if isfile(join("QA4QUBO/ksp/", f)) and f.startswith("ksp_") and f.endswith(".txt")
+    if path.isfile(path.join("QA4QUBO/ksp/", f)) and f.startswith("ksp_") and f.endswith(".txt")
 )
 
 def generate_file_ksp(n_items, C):
@@ -61,6 +60,70 @@ def test_gurobi_optimizer(n_items, capacity, items):
 
     return total_profit, total_weight, sol, round(knapsack_model.ObjVal, 2)
 
+def remove_ansi(text):
+    return re.sub(r'\x1b\[[0-9;]*m', '', text)
+
+def generate_match_k_TIMES():
+    print("\t\t" + colors.BOLD + colors.OKGREEN + "   GENERATING MATCH" + colors.ENDC + "\t\t")
+    
+    # k = quante volte risolvo il problema QUBO
+    match_k_t = [ 
+        (1, 1),
+        (1, 10),
+        (1, 100),
+        (1, 1000),
+
+        (10, 1),
+        (10, 10),
+        (10, 100),
+        (10, 1000),
+
+        (100, 1), 
+        (100, 10),
+        (100, 100),
+        (100, 1000)
+    ]
+
+    folder = "./match_k_TIMES"
+    makedirs(folder, exist_ok=True)
+
+    for k, t in match_k_t:
+        filename = f"file_{k}_{t}.txt"
+        filepath = path.join(folder, filename)
+
+        with open(filepath, "w") as f:
+            f.write(f"k     = {k}\n")
+            f.write(f"TIMES = {t}\n")
+
+        print(f"Create: {filepath}")
+    
+    print("\t\t" + colors.BOLD + colors.OKGREEN + "   END GENERATING MATCH" + colors.ENDC + "\n\n\t\t")
+    return match_k_t, folder
+
+def run_match_k_TIMES(n, capacity, items, _Q, log_DIR):
+    match_k_t, folder = generate_match_k_TIMES()
+
+    # for (k, TIMES) in match_k_t:
+    #     filepath = path.join(folder, f"file_{k}_{TIMES}.txt")
+        
+    #     with open(filepath, "a") as f:
+    #         if _QALS:
+    #             f.write("QALS\n\n")
+    #             f.write(remove_ansi(app.app1(TIMES, k, n, _Q, log_DIR, capacity, items)))
+    #         else:
+    #             f.write("NO QALS\n\n")
+    #             f.write(remove_ansi(app.app2(TIMES, k, _Q, n, capacity, items)))
+
+    for (k, TIMES) in match_k_t:
+        filepath = path.join(folder, f"file_{k}_{TIMES}.txt")
+        
+        with open(filepath, "a") as f:
+                f.write("\nQALS\n")
+                f.write(remove_ansi(app.app1(TIMES, k, n, _Q, log_DIR, capacity, items)))
+
+                f.write("\nNO QALS\n\n")
+                f.write(remove_ansi(app.app2(TIMES, k, _Q, n, capacity, items)))
+
 def main():
     # =========================
     # COSTRUZIONE MATRICE Q
@@ -73,42 +136,27 @@ def main():
     
     # ksp_file = join("QA4QUBO/ksp/", ksp_files[nn])
 
-    nn, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_1.txt")
+    n, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_1.txt")
 
-    gurobi_profit, gurobi_weight, gurobi_x, fQ = test_gurobi_optimizer(nn, capacity, items)
+    # gurobi_profit, gurobi_weight, gurobi_x, fQ = test_gurobi_optimizer(nn, capacity, items)
 
-    gurobi_sol = {
-        "profit": gurobi_profit,
-        "weight": gurobi_weight,
-        "x":      gurobi_x,
-        "fQ":     fQ
-    }
-
-    # k: z che ritorna l'annealer
-    k     = 10
-    TIMES = 1000
-    QALS  = 0
-
-    _DIR = generate_file_ksp(nn, capacity)
+    # gurobi_sol = {
+    #     "profit": gurobi_profit,
+    #     "weight": gurobi_weight,
+    #     "x":      gurobi_x,
+    #     "fQ":     fQ
+    # }
+       
+    _DIR = generate_file_ksp(n, capacity)
     log_DIR = _DIR.replace("KSP","KSP_LOG") + ".csv"
 
-    _Q = ksp.generate_QUBO_knapsack(nn, capacity, items)
-
+    _Q = ksp.generate_QUBO_knapsack(n, capacity, items)
     print("\t\t" + colors.BOLD + colors.OKGREEN + "   PROBLEM BUILDED" + colors.ENDC + "\n\n\t\t" + colors.BOLD + colors.OKGREEN + "   START ALGORITHM" + colors.ENDC + "\n")
 
     # =========================
     # ESECUZIONE DI QALS
     # =========================
-    if QALS:
-        app.app1(TIMES, k, nn, _Q, log_DIR, capacity, items)
-    else:
-        app.app2(TIMES, k, _Q, nn, capacity, items)
-    
-    print(colors.BOLD + colors.HEADER + "\nGUROBI Solution" + colors.ENDC)
-    print("profit:", gurobi_sol["profit"])
-    print("weight:", gurobi_sol["weight"])
-    print(", ".join(f"{xi}" for i, xi in enumerate(gurobi_x))) 
-    print("fQ:    ", gurobi_sol["fQ"])
+    run_match_k_TIMES(n, capacity, items, _Q, log_DIR)
 
 
 if __name__ == '__main__':

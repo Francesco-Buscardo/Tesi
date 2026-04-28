@@ -1,0 +1,33 @@
+k     = 1
+TIMES = 1
+
+QALS
+
+Knapsack Solution
+[Profit]	198
+[Weight]	101
+
+QALS Solution
+[Avg Profit GAP   ]	40.0
+[Avg Weight GAP   ]	-51.0
+[Avg fQ           ]	-1084424.67
+[fQ Min Found     ]	-1084424.67
+[Profit Found     ]	158
+[Weight Found     ]	152
+[Profit GAP       ]	40
+[Weight GAP       ]	-51
+[n of fQ Min Found]	1
+[Items            ]	[0, 1, 0, 0, 0, 1, 0, 1, 0, 1]
+
+NO QALS
+
+[Avg Profit GAP   ]	93.0
+[Avg Weight GAP   ]	2.0
+[Avg fQ           ]	-1454877.0
+[fQ Min Found     ]	-1454877.0
+[Profit Found     ]	105
+[Weight Found     ]	99
+[Profit GAP       ]	93
+[Weight GAP       ]	2
+[n of fQ Min Found]	1
+[Items            ]	[0, 1, 0, 0, 0, 1, 0, 0, 0, 0]
