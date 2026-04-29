@@ -79,8 +79,8 @@ def generate_match_k_TIMES():
         (100, 1000)
     ]
 
-    # folder = "./match_k_TIMES_lambda_div_3"
-    folder = "./match_k_TIMES_lambda_650_dot_C"
+    folder = "./match_k_TIMES_lambda_div_3"
+    # folder = "./match_k_TIMES_lambda_650_dot_C"
     makedirs(folder, exist_ok=True)
 
     for k, t in match_k_t:
