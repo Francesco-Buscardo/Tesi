@@ -1,9 +1,9 @@
-PWD /home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/plots
+PWD /home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/ksp_1/plots
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/plots/plots_lambda_div_3.tex
+INPUT /home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/ksp_1/plots/plots_lambda_div_3.tex
 OUTPUT plots_lambda_div_3.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

@@ -1,0 +1,328 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{margin=2cm}
+
+\pgfplotsset{compat=1.18}
+
+\title{Report 4.5 -- Combinazioni di $k$ e TIMES}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Grafici dei risultati per $k$ e TIMES}
+
+I grafici mostrano rispettivamente l'andamento di:
+\begin{itemize}
+    \item Avg fQ
+    \item fQ Min Found
+    \item Profit Found
+    \item Weight Found
+    \item Profit GAP
+    \item Weight GAP
+    \item n of fQ Min Found
+\end{itemize}
+al variare di TIMES per diversi valori di $k \in \{1,10,100\}$ e confrontando
+i risultati usando QALS e NON utilizzando QALS.
+
+I risultati riportati sono stati ottenuti utilizzando:
+
+\begin{itemize}
+   \item $\lambda = \frac{\sum_{i=1}^{n} p_i}{3}$
+    \item l'istanza \texttt{ksp\_3.txt}
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\hline
+Profit soluzione DP & 2679 \\
+Weight soluzione DP & 496 \\
+\hline
+\end{tabular}
+\caption{Soluzione di riferimento riportata nei file di input.}
+\label{tab:knapsack-solution}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.95\textwidth,
+    height=0.48\textwidth,
+    xmode=log,
+    log basis x=10,
+    xlabel={TIMES},
+    ylabel={Avg fQ},
+    title={Avg fQ},
+    grid=both,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    xtick={1,10,100,1000},
+    xticklabels={1,10,100,1000},
+    tick label style={font=\small},
+    label style={font=\small},
+    title style={font=\small},
+]
+\addplot[blue, thick, mark=*] coordinates {(1, 19739701567.67) (10, 17664096466.3) (100, 18473650862.89) (1000, 18437896253.3)};
+\addplot[red, thick, mark=square*] coordinates {(1, 11420293496.67) (10, 19072505664.03) (100, 18029939191.61) (1000, 18366067715.35)};
+\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 18909095344.67) (10, 16045346205.3) (100, 18717799280.41) (1000, 18336624399.52)};
+\addplot[blue, thick, dashed, mark=o] coordinates {(1, -714126625.33) (10, -713837392.47) (100, -713927646.09) (1000, -713907825.38)};
+\addplot[red, thick, dashed, mark=square] coordinates {(1, -714266511) (10, -714258867.6) (100, -714256133.74) (1000, -714256905.36)};
+\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, -714266643) (10, -714266677.1) (100, -714266807.11) (1000, -714266789.83)};
+\legend{
+    QALS ($k=1$),
+    QALS ($k=10$),
+    QALS ($k=100$),
+    NO QALS ($k=1$),
+    NO QALS ($k=10$),
+    NO QALS ($k=100$)
+}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di \textit{Avg fQ} al variare di TIMES per diversi valori di $k$.}
+\label{fig:avg-fq}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.95\textwidth,
+    height=0.48\textwidth,
+    xmode=log,
+    log basis x=10,
+    xlabel={TIMES},
+    ylabel={fQ Min Found},
+    title={fQ Min Found},
+    grid=both,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    xtick={1,10,100,1000},
+    xticklabels={1,10,100,1000},
+    tick label style={font=\small},
+    label style={font=\small},
+    title style={font=\small},
+]
+\addplot[blue, thick, mark=*] coordinates {(1, 19739701567.67) (10, 11420293934.67) (100, 8846854902) (1000, 3803511356)};
+\addplot[red, thick, mark=square*] coordinates {(1, 11420293496.67) (10, 11244644717.67) (100, 7792682974.67) (1000, 6016996006.67)};
+\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 18909095344.67) (10, 10532214635.67) (100, 9775997136) (1000, 6060833967.67)};
+\addplot[blue, thick, dashed, mark=o] coordinates {(1, -714126625.33) (10, -714222037.33) (100, -714266624) (1000, -714267662)};
+\addplot[red, thick, dashed, mark=square] coordinates {(1, -714266511) (10, -714266641) (100, -714267662) (1000, -714267662)};
+\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, -714266643) (10, -714267662) (100, -714267662) (1000, -714267662)};
+\legend{
+    QALS ($k=1$),
+    QALS ($k=10$),
+    QALS ($k=100$),
+    NO QALS ($k=1$),
+    NO QALS ($k=10$),
+    NO QALS ($k=100$)
+}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di \textit{fQ Min Found} al variare di TIMES per diversi valori di $k$.}
+\label{fig:fq-min-found}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.95\textwidth,
+    height=0.48\textwidth,
+    xmode=log,
+    log basis x=10,
+    xlabel={TIMES},
+    ylabel={Profit Found},
+    title={Profit Found: Profitto della soluzione con fq minima trovata},
+    grid=both,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    xtick={1,10,100,1000},
+    xticklabels={1,10,100,1000},
+    tick label style={font=\small},
+    label style={font=\small},
+    title style={font=\small},
+]
+\addplot[blue, thick, mark=*] coordinates {(1, 5139) (10, 3828) (100, 4050) (1000, 3865)};
+\addplot[red, thick, mark=square*] coordinates {(1, 4266) (10, 4270) (100, 4452) (1000, 3957)};
+\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 3947) (10, 4628) (100, 3285) (1000, 3491)};
+\addplot[blue, thick, dashed, mark=o] coordinates {(1, 884) (10, 2389) (100, 1445) (1000, 2483)};
+\addplot[red, thick, dashed, mark=square] coordinates {(1, 1332) (10, 1462) (100, 2483) (1000, 2483)};
+\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 1464) (10, 2483) (100, 2483) (1000, 2483)};
+\legend{
+    QALS ($k=1$),
+    QALS ($k=10$),
+    QALS ($k=100$),
+    NO QALS ($k=1$),
+    NO QALS ($k=10$),
+    NO QALS ($k=100$)
+}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di \textit{Profit Found} al variare di TIMES per diversi valori di $k$.}
+\label{fig:profit-found}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.95\textwidth,
+    height=0.48\textwidth,
+    xmode=log,
+    log basis x=10,
+    xlabel={TIMES},
+    ylabel={Weight Found},
+    title={Weight Found: Peso della soluzione con fq minima trovata},
+    grid=both,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    xtick={1,10,100,1000},
+    xticklabels={1,10,100,1000},
+    tick label style={font=\small},
+    label style={font=\small},
+    title style={font=\small},
+]
+\addplot[blue, thick, mark=*] coordinates {(1, 3182) (10, 2566) (100, 2334) (1000, 1761)};
+\addplot[red, thick, mark=square*] coordinates {(1, 2566) (10, 2551) (100, 2230) (1000, 2039)};
+\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 3127) (10, 2489) (100, 2421) (1000, 2044)};
+\addplot[blue, thick, dashed, mark=o] coordinates {(1, 494) (10, 505) (100, 501) (1000, 501)};
+\addplot[red, thick, dashed, mark=square] coordinates {(1, 501) (10, 501) (100, 501) (1000, 501)};
+\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 501) (10, 501) (100, 501) (1000, 501)};
+\legend{
+    QALS ($k=1$),
+    QALS ($k=10$),
+    QALS ($k=100$),
+    NO QALS ($k=1$),
+    NO QALS ($k=10$),
+    NO QALS ($k=100$)
+}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di \textit{Weight Found} al variare di TIMES per diversi valori di $k$.}
+\label{fig:weight-found}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.95\textwidth,
+    height=0.48\textwidth,
+    xmode=log,
+    log basis x=10,
+    xlabel={TIMES},
+    ylabel={Profit GAP},
+    title={Profit GAP: Differenza tra la soluzione con fq minima trovata e la soluzione DP},
+    grid=both,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    xtick={1,10,100,1000},
+    xticklabels={1,10,100,1000},
+    tick label style={font=\small},
+    label style={font=\small},
+    title style={font=\small},
+]
+\addplot[blue, thick, mark=*] coordinates {(1, -2460) (10, -1149) (100, -1371) (1000, -1186)};
+\addplot[red, thick, mark=square*] coordinates {(1, -1587) (10, -1591) (100, -1773) (1000, -1278)};
+\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, -1268) (10, -1949) (100, -606) (1000, -812)};
+\addplot[blue, thick, dashed, mark=o] coordinates {(1, 1795) (10, 290) (100, 1234) (1000, 196)};
+\addplot[red, thick, dashed, mark=square] coordinates {(1, 1347) (10, 1217) (100, 196) (1000, 196)};
+\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 1215) (10, 196) (100, 196) (1000, 196)};
+\legend{
+    QALS ($k=1$),
+    QALS ($k=10$),
+    QALS ($k=100$),
+    NO QALS ($k=1$),
+    NO QALS ($k=10$),
+    NO QALS ($k=100$)
+}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di \textit{Profit GAP} al variare di TIMES per diversi valori di $k$.}
+\label{fig:profit-gap}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.95\textwidth,
+    height=0.48\textwidth,
+    xmode=log,
+    log basis x=10,
+    xlabel={TIMES},
+    ylabel={Weight GAP},
+    title={Weight GAP: Differenza tra la soluzione con fq minima trovata e la soluzione DP},
+    grid=both,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    xtick={1,10,100,1000},
+    xticklabels={1,10,100,1000},
+    tick label style={font=\small},
+    label style={font=\small},
+    title style={font=\small},
+]
+\addplot[blue, thick, mark=*] coordinates {(1, -2686) (10, -2070) (100, -1838) (1000, -1265)};
+\addplot[red, thick, mark=square*] coordinates {(1, -2070) (10, -2055) (100, -1734) (1000, -1543)};
+\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, -2631) (10, -1993) (100, -1925) (1000, -1548)};
+\addplot[blue, thick, dashed, mark=o] coordinates {(1, 2) (10, -9) (100, -5) (1000, -5)};
+\addplot[red, thick, dashed, mark=square] coordinates {(1, -5) (10, -5) (100, -5) (1000, -5)};
+\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, -5) (10, -5) (100, -5) (1000, -5)};
+\legend{
+    QALS ($k=1$),
+    QALS ($k=10$),
+    QALS ($k=100$),
+    NO QALS ($k=1$),
+    NO QALS ($k=10$),
+    NO QALS ($k=100$)
+}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di \textit{Weight GAP} al variare di TIMES per diversi valori di $k$.}
+\label{fig:weight-gap}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.95\textwidth,
+    height=0.48\textwidth,
+    xmode=log,
+    log basis x=10,
+    xlabel={TIMES},
+    ylabel={n of fQ Min Found},
+    title={n of fQ Min Found},
+    grid=both,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    xtick={1,10,100,1000},
+    xticklabels={1,10,100,1000},
+    tick label style={font=\small},
+    label style={font=\small},
+    title style={font=\small},
+]
+\addplot[blue, thick, mark=*] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
+\addplot[red, thick, mark=square*] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
+\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
+\addplot[blue, thick, dashed, mark=o] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
+\addplot[red, thick, dashed, mark=square] coordinates {(1, 1) (10, 1) (100, 1) (1000, 13)};
+\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 1) (10, 1) (100, 11) (1000, 114)};
+\legend{
+    QALS ($k=1$),
+    QALS ($k=10$),
+    QALS ($k=100$),
+    NO QALS ($k=1$),
+    NO QALS ($k=10$),
+    NO QALS ($k=100$)
+}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di \textit{n of fQ Min Found} al variare di TIMES per diversi valori di $k$.}
+\label{fig:n-fq-min-found}
+\end{figure}
+
+
+\end{document}

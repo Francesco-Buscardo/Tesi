@@ -280,12 +280,12 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
     except KeyboardInterrupt:
         exit("\n\n[" + colors.BOLD + colors.OKGREEN + "KeyboardInterrupt" + colors.ENDC + "] Closing program...")
 
-    e = 0
-    d = 0
-    i = 1
-    lam = lambda_zero
+    e        = 0
+    d        = 0
+    i        = 1
+    lam      = lambda_zero
     sum_time = 0
-    f_prime = 0
+    f_prime  = 0
     
     while True:
         print(f"---------------------------------------------------------------------------------------------------------------")
@@ -351,6 +351,11 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             sum_time = sum_time + (time.time() - start_time)
 
             print(f"---------------------------------------------------------------------------------------------------------------\n")
+            # stop condition:
+            # e = quante volte viene generata la stessa soluzione
+            # d = quante volte viene trovata una soluzione diversa
+            # i = numero di iterazioni
+            # and definisce condizione di convergenza/stallo
             if ((i == i_max) or ((e + d >= N_max) and (d < d_min))):
                 if(i != i_max):
                     print(now() + " [" + colors.BOLD + colors.OKGREEN + "END" + colors.ENDC + "] Exited at cycle " + str(i) + "/" + str(i_max) + " thanks to convergence.")

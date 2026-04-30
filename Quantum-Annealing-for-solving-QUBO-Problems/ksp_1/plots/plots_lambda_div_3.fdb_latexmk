@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1777408115.43918 "/home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/plots/plots_lambda_div_3.tex" "plots_lambda_div_3.pdf" "plots_lambda_div_3" 1777408116.97518 0
+["pdflatex"] 1777541239.37982 "/home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/ksp_1/plots/plots_lambda_div_3.tex" "plots_lambda_div_3.pdf" "plots_lambda_div_3" 1777541240.76696 0
   "/etc/texmf/web2c/texmf.cnf" 1775214102.38668 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/plots/plots_lambda_div_3.tex" 1777408115.18145 13926 c011e4a2c750c258e4abb2a05b63acbe ""
+  "/home/francesco-buscardo/uni/Tesi/Quantum-Annealing-for-solving-QUBO-Problems/ksp_1/plots/plots_lambda_div_3.tex" 1777541237.74538 11354 8164498e107fc9a22b3fd68eb6c46f82 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm" 1136768653 3584 ad49a18d8515beef6d92d4d3f197d0fd ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1136768653 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
@@ -180,8 +180,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1775214117.12528 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1775214165 8216107 2edb52ea74eda7475674a5d7568ca387 ""
-  "plots_lambda_div_3.aux" 1777408116.8871 2309 f936842eebb9a5cf558e067b739d974d "pdflatex"
-  "plots_lambda_div_3.tex" 1777408115.18145 13926 c011e4a2c750c258e4abb2a05b63acbe ""
+  "plots_lambda_div_3.aux" 1777541240.67938 2047 82695a31bb313363170fb928745debf7 "pdflatex"
+  "plots_lambda_div_3.tex" 1777541237.74538 11354 8164498e107fc9a22b3fd68eb6c46f82 ""
   (generated)
   "plots_lambda_div_3.aux"
   "plots_lambda_div_3.log"

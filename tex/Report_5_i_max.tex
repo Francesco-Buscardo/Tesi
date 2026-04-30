@@ -1,0 +1,131 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    columns=fullflexible
+}
+
+\title{Analisi dei parametri di stop di QALS}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Osservazione sui parametri \texttt{i\_max}, \texttt{N\_max} e \texttt{d\_min}}
+
+Spulciando meglio i parametri di QALS, mi sono accorto che era già impostato un parametro relativo alle iterazioni di QALS: \texttt{i\_max}. 
+Il parametro in questione rappresenta il numero massimo di iterazioni di QALS, cioè il limite superiore della ricerca. In altre parole, rappresenta quanto si lascia che QALS cerchi soluzioni.
+
+Il comportamento di \texttt{i\_max} può essere riassunto nel seguente modo:
+
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{\texttt{i\_max} basso}: QALS è molto più veloce (a causa delle meno iterazioni) ma le soluzioni che si vanno a trovare 
+                                          sono peggiori inquanto QALS non aggiorna abbastanza la tabu matrix e non riesce ad esplorare bene
+                                          lo spazio delle soluzioni
+
+    \item \textbf{\texttt{i\_max} alto}: QALS è chiaramente più lento ma a discapito della velocità riesce ad esplorare meglio lo spazio delle
+                                         soluzioni e ad aggiornare in modo efficace la tabu matrix, qundi le soluzioni dovrebbero risultare migliori.
+\end{itemize}
+
+Il parametro \texttt{i\_max} è infatti uno dei parametri che definisce la condizione di stop di QALS:
+
+\begin{lstlisting}[language=Python]
+if ((i == i_max) or ((e + d >= N_max) and (d < d_min))):
+    . . .
+    break
+\end{lstlisting}
+
+Questa condizione permette di verificare se QALS ha raggiunto il numero massimo di iterazioni oppure 
+se è entrato in una condizione di convergenza o stallo.
+
+\section{Proposta modifica}
+
+Alla luce di questa osservazione, quello che suggerisco è di non aumentare ulteriormente il dominio di \texttt{TIMES}. Al contrario, abbasserei \texttt{TIMES}, per esempio fissandolo al solo valore:
+
+\[
+\texttt{TIMES} \in \{10\}
+\]
+
+D'altro canto, aumenterei invece il dominio di \texttt{i\_max}, in modo da studiare meglio quanto la profondità della ricerca interna di QALS influenzi la qualità delle soluzioni trovate:
+
+\[
+\texttt{i\_max} \in \{10, 50, 100, 250, 500, 1000\}
+\]
+
+In questo modo, \texttt{TIMES} viene utilizzato solo per ottenere una piccola statistica sulle run indipendenti, mentre \texttt{i\_max} diventa il vero parametro con cui si controlla la profondità della ricerca di QALS.
+
+\section{Altri parametri della condizione di stop}
+
+Gli altri parametri di QALS che definiscono la condizione di stop sono \texttt{N\_max} e \texttt{d\_min}.
+
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{\texttt{N\_max}}: numero massimo di iterazioni se l'alg non migliora.
+                                    Proporrei di impostare un dominio proporzionale a \texttt{i\_max}:
+    \[
+    \texttt{N\_max} \in \{5, 25, 50, 125, 250, 500\}
+    \]
+
+    \item \textbf{\texttt{d\_min}}: conta quante volte trovi una soluzione diversa ma peggiore della migliore corrente. 
+                                    Per una prima prova, imposterei:
+    \[
+    \texttt{d\_min} = 0.7 \cdot \texttt{N\_max}
+    \]
+    ottenendo quindi il seguente dominio:
+    \[
+    \texttt{d\_min} \in \{4, 18, 35, 88, 175, 350\}
+    \]
+\end{itemize}
+
+\section{Tabella dei domini proposti}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+\toprule
+\texttt{i\_max} & \texttt{N\_max} & \texttt{d\_min} \\
+\midrule
+10   & 5   & 4   \\
+50   & 25  & 18  \\
+100  & 50  & 35  \\
+250  & 125 & 88  \\
+500  & 250 & 175 \\
+1000 & 500 & 350 \\
+\bottomrule
+\end{tabular}
+\caption{Domini proposti per i parametri di stop di QALS.}
+\end{table}
+
+\section{Configurazione precedente}
+
+I parametri fino ad ora erano settati nel seguente modo:
+
+\begin{itemize}[leftmargin=1.5cm]
+    \item \texttt{i\_max = 10}
+    \item \texttt{N\_max = 50}
+    \item \texttt{d\_min = 70}
+\end{itemize}
+
+Questa configurazione è sbilanciata rispetto a \texttt{i\_max}, perché \texttt{N\_max} 
+e \texttt{d\_min} sono maggiori del numero massimo di iterazioni consentite. 
+Di conseguenza, con \texttt{i\_max = 10}, l'arresto dell'algoritmo è dominato quasi 
+esclusivamente dal limite massimo di iterazioni, senza sfruttare davvero la condizione 
+di stop basata su \texttt{i\_max}, \texttt{N\_max} e \texttt{d\_min}.
+
+\end{document}

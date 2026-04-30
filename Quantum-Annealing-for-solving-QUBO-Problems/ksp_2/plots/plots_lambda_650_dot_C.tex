@@ -10,7 +10,7 @@
 
 \pgfplotsset{compat=1.18}
 
-\title{Report 4.4 -- Combinazioni di k e TIMES}
+\title{Report 4.3 -- Combinazioni di k e TIMES}
 
 \begin{document}
 
@@ -22,8 +22,6 @@
 
 I grafici mostrano rispettivamente l'andamento di:
 \begin{itemize}
-    \item Avg Profit GAP
-    \item Avg Weight GAP
     \item Avg fQ
     \item fQ Min Found
     \item Profit Found
@@ -42,83 +40,17 @@ I risultati riportati sono stati ottenuti utilizzando:
     \item l'istanza \texttt{ksp\_2.txt}
 \end{itemize}
 
-\begin{figure}[H]
+\begin{table}[H]
 \centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=0.95\textwidth,
-    height=0.48\textwidth,
-    xmode=log,
-    log basis x=10,
-    xlabel={TIMES},
-    ylabel={Avg Profit GAP},
-    title={Avg Profit GAP},
-    grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
-    xtick={1,10,100,1000},
-    xticklabels={1,10,100,1000},
-    tick label style={font=\small},
-    label style={font=\small},
-    title style={font=\small},
-]
-\addplot[blue, thick, mark=*] coordinates {(1, -4539) (10, -5166.3) (100, -5344.6) (1000, -5232.7)};
-\addplot[red, thick, mark=square*] coordinates {(1, -3658) (10, -4702.3) (100, -4915.2) (1000, -5311.5)};
-\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, -3082) (10, -5045.3) (100, -5186.5) (1000, -5352)};
-\addplot[blue, thick, dashed, mark=o] coordinates {(1, 1528) (10, 676.5) (100, 925.9) (1000, 802.3)};
-\addplot[red, thick, dashed, mark=square] coordinates {(1, 0) (10, 24.2) (100, 76.1) (1000, 80.2)};
-\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 0) (10, 0) (100, 0) (1000, 0)};
-\legend{
-    QALS ($k=1$),
-    QALS ($k=10$),
-    QALS ($k=100$),
-    NO QALS ($k=1$),
-    NO QALS ($k=10$),
-    NO QALS ($k=100$)
-}
-\end{axis}
-\end{tikzpicture}
-\caption{Andamento di \textit{Avg Profit GAP} al variare di TIMES per diversi valori di $k$.}
-\label{fig:avg-profit-gap}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=0.95\textwidth,
-    height=0.48\textwidth,
-    xmode=log,
-    log basis x=10,
-    xlabel={TIMES},
-    ylabel={Avg Weight GAP},
-    title={Avg Weight GAP},
-    grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
-    xtick={1,10,100,1000},
-    xticklabels={1,10,100,1000},
-    tick label style={font=\small},
-    label style={font=\small},
-    title style={font=\small},
-]
-\addplot[blue, thick, mark=*] coordinates {(1, -8233) (10, -8038.2) (100, -8482.5) (1000, -8399.5)};
-\addplot[red, thick, mark=square*] coordinates {(1, -7658) (10, -8452.3) (100, -8298.4) (1000, -8393.5)};
-\addplot[green!60!black, thick, mark=triangle*] coordinates {(1, -9475) (10, -8105.9) (100, -8256.5) (1000, -8452.9)};
-\addplot[blue, thick, dashed, mark=o] coordinates {(1, -54) (10, -94.8) (100, -65.1) (1000, -73.3)};
-\addplot[red, thick, dashed, mark=square] coordinates {(1, 0) (10, -16.3) (100, -28.6) (1000, -32.4)};
-\addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 0) (10, 0) (100, 0) (1000, 0)};
-\legend{
-    QALS ($k=1$),
-    QALS ($k=10$),
-    QALS ($k=100$),
-    NO QALS ($k=1$),
-    NO QALS ($k=10$),
-    NO QALS ($k=100$)
-}
-\end{axis}
-\end{tikzpicture}
-\caption{Andamento di \textit{Avg Weight GAP} al variare di TIMES per diversi valori di $k$.}
-\label{fig:avg-weight-gap}
-\end{figure}
+\begin{tabular}{lc}
+\hline
+Profit soluzione DP & 7740 \\
+Weight soluzione DP & 978 \\
+\hline
+\end{tabular}
+\caption{Soluzione di riferimento riportata nei file di input.}
+\label{tab:knapsack-solution}
+\end{table}
 
 \begin{figure}[H]
 \centering

@@ -22,15 +22,59 @@ def app1(TIMES, k, n, _Q, log_DIR, capacity, items):
     start = time.time()
 
     for t in range(TIMES):
+        # Params:
+        # ! i_max:       numero massimo di iterazioni di QALS, è il limite superiore di ricerca, quanto si lascia 
+        # !              che QALS cerchi soluzioni
+        """
+            IMPLICAZIONI SU TIMES:
+                Spulciando meglio i parametri di QALS mi sono accorto che era già impostato un parametro realtivo alle iterazioni di
+                QALS: i_max. Il parmetro in questione rappresenta il numero massimo di iterazioni di QALS, è il limite superiore di 
+                ricerca quindi rappresenta quanto si lascia che QALS cerchi soluzioni:
+                  - i_max -> basso = QALS è molto più veloce (a causa delle meno iterazioni) ma le soluzioni che si vanno a trovare 
+                                     sono peggiori inquanto QALS non aggiorna abbastanza la tabu matrix e non riesce ad esplorare bene
+                                     lo spazio delle soluzioni.
+                  - i_max -> alto = QALS è chiaramente più lento ma a discapito della velocità riesce ad esplorare meglio lo spazio delle
+                                    soluzioni e ad aggiornare in modo efficace la tabu matrix, qundi le soluzioni dovrebbero risultare migliori.
+                "i_max" infatti è uno dei parametri che definisce la condizione stop di QALS:
+                        if ((i == i_max) or ((e + d >= N_max) and (d < d_min)))
+
+                Questa condizione permette di verificare se QALS ha raggiunto il numero massimo di iterazioni oppure 
+                se è entrato in una condizione di convergenza o stallo.
+                
+                Quindi quello che sugerisco è anzichè testare con un dominio di TIMES più alto lo abbasserei (per esempio io solo {10}),
+                d'altro canto aumenterei invece il dominio di i_max a {10, 50, 100, 250, 500, 1000}.
+
+                Gli altri parametri di QALS che definiscono la condizione di stop sono:
+                    - N_max: numero massimo di iterazioni se l'alg non migliora.
+                             Quindi imposterei un dominio, rispettivamente con i_max, di questo genere {5, 25, 50, 125, 250, 500}.
+                    - d_min: conta quante volte trovi una soluzione diversa ma peggiore della migliore corrente.
+                             Qui farei giusto per provare d_min = 0.7 * N_max: {4, 18, 35, 88, 175, 350}.
+
+                I parametri fino ad ora erano settati così:
+                    - i_max = 10
+                    - N_max = 50
+                    - d_min = 70
+        """
+        # - d_min:       conta quante volte trovi una soluzione diversa ma peggiore della migliore corrente
+        # - p_delta:     prob modifica permutazione
+        # - eta:         controlla quanto velocemente decresce p_delta
+        # - q:           prob di perturbazione della soluz candidata  
+        # - N:           numero di iterazioni per cui p rimane costante 
+        # - N_max:       numero massimo di iterazioni se l'alg non migliora
+        # - lambda_zero: fattore di penalita iniziale della tabu matrix
+        # - n:           è la dimensione del problema
+        # - k:           numero di soluzioni candidate generate ad ogni iterazione all'annealing
+        # - topology:    topologia hardware
+        # - sim:         False indica che non sta usando la modalità simulata del solver QALS
         z, r_time = solver.solve(
             d_min = 70,
-            eta = 0.01,
-            i_max = 10,
+            eta = 0.10,
+            i_max = 100, # before: 10
             k = k,
-            lambda_zero = 3/2,
+            lambda_zero = 1.5,
             n = n,
             N = 10,
-            N_max = 100,
+            N_max = 50, # before: 100
             p_delta = 0.1,
             q = 0.2,
             topology = 'pegasus',
