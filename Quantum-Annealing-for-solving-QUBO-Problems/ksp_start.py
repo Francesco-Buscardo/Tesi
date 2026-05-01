@@ -61,26 +61,43 @@ def remove_ansi(text):
 def generate_match_k_TIMES():
     print("\t\t" + colors.BOLD + colors.OKGREEN + "   GENERATING MATCH" + colors.ENDC + "\t\t")
     
+    # ! IDEA: lasciare TIMES = 10, variare tanto k = {10, 100, 1000, 2000, 5000}
     # k = quante volte risolvo il problema QUBO
-    match_k_t = [ 
-        (1, 1),
-        (1, 10),
-        (1, 100),
-        (1, 1000),
+    # match_k_t = [ 
+    #     (1, 1),
+    #     (1, 10),
+    #     (1, 100),
+    #     (1, 1000),
 
-        (10, 1),
-        (10, 10),
-        (10, 100),
-        (10, 1000),
+    #     (10, 1),
+    #     (10, 10),
+    #     (10, 100),
+    #     (10, 1000),
 
-        (100, 1), 
-        (100, 10),
-        (100, 100),
-        (100, 1000)
+    #     (100, 1), 
+    #     (100, 10),
+    #     (100, 100),
+    #     (100, 1000),
+    
+    #     (1000, 1),
+    #     (1000, 10),
+    #     (1000, 100),
+    #     (1000, 1000)
+    # ]
+
+    match_k_t = [
+        (1000, 1),
+        (1000, 10),
+        (1000, 100),
+        (1000, 1000)
     ]
-
-    folder = "./match_k_TIMES_lambda_div_3"
-    # folder = "./match_k_TIMES_lambda_650_dot_C"
+ 
+    folder = "./ksp_1/match_k_TIMES_lambda_div_3"       
+    # folder = "./ksp_1/match_k_TIMES_lambda_650_dot_C"   
+    # folder = "./ksp_2/match_k_TIMES_lambda_div_3"       
+    # folder = "./ksp_2/match_k_TIMES_lambda_650_dot_C"   
+    # folder = "./ksp_3/match_k_TIMES_lambda_div_3"       
+    # folder = "./ksp_3/match_k_TIMES_lambda_650_dot_C"   
     makedirs(folder, exist_ok=True)
 
     for k, t in match_k_t:
@@ -96,7 +113,7 @@ def generate_match_k_TIMES():
     print("\t\t" + colors.BOLD + colors.OKGREEN + "   END GENERATING MATCH" + colors.ENDC + "\n\n\t\t")
     return match_k_t, folder
 
-def run_match_k_TIMES(QALS, n, capacity, items, _Q, log_DIR):
+def run_match_k_TIMES(_QALS, n, capacity, items, _Q, log_DIR):
     match_k_t, folder = generate_match_k_TIMES()
 
     # for (k, TIMES) in match_k_t:
@@ -124,19 +141,7 @@ def main():
     # =========================
     # COSTRUZIONE MATRICE Q
     # =========================
-    capacity = 0
-    items    = []
-
-    n, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_1.txt")
-
-    # gurobi_profit, gurobi_weight, gurobi_x, fQ = test_gurobi_optimizer(nn, capacity, items)
-
-    # gurobi_sol = {
-    #     "profit": gurobi_profit,
-    #     "weight": gurobi_weight,
-    #     "x":      gurobi_x,
-    #     "fQ":     fQ
-    # }
+    n, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_2.txt")
        
     _DIR = generate_file_ksp(n, capacity)
     log_DIR = _DIR.replace("KSP","KSP_LOG") + ".csv"
@@ -145,10 +150,9 @@ def main():
     print("\t\t" + colors.BOLD + colors.OKGREEN + "   PROBLEM BUILDED" + colors.ENDC + "\n\n\t\t" + colors.BOLD + colors.OKGREEN + "   START ALGORITHM" + colors.ENDC + "\n")
 
     # =========================
-    # ESECUZIONE DI QALS
+    # ESECUZIONE ALG
     # =========================
-    QALS = 0
-    run_match_k_TIMES(QALS, n, capacity, items, _Q, log_DIR)
+    run_match_k_TIMES(_QALS=0, n=n, capacity=capacity, items=items, _Q=_Q, log_DIR=log_DIR)
 
 
 if __name__ == '__main__':

@@ -29,7 +29,7 @@ I grafici mostrano rispettivamente l'andamento di:
     \item Weight GAP
     \item n of fQ Min Found
 \end{itemize}
-al variare di TIMES per diversi valori di $k \in \{1,10,100\}$ e confrontando
+al variare di TIMES per diversi valori di $k \in \{1,10,100,1000\}$ e confrontando
 i risultati usando QALS e NON utilizzando QALS.
 
 I risultati riportati sono stati ottenuti utilizzando:
@@ -63,7 +63,7 @@ Weight soluzione DP & 978 \\
     ylabel={Avg fQ},
     title={Avg fQ},
     grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=4},
     xtick={1,10,100,1000},
     xticklabels={1,10,100,1000},
     tick label style={font=\small},
@@ -73,16 +73,20 @@ Weight soluzione DP & 978 \\
 \addplot[blue, thick, mark=*] coordinates {(1, 814223043861) (10, 694599233966.1300048828) (100, 784642116372.7299804688) (1000, 766311082652.3499755859)};
 \addplot[red, thick, mark=square*] coordinates {(1, 1068782526838) (10, 647346229282.9300537109) (100, 775070612259.8800048828) (1000, 759839057426.8699951172)};
 \addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 1124829902530) (10, 791292979562.3000488281) (100, 769956918036.9799804688) (1000, 765706382037.9799804688)};
+\addplot[yellow!70!black, thick, mark=diamond*] coordinates {(1, 527563420238.0) (10, 704283193106.2) (100, 778487019501.21) (1000, 777855889383.07)};
 \addplot[blue, thick, dashed, mark=o] coordinates {(1, -10200341606.3299999237) (10, -10199240293.8999996185) (100, -10199800721.7299995422) (1000, -10199428947.3600006104)};
 \addplot[red, thick, dashed, mark=square] coordinates {(1, -10200696911) (10, -10200653427.7700004578) (100, -10200683508.3099994659) (1000, -10200675698.8400001526)};
 \addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, -10200706391.3299999237) (10, -10200708355.7000007629) (100, -10200708458.4799995422) (1000, -10200708731.5599994659)};
+\addplot[yellow!70!black, thick, dashed, mark=diamond] coordinates {(1, -10200709858.33) (10, -10200710037.63) (100, -10200710035.31) (1000, -10200710055.17)};
 \legend{
     QALS ($k=1$),
     QALS ($k=10$),
     QALS ($k=100$),
+    QALS ($k=1000$),
     NO QALS ($k=1$),
     NO QALS ($k=10$),
-    NO QALS ($k=100$)
+    NO QALS ($k=100$),
+    NO QALS ($k=1000$)
 }
 \end{axis}
 \end{tikzpicture}
@@ -102,7 +106,7 @@ Weight soluzione DP & 978 \\
     ylabel={fQ Min Found},
     title={fQ Min Found},
     grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=4},
     xtick={1,10,100,1000},
     xticklabels={1,10,100,1000},
     tick label style={font=\small},
@@ -112,16 +116,20 @@ Weight soluzione DP & 978 \\
 \addplot[blue, thick, mark=*] coordinates {(1, 814223043861) (10, 422436583526.6699829102) (100, 380122060911.6699829102) (1000, 214204626089.6700134277)};
 \addplot[red, thick, mark=square*] coordinates {(1, 1068782526838) (10, 541413734086) (100, 366377184210) (1000, 246347756595)};
 \addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 1124829902530) (10, 409788212309.6699829102) (100, 280097598739.6699829102) (1000, 219783286235)};
+\addplot[yellow!70!black, thick, mark=diamond*] coordinates {(1, 527563420238.0) (10, 435137925280.0) (100, 388487237427.67) (1000, 196776467683.67)};
 \addplot[blue, thick, dashed, mark=o] coordinates {(1, -10200341606.3299999237) (10, -10200694173) (100, -10200708765.3299999237) (1000, -10200710201.3299999237)};
 \addplot[red, thick, dashed, mark=square] coordinates {(1, -10200696911) (10, -10200706462.3299999237) (100, -10200710158.3299999237) (1000, -10200710464.3299999237)};
 \addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, -10200706391.3299999237) (10, -10200710199.3299999237) (100, -10200710468.3299999237) (1000, -10200710854.3299999237)};
+\addplot[yellow!70!black, thick, dashed, mark=diamond] coordinates {(1, -10200709858.33) (10, -10200710854.33) (100, -10200710854.33) (1000, -10200710854.33)};
 \legend{
     QALS ($k=1$),
     QALS ($k=10$),
     QALS ($k=100$),
+    QALS ($k=1000$),
     NO QALS ($k=1$),
     NO QALS ($k=10$),
-    NO QALS ($k=100$)
+    NO QALS ($k=100$),
+    NO QALS ($k=1000$)
 }
 \end{axis}
 \end{tikzpicture}
@@ -141,7 +149,7 @@ Weight soluzione DP & 978 \\
     ylabel={Profit Found},
     title={Profit Found: Profitto della soluzione con fq minima trovata},
     grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=4},
     xtick={1,10,100,1000},
     xticklabels={1,10,100,1000},
     tick label style={font=\small},
@@ -151,16 +159,20 @@ Weight soluzione DP & 978 \\
 \addplot[blue, thick, mark=*] coordinates {(1, 16139) (10, 13060) (100, 10716) (1000, 11905)};
 \addplot[red, thick, mark=square*] coordinates {(1, 12490) (10, 10954) (100, 12171) (1000, 11358)};
 \addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 14030) (10, 12373) (100, 10280) (1000, 11541)};
+\addplot[yellow!70!black, thick, mark=diamond*] coordinates {(1, 11843) (10, 11485) (100, 14100) (1000, 9743)};
 \addplot[blue, thick, dashed, mark=o] coordinates {(1, 3918) (10, 173) (100, 4585) (1000, 6021)};
 \addplot[red, thick, dashed, mark=square] coordinates {(1, 2911) (10, 2282) (100, 5978) (1000, 6284)};
 \addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 2211) (10, 6019) (100, 6284) (1000, 6674)};
+\addplot[yellow!70!black, thick, dashed, mark=diamond] coordinates {(1, 5678) (10, 6674) (100, 6674) (1000, 6674)};
 \legend{
     QALS ($k=1$),
     QALS ($k=10$),
     QALS ($k=100$),
+    QALS ($k=1000$),
     NO QALS ($k=1$),
     NO QALS ($k=10$),
-    NO QALS ($k=100$)
+    NO QALS ($k=100$),
+    NO QALS ($k=1000$)
 }
 \end{axis}
 \end{tikzpicture}
@@ -180,7 +192,7 @@ Weight soluzione DP & 978 \\
     ylabel={Weight Found},
     title={Weight Found: Peso della soluzione con fq minima trovata},
     grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=4},
     xtick={1,10,100,1000},
     xticklabels={1,10,100,1000},
     tick label style={font=\small},
@@ -190,16 +202,20 @@ Weight soluzione DP & 978 \\
 \addplot[blue, thick, mark=*] coordinates {(1, 10000) (10, 7520) (100, 7193) (1000, 5696)};
 \addplot[red, thick, mark=square*] coordinates {(1, 11296) (10, 8362) (100, 7083) (1000, 6021)};
 \addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 11560) (10, 7424) (100, 6341) (1000, 5754)};
+\addplot[yellow!70!black, thick, mark=diamond*] coordinates {(1, 8269) (10, 7615) (100, 7259) (1000, 5510)};
 \addplot[blue, thick, dashed, mark=o] coordinates {(1, 1007) (10, 1002) (100, 1001) (1000, 1001)};
 \addplot[red, thick, dashed, mark=square] coordinates {(1, 1002) (10, 1001) (100, 1001) (1000, 1001)};
 \addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 1001) (10, 1001) (100, 1001) (1000, 1001)};
+\addplot[yellow!70!black, thick, dashed, mark=diamond] coordinates {(1, 1001) (10, 1001) (100, 1001) (1000, 1001)};
 \legend{
     QALS ($k=1$),
     QALS ($k=10$),
     QALS ($k=100$),
+    QALS ($k=1000$),
     NO QALS ($k=1$),
     NO QALS ($k=10$),
-    NO QALS ($k=100$)
+    NO QALS ($k=100$),
+    NO QALS ($k=1000$)
 }
 \end{axis}
 \end{tikzpicture}
@@ -219,7 +235,7 @@ Weight soluzione DP & 978 \\
     ylabel={Profit GAP},
     title={Profit GAP: Differenza tra la soluzione con fq minima trovata e la soluzione di DP},
     grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=4},
     xtick={1,10,100,1000},
     xticklabels={1,10,100,1000},
     tick label style={font=\small},
@@ -229,16 +245,20 @@ Weight soluzione DP & 978 \\
 \addplot[blue, thick, mark=*] coordinates {(1, -8399) (10, -5320) (100, -2976) (1000, -4165)};
 \addplot[red, thick, mark=square*] coordinates {(1, -4750) (10, -3214) (100, -4431) (1000, -3618)};
 \addplot[green!60!black, thick, mark=triangle*] coordinates {(1, -6290) (10, -4633) (100, -2540) (1000, -3801)};
+\addplot[yellow!70!black, thick, mark=diamond*] coordinates {(1, -4103) (10, -3745) (100, -6360) (1000, -2003)};
 \addplot[blue, thick, dashed, mark=o] coordinates {(1, 3822) (10, 7567) (100, 3155) (1000, 1719)};
 \addplot[red, thick, dashed, mark=square] coordinates {(1, 4829) (10, 5458) (100, 1762) (1000, 1456)};
 \addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 5529) (10, 1721) (100, 1456) (1000, 1066)};
+\addplot[yellow!70!black, thick, dashed, mark=diamond] coordinates {(1, 2062) (10, 1066) (100, 1066) (1000, 1066)};
 \legend{
     QALS ($k=1$),
     QALS ($k=10$),
     QALS ($k=100$),
+    QALS ($k=1000$),
     NO QALS ($k=1$),
     NO QALS ($k=10$),
-    NO QALS ($k=100$)
+    NO QALS ($k=100$),
+    NO QALS ($k=1000$)
 }
 \end{axis}
 \end{tikzpicture}
@@ -258,7 +278,7 @@ Weight soluzione DP & 978 \\
     ylabel={Weight GAP},
     title={Weight GAP Differenza tra la soluzione con fq minima trovata e la soluzione di DP},
     grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=4},
     xtick={1,10,100,1000},
     xticklabels={1,10,100,1000},
     tick label style={font=\small},
@@ -268,16 +288,20 @@ Weight soluzione DP & 978 \\
 \addplot[blue, thick, mark=*] coordinates {(1, -9022) (10, -6542) (100, -6215) (1000, -4718)};
 \addplot[red, thick, mark=square*] coordinates {(1, -10318) (10, -7384) (100, -6105) (1000, -5043)};
 \addplot[green!60!black, thick, mark=triangle*] coordinates {(1, -10582) (10, -6446) (100, -5363) (1000, -4776)};
+\addplot[yellow!70!black, thick, mark=diamond*] coordinates {(1, -7291) (10, -6637) (100, -6281) (1000, -4532)};
 \addplot[blue, thick, dashed, mark=o] coordinates {(1, -29) (10, -24) (100, -23) (1000, -23)};
 \addplot[red, thick, dashed, mark=square] coordinates {(1, -24) (10, -23) (100, -23) (1000, -23)};
 \addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, -23) (10, -23) (100, -23) (1000, -23)};
+\addplot[yellow!70!black, thick, dashed, mark=diamond] coordinates {(1, -23) (10, -23) (100, -23) (1000, -23)};
 \legend{
     QALS ($k=1$),
     QALS ($k=10$),
     QALS ($k=100$),
+    QALS ($k=1000$),
     NO QALS ($k=1$),
     NO QALS ($k=10$),
-    NO QALS ($k=100$)
+    NO QALS ($k=100$),
+    NO QALS ($k=1000$)
 }
 \end{axis}
 \end{tikzpicture}
@@ -297,7 +321,7 @@ Weight soluzione DP & 978 \\
     ylabel={n of fQ Min Found},
     title={n of fQ Min Found},
     grid=both,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=3},
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=4},
     xtick={1,10,100,1000},
     xticklabels={1,10,100,1000},
     tick label style={font=\small},
@@ -307,16 +331,20 @@ Weight soluzione DP & 978 \\
 \addplot[blue, thick, mark=*] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
 \addplot[red, thick, mark=square*] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
 \addplot[green!60!black, thick, mark=triangle*] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
+\addplot[yellow!70!black, thick, mark=diamond*] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
 \addplot[blue, thick, dashed, mark=o] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
 \addplot[red, thick, dashed, mark=square] coordinates {(1, 1) (10, 1) (100, 1) (1000, 1)};
 \addplot[green!60!black, thick, dashed, mark=triangle] coordinates {(1, 1) (10, 1) (100, 2) (1000, 6)};
+\addplot[yellow!70!black, thick, dashed, mark=diamond] coordinates {(1, 1) (10, 1) (100, 5) (1000, 65)};
 \legend{
     QALS ($k=1$),
     QALS ($k=10$),
     QALS ($k=100$),
+    QALS ($k=1000$),
     NO QALS ($k=1$),
     NO QALS ($k=10$),
-    NO QALS ($k=100$)
+    NO QALS ($k=100$),
+    NO QALS ($k=1000$)
 }
 \end{axis}
 \end{tikzpicture}

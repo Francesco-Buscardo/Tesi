@@ -1,0 +1,29 @@
+k     = 1000
+TIMES = 100
+
+QALS
+
+Knapsack Solution
+[Profit]	7740
+[Weight]	978
+
+QALS Solution
+[Avg fQ           ]	778487019501.21
+[fQ Min Found     ]	388487237427.67
+[Profit Found     ]	14100
+[Weight Found     ]	7259
+[Profit GAP       ]	-6360
+[Weight GAP       ]	-6281
+[n of fQ Min Found]	1
+[Items            ]	[0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0]
+
+NO QALS
+
+[Avg fQ           ]	-10200710035.31
+[fQ Min Found     ]	-10200710854.33
+[Profit Found     ]	6674
+[Weight Found     ]	1001
+[Profit GAP       ]	1066
+[Weight GAP       ]	-23
+[n of fQ Min Found]	5
+[Items            ]	[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0]

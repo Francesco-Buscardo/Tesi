@@ -16,6 +16,21 @@ def annealer(theta, sampler, k, time=False):
     
     return list(response.first.sample.values())
 
+def ksp_annealer(theta, sampler, k, time=False):
+    start = 0
+
+    if time:
+        start = tm.time()
+    
+    response = sampler.sample_qubo(theta, num_reads = k)  
+    sample   = response.first
+     
+    
+    if time:
+        print(f"Time: {tm.time() - start}")
+    
+    return list(sample.sample.values()), sample.num_occurrences
+
 def hybrid(theta, sampler):
     response = sampler.sample_qubo(theta)
 

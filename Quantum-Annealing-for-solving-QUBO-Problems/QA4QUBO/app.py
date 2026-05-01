@@ -1,13 +1,12 @@
 import time
 import datetime
 import math
-import numpy as np # type: ignore
 
 import neal # type: ignore
 
 from QA4QUBO.colors import colors
 from QA4QUBO import ksp, solver
-from QA4QUBO.script import annealer
+from QA4QUBO.script import ksp_annealer
 
 def log_write(tpe, var):
     return "["+colors.BOLD+str(tpe)+colors.ENDC+"]\t"+str(var)+"\n"
@@ -69,12 +68,12 @@ def app1(TIMES, k, n, _Q, log_DIR, capacity, items):
         z, r_time = solver.solve(
             d_min = 70,
             eta = 0.10,
-            i_max = 100, # before: 10
+            i_max = 10,
             k = k,
             lambda_zero = 1.5,
             n = n,
             N = 10,
-            N_max = 50, # before: 100
+            N_max = 100,
             p_delta = 0.1,
             q = 0.2,
             topology = 'pegasus',
@@ -105,24 +104,10 @@ def app1(TIMES, k, n, _Q, log_DIR, capacity, items):
    
     string += colors.BOLD + colors.HEADER + "\nQALS Solution" + colors.ENDC + "\n"
 
-    p_gap  = []
-    w_gap  = []
-    
-    for t in range(TIMES):
-        # string += log_write(f"{t}", zz[t])
-        # string += log_write("fQ", round(mins_z[t], 2))
+    # for t in range(TIMES):
+    #     sol_p = sum(items[j][1] for j in range(n) if zz[t][j] == 1)
+    #     sol_w = sum(items[j][0] for j in range(n) if zz[t][j] == 1)
 
-        sol_p = sum(items[j][1] for j in range(n) if zz[t][j] == 1)
-        sol_w = sum(items[j][0] for j in range(n) if zz[t][j] == 1)
-
-        # string += log_write("P", sol_p)
-        # string += log_write("W", sol_w)
-        
-        p_gap.append(ksp_dp_profit - sol_p)
-        w_gap.append(ksp_dp_weight - sol_w)
-    
-    avg_p_gap = round(sum(p_gap) / len(p_gap), 1)
-    avg_w_gap = round(sum(w_gap) / len(w_gap), 1)
     avg_fz    = round((sum(mins_z[i] for i in range(TIMES)) / len(mins_z)), 2)
     
     itms = []
@@ -133,8 +118,6 @@ def app1(TIMES, k, n, _Q, log_DIR, capacity, items):
     w_best_found = sum(items[i][0] * itms[i] for i in range(len(itms)))
 
 
-    string += log_write("Avg Profit GAP   ", avg_p_gap)
-    string += log_write("Avg Weight GAP   ", avg_w_gap)
     string += log_write("Avg fQ           ", avg_fz)
     string += log_write("fQ Min Found     ", round(fz_min_found, 2))
     string += log_write("Profit Found     ", p_best_found)
@@ -142,8 +125,6 @@ def app1(TIMES, k, n, _Q, log_DIR, capacity, items):
     string += log_write("Profit GAP       ", ksp_dp_profit - p_best_found)
     string += log_write("Weight GAP       ", ksp_dp_weight - w_best_found)
     string += log_write("n of fQ Min Found", cntr_fz_min)
-    # for i in range(len(sol_min)):
-    #     string += log_write(f"RUN              ", sol_min[i][0])
     string += log_write("Items            ", itms)
 
     return string
@@ -162,39 +143,29 @@ def app2(TIMES, k, _Q, n, capacity, items):
     print(string)
     string = ""
     
-    zz     = []
-    mins_z = []
-    
-    w_gap = []
-    p_gap = []
-    
+    zz         = []
+    mins_z     = []
+
     for t in range(TIMES):
-        z = annealer(_Q, sampler, k)
+        z, num_occ_z = ksp_annealer(_Q, sampler, k)
         zz.append(z)
 
         fz = solver.function_f(_Q, z).item()
-        mins_z.append(fz)
+        mins_z.append((fz, num_occ_z))
 
-        # string += log_write(f"{t}", [int(x) for x in z])
-        # string += log_write("fQ", round(fz, 2))
-        
-        sol_w = sum(items[j][0] for j in range(n) if z[j])
-        sol_p = sum(items[j][1] for j in range(n) if z[j])
+        # sol_w = sum(items[j][0] for j in range(n) if z[j])
+        # sol_p = sum(items[j][1] for j in range(n) if z[j])
 
-        # string += log_write("P", sol_p)
-        # string += log_write("W", sol_w)
+    fz_min_found, num_occ = min(mins_z, key=lambda x: x[0])
+    cntr_fz_min           = sum(1 for fz, _ in mins_z if math.isclose(fz, fz_min_found))
+    sol_min = [
+        (t, round(fz, 2), num_occ_z)
+        for t, (fz, num_occ_z) in enumerate(mins_z)
+        if math.isclose(fz, fz_min_found)
+    ]    
 
-        w_gap.append(ksp_dp_weight - sol_w)
-        p_gap.append(ksp_dp_profit - sol_p)
-
-    fz_min_found = min(mins_z)
-    cntr_fz_min  = sum(1 for fz in mins_z if math.isclose(fz, fz_min_found))
-    sol_min      = [(t, round(fz, 2)) for t, fz in enumerate(mins_z) if math.isclose(fz, fz_min_found)]
+    avg_fz = round(sum(fz for fz, _ in mins_z) / len(mins_z), 2)
     
-    avg_p_gap = round((sum(p_gap)) / len(p_gap), 1)
-    avg_w_gap = round((sum(w_gap)) / len(w_gap), 1)
-    avg_fz    = round((sum(mins_z[i] for i in range(TIMES)) / len(mins_z)), 2)
-
     itms = []
     if len(sol_min) != 0:
         itms.extend(int(x) for x in zz[sol_min[0][0]])
@@ -202,8 +173,6 @@ def app2(TIMES, k, _Q, n, capacity, items):
     p_best_found = sum(items[i][1] * itms[i] for i in range(len(itms)))
     w_best_found = sum(items[i][0] * itms[i] for i in range(len(itms)))
 
-    string += log_write("Avg Profit GAP   ", avg_p_gap)
-    string += log_write("Avg Weight GAP   ", avg_w_gap)
     string += log_write("Avg fQ           ", avg_fz)
     string += log_write("fQ Min Found     ", round(fz_min_found, 2))
     string += log_write("Profit Found     ", p_best_found)
@@ -211,8 +180,6 @@ def app2(TIMES, k, _Q, n, capacity, items):
     string += log_write("Profit GAP       ", ksp_dp_profit - p_best_found)
     string += log_write("Weight GAP       ", ksp_dp_weight - w_best_found)
     string += log_write("n of fQ Min Found", cntr_fz_min)
-    # for i in range(len(sol_min)):
-    #     string += log_write(f"RUN              ", sol_min[i][0])
     string += log_write("Items            ", itms)
 
     return string

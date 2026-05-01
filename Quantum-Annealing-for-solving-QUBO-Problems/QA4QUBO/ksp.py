@@ -98,35 +98,3 @@ def ksp_dp(W, wt, val, n):
             return profit_take, weight_take
         else:
             return profit_leave, weight_leave
-
-def bf(n, index, items_b, sols):
-    if index == n:
-        sols.append(np.copy(items_b))
-        return
-
-    for i in (0, 1):
-        items_b[index] = i
-        bf(n, index + 1, items_b, sols)
-    
-def ksp_bf(n_items, C, items):
-
-    profits = [p for _, p in items]
-    weights = [w for w, _ in items]
-
-    best_profit_so_far = 0
-    items_so_far       = np.zeros(n_items, dtype = bool)
-    items_b            = np.zeros(n_items, dtype = bool)
-    sols               = []
-
-    bf(n_items, 0, items_b, sols)
-
-    for i in sols:
-
-        w_i = sum(weights[j] for j in range(n_items) if i[j] == 1)
-        if w_i <= C:
-            sum_i = sum(profits[j] for j in range(n_items) if i[j] == 1)
-            if sum_i > best_profit_so_far:
-                best_profit_so_far = sum_i
-                items_so_far = np.copy(i)
-
-    return best_profit_so_far, items_so_far
