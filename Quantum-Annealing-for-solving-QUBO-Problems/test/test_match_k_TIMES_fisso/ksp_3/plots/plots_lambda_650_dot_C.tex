@@ -1,0 +1,199 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=2cm}
+
+\pgfplotsset{compat=1.18}
+
+\title{Report 4.10 -- Risultati per $k$ con $TIMES = 10$}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Grafici dei risultati per $k$ e $TIMES = 10$}
+
+I grafici mostrano rispettivamente l'andamento di:
+\begin{itemize}
+    \item Avg fQ
+    \item fQ Min Found
+    \item Profit Found
+    \item Weight Found
+    \item Profit GAP
+    \item Weight GAP
+    \item n of fQ Min Found
+\end{itemize}
+al variare di $k \in \{1000, 2000, 3000, 4000, 5000\}$, confrontando
+i risultati usando QALS e NON utilizzando QALS.
+
+I risultati riportati sono stati ottenuti utilizzando:
+
+\begin{itemize}
+    \item $\lambda = \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}$
+    \item l'istanza \texttt{ksp\_3.txt}
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Profit ottimo & 2679 \\
+Weight ottimo & 496 \\
+TIMES & 10 \\
+\bottomrule
+\end{tabular}
+\caption{Soluzione di riferimento del problema di knapsack.}
+\end{table}
+
+\section{Tabella riassuntiva}
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|rrrrrrr|rrrrrrr}
+\toprule
+\multirow{2}{*}{$k$} & \multicolumn{7}{c|}{QALS} & \multicolumn{7}{c}{NO QALS} \\
+\cmidrule(lr){2-8} \cmidrule(lr){9-15}
+ & Avg fQ & fQ Min & Profit & Weight & Profit GAP & Weight GAP & n fQ Min
+ & Avg fQ & fQ Min & Profit & Weight & Profit GAP & Weight GAP & n fQ Min \\
+\midrule
+1000 & 152357.55 & 84302.41 & 2662 & 2390 & 17 & -1894 & 1 & -9424.8 & -9424.8 & 2936 & 560 & -257 & -64 & 10 \\
+2000 & 155488.02 & 118747.24 & 3872 & 2721 & -1193 & -2225 & 1 & -9424.8 & -9424.8 & 2936 & 560 & -257 & -64 & 10 \\
+3000 & 148682.71 & 33336.15 & 2433 & 1772 & 246 & -1276 & 1 & -9424.8 & -9424.8 & 2936 & 560 & -257 & -64 & 10 \\
+4000 & 162673.57 & 111936.55 & 4701 & 2669 & -2022 & -2173 & 1 & -9424.8 & -9424.8 & 2936 & 560 & -257 & -64 & 10 \\
+5000 & 179905.33 & 113582.99 & 3282 & 2671 & -603 & -2175 & 1 & -9424.8 & -9424.8 & 2936 & 560 & -257 & -64 & 10 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Risultati numerici per $k \in \{1000,2000,3000,4000,5000\}$ con \texttt{TIMES = 10}.}
+\end{table}
+
+\newpage
+
+\section{Grafici}
+
+\pgfplotsset{
+    every axis/.append style={
+        width=0.92\textwidth,
+        height=0.42\textwidth,
+        grid=both,
+        xlabel={$k$},
+        xtick={1000,2000,3000,4000,5000},
+        legend style={at={(0.5,-0.22)}, anchor=north, legend columns=2},
+        tick label style={font=\small},
+        label style={font=\small},
+        title style={font=\bfseries}
+    }
+}
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[title={Avg fQ}, ylabel={Avg fQ}]
+\addplot[blue, mark=*] coordinates {(1000,152357.55) (2000,155488.02) (3000,148682.71) (4000,162673.57) (5000,179905.33)};
+\addlegendentry{QALS}
+\addplot[red, dashed, mark=square*] coordinates {(1000,-9424.8) (2000,-9424.8) (3000,-9424.8) (4000,-9424.8) (5000,-9424.8)};
+\addlegendentry{NO QALS}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di Avg fQ al variare di $k$.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[title={fQ Min Found}, ylabel={fQ Min Found}]
+\addplot[blue, mark=*] coordinates {(1000,84302.41) (2000,118747.24) (3000,33336.15) (4000,111936.55) (5000,113582.99)};
+\addlegendentry{QALS}
+\addplot[red, dashed, mark=square*] coordinates {(1000,-9424.8) (2000,-9424.8) (3000,-9424.8) (4000,-9424.8) (5000,-9424.8)};
+\addlegendentry{NO QALS}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento di fQ Min Found al variare di $k$.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[title={Profit Found}, ylabel={Profit Found}]
+\addplot[blue, mark=*] coordinates {(1000,2662) (2000,3872) (3000,2433) (4000,4701) (5000,3282)};
+\addlegendentry{QALS}
+\addplot[red, dashed, mark=square*] coordinates {(1000,2936) (2000,2936) (3000,2936) (4000,2936) (5000,2936)};
+\addlegendentry{NO QALS}
+\addplot[black, dotted, thick] coordinates {(1000,2679) (5000,2679)};
+\addlegendentry{Profit ottimo}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento del profitto trovato al variare di $k$.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[title={Weight Found}, ylabel={Weight Found}]
+\addplot[blue, mark=*] coordinates {(1000,2390) (2000,2721) (3000,1772) (4000,2669) (5000,2671)};
+\addlegendentry{QALS}
+\addplot[red, dashed, mark=square*] coordinates {(1000,560) (2000,560) (3000,560) (4000,560) (5000,560)};
+\addlegendentry{NO QALS}
+\addplot[black, dotted, thick] coordinates {(1000,496) (5000,496)};
+\addlegendentry{Weight ottimo}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento del peso trovato al variare di $k$.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[title={Profit GAP}, ylabel={Profit GAP}]
+\addplot[blue, mark=*] coordinates {(1000,17) (2000,-1193) (3000,246) (4000,-2022) (5000,-603)};
+\addlegendentry{QALS}
+\addplot[red, dashed, mark=square*] coordinates {(1000,-257) (2000,-257) (3000,-257) (4000,-257) (5000,-257)};
+\addlegendentry{NO QALS}
+\addplot[black, dotted, thick] coordinates {(1000,0) (5000,0)};
+\addlegendentry{GAP nullo}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento del Profit GAP al variare di $k$.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[title={Weight GAP}, ylabel={Weight GAP}]
+\addplot[blue, mark=*] coordinates {(1000,-1894) (2000,-2225) (3000,-1276) (4000,-2173) (5000,-2175)};
+\addlegendentry{QALS}
+\addplot[red, dashed, mark=square*] coordinates {(1000,-64) (2000,-64) (3000,-64) (4000,-64) (5000,-64)};
+\addlegendentry{NO QALS}
+\addplot[black, dotted, thick] coordinates {(1000,0) (5000,0)};
+\addlegendentry{GAP nullo}
+\end{axis}
+\end{tikzpicture}
+\caption{Andamento del Weight GAP al variare di $k$.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[title={n of fQ Min Found}, ylabel={n of fQ Min Found}]
+\addplot[blue, mark=*] coordinates {(1000,1) (2000,1) (3000,1) (4000,1) (5000,1)};
+\addlegendentry{QALS}
+\addplot[red, dashed, mark=square*] coordinates {(1000,10) (2000,10) (3000,10) (4000,10) (5000,10)};
+\addlegendentry{NO QALS}
+\end{axis}
+\end{tikzpicture}
+\caption{Numero di volte in cui è stato trovato il minimo fQ al variare di $k$.}
+\end{figure}
+
+\end{document}

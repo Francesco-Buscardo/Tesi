@@ -64,41 +64,14 @@ def generate_match_k_TIMES():
     # ! IDEA: lasciare TIMES = 10, variare tanto k = {10, 100, 1000, 2000, 5000}
     # k = quante volte risolvo il problema QUBO
     match_k_t = [ 
-        (1, 1),
-        (1, 10),
-        (1, 100),
-        (1, 1000),
-
-        (10, 1),
-        (10, 10),
-        (10, 100),
-        (10, 1000),
-
-        (100, 1), 
-        (100, 10),
-        (100, 100),
-        (100, 1000),
-    
-        (1000, 1),
         (1000, 10),
-        (1000, 100),
-        (1000, 1000)
+        (2000, 10),
+        (3000, 10),
+        (4000, 10),
+        (5000, 10)
     ]
-
-    # match_k_t = [ 
-    #     (1000, 10),
-    #     (2000, 10),
-    #     (3000, 10),
-    #     (4000, 10),
-    #     (5000, 10)
-    # ]
- 
-    folder = "./ksp_1/match_k_TIMES_lambda_div_3"       
-    # folder = "./ksp_1/match_k_TIMES_lambda_650_dot_C"   
-    # folder = "./ksp_2/match_k_TIMES_lambda_div_3"       
-    # folder = "./ksp_2/match_k_TIMES_lambda_650_dot_C"   
-    # folder = "./ksp_3/match_k_TIMES_lambda_div_3"       
-    # folder = "./ksp_3/match_k_TIMES_lambda_650_dot_C"   
+    
+    folder = ""
     makedirs(folder, exist_ok=True)
 
     for k, t in match_k_t:
