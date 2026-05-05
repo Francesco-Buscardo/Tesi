@@ -1,4 +1,5 @@
 import numpy as np # type: ignore
+import ksp_config as ksp_config
 
 # items[n_items][2]: 
 #    | w |  p 
@@ -52,17 +53,18 @@ def compute_penalty(C, items):
     # Per questo motivo ti direi di provare con entrambi i valori 
     # (sum pesi) / 3 e quello che già usavi.
 
-    # ? OPT 1 - mediamente meglio
-    A = sum(p for _, p in items)
-    return  A / 3
-
-    # ? OPT 2
-    # A = sum(p for _, p in items)
-    # return A / C
-
-    # ? OPT 3
-    # A = sum(p for _, p in items)
-    # return A / (650 * C)
+    if ksp_config.LAMBDA_VALUE == "lambda_div_3":
+        # ? OPT 1 - mediamente meglio
+        A = sum(p for _, p in items) / 3
+        return A
+    elif ksp_config.LAMBDA_VALUE == "lambda_650_dot_C":
+        A = sum(p for _, p in items) / (650 * C)
+        return A 
+    elif ksp_config.LAMBDA_VALUE == "lambda_div_C":
+        A = sum(p for _, p in items) / C
+        return A
+    else:
+        return 0
 
 def generate_QUBO_knapsack(n_items, C, items):
     # Generate the matrix -Q for the knapsack problem

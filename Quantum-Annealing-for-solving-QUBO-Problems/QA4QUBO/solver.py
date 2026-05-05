@@ -6,11 +6,11 @@ import datetime
 import sys
 import csv
 
-import neal
-import dimod
-from dwave.system.composites.embedding import EmbeddingComposite
-from dwave.system.samplers import DWaveSampler
-from dwave.system import LeapHybridSampler
+import neal                                                      # type: ignore                                      
+import dimod                                                     # type: ignore
+from dwave.system.composites.embedding import EmbeddingComposite # type: ignore
+from dwave.system.samplers import DWaveSampler                   # type: ignore
+from dwave.system import LeapHybridSampler                       # type: ignore
 
 from QA4QUBO.matrix import generate_chimera, generate_pegasus
 from QA4QUBO.script import annealer, hybrid
@@ -192,7 +192,7 @@ def csv_write(DIR, l):
 def now():
     return datetime.datetime.now().strftime("%H:%M:%S")
 
-def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, log_DIR, sim):
+def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim):
     
     try:
         if (not sim):  # ? REAL QUANTUM MODE
@@ -206,8 +206,6 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             
             # topologia del sampler
             A = get_active(sampler, n)
-            
-            log_DIR.replace("TSP_", "TSP_QA_")
         else: # ? SIMULATED MODE
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.OKCYAN + "Started Algorithm in Simulating Mode" + colors.ENDC)
             
@@ -215,8 +213,6 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             sampler = neal.SimulatedAnnealingSampler()
             # sampler = dimod.ExactSolver()
             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-            log_DIR.replace("TSP_", "TSP_SA_")
             
             if topology == 'chimera':
                 print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.OKCYAN + "Using Chimera Topology \n" + colors.ENDC)
@@ -343,10 +339,8 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
 
             try:
                 print(now() + " [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] f_prime = {round(f_prime, 2)}, f_star = {round(f_star, 2)}, p = {p}, e = {e}, d = {d} and lambda = {round(lam,5)}\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] Took {converted} in total")
-                csv_write(DIR = log_DIR, l = [i, f_prime, f_star, p, e, d, lam, z_prime, z_star])
             except UnboundLocalError:
                 print(now()+" ["+colors.BOLD+colors.OKGREEN+"DATA"+ colors.ENDC + f" No variations on f and z. p = {p}, e = {e}, d = {d} and lambda = {round(lam, 5)}\n" + now() + "  [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] Took {converted} in total")
-                csv_write(DIR = log_DIR, l = [i, "null", f_star, p, e, d, lam, "null", z_star])
             
             sum_time = sum_time + (time.time() - start_time)
 

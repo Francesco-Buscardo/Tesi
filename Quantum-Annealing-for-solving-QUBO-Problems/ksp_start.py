@@ -1,28 +1,12 @@
 from os import system, name, listdir, path, makedirs
 import re
+from pathlib import Path
 
 from gurobipy import Model, GRB, quicksum # type: ignore
 
 from QA4QUBO import ksp, app
 from QA4QUBO.colors import colors
-
-def generate_file_ksp(n_items, C):
-    nok = True
-    i = 0
-    _dir = "KSP_" + str(n_items)+ "_" + str(C)
-
-    while(nok):
-        try:
-            with open("outputs/" + _dir.replace("KSP", "KSP_LOG") + ".csv", "r") as file:
-                pass
-            i += 1
-            _dir = "KSP_" + str(n_items) + "_" + str(C) + "_" + str(i)
-        except FileNotFoundError:
-            nok = False
-        
-    DIR = "outputs/" + _dir
-
-    return DIR
+import ksp_config as ksp_config
 
 def test_gurobi_optimizer(n_items, capacity, items):
     # create model
@@ -32,7 +16,7 @@ def test_gurobi_optimizer(n_items, capacity, items):
     x = knapsack_model.addVars(n_items, vtype = GRB.BINARY, name = "x")
 
     #define objective function Q(x) = x^T Q x = ∑​_i(∑​_j(Qij ​xi ​xj​))
-    Q = ksp.generate_QUBO_knapsack(n_items, capacity, items)
+    Q       = ksp.generate_QUBO_knapsack(n_items, capacity, items)
     obj_fun = quicksum(Q[i,j] * x[i] * x[j] for i in range(n_items) for j in range(n_items))
     knapsack_model.setObjective(obj_fun, GRB.MINIMIZE)
 
@@ -58,23 +42,22 @@ def test_gurobi_optimizer(n_items, capacity, items):
 def remove_ansi(text):
     return re.sub(r'\x1b\[[0-9;]*m', '', text)
 
-def generate_match_k_TIMES():
-    print("\t\t" + colors.BOLD + colors.OKGREEN + "   GENERATING MATCH" + colors.ENDC + "\t\t")
-    
-    # ! IDEA: lasciare TIMES = 10, variare tanto k = {10, 100, 1000, 2000, 5000}
-    # k = quante volte risolvo il problema QUBO
-    match_k_t = [ 
-        (1000, 10),
-        (2000, 10),
-        (3000, 10),
-        (4000, 10),
-        (5000, 10)
-    ]
-    
-    folder = ""
+def generate_folder_match_k_TIMES(file):
+    if ksp_config.LAMBDA_VALUE == "lambda_div_3":
+        lambda_folder = "lambda_div_3"
+    elif ksp_config.LAMBDA_VALUE == "lambda_650_dot_C":
+        lambda_folder = "lambda_650_dot_C"
+    elif ksp_config.LAMBDA_VALUE == "lambda_div_C":
+        lambda_folder = "lambda_div_C"
+    else:
+        lambda_folder = ""
+
+    ksp_name = Path(file).stem
+    folder   = f"test/test_i_max/{ksp_name}/{lambda_folder}/"
+
     makedirs(folder, exist_ok=True)
 
-    for k, t in match_k_t:
+    for k, t in ksp_config.MATCH_K_T:
         filename = f"file_{k}_{t}.txt"
         filepath = path.join(folder, filename)
 
@@ -84,52 +67,39 @@ def generate_match_k_TIMES():
 
         print(f"Create: {filepath}")
     
-    print("\t\t" + colors.BOLD + colors.OKGREEN + "   END GENERATING MATCH" + colors.ENDC + "\n\n\t\t")
-    return match_k_t, folder
+    return folder
 
-def run_match_k_TIMES(_QALS, n, capacity, items, _Q, log_DIR):
-    match_k_t, folder = generate_match_k_TIMES()
+def run_match_k_TIMES(file, n, capacity, items, _Q):
+    folder = generate_folder_match_k_TIMES(file)
 
-    # for (k, TIMES) in match_k_t:
-    #     filepath = path.join(folder, f"file_{k}_{TIMES}.txt")
-        
-    #     with open(filepath, "a") as f:
-    #         if _QALS:
-    #             f.write("QALS\n\n")
-    #             f.write(remove_ansi(app.app1(TIMES, k, n, _Q, log_DIR, capacity, items)))
-    #         else:
-    #             f.write("NO QALS\n\n")
-    #             f.write(remove_ansi(app.app2(TIMES, k, _Q, n, capacity, items)))
-
-    for (k, TIMES) in match_k_t:
+    for (k, TIMES) in ksp_config.MATCH_K_T:
         filepath = path.join(folder, f"file_{k}_{TIMES}.txt")
-        
-        with open(filepath, "a") as f:
-                f.write("\nQALS\n")
-                f.write(remove_ansi(app.app1(TIMES, k, n, _Q, log_DIR, capacity, items)))
 
-                f.write("\nNO QALS\n\n")
-                f.write(remove_ansi(app.app2(TIMES, k, _Q, n, capacity, items)))
+        with open(filepath, "a") as f:
+            f.write("\nQALS\n")
+            f.write(remove_ansi(app.app1(TIMES, k, _Q, n, capacity, items)))
+
+            f.write("\nNO QALS\n\n")
+            f.write(remove_ansi(app.app2(TIMES, k, _Q, n, capacity, items)))
 
 def main():
-    # =========================
-    # COSTRUZIONE MATRICE Q
-    # =========================
-    n, capacity, items = ksp.build_knapsack("QA4QUBO/ksp/ksp_1.txt")
-       
-    _DIR = generate_file_ksp(n, capacity)
-    log_DIR = _DIR.replace("KSP","KSP_LOG") + ".csv"
+    
+    for file in ksp_config.KSP_EXAMPLES:
+        print("\t\t" + colors.BOLD + colors.OKGREEN + f"{file}" + colors.ENDC + "\n\n\t\t")
+        # =========================
+        # COSTRUZIONE MATRICE Q
+        # =========================
+        n, capacity, items = ksp.build_knapsack(file)
 
-    _Q = ksp.generate_QUBO_knapsack(n, capacity, items)
-    print("\t\t" + colors.BOLD + colors.OKGREEN + "   PROBLEM BUILDED" + colors.ENDC + "\n\n\t\t" + colors.BOLD + colors.OKGREEN + "   START ALGORITHM" + colors.ENDC + "\n")
+        _Q = ksp.generate_QUBO_knapsack(n, capacity, items)
+        print("\t\t" + colors.BOLD + colors.OKGREEN + "   PROBLEM BUILDED" + colors.ENDC + "\n\n\t\t" + colors.BOLD + colors.OKGREEN + "   START ALGORITHM" + colors.ENDC + "\n")
 
-    # =========================
-    # ESECUZIONE ALG
-    # =========================
-    run_match_k_TIMES(_QALS=0, n=n, capacity=capacity, items=items, _Q=_Q, log_DIR=log_DIR)
+        # =========================
+        # ESECUZIONE ALGORITMO
+        # =========================
+        run_match_k_TIMES(file=file, n=n, capacity=capacity, items=items, _Q=_Q)
 
 
 if __name__ == '__main__':
     system('cls' if name == 'nt' else 'clear')
-
     main()
