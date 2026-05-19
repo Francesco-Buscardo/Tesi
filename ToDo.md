@@ -1,0 +1,1 @@
+scalare il problema QUBO per 10 e 20

@@ -54,12 +54,14 @@ def compute_penalty(C, items):
     # (sum pesi) / 3 e quello che già usavi.
 
     if ksp_config.LAMBDA_VALUE == "lambda_div_3":
-        # ? OPT 1 - mediamente meglio
         A = sum(p for _, p in items) / 3
         return A
     elif ksp_config.LAMBDA_VALUE == "lambda_650_dot_C":
         A = sum(p for _, p in items) / (650 * C)
         return A 
+    elif ksp_config.LAMBDA_VALUE == "lambda_6500_dot_C":
+        A = sum(p for _, p in items) / (6500 * C)
+        return A
     elif ksp_config.LAMBDA_VALUE == "lambda_div_C":
         A = sum(p for _, p in items) / C
         return A

@@ -1,6 +1,7 @@
-from os import system, name, listdir, path, makedirs
+from os import system, name, path, makedirs
 import re
 from pathlib import Path
+import numpy as np    # type: ignore
 
 from gurobipy import Model, GRB, quicksum # type: ignore
 
@@ -47,13 +48,15 @@ def generate_folder_match_k_TIMES(file):
         lambda_folder = "lambda_div_3"
     elif ksp_config.LAMBDA_VALUE == "lambda_650_dot_C":
         lambda_folder = "lambda_650_dot_C"
+    elif ksp_config.LAMBDA_VALUE == "lambda_6500_dot_C":
+        lambda_folder = "lambda_6500_dot_C"
     elif ksp_config.LAMBDA_VALUE == "lambda_div_C":
         lambda_folder = "lambda_div_C"
     else:
         lambda_folder = ""
 
     ksp_name = Path(file).stem
-    folder   = f"test/test_i_max/{ksp_name}/{lambda_folder}/"
+    folder   = f"{ksp_config.TEST_FOLDER}/{ksp_name}/{lambda_folder}/"
 
     makedirs(folder, exist_ok=True)
 
@@ -92,12 +95,15 @@ def main():
         n, capacity, items = ksp.build_knapsack(file)
 
         _Q = ksp.generate_QUBO_knapsack(n, capacity, items)
+        _Q = np.array(_Q)
+        
+        Q_scale =  _Q / ksp_config.SCALE_QUBO
         print("\t\t" + colors.BOLD + colors.OKGREEN + "   PROBLEM BUILDED" + colors.ENDC + "\n\n\t\t" + colors.BOLD + colors.OKGREEN + "   START ALGORITHM" + colors.ENDC + "\n")
 
         # =========================
         # ESECUZIONE ALGORITMO
         # =========================
-        run_match_k_TIMES(file=file, n=n, capacity=capacity, items=items, _Q=_Q)
+        run_match_k_TIMES(file=file, n=n, capacity=capacity, items=items, _Q=Q_scale)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,120 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    columns=fullflexible
+}
+
+\title{Scaling del problema QUBO} 
+\author{}
+\date{May 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Scaling del problema QUBO}
+Come si è visto una QUBO ha forma:
+\[
+f(x) = x^T Q x
+\]
+
+dove \(Q\) contiene i coefficienti lineari e quadratici del problema.  
+Se moltiplichiamo tutta la matrice per una costante positiva \(\alpha\):
+
+\[
+Q' = \alpha Q
+\]
+
+allora la nuova funzione diventa:
+
+\[
+f'(x) = x^T Q' x
+\]
+
+Sostituendo \(Q' = \alpha Q\), otteniamo:
+
+\[
+f'(x) = x^T (\alpha Q) x
+\]
+
+Da cui:
+
+\[
+f'(x) = \alpha x^T Q x = \alpha f(x)
+\]
+
+Nei test si è usata: 
+\[
+\alpha \in [0.1, 0.2]
+\]
+\[\]
+Per esempio, se due configurazioni hanno energie:
+
+\[
+E(x_1) = 100, \qquad E(x_2) = 110
+\]
+
+la differenza energetica è:
+
+\[
+\Delta E = E(x_2) - E(x_1) = 110 - 100 = 10
+\]
+
+Se scaliamo tutto con \(\alpha = 0.1\), otteniamo:
+
+\[
+E'(x_1) = \alpha E(x_1) = 0.1 \cdot 100 = 10
+\]
+
+\[
+E'(x_2) = \alpha E(x_2) = 0.1 \cdot 110 = 11
+\]
+
+e quindi:
+
+\[
+\Delta E' = E'(x_2) - E'(x_1) = 11 - 10 = 1
+\]
+
+La soluzione migliore è ancora \(x_1\), perché continua ad avere energia minore 
+rispetto a \(x_2\). Tuttavia, il salto energetico tra \(x_1\) e \(x_2\) è diventato 
+molto più piccolo.
+
+\section{Perche scalare il problema?}
+Nel simulated annealing, la probabilità di accettare una mossa peggiorativa è data da:
+\[
+P = e^{-\frac{\Delta E}{T}}
+\]
+
+Quindi, a parità di temperatura T, se $\Delta E$ è grande, la probabilità diventa molto piccola. 
+Se invece lo scaling riduce $\Delta E$, la probabilità aumenta.
+\\Esempio con $T$=1:
+\[
+e^{-10} \approx 0.000045, \qquad e^{-1} \approx 0.367
+\]
+
+Si deduce che dopo lo scaling, una mossa leggermente peggiorativa può ancora essere accettata 
+con probabilità significativa. Questo permette all’annealer di esplorare meglio lo 
+spazio delle soluzioni, invece di bloccarsi subito nel primo minimo locale trovato.
+
+Tuttavia, uno scaling eccessivo può rendere il paesaggio energetico troppo piatto, riducendo la 
+capacità dell'annealer di distinguere soluzioni buone da soluzioni peggiori.
+
+\end{document}

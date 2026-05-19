@@ -1,0 +1,66 @@
+k     = 2000
+TIMES = 5
+
+QALS
+
+Knapsack Solution
+[Profit]	7740
+[Weight]	978
+[i_max, N_max, d_min]	10, 5, 4
+[Avg fQ             ]	128045.37
+[fQ Min Found       ]	55949.91
+[Profit Found       ]	10737
+[Weight Found       ]	6008
+[Profit GAP         ]	-2997
+[Weight GAP         ]	-5030
+[n of fQ Min Found  ]	1
+[i_max, N_max, d_min]	50, 25, 18
+[Avg fQ             ]	64022.69
+[fQ Min Found       ]	55949.91
+[Profit Found       ]	10737
+[Weight Found       ]	6008
+[Profit GAP         ]	-2997
+[Weight GAP         ]	-5030
+[n of fQ Min Found  ]	1
+[i_max, N_max, d_min]	100, 50, 35
+[Avg fQ             ]	42681.79
+[fQ Min Found       ]	55949.91
+[Profit Found       ]	10737
+[Weight Found       ]	6008
+[Profit GAP         ]	-2997
+[Weight GAP         ]	-5030
+[n of fQ Min Found  ]	1
+[i_max, N_max, d_min]	250, 125, 88
+[Avg fQ             ]	32011.34
+[fQ Min Found       ]	28934.27
+[Profit Found       ]	8915
+[Weight Found       ]	4678
+[Profit GAP         ]	-1175
+[Weight GAP         ]	-3700
+[n of fQ Min Found  ]	1
+[i_max, N_max, d_min]	500, 250, 175
+[Avg fQ             ]	25609.07
+[fQ Min Found       ]	28934.27
+[Profit Found       ]	8915
+[Weight Found       ]	4678
+[Profit GAP         ]	-1175
+[Weight GAP         ]	-3700
+[n of fQ Min Found  ]	1
+[i_max, N_max, d_min]	1000, 500, 350
+[Avg fQ             ]	21340.9
+[fQ Min Found       ]	28934.27
+[Profit Found       ]	8915
+[Weight Found       ]	4678
+[Profit GAP         ]	-1175
+[Weight GAP         ]	-3700
+[n of fQ Min Found  ]	1
+
+NO QALS
+
+[Avg fQ           ]	-2737.42
+[fQ Min Found     ]	-2737.42
+[Profit Found     ]	7740
+[Weight Found     ]	978
+[Profit GAP       ]	0
+[Weight GAP       ]	0
+[n of fQ Min Found]	5
