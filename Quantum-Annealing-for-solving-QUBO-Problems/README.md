@@ -79,9 +79,6 @@ Tesi/
 │   │   │   ├── ksp_2.txt
 │   │   │   └── ksp_3.txt
 │   │   │
-│   │   ├── mksp/
-│   │   │   └── README.md
-│   │   │
 │   │   ├── qap/
 │   │   │   ├── Bur26.txt
 │   │   │   ├── Chr12.txt
@@ -118,21 +115,13 @@ Tesi/
 │
 ├── tex/
 │   ├── ORDINE.txt
-│   ├── Obb.tex
 │   ├── Obb.pdf
-│   ├── Report2.tex
 │   ├── Report2.pdf
-│   ├── Report_5_i_max.tex
 │   ├── Report_5_i_max.pdf
-│   ├── Report_6.tex
 │   ├── Report_6.pdf
-│   ├── Sviluppo_Classical_ksp.tex
 │   ├── Sviluppo_Classical_ksp.pdf
-│   ├── Sviluppo_mksp.tex
 │   ├── Sviluppo_mksp.pdf
-│   ├── Swap_k_TMES.tex
 │   ├── Swap_k_TMES.pdf
-│   ├── Tesi.tex
 │   └── Tesi.pdf
 │
 ├── .gitignore
