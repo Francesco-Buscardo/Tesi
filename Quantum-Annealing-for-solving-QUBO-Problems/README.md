@@ -1,11 +1,6 @@
-````markdown
 # Quantum Annealing for Solving QUBO Problems
 
-Python implementation of the research paper:
-
-> Pastorello, D. and Blanzieri, E., 2019.  
-> Quantum annealing learning search for solving QUBO problems.  
-> Quantum Information Processing, 18(10), p.303.
+Python implementation of research: Pastorello, D. and Blanzieri, E., 2019. Quantum annealing learning search for solving QUBO problems. Quantum Information Processing, 18(10), p.303.
 
 ## Requirements
 
