@@ -151,6 +151,3 @@ The Knapsack Problem input files are located in:
 ```text
 QA4QUBO/ksp/
 ```
-
-```
-```
