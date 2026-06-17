@@ -1,18 +1,18 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-
 @dataclass
+
 class QALSParams:
     i_max: list[int]
     N_max: list[int]
     d_min: list[int]
 
-TEST_FOLDER = Path("test/scale_QUBO/20/")
+TEST_FOLDER = Path("test/Decay_Factor/scale/30/")
 
 KSP_EXAMPLES = [
     # Path("QA4QUBO/ksp/ksp_1.txt"),
-    Path("QA4QUBO/ksp/ksp_2.txt"),
+    # Path("QA4QUBO/ksp/ksp_2.txt"),
     Path("QA4QUBO/ksp/ksp_3.txt"),
 ]
 
@@ -31,11 +31,14 @@ MATCH_K_T = [
     (2000, 5)
 ]
 
-SCALE_QUBO = 1
+# SCALE_QUBO = 1
 # SCALE_QUBO = 10
 # SCALE_QUBO = 20
+SCALE_QUBO = 30
 
-LAMBDA_VALUE = "lambda_div_3"
-# LAMBDA_VALUE = "lambda_650_dot_C"
+# LAMBDA_VALUE = "lambda_div_3"
+LAMBDA_VALUE = "lambda_650_dot_C"
 # LAMBDA_VALUE = "lambda_6500_dot_C"
 # LAMBDA_VALUE = "lambda_div_C"
+
+DECAY_FACTOR = 0.97

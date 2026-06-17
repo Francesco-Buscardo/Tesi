@@ -15,6 +15,7 @@ from dwave.system import LeapHybridSampler                       # type: ignore
 from QA4QUBO.matrix import generate_chimera, generate_pegasus
 from QA4QUBO.script import annealer, hybrid
 from QA4QUBO.colors import colors
+import ksp_config as config
 
 
 random = SystemRandom()
@@ -323,7 +324,7 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
                     m_star = m
                     e = 0
                     d = 0
-                    S = S + ((np.outer(z_prime, z_prime) - I) + np.diagflat(z_prime))
+                    S = (config.DECAY_FACTOR * S) + ((np.outer(z_prime, z_prime) - I) + np.diagflat(z_prime))
                 else:
                     d = d + 1
                     if make_decision((p - p_delta) ** (f_prime - f_star)):

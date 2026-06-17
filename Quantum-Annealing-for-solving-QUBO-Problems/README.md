@@ -36,25 +36,16 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Install the Required Packages
-
-First, upgrade `pip`, `setuptools`, and `wheel`:
-
-```bash
-python -m pip install --upgrade pip setuptools wheel
-```
-
-Then install the project dependencies:
-
-```bash
+python -m venv .venv
+source .venv/Scripts/activate
 python -m pip install -r requirements_ksp.txt
-```
 
 ### 4. Run the Program
 
-To start the Knapsack Problem experiment, run:
+To start run:
 
 ```bash
+python -m pip install -r requirements_ksp.txt
 python ksp_start.py
 ```
 
@@ -100,6 +91,7 @@ Tesi/
 │   │   └── vector.py
 │   │
 │   ├── test/
+│   │   ├── scale_QUBO/
 │   │   ├── scale_QUBO/
 │   │   ├── test_i_max/
 │   │   ├── test_match_k_TIMES/

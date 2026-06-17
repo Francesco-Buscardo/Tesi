@@ -6,6 +6,7 @@ QALS
 Knapsack Solution
 [Profit]	2679
 [Weight]	496
+
 [i_max, N_max, d_min]	10, 5, 4
 [Avg fQ             ]	9471.65
 [fQ Min Found       ]	7811.11
@@ -14,6 +15,7 @@ Knapsack Solution
 [Profit GAP         ]	-732
 [Weight GAP         ]	-2523
 [n of fQ Min Found  ]	1
+
 [i_max, N_max, d_min]	50, 25, 18
 [Avg fQ             ]	4735.82
 [fQ Min Found       ]	2464.18
@@ -22,6 +24,7 @@ Knapsack Solution
 [Profit GAP         ]	264
 [Weight GAP         ]	-1496
 [n of fQ Min Found  ]	1
+
 [i_max, N_max, d_min]	100, 50, 35
 [Avg fQ             ]	3157.22
 [fQ Min Found       ]	969.21
@@ -30,6 +33,7 @@ Knapsack Solution
 [Profit GAP         ]	-259
 [Weight GAP         ]	-1055
 [n of fQ Min Found  ]	1
+
 [i_max, N_max, d_min]	250, 125, 88
 [Avg fQ             ]	2367.91
 [fQ Min Found       ]	969.21
@@ -38,6 +42,7 @@ Knapsack Solution
 [Profit GAP         ]	-259
 [Weight GAP         ]	-1055
 [n of fQ Min Found  ]	1
+
 [i_max, N_max, d_min]	500, 250, 175
 [Avg fQ             ]	1894.33
 [fQ Min Found       ]	969.21
@@ -46,6 +51,7 @@ Knapsack Solution
 [Profit GAP         ]	-259
 [Weight GAP         ]	-1055
 [n of fQ Min Found  ]	1
+
 [i_max, N_max, d_min]	1000, 500, 350
 [Avg fQ             ]	1578.61
 [fQ Min Found       ]	969.21

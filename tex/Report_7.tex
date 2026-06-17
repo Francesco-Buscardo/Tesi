@@ -1,0 +1,42 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    columns=fullflexible
+}
+
+\title{Interpretazione del Decay Factor} 
+\author{}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Interpretazione del Decay Factor}
+Fino ad ora si è considerata la Tabù Matrix come un modo per penalizzare tutte le soluzioni già viste o scartate. In questo modo
+le penalizzazioni vecchie restano forti anche quando magari non contano più tanto. 
+Una variazione proposta potrebbe essere quella di introdurre un Decay Factor: ovvero un fattore di decadimento che permette di cacellare 
+la memoria passata ad ogni iterazione, in particolare si è suggerito di adottare:
+\[
+    DF = 0.97
+\] 
+in questo modo permettiamo alla Tabù Matrix di dimenticare ad ogni iterazione il 3\% della memoria passata, facendo pesare meno le vecchie penalizzazioni
+e di più quelle attuali.
+
+\end{document}
