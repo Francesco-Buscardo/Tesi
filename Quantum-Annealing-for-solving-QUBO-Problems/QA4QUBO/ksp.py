@@ -1,4 +1,4 @@
-import numpy as np # type: ignore
+import numpy as np 
 import ksp_config as ksp_config
 
 # items[n_items][2]: 
@@ -85,20 +85,33 @@ def generate_QUBO_knapsack(n_items, C, items):
 
     return Q
 
-def ksp_dp(W, wt, val, n):
-    if n == 0 or W == 0:
-        return 0, 0 
-    
-    if wt[n - 1] > W:
-        return ksp_dp(W, wt, val, n - 1)
-    else:
-        profit_take, weight_take = ksp_dp(W - wt[n - 1], wt, val, n - 1)
-        profit_take += val[n - 1]
-        weight_take += wt[n - 1]
+def ksp_dp(n, p, w, C):
+    DP = np.zeros((n+1, C+1), dtype=int)
 
-        profit_leave, weight_leave = ksp_dp(W, wt, val, n - 1)
+    for i in range(1, n + 1):
+        for j in range(C + 1):
+            if w[i-1] <= j:
+                DP[i][j] = max(
+                    DP[i-1][j],
+                    DP[i-1][j-w[i -1]] + p[i-1]
+                )
+            else:
+                DP[i][j] = DP[i-1][j]
 
-        if profit_take > profit_leave:
-            return profit_take, weight_take
-        else:
-            return profit_leave, weight_leave
+    sol = np.zeros(n, dtype=int)
+    i = n
+    j = C
+
+    while i > 0 and j >= 0:
+        if w[i-1] <= j:
+            without_item = DP[i-1][j]
+            with_item = DP[i-1][j-w[i-1]] + p[i-1]
+
+            if with_item > without_item:
+                sol[i-1] = 1
+                j -= w[i-1]
+        i -= 1
+
+    best_weight = sum(w[i] * sol[i] for i in range(n))
+
+    return DP[n][C], best_weight, sol

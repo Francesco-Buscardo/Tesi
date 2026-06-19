@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 from random import SystemRandom
-import numpy as np # type: ignore
+import numpy as np
 import time
 import datetime
 import sys
 import csv
 
-import neal                                                      # type: ignore                                      
-import dimod                                                     # type: ignore
-from dwave.system.composites.embedding import EmbeddingComposite # type: ignore
-from dwave.system.samplers import DWaveSampler                   # type: ignore
-from dwave.system import LeapHybridSampler                       # type: ignore
+import neal                                                                                            
+import dimod                                                     
+from dwave.system.composites.embedding import EmbeddingComposite 
+from dwave.system.samplers import DWaveSampler                   
+from dwave.system import LeapHybridSampler                       
 
 from QA4QUBO.matrix import generate_chimera, generate_pegasus
 from QA4QUBO.script import annealer, hybrid
@@ -203,7 +203,7 @@ def csv_write(DIR, l):
 def now():
     return datetime.datetime.now().strftime("%H:%M:%S")
 
-def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim):
+def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim, z_opt):
     
     try:
         if (not sim):  # ? REAL QUANTUM MODE
@@ -265,19 +265,26 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         
         print("Ended in " + str(convert_2) + "\n")
 
-        solutions_matrix = []
-        hamming_matrix   = []
-        t                = 0
+        solutions_matrix_star = []
+        solutions_matrix_best = []
+        solutions_matrix_opt  = []
 
         f_one = function_f(Q, z_one).item()
         f_two = function_f(Q, z_two).item()
+        
+        z_best = np.zeros(n)
+        f_best = 0
 
         if (f_one < f_two):
+            z_best = z_one.copy()
+            f_best = f_one
             z_star = z_one
             f_star = f_one
             m_star = m_one
             z_prime = z_two
         else:
+            z_best = z_two.copy()
+            f_best = f_two
             z_star = z_two
             f_star = f_two
             m_star = m_two
@@ -298,8 +305,25 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
     sum_time = 0
     f_prime  = 0
 
-    solutions_matrix.append(z_star)
-    t =+ 1
+    solutions_matrix_star.append([
+        z_star.copy(), 
+        round(function_f(Q, z_star).item(), 2), 
+        0, 
+        np.zeros(n)
+    ])
+    solutions_matrix_best.append([
+        z_star.copy(), 
+        round(function_f(Q, z_star).item(), 2), 
+        0, 
+        np.zeros(n)
+    ])
+    hamm_d_opt, hamm_vec_opt = hamming_distance(z_prime, z_opt)
+    solutions_matrix_opt.append([
+        z_star.copy(), 
+        round(function_f(Q, z_star).item(), 2), 
+        hamm_d_opt,
+        hamm_vec_opt.copy()
+    ])
 
     while True:
         print(f"---------------------------------------------------------------------------------------------------------------")
@@ -323,6 +347,13 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "ANN" + colors.ENDC + "] Working on z'...", end = ' ')
             start = time.time()
             
+           
+            # per ottenere la config dei qubits basta chiamare annealer(Theta_prime, sampler, k) 
+            # e poi fare il mapping inverso con map_back
+            # qubit_config = annealer(Theta_prime, sampler, k)
+            # z_prime = map_back(qubit_config, m)
+            
+
             # soluzione candidata 
             z_prime = map_back(annealer(Theta_prime, sampler, k), m)
 
@@ -333,14 +364,34 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             if make_decision(q):
                 z_prime = h(z_prime, p)
             
-            hamm_d, hamm_vec = hamming_distance(z_prime, solutions_matrix[-1])
-            hamming_matrix.append([t, hamm_d, hamm_vec])
-            solutions_matrix.append(z_prime)
-            t =+ 1 
+            f_prime = function_f(Q, z_prime).item()
 
-            if (z_prime != z_star).any():
-                f_prime = function_f(Q, z_prime).item()
-                
+            if f_prime < f_best:
+                z_best, f_best = z_prime, f_prime
+            
+            hamm_d_star, hamm_vec_star = hamming_distance(z_prime, z_star)
+            hamm_d_best, hamm_vec_best = hamming_distance(z_prime, z_best)
+            hamm_d_opt,  hamm_vec_opt  = hamming_distance(z_prime, z_opt)
+            solutions_matrix_star.append([
+                z_prime.copy(), 
+                f_prime,
+                hamm_d_star, 
+                hamm_vec_star.copy()
+            ])
+            solutions_matrix_best.append([
+                z_prime.copy(), 
+                f_prime,
+                hamm_d_best, 
+                hamm_vec_best.copy()
+            ])
+            solutions_matrix_opt.append([
+                z_prime.copy(), 
+                f_prime,
+                hamm_d_opt, 
+                hamm_vec_opt.copy()
+            ])
+
+            if (z_prime != z_star).any():                
                 if (f_prime < f_star):
                     z_prime, z_star = z_star, z_prime
                     f_star = f_prime
@@ -355,11 +406,11 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
                         f_star = f_prime
                         m_star = m
                         e = 0
-                lam = min(lambda_zero, (lambda_zero / (2 + (i - 1) - e)))
+                lam = min(lambda_zero, (lambda_zero / (2 + (i-1) - e)))
             else:
                 e = e + 1
 
-            converted = datetime.timedelta(seconds = (time.time() - start_time))
+            converted = datetime.timedelta(seconds=(time.time()-start_time))
 
             try:
                 print(now() + " [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] f_prime = {round(f_prime, 2)}, f_star = {round(f_star, 2)}, p = {p}, e = {e}, d = {d} and lambda = {round(lam,5)}\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] Took {converted} in total")
@@ -367,8 +418,8 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
                 print(now()+" ["+colors.BOLD+colors.OKGREEN+"DATA"+ colors.ENDC + f" No variations on f and z. p = {p}, e = {e}, d = {d} and lambda = {round(lam, 5)}\n" + now() + "  [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] Took {converted} in total")
             
             sum_time = sum_time + (time.time() - start_time)
-
             print(f"---------------------------------------------------------------------------------------------------------------\n")
+            
             # stop condition:
             # e = quante volte viene generata la stessa soluzione
             # d = quante volte viene trovata una soluzione diversa
@@ -394,4 +445,4 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
     
     print(now() + " [" + colors.BOLD + colors.OKGREEN + "TIME" + colors.ENDC + "] Average time for iteration: " + str(conv) + "\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "TIME" + colors.ENDC + "] Total time: " + str(converted) + "\n")
 
-    return np.atleast_2d(np.atleast_2d(z_star).T).T[0], conv
+    return np.atleast_2d(np.atleast_2d(z_star).T).T[0], conv, solutions_matrix_star, solutions_matrix_best, solutions_matrix_opt

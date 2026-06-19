@@ -52,72 +52,7 @@ python ksp_start.py
 ## Project Structure
 
 ```text
-Tesi/
-├── Docs/
-│   ├── Alg_1_genreal_idea.md
-│   ├── Alg_2_QUBO_idea.md
-│   ├── QALS_implementations.pdf
-│   ├── Quantum_Annealing_for_QUBO_problems.pdf
-│   ├── dataset_generator.c
-│   ├── generator
-│   └── test.in
-│
-├── Quantum-Annealing-for-solving-QUBO-Problems/
-│   ├── QA4QUBO/
-│   │   ├── ksp/
-│   │   │   ├── README.txt
-│   │   │   ├── ksp_1.txt
-│   │   │   ├── ksp_2.txt
-│   │   │   └── ksp_3.txt
-│   │   │
-│   │   ├── qap/
-│   │   │   ├── Bur26.txt
-│   │   │   ├── Chr12.txt
-│   │   │   ├── Esc16.txt
-│   │   │   ├── Esc64.txt
-│   │   │   ├── Lipa70.txt
-│   │   │   └── Nug28.txt
-│   │   │
-│   │   ├── __init__.py
-│   │   ├── app.py
-│   │   ├── colors.py
-│   │   ├── ksp.py
-│   │   ├── matrix.py
-│   │   ├── mksp.py
-│   │   ├── script.py
-│   │   ├── solver.py
-│   │   ├── test.py
-│   │   ├── tsp.py
-│   │   └── vector.py
-│   │
-│   ├── test/
-│   │   ├── scale_QUBO/
-│   │   ├── scale_QUBO/
-│   │   ├── test_i_max/
-│   │   ├── test_match_k_TIMES/
-│   │   └── test_match_k_TIMES_fisso/
-│   │
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ksp_config.py
-│   ├── ksp_start.py
-│   ├── requirements.txt
-│   ├── requirements_ksp.txt
-│   └── start.py
-│
-├── tex/
-│   ├── ORDINE.txt
-│   ├── Obb.pdf
-│   ├── Report2.pdf
-│   ├── Report_5_i_max.pdf
-│   ├── Report_6.pdf
-│   ├── Sviluppo_Classical_ksp.pdf
-│   ├── Sviluppo_mksp.pdf
-│   ├── Swap_k_TMES.pdf
-│   └── Tesi.pdf
-│
-├── .gitignore
-└── ToDo.md
+
 ```
 
 ## Notes

@@ -1,0 +1,103 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+
+\title{Report 8 -- Diagnostica QALS}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Diagnostica di QALS}
+
+Fino ad ora i test su QALS sono stati svolti principalmente con l'obiettivo di verificare se, al variare delle configurazioni dei parametri, l'algoritmo 
+fosse in grado di trovare soluzioni buone per il problema considerato. In particolare, l'interesse era quello di capire se QALS riuscisse a produrre soluzioni non troppo distanti da quella ottima.
+Tuttavia, per i test case di dimensione maggiore, i risultati ottenuti non sono stati sempre soddisfacenti. Per questo motivo si è deciso di introdurre una forma di diagnostica aggiuntiva, 
+con lo scopo di osservare più nel dettaglio il comportamento dell'algoritmo durante la fase di ricerca.
+
+L'idea consiste nell'utilizzare la distanza di Hamming tra configurazioni binarie. Nel contesto del problema Knapsack, una soluzione è rappresentata da un vettore binario:
+\[
+z = (z_1, z_2, \dots, z_n),
+\]
+dove:
+\[
+z_i =
+\begin{cases}
+1 & \text{se l'item } i \text{ è selezionato},\\
+0 & \text{altrimenti}.
+\end{cases}
+\]
+
+La distanza di Hamming tra due soluzioni binarie \(z\) e \(z'\) misura il numero di posizioni in cui esse differiscono:
+\[
+d_H(z,z') = \sum_{i=1}^{n} \mathbf{1}_{z_i \neq z'}.
+\]
+
+Nel nostro caso, questa misura permette di capire quanti item cambiano stato tra due soluzioni: un valore alto indica che molte variabili binarie sono diverse,
+mentre un valore basso indica che le due configurazioni sono simili.
+
+\section{Possibili confronti tramite distanza di Hamming}
+
+\subsection{Distanza rispetto alla migliore soluzione trovata}
+
+Il primo confronto consiste nel calcolare la distanza tra la soluzione generata all'iterazione \(t\), indicata con \(z_t\), e la migliore soluzione trovata
+fino a quel momento, indicata con \(z_{\text{best}}\):
+\[
+d_H(z_t, z_{\text{best}}).
+\]
+
+Questa misura permette di osservare se le soluzioni candidate generate dall'algoritmo tendono ad avvicinarsi o ad allontanarsi dalla migliore configurazione individuata durante la ricerca.
+Un valore alto indica che la soluzione corrente è distante dalla migliore soluzione trovata, mentre un valore basso indica che la soluzione generata è più vicina a \(z_{\text{best}}\). 
+Se questa distanza tende a diminuire, si può interpretare il comportamento dell'algoritmo come una fase di intensificazione attorno ad una regione dello spazio delle soluzioni.
+
+\subsection{Distanza rispetto alla soluzione corrente accettata}
+
+Il secondo confronto consiste nel calcolare la distanza tra la soluzione candidata \(z_t\) e la soluzione corrente accettata dall'algoritmo, indicata con \(z_{\text{star}}\):
+\[
+d_H(z_t, z_{\text{star}}).
+\]
+
+In questo caso \(z_{\text{star}}\) non deve essere interpretata come la soluzione ottima, ma come lo stato corrente dell'algoritmo. Infatti, QALS può accettare anche soluzioni peggiorative con una certa probabilità, 
+al fine di evitare di bloccarsi prematuramente in minimi locali.
+Questa distanza misura quindi l'ampiezza della mossa proposta nello spazio delle soluzioni. Rappresenta quindi una misura del movimento della ricerca rispetto alla configurazione attualmente accettata.
+Valori elevati indicano che l'algoritmo sta proponendo salti ampi nello spazio delle soluzioni, e quindi un comportamento più esplorativo. Valori bassi indicano invece che la nuova soluzione candidata 
+è simile alla soluzione corrente, suggerendo una ricerca più locale attorno alla configurazione accettata.
+
+\subsection{Distanza rispetto alla soluzione ottima}
+
+Il terzo confronto consiste nel calcolare la distanza tra la soluzione generata \(z_t\) e la soluzione ottima nota, indicata con \(z_{\text{opt}}\):
+\[
+d_H(z_t, z_{\text{opt}}).
+\]
+
+Questa misura indica quanto la soluzione generata sia distante dalla soluzione ottima del problema.
+Un valore alto indica che la soluzione candidata è lontana dall'ottimo, mentre un valore basso indica che essa è simile alla soluzione ottima. 
+Se la distanza raggiunge valore zero, significa che QALS ha generato esattamente la soluzione ottima.
+Questo tipo di confronto è possibile solo nei casi in cui la soluzione ottima sia nota (nel nostro caso calcolata con Dynamic Programming).
+
+\section{Interpretazione generale}
+
+La distanza di Hamming può quindi essere utilizzata con significati diversi a seconda della soluzione di riferimento scelta. In particolare:
+\begin{itemize}
+    \item \(d_H(z_t, z_{\text{star}})\) misura l'ampiezza della mossa proposta rispetto alla soluzione corrente accettata;
+    \item \(d_H(z_t, z_{\text{best}})\) misura la distanza dalla migliore soluzione trovata fino a quel momento;
+    \item \(d_H(z_t, z_{\text{opt}})\) misura la distanza dalla soluzione ottima, quando questa è nota.
+\end{itemize}
+
+In questo modo, la distanza di Hamming non viene utilizzata come criterio di ottimizzazione, ma come strumento diagnostico per analizzare il comportamento della ricerca. 
+Essa permette di distinguere tra fasi di esplorazione, caratterizzate da salti più ampi nello spazio delle soluzioni, e fasi di intensificazione, caratterizzate da 
+soluzioni più vicine a una configurazione di riferimento.
+
+\end{document}

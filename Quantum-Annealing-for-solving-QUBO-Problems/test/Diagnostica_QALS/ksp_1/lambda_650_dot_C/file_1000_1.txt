@@ -1,0 +1,19 @@
+k     = 1000
+TIMES = 1
+
+QALS
+
+Knapsack Solution
+[Profit]	198
+[Weight]	101
+[i_max, N_max, d_min]	500, 250, 175
+[fQ Min Found       ]	-301.62
+[Profit Found       ]	314
+[Weight Found       ]	211
+
+NO QALS
+
+[fQ Min Found     ]	-330.85
+[Profit Found     ]	302
+[Weight Found     ]	177
+[n of fQ Min Found]	1
