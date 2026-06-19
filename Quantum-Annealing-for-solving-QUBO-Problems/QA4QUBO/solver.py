@@ -23,6 +23,16 @@ random = SystemRandom()
 # np.set_printoptions(linewidth = int(np.inf), threshold = sys.maxsize)
 np.set_printoptions(linewidth = sys.maxsize, threshold = sys.maxsize)
 
+def hamming_distance(a, b):
+    bits = np.zeros(len(a), dtype=int)
+    counter = 0
+
+    for i in range(len(a)):
+        if a[i] != b[i]:
+            bits[i] = 1
+            counter += 1 
+    
+    return counter, bits
 
 def function_f(Q, x):
     return np.matmul(np.matmul(x, Q), np.atleast_2d(x).T)
@@ -255,6 +265,10 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         
         print("Ended in " + str(convert_2) + "\n")
 
+        solutions_matrix = []
+        hamming_matrix   = []
+        t                = 0
+
         f_one = function_f(Q, z_one).item()
         f_two = function_f(Q, z_two).item()
 
@@ -283,7 +297,10 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
     lam      = lambda_zero
     sum_time = 0
     f_prime  = 0
-    
+
+    solutions_matrix.append(z_star)
+    t =+ 1
+
     while True:
         print(f"---------------------------------------------------------------------------------------------------------------")
         start_time = time.time()
@@ -306,6 +323,7 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "ANN" + colors.ENDC + "] Working on z'...", end = ' ')
             start = time.time()
             
+            # soluzione candidata 
             z_prime = map_back(annealer(Theta_prime, sampler, k), m)
 
             convert_z = datetime.timedelta(seconds = (time.time() - start))
@@ -314,8 +332,13 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
 
             if make_decision(q):
                 z_prime = h(z_prime, p)
+            
+            hamm_d, hamm_vec = hamming_distance(z_prime, solutions_matrix[-1])
+            hamming_matrix.append([t, hamm_d, hamm_vec])
+            solutions_matrix.append(z_prime)
+            t =+ 1 
 
-            if (z_prime != z_star).any() :
+            if (z_prime != z_star).any():
                 f_prime = function_f(Q, z_prime).item()
                 
                 if (f_prime < f_star):

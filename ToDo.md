@@ -4,4 +4,4 @@
 - traiettoria dello spazio delle soluz
 - capire lo spazio dove si trova la souzione
 
-diagnostica ricerca
+- clustering ?

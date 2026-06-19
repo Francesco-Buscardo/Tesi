@@ -2,7 +2,7 @@ import time
 import datetime
 import math
 
-import neal # type: ignore
+import neal
 
 from QA4QUBO.colors import colors
 from QA4QUBO import ksp, solver
@@ -12,6 +12,7 @@ import ksp_config as ksp_config
 def log_write(tpe, var):
     return "[" + colors.BOLD + str(tpe) + colors.ENDC + "]\t" + str(var) + "\n"
 
+# QALS
 def app1(TIMES, k, _Q, n, capacity, items):
     zz      = []
     r_times = [] 
@@ -33,37 +34,6 @@ def app1(TIMES, k, _Q, n, capacity, items):
     for i in range(I_max.__len__()):
         for t in range(TIMES):
             """
-                i_max: numero massimo di iterazioni di QALS, è il limite superiore di ricerca, quanto si lascia 
-                    che QALS cerchi soluzioni
-                IMPLICAZIONI SU TIMES:
-                    Spulciando meglio i parametri di QALS mi sono accorto che era già impostato un parametro realtivo alle iterazioni di
-                    QALS: i_max. Il parmetro in questione rappresenta il numero massimo di iterazioni di QALS, è il limite superiore di 
-                    ricerca quindi rappresenta quanto si lascia che QALS cerchi soluzioni:
-                    - i_max -> basso = QALS è molto più veloce (a causa delle meno iterazioni) ma le soluzioni che si vanno a trovare 
-                                        sono peggiori inquanto QALS non aggiorna abbastanza la tabu matrix e non riesce ad esplorare bene
-                                        lo spazio delle soluzioni.
-                    - i_max -> alto = QALS è chiaramente più lento ma a discapito della velocità riesce ad esplorare meglio lo spazio delle
-                                        soluzioni e ad aggiornare in modo efficace la tabu matrix, qundi le soluzioni dovrebbero risultare migliori.
-                    "i_max" infatti è uno dei parametri che definisce la condizione stop di QALS:
-                            if ((i == i_max) or ((e + d >= N_max) and (d < d_min)))
-
-                    Questa condizione permette di verificare se QALS ha raggiunto il numero massimo di iterazioni oppure 
-                    se è entrato in una condizione di convergenza o stallo.
-                    
-                    Quindi quello che sugerisco è anzichè testare con un dominio di TIMES più alto lo abbasserei (per esempio io solo {10}),
-                    d'altro canto aumenterei invece il dominio di i_max a {10, 50, 100, 250, 500, 1000}.
-
-                    Gli altri parametri di QALS che definiscono la condizione di stop sono:
-                        - N_max: numero massimo di iterazioni se l'alg non migliora.
-                                Quindi imposterei un dominio, rispettivamente con i_max, di questo genere {5, 25, 50, 125, 250, 500}.
-                        - d_min: conta quante volte trovi una soluzione diversa ma peggiore della migliore corrente.
-                                Qui farei giusto per provare d_min = 0.7 * N_max: {4, 18, 35, 88, 175, 350}.
-
-                    I parametri fino ad ora erano settati così:
-                        - i_max = 10
-                        - N_max = 50
-                        - d_min = 70
-        
                 Params:
                 - d_min:       conta quante volte trovi una soluzione diversa ma peggiore della migliore corrente
                 - p_delta:     prob modifica permutazione
@@ -105,9 +75,9 @@ def app1(TIMES, k, _Q, n, capacity, items):
 
         print("\t\t\t" + colors.BOLD + colors.OKGREEN + "RESULTS" + colors.ENDC + "\n")
 
-        conv = datetime.timedelta(seconds = int(time.time() - start))
+        # conv = datetime.timedelta(seconds = int(time.time() - start))
     
-        avg_fz = round((sum(mins_z[i] for i in range(TIMES)) / len(mins_z)), 2)
+        # avg_fz = round((sum(mins_z[i] for i in range(TIMES)) / len(mins_z)), 2)
         
         itms = []
         if len(sol_min) != 0:
@@ -117,7 +87,7 @@ def app1(TIMES, k, _Q, n, capacity, items):
         w_best_found = sum(items[i][0] * itms[i] for i in range(len(itms)))
 
         string += log_write("i_max, N_max, d_min", f"{I_max[i]}, {N_max[i]}, {D_min[i]}")
-        string += log_write("Avg fQ             ", avg_fz)
+        # string += log_write("Avg fQ             ", avg_fz)
         string += log_write("fQ Min Found       ", round(fz_min_found, 2))
         string += log_write("Profit Found       ", p_best_found)
         string += log_write("Weight Found       ", w_best_found)
@@ -128,6 +98,7 @@ def app1(TIMES, k, _Q, n, capacity, items):
 
     return string
 
+# NO QALS
 def app2(TIMES, k, _Q, n, capacity, items):
     string = str()
 
@@ -160,7 +131,7 @@ def app2(TIMES, k, _Q, n, capacity, items):
         if math.isclose(fz, fz_min_found)
     ]    
 
-    avg_fz = round(sum(fz for fz, _ in mins_z) / len(mins_z), 2)
+    # avg_fz = round(sum(fz for fz, _ in mins_z) / len(mins_z), 2)
     
     itms = []
     if len(sol_min) != 0:
@@ -169,7 +140,7 @@ def app2(TIMES, k, _Q, n, capacity, items):
     p_best_found = sum(items[i][1] * itms[i] for i in range(len(itms)))
     w_best_found = sum(items[i][0] * itms[i] for i in range(len(itms)))
 
-    string += log_write("Avg fQ           ", avg_fz)
+    # string += log_write("Avg fQ           ", avg_fz)
     string += log_write("fQ Min Found     ", round(fz_min_found, 2))
     string += log_write("Profit Found     ", p_best_found)
     string += log_write("Weight Found     ", w_best_found)

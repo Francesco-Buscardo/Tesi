@@ -1,9 +1,9 @@
 from os import system, name, path, makedirs
 import re
 from pathlib import Path
-import numpy as np    # type: ignore
+import numpy as np  
 
-from gurobipy import Model, GRB, quicksum # type: ignore
+from gurobipy import Model, GRB, quicksum 
 
 from QA4QUBO import ksp, app
 from QA4QUBO.colors import colors
