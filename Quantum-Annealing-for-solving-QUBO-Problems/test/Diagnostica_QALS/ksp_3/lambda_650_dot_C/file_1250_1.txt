@@ -1,0 +1,57 @@
+k     = 1250
+TIMES = 1
+
+QALS
+[i_max, N_max, d_min]	10, 5, 4
+[n clusters         ]	8
+[cluster sizes      ]	cluster 0: 3, cluster 1: 2, cluster 2: 2, cluster 3: 1, cluster 4: 1, cluster 5: 1, cluster 6: 1, cluster 7: 1
+[medoid max cluster ]	[1 0 1 1 1 0 0 0 1 0 1 0 0 0 1 1 0 0 1 0 1 0 1 1 1 1 0 0 1 1]
+[fQ                 ]	293249.6286288961
+[Profit             ]	5004
+[Weight             ]	3911
+
+[i_max, N_max, d_min]	50, 25, 18
+[n clusters         ]	22
+[cluster sizes      ]	cluster 0: 3, cluster 1: 3, cluster 2: 3, cluster 3: 2, cluster 4: 5, cluster 5: 5, cluster 6: 4, cluster 7: 3, cluster 8: 2, cluster 9: 2, cluster 10: 3, cluster 11: 2, cluster 12: 1, cluster 13: 1, cluster 14: 2, cluster 15: 1, cluster 16: 2, cluster 17: 2, cluster 18: 1, cluster 19: 1, cluster 20: 2, cluster 21: 2
+[medoid max cluster ]	[1 0 1 0 1 0 0 1 0 0 0 0 1 1 1 0 0 1 1 1 0 1 1 0 0 1 1 0 1 1]
+[fQ                 ]	338551.1183663443
+[Profit             ]	4696
+[Weight             ]	4154
+
+[i_max, N_max, d_min]	100, 50, 35
+[n clusters         ]	25
+[cluster sizes      ]	cluster 0: 10, cluster 1: 3, cluster 2: 5, cluster 3: 4, cluster 4: 4, cluster 5: 6, cluster 6: 8, cluster 7: 5, cluster 8: 3, cluster 9: 4, cluster 10: 7, cluster 11: 4, cluster 12: 3, cluster 13: 8, cluster 14: 3, cluster 15: 5, cluster 16: 1, cluster 17: 2, cluster 18: 3, cluster 19: 2, cluster 20: 1, cluster 21: 2, cluster 22: 2, cluster 23: 2, cluster 24: 5
+[medoid max cluster ]	[0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 0 0 0 0]
+[fQ                 ]	358131.1412436665
+[Profit             ]	4531
+[Weight             ]	4254
+
+[i_max, N_max, d_min]	250, 125, 88
+[n clusters         ]	31
+[cluster sizes      ]	cluster 0: 107, cluster 1: 41, cluster 2: 4, cluster 3: 4, cluster 4: 3, cluster 5: 8, cluster 6: 6, cluster 7: 10, cluster 8: 8, cluster 9: 3, cluster 10: 4, cluster 11: 4, cluster 12: 2, cluster 13: 4, cluster 14: 2, cluster 15: 4, cluster 16: 3, cluster 17: 6, cluster 18: 2, cluster 19: 3, cluster 20: 2, cluster 21: 2, cluster 22: 2, cluster 23: 4, cluster 24: 2, cluster 25: 3, cluster 26: 3, cluster 27: 1, cluster 28: 1, cluster 29: 2, cluster 30: 2
+[medoid max cluster ]	[1 0 1 1 1 0 1 1 0 1 0 1 1 0 1 1 1 0 1 1 1 0 1 1 0 0 1 1 0 0]
+[fQ                 ]	522820.25538154464
+[Profit             ]	4767
+[Weight             ]	5015
+
+[i_max, N_max, d_min]	500, 250, 175
+[n clusters         ]	30
+[cluster sizes      ]	cluster 0: 8, cluster 1: 243, cluster 2: 7, cluster 3: 6, cluster 4: 8, cluster 5: 3, cluster 6: 5, cluster 7: 5, cluster 8: 4, cluster 9: 130, cluster 10: 4, cluster 11: 5, cluster 12: 6, cluster 13: 2, cluster 14: 3, cluster 15: 2, cluster 16: 3, cluster 17: 4, cluster 18: 32, cluster 19: 1, cluster 20: 3, cluster 21: 4, cluster 22: 3, cluster 23: 3, cluster 24: 2, cluster 25: 2, cluster 26: 1, cluster 27: 1, cluster 28: 1, cluster 29: 1
+[medoid max cluster ]	[0 1 0 0 1 1 0 1 1 0 1 1 1 0 1 1 1 1 0 1 0 1 1 0 0 0 0 1 0 1]
+[fQ                 ]	402123.23792415176
+[Profit             ]	4681
+[Weight             ]	4472
+
+[i_max, N_max, d_min]	1000, 500, 350
+[n clusters         ]	31
+[cluster sizes      ]	cluster 0: 7, cluster 1: 27, cluster 2: 857, cluster 3: 10, cluster 4: 7, cluster 5: 9, cluster 6: 6, cluster 7: 3, cluster 8: 6, cluster 9: 3, cluster 10: 6, cluster 11: 5, cluster 12: 4, cluster 13: 5, cluster 14: 5, cluster 15: 4, cluster 16: 2, cluster 17: 8, cluster 18: 4, cluster 19: 1, cluster 20: 2, cluster 21: 2, cluster 22: 2, cluster 23: 1, cluster 24: 2, cluster 25: 3, cluster 26: 2, cluster 27: 2, cluster 28: 4, cluster 29: 1, cluster 30: 2
+[medoid max cluster ]	[1 1 0 1 1 0 1 1 0 1 0 0 1 0 1 1 1 1 1 0 0 1 1 0 0 0 0 0 1 1]
+[fQ                 ]	332765.8510241057
+[Profit             ]	4759
+[Weight             ]	4124
+
+NO QALS
+
+[fQ Min Found     ]	-9424.8
+[Profit Found     ]	2936
+[Weight Found     ]	560

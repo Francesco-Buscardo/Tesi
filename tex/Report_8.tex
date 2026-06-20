@@ -9,8 +9,12 @@
 \usepackage{geometry}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 \geometry{margin=2.5cm}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
 
 \title{Report 8 -- Diagnostica QALS}
 
@@ -99,5 +103,118 @@ La distanza di Hamming può quindi essere utilizzata con significati diversi a s
 In questo modo, la distanza di Hamming non viene utilizzata come criterio di ottimizzazione, ma come strumento diagnostico per analizzare il comportamento della ricerca. 
 Essa permette di distinguere tra fasi di esplorazione, caratterizzate da salti più ampi nello spazio delle soluzioni, e fasi di intensificazione, caratterizzate da 
 soluzioni più vicine a una configurazione di riferimento.
+
+\section{Clustering}
+
+\subsection{Motivazione}
+
+Durante l'esecuzione di QALS vengono generate diverse soluzioni candidate, indicate con $z$. 
+Oltre a valutare il valore della funzione obiettivo $f_Q(z)$, risulta utile analizzare anche il modo in cui l'algoritmo esplora lo spazio delle soluzioni.
+A questo scopo si può utilizzare una procedura di clustering diagnostico, il cui obiettivo non è modificare il comportamento dell'algoritmo, ma studiare le soluzioni prodotte 
+durante la ricerca.
+
+L'idea principale è raggruppare soluzioni simili tra loro. Poiché nel problema QUBO le soluzioni sono rappresentate come vettori binari, una misura naturale di distanza è la 
+distanza di Hamming. In questo modo è possibile costruire una matrice delle distanze tra tutte le soluzioni generate da QALS. Tale matrice viene poi utilizzata come input per 
+un algoritmo di clustering agglomerativo.
+
+\subsection{Procedura utilizzata}
+
+La procedura segue quattro passaggi principali.
+Prima si raccolgono tutte le soluzioni $z$ generate durante l'esecuzione di QALS. Successivamente, per ogni coppia di soluzioni, viene calcolata la distanza di Hamming. 
+I valori ottenuti vengono inseriti in una matrice simmetrica $D$, dove l'elemento $D[i][j]$ rappresenta la distanza tra la soluzione $z_i$ e la soluzione $z_j$.
+
+Una volta ottenuta la matrice delle distanze, viene applicato un algoritmo di clustering agglomerativo.
+L'algoritmo assegna quindi ogni soluzione a uno dei cluster individuati. 
+Infine, una volta calcolato il numero di soluzioni appartenenti a ciascun cluster si considererà solo il cluster con cardinalità maggiore da cui 
+si estrarrà il medoid. Il medoid è la soluzione appartenente al cluster che minimizza la distanza media di Hamming rispetto a tutte le 
+altre soluzioni dello stesso cluster:
+\[
+z_{\text{medoid}}
+=
+\arg\min_{z \in C_i}
+\frac{1}{|C_i|-1}
+\sum_{\substack{z_j \in C_i \\ z_j \neq z}}
+d_H(z, z_j)
+\].
+
+Questa analisi permette di capire se QALS tende a generare soluzioni appartenenti a una sola regione dello spazio di ricerca oppure se esplora regioni differenti 
+ed inoltre capire su quali soluzioni si concentra la ricerca.
+Un numero ridotto di cluster molto popolati può indicare una concentrazione della ricerca in poche zone, mentre molti cluster piccoli possono suggerire una 
+maggiore dispersione delle soluzioni generate.
+
+\subsection{Algoritmo}
+
+\begin{algorithm}[H]
+\caption{Clustering diagnostico delle soluzioni QALS con calcolo dei medoid}
+\begin{algorithmic}[1]
+\Require $solutions\_matrix$, $n\_clusters$
+\Ensure $labels$, $cluster\_sizes$, $cluster\_medoids$
+
+\State $Z \gets [\ ]$
+
+\For{ogni elemento $item$ in $solutions\_matrix$}
+    \State $z \gets item[0]$
+    \State aggiungi $z$ a $Z$
+\EndFor
+
+\State $m \gets |Z|$
+\State $D \gets$ matrice $m \times m$ inizializzata a $0$
+
+\For{$i \gets 0$ to $m-1$}
+    \For{$j \gets 0$ to $m-1$}
+        \State $D[i][j] \gets d_H(Z[i], Z[j])$
+    \EndFor
+\EndFor
+
+\State $model \gets AgglomerativeClustering($
+\Statex \hspace{1.5cm} $n\_clusters = n\_clusters,$
+\Statex \hspace{1.5cm} $metric = \text{``precomputed''},$
+\Statex \hspace{1.5cm} $linkage = \text{``average''})$
+
+\State $labels \gets model.fit\_predict(D)$
+
+\State $cluster\_sizes \gets \{\}$
+\State $cluster\_medoids \gets \{\}$
+
+\For{ogni $label$ in $labels$}
+    \If{$label$ non appartiene a $cluster\_sizes$}
+        \State $cluster\_sizes[label] \gets 0$
+    \EndIf
+    \State $cluster\_sizes[label] \gets cluster\_sizes[label] + 1$
+\EndFor
+
+\State $largest\_cluster \gets \arg\max_{c \in cluster\_sizes} cluster\_sizes[c]$
+
+\State $C_{\max} \gets \{Z[i] \mid labels[i] = largest\_cluster\}$
+
+\If{$|C_{\max}| > 1$}
+    \State $z_{\text{medoid}} \gets
+    \displaystyle
+    \arg\min_{z \in C_{\max}}
+    \frac{1}{|C_{\max}|-1}
+    \sum_{\substack{z_j \in C_{\max} \\ z_j \neq z}}
+    d_H(z,z_j)$
+\Else
+    \State $z_{\text{medoid}} \gets$ unico elemento di $C_{\max}$
+\EndIf
+
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Interpretazione dei risultati}
+
+L'output dell'algoritmo è composto da due elementi. Il primo è il vettore $labels$, che associa ogni soluzione al cluster corrispondente. Il secondo è $cluster\_sizes$, che indica quante soluzioni appartengono a ciascun cluster.
+
+Per esempio, se si ottiene:
+
+\[
+labels = [0,0,1,1,1,2]
+\]
+
+allora le prime due soluzioni appartengono al cluster $0$, le successive tre al cluster $1$ e l'ultima al cluster $2$. Di conseguenza, le dimensioni dei cluster sono:
+
+\[
+cluster\_sizes = \{0:2,\; 1:3,\; 2:1\}
+\].
 
 \end{document}

@@ -61,3 +61,4 @@ typing-inspection==0.4.2
 urllib3==2.6.3
 Werkzeug==3.1.7
 zipp==3.23.0
+scikit-learn==1.9.0

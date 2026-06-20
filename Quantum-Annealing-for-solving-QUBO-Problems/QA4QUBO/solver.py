@@ -15,6 +15,7 @@ from dwave.system import LeapHybridSampler
 from QA4QUBO.matrix import generate_chimera, generate_pegasus
 from QA4QUBO.script import annealer, hybrid
 from QA4QUBO.colors import colors
+import QA4QUBO.hamming as hamming
 import ksp_config as config
 
 
@@ -22,17 +23,6 @@ random = SystemRandom()
 
 # np.set_printoptions(linewidth = int(np.inf), threshold = sys.maxsize)
 np.set_printoptions(linewidth = sys.maxsize, threshold = sys.maxsize)
-
-def hamming_distance(a, b):
-    bits = np.zeros(len(a), dtype=int)
-    counter = 0
-
-    for i in range(len(a)):
-        if a[i] != b[i]:
-            bits[i] = 1
-            counter += 1 
-    
-    return counter, bits
 
 def function_f(Q, x):
     return np.matmul(np.matmul(x, Q), np.atleast_2d(x).T)
@@ -245,25 +235,25 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         I = np.identity(n)
         p = 1
 
+        Z = []
+
         Theta_one, m_one = g(Q, A, np.arange(n), p, sim)
         Theta_two, m_two = g(Q, A, np.arange(n), p, sim)
 
         print(now() + " [" + colors.BOLD + colors.OKGREEN + "ANN" + colors.ENDC + "] Working on z1...", end = ' ')
-        
+
         start = time.time()
         z_one = map_back(annealer(Theta_one, sampler, k), m_one)
         convert_1 = datetime.timedelta(seconds = (time.time() - start))
-        
         print("Ended in " + str(convert_1) + "\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "ANN" + colors.ENDC + "] Working on z2...", end = ' ')
+        
         start = time.time()
-        
-        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        z_two = map_back(annealer(Theta_two, sampler, k), m_two)
-        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        
+        z_two = map_back(annealer(Theta_two, sampler, k), m_two)        
         convert_2 = datetime.timedelta(seconds = (time.time() - start))
-        
         print("Ended in " + str(convert_2) + "\n")
+
+        Z.append(z_one)
+        Z.append(z_two)
 
         solutions_matrix_star = []
         solutions_matrix_best = []
@@ -317,7 +307,7 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         0, 
         np.zeros(n)
     ])
-    hamm_d_opt, hamm_vec_opt = hamming_distance(z_prime, z_opt)
+    hamm_d_opt, hamm_vec_opt = hamming.hamming_distance(z_prime, z_opt)
     solutions_matrix_opt.append([
         z_star.copy(), 
         round(function_f(Q, z_star).item(), 2), 
@@ -358,20 +348,20 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             z_prime = map_back(annealer(Theta_prime, sampler, k), m)
 
             convert_z = datetime.timedelta(seconds = (time.time() - start))
-            
             print("Ended in " + str(convert_z))
 
             if make_decision(q):
                 z_prime = h(z_prime, p)
-            
             f_prime = function_f(Q, z_prime).item()
-
+           
+            Z.append(z_prime)
+            
+            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             if f_prime < f_best:
                 z_best, f_best = z_prime, f_prime
-            
-            hamm_d_star, hamm_vec_star = hamming_distance(z_prime, z_star)
-            hamm_d_best, hamm_vec_best = hamming_distance(z_prime, z_best)
-            hamm_d_opt,  hamm_vec_opt  = hamming_distance(z_prime, z_opt)
+            hamm_d_star, hamm_vec_star = hamming.hamming_distance(z_prime, z_star)
+            hamm_d_best, hamm_vec_best = hamming.hamming_distance(z_prime, z_best)
+            hamm_d_opt,  hamm_vec_opt  = hamming.hamming_distance(z_prime, z_opt)
             solutions_matrix_star.append([
                 z_prime.copy(), 
                 f_prime,
@@ -390,6 +380,8 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
                 hamm_d_opt, 
                 hamm_vec_opt.copy()
             ])
+            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
             if (z_prime != z_star).any():                
                 if (f_prime < f_star):
@@ -445,4 +437,4 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
     
     print(now() + " [" + colors.BOLD + colors.OKGREEN + "TIME" + colors.ENDC + "] Average time for iteration: " + str(conv) + "\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "TIME" + colors.ENDC + "] Total time: " + str(converted) + "\n")
 
-    return np.atleast_2d(np.atleast_2d(z_star).T).T[0], conv, solutions_matrix_star, solutions_matrix_best, solutions_matrix_opt
+    return np.atleast_2d(np.atleast_2d(z_star).T).T[0], conv, Z #, solutions_matrix_star, solutions_matrix_best, solutions_matrix_opt
