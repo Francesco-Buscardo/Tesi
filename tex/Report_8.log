@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  20 JUN 2026 18:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  22 JUN 2026 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -313,52 +313,32 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip54
 )
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
-Package: geometry 2026/03/07 v6.0 Page Geometry
-
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count312
-\Gm@cntv=\count313
-\c@Gm@tempcnt=\count314
-\Gm@bindingoffset=\dimen165
-\Gm@wd@mp=\dimen166
-\Gm@odd@mp=\dimen167
-\Gm@even@mp=\dimen168
-\Gm@layoutwidth=\dimen169
-\Gm@layoutheight=\dimen170
-\Gm@layouthoffset=\dimen171
-\Gm@layoutvoffset=\dimen172
-\Gm@dimlist=\toks25
-
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen173
-\lightrulewidth=\dimen174
-\cmidrulewidth=\dimen175
-\belowrulesep=\dimen176
-\belowbottomsep=\dimen177
-\aboverulesep=\dimen178
-\abovetopsep=\dimen179
-\cmidrulesep=\dimen180
-\cmidrulekern=\dimen181
-\defaultaddspace=\dimen182
-\@cmidla=\count315
-\@cmidlb=\count316
-\@aboverulesep=\dimen183
-\@belowrulesep=\dimen184
-\@thisruleclass=\count317
-\@lastruleclass=\count318
-\@thisrulewidth=\dimen185
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count312
+\@cmidlb=\count313
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count314
+\@lastruleclass=\count315
+\@thisrulewidth=\dimen177
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count319
-\float@exts=\toks26
+\c@float@type=\count316
+\float@exts=\toks25
 \float@box=\box55
-\@float@everytoks=\toks27
+\@float@everytoks=\toks26
 \@floatcapt=\box56
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.sty
@@ -367,8 +347,8 @@ nment
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks28
-\c@algorithm=\count320
+\@float@every@algorithm=\toks27
+\c@algorithm=\count317
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudoco
 de.sty
@@ -379,24 +359,122 @@ x.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count321
-\c@ALG@rem=\count322
-\c@ALG@nested=\count323
+\c@ALG@line=\count318
+\c@ALG@rem=\count319
+\c@ALG@nested=\count320
 \ALG@tlm=\skip55
 \ALG@thistlm=\skip56
-\c@ALG@Lnr=\count324
-\c@ALG@blocknr=\count325
-\c@ALG@storecount=\count326
-\c@ALG@tmpcounter=\count327
+\c@ALG@Lnr=\count321
+\c@ALG@blocknr=\count322
+\c@ALG@storecount=\count323
+\c@ALG@tmpcounter=\count324
 \ALG@tmplength=\skip57
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen178
+\captionmargin=\dimen179
+\caption@leftmargin=\dimen180
+\caption@rightmargin=\dimen181
+\caption@width=\dimen182
+\caption@indent=\dimen183
+\caption@parindent=\dimen184
+\caption@hangindent=\dimen185
+Package caption Info: Standard document class detected.
 )
+\c@caption@flags=\count325
+\c@continuedfloat=\count326
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count327
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count328
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count329
+\Gm@cntv=\count330
+\c@Gm@tempcnt=\count331
+\Gm@bindingoffset=\dimen186
+\Gm@wd@mp=\dimen187
+\Gm@odd@mp=\dimen188
+\Gm@even@mp=\dimen189
+\Gm@layoutwidth=\dimen190
+\Gm@layoutheight=\dimen191
+\Gm@layouthoffset=\dimen192
+\Gm@layoutvoffset=\dimen193
+\Gm@dimlist=\toks28
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count328
-) (Report_8.aux)
+\l__color_backend_stack_int=\count332
+) (Report_8.aux
+
+LaTeX Warning: Label `fig:hd-zstarold-zstarnew-lambda1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hd-zstarold-zstarnew-lambda1' multiply defined.
+
+
+LaTeX Warning: Label `fig:hd-zt-zstar-lambda1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hd-zt-zstar-lambda1' multiply defined.
+
+
+LaTeX Warning: Label `fig:hd-zstarold-zstarnew-lambda2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hd-zstarold-zstarnew-lambda2' multiply defined.
+
+
+LaTeX Warning: Label `fig:hd-zt-zstar-lambda2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hd-zt-zstar-lambda2' multiply defined.
+
+
+LaTeX Warning: Label `tab:confronto-qals-noqals' multiply defined.
+
+
+LaTeX Warning: Label `fig:hd-zstarold-zstarnew-lambda1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hd-zstarold-zstarnew-lambda1' multiply defined.
+
+
+LaTeX Warning: Label `fig:hd-zt-zstar-lambda1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hd-zt-zstar-lambda1' multiply defined.
+
+
+LaTeX Warning: Label `fig:hd-zstarold-zstarnew-lambda2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hd-zstarold-zstarnew-lambda2' multiply defined.
+
+
+LaTeX Warning: Label `fig:hd-zt-zstar-lambda2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hd-zt-zstar-lambda2' multiply defined.
+
+)
 \openout1 = `Report_8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -423,16 +501,16 @@ LaTeX Info: Redefining \it@ccap on input line 21.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
-\scratchdimen=\dimen186
+\scratchcounter=\count333
+\scratchdimen=\dimen194
 \scratchbox=\box57
-\nofMPsegments=\count330
-\nofMParguments=\count331
+\nofMPsegments=\count334
+\nofMParguments=\count335
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count332
-\MPscratchDim=\dimen187
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
+\MPscratchCnt=\count336
+\MPscratchDim=\dimen195
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
 \everyMPtoPDFconversion=\toks30
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
@@ -450,6 +528,8 @@ Package hyperref Info: Link coloring OFF on input line 21.
 \@outlinefile=\write3
 \openout3 = `Report_8.out'.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -459,15 +539,15 @@ Package hyperref Info: Link coloring OFF on input line 21.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=455.24411pt
-* \textheight=702.78308pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-38.1381pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -503,49 +583,197 @@ LaTeX Warning: No \author given.
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
 [3]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 148.
- [4] [5] [6] (Report_8.aux)
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lam
+bda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=85, 715.2321pt x 353.1594
+pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1
+/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png  used
+ on input line 195.
+(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lam
+bda_650_dot_C/2000_1_HD_z_t_z_star.png, id=87, 715.473pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1
+/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  used on input l
+ine 202.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lam
+bda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=88, 715.2321pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1
+/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png  used on 
+input line 211.
+(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lam
+bda_div_3/2000_1_HD_z_t_z_star.png, id=89, 715.473pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+1/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1
+/lambda_div_3/2000_1_HD_z_t_z_star.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png  used on input line 
+218.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ [4]
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lam
+bda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=97, 715.473pt x 353.1594p
+t>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3
+/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png  used
+ on input line 262.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lam
+bda_650_dot_C/2000_1_HD_z_t_z_star.png, id=98, 715.473pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3
+/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  used on input l
+ine 269.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lam
+bda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=99, 715.473pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3
+/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png  used on 
+input line 278.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lam
+bda_div_3/2000_1_HD_z_t_z_star.png, id=100, 715.473pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+3/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3
+/lambda_div_3/2000_1_HD_z_t_z_star.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png  used on input line 
+285.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ [5 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1
+/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing-fo
+r-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_650_dot_C/2000_1_HD_
+z_t_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostic
+a_QALS/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Anne
+aling-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_div_3/2000_1
+_HD_z_t_z_star.png>]
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lam
+bda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=114, 715.473pt x 353.1594
+pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2
+/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png  used
+ on input line 324.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lam
+bda_650_dot_C/2000_1_HD_z_t_z_star.png, id=115, 715.473pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2
+/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  used on input l
+ine 331.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lam
+bda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=116, 715.473pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2
+/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png  used on 
+input line 340.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+<../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lam
+bda_div_3/2000_1_HD_z_t_z_star.png, id=117, 715.473pt x 353.1594pt>
+File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_
+2/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
+<use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2
+/lambda_div_3/2000_1_HD_z_t_z_star.png>
+Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png  used on input line 
+347.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ [6 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3
+/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing-fo
+r-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_650_dot_C/2000_1_HD_
+z_t_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostic
+a_QALS/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Anne
+aling-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_div_3/2000_1
+_HD_z_t_z_star.png>] [7 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../
+Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_
+650_dot_C/2000_1_HD_z_t_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Prob
+lems/test/Diagnostica_QALS/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.p
+ng> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2
+/lambda_div_3/2000_1_HD_z_t_z_star.png>]
+(Report_8.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Report_8.out' has not changed.
-(rerunfilecheck)             Checksum: A9B44D842B85E2D5743B03A7F89BCA4E;2188.
+(rerunfilecheck)             Checksum: 9D20609562571B7039DD710C9AC576FD;2141.
  ) 
 Here is how much of TeX's memory you used:
- 12314 strings out of 467871
- 190575 string characters out of 5418860
- 621572 words of memory out of 5000000
- 41011 multiletter control sequences out of 15000+600000
- 643923 words of font info for 83 fonts, out of 8000000 for 9000
+ 13823 strings out of 467871
+ 229054 string characters out of 5418860
+ 645752 words of memory out of 5000000
+ 42501 multiletter control sequences out of 15000+600000
+ 646098 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,377b,467s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,79p,377b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
-000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 ecbx1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
-i600\tcrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
-ec/dpi600\ecrm0800.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
-ppen/ec/dpi600\ecbx1440.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/l
-jfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts
-/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\User\AppData\Local\MiKTeX\
-fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/User/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/User
-s/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
-C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/User/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Report_8.pdf (6 pages, 203790 bytes).
+i600\ectt1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\tcrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\ecrm0800.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\
+fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\User\AppData\Local\Mi
+KTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/User/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/U
+ser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:
+/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/User/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Report_8.pdf (7 pages, 2858374 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 414 PDF objects out of 1000 (max. 8388607)
+ 27 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,13 +6,13 @@
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{geometry}
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{subcaption}
+\usepackage[a4paper, margin=2.0cm]{geometry}
 
-\geometry{margin=2.5cm}
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
 \algrenewcommand\algorithmicensure{\textbf{Output:}}
 
@@ -54,55 +54,36 @@ mentre un valore basso indica che le due configurazioni sono simili.
 
 \section{Possibili confronti tramite distanza di Hamming}
 
-\subsection{Distanza rispetto alla migliore soluzione trovata}
-
-Il primo confronto consiste nel calcolare la distanza tra la soluzione generata all'iterazione \(t\), indicata con \(z_t\), e la migliore soluzione trovata
-fino a quel momento, indicata con \(z_{\text{best}}\):
-\[
-d_H(z_t, z_{\text{best}}).
-\]
-
-Questa misura permette di osservare se le soluzioni candidate generate dall'algoritmo tendono ad avvicinarsi o ad allontanarsi dalla migliore configurazione individuata durante la ricerca.
-Un valore alto indica che la soluzione corrente è distante dalla migliore soluzione trovata, mentre un valore basso indica che la soluzione generata è più vicina a \(z_{\text{best}}\). 
-Se questa distanza tende a diminuire, si può interpretare il comportamento dell'algoritmo come una fase di intensificazione attorno ad una regione dello spazio delle soluzioni.
-
 \subsection{Distanza rispetto alla soluzione corrente accettata}
 
-Il secondo confronto consiste nel calcolare la distanza tra la soluzione candidata \(z_t\) e la soluzione corrente accettata dall'algoritmo, indicata con \(z_{\text{star}}\):
+Il primo confronto consiste nel calcolare la distanza tra la soluzione candidata \(z_t\) e la soluzione corrente accettata dall'algoritmo, indicata con \(z_{\text{star}}\):
 \[
 d_H(z_t, z_{\text{star}}).
 \]
 
 In questo caso \(z_{\text{star}}\) non deve essere interpretata come la soluzione ottima, ma come lo stato corrente dell'algoritmo. Infatti, QALS può accettare anche soluzioni peggiorative con una certa probabilità, 
 al fine di evitare di bloccarsi prematuramente in minimi locali.
-Questa distanza misura quindi l'ampiezza della mossa proposta nello spazio delle soluzioni. Rappresenta quindi una misura del movimento della ricerca rispetto alla configurazione attualmente accettata.
+Questa distanza misura l'ampiezza della mossa proposta nello spazio delle soluzioni. Rappresenta dunque una misura del movimento della ricerca rispetto alla configurazione attualmente accettata.
 Valori elevati indicano che l'algoritmo sta proponendo salti ampi nello spazio delle soluzioni, e quindi un comportamento più esplorativo. Valori bassi indicano invece che la nuova soluzione candidata 
 è simile alla soluzione corrente, suggerendo una ricerca più locale attorno alla configurazione accettata.
 
-\subsection{Distanza rispetto alla soluzione ottima}
+\subsection{Distanza rispetto soluzioni accettate consecutive}
 
-Il terzo confronto consiste nel calcolare la distanza tra la soluzione generata \(z_t\) e la soluzione ottima nota, indicata con \(z_{\text{opt}}\):
+Nel secondo confronto si stima la distanza tra la soluzione accettate nell'iterazione precedente \(z_{\text{starOld}}\) e la soluzione corrente accettata dall'algoritmo, indicata con \(z_{\text{starNew}}\):
 \[
-d_H(z_t, z_{\text{opt}}).
+d_H(z_{\text{starOld}}, z_{\text{starNew}}).
 \]
 
-Questa misura indica quanto la soluzione generata sia distante dalla soluzione ottima del problema.
-Un valore alto indica che la soluzione candidata è lontana dall'ottimo, mentre un valore basso indica che essa è simile alla soluzione ottima. 
-Se la distanza raggiunge valore zero, significa che QALS ha generato esattamente la soluzione ottima.
-Questo tipo di confronto è possibile solo nei casi in cui la soluzione ottima sia nota (nel nostro caso calcolata con Dynamic Programming).
+Come prima \(z_{\text{starNew}}\) non deve essere interpretata come la soluzione ottima, ma solo come lo stato corrente dell'algoritmo.
+Questa distanza misura quanto la nuova soluzione accettata da QALS si discosti da quella precedente. \(z_{\text{star}}\) può essere interpretato come la posizione di QALS
+e ad ogni nuova soluzione proposta si confronta con la nuova soluzione accettata.
 
 \section{Interpretazione generale}
 
-La distanza di Hamming può quindi essere utilizzata con significati diversi a seconda della soluzione di riferimento scelta. In particolare:
 \begin{itemize}
     \item \(d_H(z_t, z_{\text{star}})\) misura l'ampiezza della mossa proposta rispetto alla soluzione corrente accettata;
-    \item \(d_H(z_t, z_{\text{best}})\) misura la distanza dalla migliore soluzione trovata fino a quel momento;
-    \item \(d_H(z_t, z_{\text{opt}})\) misura la distanza dalla soluzione ottima, quando questa è nota.
+    \item \(d_H(z_{\text{starOld}}, z_{\text{starNew}})\) permette di misurare la variazione delle soluzioni accettate
 \end{itemize}
-
-In questo modo, la distanza di Hamming non viene utilizzata come criterio di ottimizzazione, ma come strumento diagnostico per analizzare il comportamento della ricerca. 
-Essa permette di distinguere tra fasi di esplorazione, caratterizzate da salti più ampi nello spazio delle soluzioni, e fasi di intensificazione, caratterizzate da 
-soluzioni più vicine a una configurazione di riferimento.
 
 \section{Clustering}
 
@@ -123,10 +104,11 @@ La procedura segue quattro passaggi principali.
 Prima si raccolgono tutte le soluzioni $z$ generate durante l'esecuzione di QALS. Successivamente, per ogni coppia di soluzioni, viene calcolata la distanza di Hamming. 
 I valori ottenuti vengono inseriti in una matrice simmetrica $D$, dove l'elemento $D[i][j]$ rappresenta la distanza tra la soluzione $z_i$ e la soluzione $z_j$.
 
-Una volta ottenuta la matrice delle distanze, viene applicato un algoritmo di clustering agglomerativo.
+Una volta ottenuta la matrice delle distanze, viene applicato un algoritmo di clustering agglomerativo. Il clustering prevede di identificare dei cluster basandosi 
+sulla distanza fra soluzioni, in particolare è stato impostato per far in modo che le soluzioni di un cluster abbiamo al più una distanza di hamming del \(40\%\). 
 L'algoritmo assegna quindi ogni soluzione a uno dei cluster individuati. 
-Infine, una volta calcolato il numero di soluzioni appartenenti a ciascun cluster si considererà solo il cluster con cardinalità maggiore da cui 
-si estrarrà il medoid. Il medoid è la soluzione appartenente al cluster che minimizza la distanza media di Hamming rispetto a tutte le 
+Infine, una volta calcolato il numero di soluzioni appartenenti a ciascun cluster si considera solo il cluster con cardinalità maggiore da cui 
+si estrae il medoid. Il medoid è la soluzione appartenente al cluster che minimizza la distanza media di Hamming rispetto a tutte le 
 altre soluzioni dello stesso cluster:
 \[
 z_{\text{medoid}}
@@ -137,73 +119,7 @@ z_{\text{medoid}}
 d_H(z, z_j)
 \].
 
-Questa analisi permette di capire se QALS tende a generare soluzioni appartenenti a una sola regione dello spazio di ricerca oppure se esplora regioni differenti 
-ed inoltre capire su quali soluzioni si concentra la ricerca.
-Un numero ridotto di cluster molto popolati può indicare una concentrazione della ricerca in poche zone, mentre molti cluster piccoli possono suggerire una 
-maggiore dispersione delle soluzioni generate.
-
-\subsection{Algoritmo}
-
-\begin{algorithm}[H]
-\caption{Clustering diagnostico delle soluzioni QALS con calcolo dei medoid}
-\begin{algorithmic}[1]
-\Require $solutions\_matrix$, $n\_clusters$
-\Ensure $labels$, $cluster\_sizes$, $cluster\_medoids$
-
-\State $Z \gets [\ ]$
-
-\For{ogni elemento $item$ in $solutions\_matrix$}
-    \State $z \gets item[0]$
-    \State aggiungi $z$ a $Z$
-\EndFor
-
-\State $m \gets |Z|$
-\State $D \gets$ matrice $m \times m$ inizializzata a $0$
-
-\For{$i \gets 0$ to $m-1$}
-    \For{$j \gets 0$ to $m-1$}
-        \State $D[i][j] \gets d_H(Z[i], Z[j])$
-    \EndFor
-\EndFor
-
-\State $model \gets AgglomerativeClustering($
-\Statex \hspace{1.5cm} $n\_clusters = n\_clusters,$
-\Statex \hspace{1.5cm} $metric = \text{``precomputed''},$
-\Statex \hspace{1.5cm} $linkage = \text{``average''})$
-
-\State $labels \gets model.fit\_predict(D)$
-
-\State $cluster\_sizes \gets \{\}$
-\State $cluster\_medoids \gets \{\}$
-
-\For{ogni $label$ in $labels$}
-    \If{$label$ non appartiene a $cluster\_sizes$}
-        \State $cluster\_sizes[label] \gets 0$
-    \EndIf
-    \State $cluster\_sizes[label] \gets cluster\_sizes[label] + 1$
-\EndFor
-
-\State $largest\_cluster \gets \arg\max_{c \in cluster\_sizes} cluster\_sizes[c]$
-
-\State $C_{\max} \gets \{Z[i] \mid labels[i] = largest\_cluster\}$
-
-\If{$|C_{\max}| > 1$}
-    \State $z_{\text{medoid}} \gets
-    \displaystyle
-    \arg\min_{z \in C_{\max}}
-    \frac{1}{|C_{\max}|-1}
-    \sum_{\substack{z_j \in C_{\max} \\ z_j \neq z}}
-    d_H(z,z_j)$
-\Else
-    \State $z_{\text{medoid}} \gets$ unico elemento di $C_{\max}$
-\EndIf
-
-\end{algorithmic}
-\end{algorithm}
-
-\subsection{Interpretazione dei risultati}
-
-L'output dell'algoritmo è composto da due elementi. Il primo è il vettore $labels$, che associa ogni soluzione al cluster corrispondente. Il secondo è $cluster\_sizes$, che indica quante soluzioni appartengono a ciascun cluster.
+Conclusa la procedura si otterranno due vettori: il primo è il vettore $labels$, che associa ogni soluzione al cluster corrispondente; il secondo è $cluster\_sizes$, che indica quante soluzioni appartengono a ciascun cluster.
 
 Per esempio, se si ottiene:
 
@@ -216,5 +132,234 @@ allora le prime due soluzioni appartengono al cluster $0$, le successive tre al 
 \[
 cluster\_sizes = \{0:2,\; 1:3,\; 2:1\}
 \].
+
+Questa analisi permette di capire se QALS tende a generare soluzioni appartenenti a una sola regione dello spazio di ricerca oppure se esplora regioni differenti 
+ed inoltre capire su quali soluzioni si concentra la ricerca.
+Un numero ridotto di cluster molto popolati può indicare una concentrazione della ricerca in poche zone, mentre molti cluster piccoli possono suggerire una 
+maggiore dispersione delle soluzioni generate.
+
+\section{Risultati}    
+
+In questa sezione vengono analizzati i risultati ottenuti sui file di test
+\texttt{ksp\_1}, \texttt{ksp\_3} e \texttt{ksp\_3} con: 
+\[
+\lambda_1 = \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}, 
+\qquad
+\lambda_2 = \frac{\sum_{i=1}^{n} p_i}{3}.
+\]
+In tutti i casi è stata utilizzata la seguente
+configurazione di QALS:
+\[
+TIMES = 1, \qquad
+k = 2000, \qquad
+i_{\max} = 250, \qquad
+N_{\max} = 125, \qquad
+d_{\min} = 88.
+\].
+
+\subsection{ksp\_1}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
+\hline
+Numero cluster & 5 & 12 \\
+Dimensione cluster massimo & 238 & 120 \\
+Medoid cluster massimo & 
+\([1\,1\,0\,1\,1\,1\,1\,1\,1\,0]\) &
+\([1\,1\,0\,1\,0\,1\,1\,1\,0\,1]\) \\
+\(f_Q\) medoid & 220.38 & 3064569.00 \\
+Profit medoid & 360 & 339 \\
+Weight medoid & 416 & 279 \\
+\hline
+\(f_Q\) Min Found QALS & -225.26 & -1441170.00 \\
+Profit Found QALS & 248 & 94 \\
+Weight Found QALS & 218 & 111 \\
+\hline
+\(f_Q\) Min Found NO QALS & -330.85 & -1455540.67 \\
+Profit Found NO QALS & 302 & 198 \\
+Weight Found NO QALS & 177 & 101 \\
+\hline
+\end{tabular}
+
+\caption{Confronto dei risultati ottenuti con QALS e senza QALS.}
+\label{tab:confronto-qals-noqals}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
+    \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_1\)}
+    \label{fig:hd-zstarold-zstarnew-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
+    \caption{\(d_H(z_t, z_\star)\) con \(\lambda_1\)}
+    \label{fig:hd-zt-zstar-lambda1}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
+    \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_2\)}
+    \label{fig:hd-zstarold-zstarnew-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png}
+    \caption{\(d_H(z_t, z_\star)\) con \(\lambda_2\)}
+    \label{fig:hd-zt-zstar-lambda2}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp1}
+\end{figure}
+
+\subsection{ksp\_3}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
+\hline
+Numero cluster & 28 & 37 \\
+Dimensione cluster massimo & 133 & 92 \\
+Medoid cluster massimo & 
+\([1\,0\,0\,0\,1\,0\,1\,1\,1\,1\,1\,0\,1\,0\,1]\) &
+\([1\,0\,1\,1\,0\,1\,1\,1\,0\,0\,0\,1\,1\,1\,1]\) \\
+&
+\([1\,1\,1\,1\,1\,0\,0\,1\,0\,1\,0\,1\,0\,0\,0]\) &
+\([0\,0\,0\,0\,1\,0\,1\,1\,1\,1\,1\,1\,0\,0\,0]\) \\
+\(f_Q\) medoid & 436802.61 & 35350570832.67 \\
+Profit medoid & 3985 & 5055 \\
+Weight medoid & 4632 & 4061 \\
+\hline
+\(f_Q\) Min Found QALS & 91308.49 & 7577574645.00 \\
+Profit Found QALS & 3747 & 3147 \\
+Weight Found QALS & 2470 & 2208 \\
+\hline
+\(f_Q\) Min Found NO QALS & -9424.80 & -714267662.00 \\
+Profit Found NO QALS & 2936 & 2483 \\
+Weight Found NO QALS & 560 & 501 \\
+\hline
+\end{tabular}
+\caption{Confronto dei risultati ottenuti con QALS e senza QALS.}
+\label{tab:confronto-qals-noqals-ksp}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
+    \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_1\)}
+    \label{fig:hd-zstarold-zstarnew-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
+    \caption{\(d_H(z_t, z_\star)\) con \(\lambda_1\)}
+    \label{fig:hd-zt-zstar-lambda1}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
+    \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_2\)}
+    \label{fig:hd-zstarold-zstarnew-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png}
+    \caption{\(d_H(z_t, z_\star)\) con \(\lambda_2\)}
+    \label{fig:hd-zt-zstar-lambda2}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp3}
+\end{figure}
+
+\subsection{ksp\_2}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
+\hline
+Numero cluster & 40 & 50 \\
+Dimensione cluster massimo & 50 & 85 \\
+\(f_Q\) medoid & 6615379.89 & 1243440229295.67 \\
+Profit medoid & 18206 & 17947 \\
+Weight medoid & 12931 & 12098 \\
+\hline
+\(f_Q\) Min Found QALS & 1179048.12 & 479838224209.0 \\
+Profit Found QALS & 9695 & 8812 \\
+Weight Found QALS & 6132 & 7939 \\
+\hline
+\(f_Q\) Min Found NO QALS & -54748.31 & -10200709849.33 \\
+Profit Found NO QALS & 7740 & 5669 \\
+Weight Found NO QALS & 978 & 1001 \\
+\hline
+\end{tabular}
+
+\caption{Confronto dei risultati ottenuti con QALS e senza QALS.}
+\label{tab:confronto-qals-noqals}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
+    \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_1\)}
+    \label{fig:hd-zstarold-zstarnew-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
+    \caption{\(d_H(z_t, z_\star)\) con \(\lambda_1\)}
+    \label{fig:hd-zt-zstar-lambda1}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
+    \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_2\)}
+    \label{fig:hd-zstarold-zstarnew-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png}
+    \caption{\(d_H(z_t, z_\star)\) con \(\lambda_2\)}
+    \label{fig:hd-zt-zstar-lambda2}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp2}
+\end{figure}
+
+\subsection{Interpretazione risultati}
+Si può vedere come in tutti i casi la soluzione accettata non cambi spesso nonostante la ricerca
+sia vasta in quanto dai grafici \(d_H(z_t, z_\star)\) si può notare come la distanza di Hamming oscilli molto il che rende evidente il 
+comportamento esplorativo di QALS. Integrando queste informazioni con i risultati del clustering si può concludere che seppur la ricerca
+di QALS offre nuove soluzioni per la maggior parte dei casi queste appartengano ad un cluster ben specifico facendo notare come QALS ritorna
+spesso su soluzioni simili fra loro. 
+Tale comportamento è più evidente nella versione con soft constraints.
+
+Si noti inoltre come cambiando la dimensione del problema il numero di cluster aumenti e il la dimensione del cluster massimo dimuisca il che coincide con quello che ci si aspetta:
+più il problema diventa grande, più configurazioni ci possono essere e quindi più cluster possono essere individuati il che pilota la dimensione del cluster massimo a diminuire.
 
 \end{document}

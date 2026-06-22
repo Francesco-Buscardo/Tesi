@@ -193,7 +193,7 @@ def csv_write(DIR, l):
 def now():
     return datetime.datetime.now().strftime("%H:%M:%S")
 
-def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim, z_opt):
+def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim):
     
     try:
         if (not sim):  # ? REAL QUANTUM MODE
@@ -234,7 +234,6 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         
         I = np.identity(n)
         p = 1
-
         Z = []
 
         Theta_one, m_one = g(Q, A, np.arange(n), p, sim)
@@ -255,9 +254,8 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         Z.append(z_one)
         Z.append(z_two)
 
-        solutions_matrix_star = []
-        solutions_matrix_best = []
-        solutions_matrix_opt  = []
+        solutions_matrix_star      = []
+        solutions_matrix_zaccepted = []
 
         f_one = function_f(Q, z_one).item()
         f_two = function_f(Q, z_two).item()
@@ -301,18 +299,11 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         0, 
         np.zeros(n)
     ])
-    solutions_matrix_best.append([
+    solutions_matrix_zaccepted.append([
         z_star.copy(), 
-        round(function_f(Q, z_star).item(), 2), 
+        function_f(Q, z_star).item(),
         0, 
         np.zeros(n)
-    ])
-    hamm_d_opt, hamm_vec_opt = hamming.hamming_distance(z_prime, z_opt)
-    solutions_matrix_opt.append([
-        z_star.copy(), 
-        round(function_f(Q, z_star).item(), 2), 
-        hamm_d_opt,
-        hamm_vec_opt.copy()
     ])
 
     while True:
@@ -349,39 +340,28 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
 
             convert_z = datetime.timedelta(seconds = (time.time() - start))
             print("Ended in " + str(convert_z))
-
+            
+            # perturbazione casuale alla soluz
             if make_decision(q):
                 z_prime = h(z_prime, p)
             f_prime = function_f(Q, z_prime).item()
-           
+            
             Z.append(z_prime)
             
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             if f_prime < f_best:
-                z_best, f_best = z_prime, f_prime
-            hamm_d_star, hamm_vec_star = hamming.hamming_distance(z_prime, z_star)
-            hamm_d_best, hamm_vec_best = hamming.hamming_distance(z_prime, z_best)
-            hamm_d_opt,  hamm_vec_opt  = hamming.hamming_distance(z_prime, z_opt)
+                z_best = z_prime
+                f_best = f_prime
+
+            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            hamm_d_star, hamm_vec_star = hamming.hamming_distance(z_prime, z_star) 
             solutions_matrix_star.append([
                 z_prime.copy(), 
                 f_prime,
                 hamm_d_star, 
                 hamm_vec_star.copy()
             ])
-            solutions_matrix_best.append([
-                z_prime.copy(), 
-                f_prime,
-                hamm_d_best, 
-                hamm_vec_best.copy()
-            ])
-            solutions_matrix_opt.append([
-                z_prime.copy(), 
-                f_prime,
-                hamm_d_opt, 
-                hamm_vec_opt.copy()
-            ])
             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+            z_tmp = z_star
 
             if (z_prime != z_star).any():                
                 if (f_prime < f_star):
@@ -391,7 +371,7 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
                     e = 0
                     d = 0
                     S = (config.DECAY_FACTOR * S) + ((np.outer(z_prime, z_prime) - I) + np.diagflat(z_prime))
-                else:
+                else: # z_prime è peggiore la accetto con una certa probabilità
                     d = d + 1
                     if make_decision((p - p_delta) ** (f_prime - f_star)):
                         z_prime, z_star = z_star, z_prime
@@ -403,6 +383,16 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
                 e = e + 1
 
             converted = datetime.timedelta(seconds=(time.time()-start_time))
+            
+            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            hamm_d_zaccepted, hamm_vec_zaccepted = hamming.hamming_distance(z_tmp, z_star)
+            solutions_matrix_zaccepted.append([
+                z_star.copy(), 
+                function_f(Q, z_star).item(),
+                hamm_d_zaccepted, 
+                hamm_vec_zaccepted.copy()
+            ])
+            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
             try:
                 print(now() + " [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] f_prime = {round(f_prime, 2)}, f_star = {round(f_star, 2)}, p = {p}, e = {e}, d = {d} and lambda = {round(lam,5)}\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] Took {converted} in total")
@@ -437,4 +427,4 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
     
     print(now() + " [" + colors.BOLD + colors.OKGREEN + "TIME" + colors.ENDC + "] Average time for iteration: " + str(conv) + "\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "TIME" + colors.ENDC + "] Total time: " + str(converted) + "\n")
 
-    return np.atleast_2d(np.atleast_2d(z_star).T).T[0], conv, Z #, solutions_matrix_star, solutions_matrix_best, solutions_matrix_opt
+    return np.atleast_2d(np.atleast_2d(z_star).T).T[0], f_star, z_best, f_best, conv, Z, solutions_matrix_zaccepted, solutions_matrix_star

@@ -10,17 +10,18 @@ class QALSParams:
 TEST_FOLDER  = Path("test/Diagnostica_QALS/")
 
 KSP_EXAMPLES = [
-    # Path("QA4QUBO/ksp/ksp_1.txt")
-    # Path("QA4QUBO/ksp/ksp_2.txt")
-    Path("QA4QUBO/ksp/ksp_3.txt")
+    #Path("QA4QUBO/ksp/ksp_1.txt")
+    Path("QA4QUBO/ksp/ksp_2.txt")
+    #Path("QA4QUBO/ksp/ksp_3.txt")
 ]
 
-KSP_FILE = "ksp_3"
-
+# i_max=[10, 50, 100, 250, 500, 1000]
+# N_max=[5,  25, 50,  125, 250, 500 ]
+# d_min=[4,  18, 35,  88,  175, 350 ]
 QALS_PARAMS = QALSParams(       
-    i_max=[10, 50, 100, 250, 500, 1000],
-    N_max=[5,  25, 50,  125, 250, 500],
-    d_min=[4,  18, 35,  88,  175, 350]
+    i_max=[250],
+    N_max=[125],
+    d_min=[88]
 )
 
 # k = quante volte risolvo il problema QUBO
@@ -36,8 +37,8 @@ MATCH_K_T = [
 # 1, 10, 20
 SCALE_QUBO = 1
 
-# LAMBDA_VALUE = "lambda_div_3"
-LAMBDA_VALUE = "lambda_650_dot_C"
+LAMBDA_VALUE = "lambda_div_3"
+#LAMBDA_VALUE = "lambda_650_dot_C"
 # LAMBDA_VALUE = "lambda_6500_dot_C"
 # LAMBDA_VALUE = "lambda_div_C"
 

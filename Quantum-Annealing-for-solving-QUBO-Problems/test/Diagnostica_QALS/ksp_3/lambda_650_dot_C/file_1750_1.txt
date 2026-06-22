@@ -2,56 +2,19 @@ k     = 1750
 TIMES = 1
 
 QALS
-[i_max, N_max, d_min]	10, 5, 4
-[n clusters         ]	7
-[cluster sizes      ]	cluster 0: 2, cluster 1: 2, cluster 2: 2, cluster 3: 3, cluster 4: 1, cluster 5: 1, cluster 6: 1
-[medoid max cluster ]	[0 0 0 1 1 0 1 0 1 1 1 0 1 1 1 1 0 0 0 0 0 1 1 1 1 0 1 0 1 1]
-[fQ                 ]	311604.13377859665
-[Profit             ]	5527
-[Weight             ]	4015
-
-[i_max, N_max, d_min]	50, 25, 18
-[n clusters         ]	21
-[cluster sizes      ]	cluster 0: 5, cluster 1: 3, cluster 2: 4, cluster 3: 2, cluster 4: 3, cluster 5: 3, cluster 6: 2, cluster 7: 3, cluster 8: 2, cluster 9: 2, cluster 10: 3, cluster 11: 4, cluster 12: 1, cluster 13: 1, cluster 14: 2, cluster 15: 2, cluster 16: 4, cluster 17: 1, cluster 18: 2, cluster 19: 2, cluster 20: 1
-[medoid max cluster ]	[0 0 1 1 1 1 0 0 0 0 0 1 0 1 0 1 1 0 1 0 1 1 0 0 0 1 1 1 0 0]
-[fQ                 ]	284431.5851005681
-[Profit             ]	4068
-[Weight             ]	3856
-
-[i_max, N_max, d_min]	100, 50, 35
-[n clusters         ]	29
-[cluster sizes      ]	cluster 0: 14, cluster 1: 7, cluster 2: 5, cluster 3: 4, cluster 4: 5, cluster 5: 3, cluster 6: 5, cluster 7: 3, cluster 8: 2, cluster 9: 3, cluster 10: 6, cluster 11: 4, cluster 12: 3, cluster 13: 2, cluster 14: 2, cluster 15: 2, cluster 16: 2, cluster 17: 2, cluster 18: 1, cluster 19: 4, cluster 20: 4, cluster 21: 3, cluster 22: 2, cluster 23: 2, cluster 24: 4, cluster 25: 1, cluster 26: 2, cluster 27: 1, cluster 28: 4
-[medoid max cluster ]	[1 1 1 0 1 1 1 0 0 1 0 0 1 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 0]
-[fQ                 ]	407706.3615108246
-[Profit             ]	3691
-[Weight             ]	4494
-
 [i_max, N_max, d_min]	250, 125, 88
-[n clusters         ]	28
-[cluster sizes      ]	cluster 0: 138, cluster 1: 5, cluster 2: 13, cluster 3: 8, cluster 4: 8, cluster 5: 7, cluster 6: 3, cluster 7: 5, cluster 8: 4, cluster 9: 6, cluster 10: 3, cluster 11: 3, cluster 12: 2, cluster 13: 4, cluster 14: 2, cluster 15: 4, cluster 16: 11, cluster 17: 3, cluster 18: 2, cluster 19: 2, cluster 20: 3, cluster 21: 4, cluster 22: 3, cluster 23: 4, cluster 24: 2, cluster 25: 1, cluster 26: 1, cluster 27: 1
-[medoid max cluster ]	[1 0 0 1 1 1 1 1 0 0 1 0 1 1 1 1 0 1 1 1 1 0 0 0 1 1 0 1 0 1]
-[fQ                 ]	593089.0124704437
-[Profit             ]	4834
-[Weight             ]	5303
-
-[i_max, N_max, d_min]	500, 250, 175
-[n clusters         ]	30
-[cluster sizes      ]	cluster 0: 336, cluster 1: 71, cluster 2: 8, cluster 3: 3, cluster 4: 5, cluster 5: 6, cluster 6: 6, cluster 7: 2, cluster 8: 2, cluster 9: 7, cluster 10: 4, cluster 11: 3, cluster 12: 2, cluster 13: 3, cluster 14: 2, cluster 15: 3, cluster 16: 2, cluster 17: 5, cluster 18: 4, cluster 19: 3, cluster 20: 4, cluster 21: 1, cluster 22: 2, cluster 23: 3, cluster 24: 5, cluster 25: 1, cluster 26: 2, cluster 27: 3, cluster 28: 2, cluster 29: 2
-[medoid max cluster ]	[0 0 0 0 1 1 1 1 0 0 1 0 0 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 0 1]
-[fQ                 ]	478058.1706740365
-[Profit             ]	4828
-[Weight             ]	4822
-
-[i_max, N_max, d_min]	1000, 500, 350
-[n clusters         ]	33
-[cluster sizes      ]	cluster 0: 621, cluster 1: 282, cluster 2: 4, cluster 3: 3, cluster 4: 7, cluster 5: 4, cluster 6: 3, cluster 7: 3, cluster 8: 4, cluster 9: 4, cluster 10: 3, cluster 11: 4, cluster 12: 3, cluster 13: 3, cluster 14: 6, cluster 15: 3, cluster 16: 2, cluster 17: 3, cluster 18: 4, cluster 19: 3, cluster 20: 1, cluster 21: 2, cluster 22: 2, cluster 23: 2, cluster 24: 2, cluster 25: 2, cluster 26: 8, cluster 27: 1, cluster 28: 1, cluster 29: 4, cluster 30: 4, cluster 31: 2, cluster 32: 2
-[medoid max cluster ]	[0 0 0 0 1 1 1 0 0 0 1 1 1 0 1 0 0 0 1 1 1 1 0 1 1 1 1 0 0 1]
-[fQ                 ]	261311.98794718256
-[Profit             ]	4594
-[Weight             ]	3725
+[n clusters         ]	31
+[clusters found     ]	cluster 0: 25, cluster 1: 102, cluster 2: 8, cluster 3: 4, cluster 4: 6, cluster 5: 7, cluster 6: 4, cluster 7: 5, cluster 8: 2, cluster 9: 3, cluster 10: 3, cluster 11: 8, cluster 12: 5, cluster 13: 4, cluster 14: 20, cluster 15: 2, cluster 16: 6, cluster 17: 3, cluster 18: 3, cluster 19: 2, cluster 20: 2, cluster 21: 4, cluster 22: 5, cluster 23: 3, cluster 24: 2, cluster 25: 3, cluster 26: 2, cluster 27: 2, cluster 28: 2, cluster 29: 3, cluster 30: 2
+[max cluster size   ]	102
+[medoid max cluster ]	[1 0 0 0 1 1 0 1 1 0 1 0 1 1 0 1 0 0 0 0 1 1 0 1 1 1 0 1 1 1]
+[medoid fQ          ]	347196.88
+[Profit             ]	5110
+[Weight             ]	4201
+[fQ Min Found       ]	15251.87
+[Profit Found       ]	2027
+[Weight Found       ]	1455
 
 NO QALS
-
 [fQ Min Found     ]	-9424.8
 [Profit Found     ]	2936
 [Weight Found     ]	560

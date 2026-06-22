@@ -1,0 +1,20 @@
+k     = 1000
+TIMES = 1
+
+QALS
+[i_max, N_max, d_min]	250, 125, 88
+[n clusters         ]	50
+[clusters found     ]	cluster 0: 12, cluster 1: 4, cluster 2: 5, cluster 3: 4, cluster 4: 3, cluster 5: 113, cluster 6: 3, cluster 7: 2, cluster 8: 4, cluster 9: 2, cluster 10: 3, cluster 11: 2, cluster 12: 2, cluster 13: 3, cluster 14: 7, cluster 15: 3, cluster 16: 3, cluster 17: 5, cluster 18: 4, cluster 19: 2, cluster 20: 3, cluster 21: 4, cluster 22: 3, cluster 23: 2, cluster 24: 2, cluster 25: 2, cluster 26: 3, cluster 27: 3, cluster 28: 2, cluster 29: 2, cluster 30: 1, cluster 31: 3, cluster 32: 2, cluster 33: 2, cluster 34: 3, cluster 35: 2, cluster 36: 2, cluster 37: 2, cluster 38: 4, cluster 39: 3, cluster 40: 2, cluster 41: 2, cluster 42: 1, cluster 43: 3, cluster 44: 2, cluster 45: 1, cluster 46: 2, cluster 47: 1, cluster 48: 1, cluster 49: 1
+[max cluster size   ]	113
+[medoid max cluster ]	[1 1 0 1 0 1 0 0 0 1 0 0 1 1 1 0 0 1 1 1 1 0 1 1 0 0 0 1 1 0 1 1 0 0 0 0 1 1 1 1 1 0 0 0 1 1 1 1 0 1]
+[medoid fQ          ]	1970633575797.0
+[Profit             ]	16403
+[Weight             ]	14950
+[fQ Min Found       ]	275441206349.0
+[Profit Found       ]	9827
+[Weight Found       ]	6298
+
+NO QALS
+[fQ Min Found     ]	-10200709754.33
+[Profit Found     ]	5574
+[Weight Found     ]	1001

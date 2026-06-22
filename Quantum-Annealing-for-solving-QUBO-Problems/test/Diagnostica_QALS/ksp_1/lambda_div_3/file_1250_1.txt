@@ -1,0 +1,20 @@
+k     = 1250
+TIMES = 1
+
+QALS
+[i_max, N_max, d_min]	250, 125, 88
+[n clusters         ]	10
+[clusters found     ]	cluster 0: 150, cluster 1: 36, cluster 2: 14, cluster 3: 13, cluster 4: 4, cluster 5: 4, cluster 6: 2, cluster 7: 25, cluster 8: 3, cluster 9: 1
+[max cluster size   ]	150
+[medoid max cluster ]	[0 0 1 1 0 1 1 1 1 1]
+[medoid fQ          ]	7894169.0
+[Profit             ]	291
+[Weight             ]	357
+[fQ Min Found       ]	-1446341.0
+[Profit Found       ]	129
+[Weight Found       ]	93
+
+NO QALS
+[fQ Min Found     ]	-1455540.67
+[Profit Found     ]	198
+[Weight Found     ]	101
