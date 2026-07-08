@@ -87,13 +87,6 @@ e ad ogni nuova soluzione proposta si confronta con la nuova soluzione accettata
 
 \section{Clustering}
 
-\subsection{Motivazione}
-
-Durante l'esecuzione di QALS vengono generate diverse soluzioni candidate, indicate con $z$. 
-Oltre a valutare il valore della funzione obiettivo $f_Q(z)$, risulta utile analizzare anche il modo in cui l'algoritmo esplora lo spazio delle soluzioni.
-A questo scopo si può utilizzare una procedura di clustering diagnostico, il cui obiettivo non è modificare il comportamento dell'algoritmo, ma studiare le soluzioni prodotte 
-durante la ricerca.
-
 L'idea principale è raggruppare soluzioni simili tra loro. Poiché nel problema QUBO le soluzioni sono rappresentate come vettori binari, una misura naturale di distanza è la 
 distanza di Hamming. In questo modo è possibile costruire una matrice delle distanze tra tutte le soluzioni generate da QALS. Tale matrice viene poi utilizzata come input per 
 un algoritmo di clustering agglomerativo.
@@ -141,7 +134,7 @@ maggiore dispersione delle soluzioni generate.
 \section{Risultati}    
 
 In questa sezione vengono analizzati i risultati ottenuti sui file di test
-\texttt{ksp\_1}, \texttt{ksp\_3} e \texttt{ksp\_3} con: 
+\texttt{ksp\_1}, \texttt{ksp\_3}, \texttt{ksp\_2} e con:
 \[
 \lambda_1 = \frac{\sum_{i=1}^{n} p_i}{650 \cdot C}, 
 \qquad
@@ -149,7 +142,7 @@ In questa sezione vengono analizzati i risultati ottenuti sui file di test
 \]
 In tutti i casi è stata utilizzata la seguente
 configurazione di QALS:
-\[
+\[ò
 TIMES = 1, \qquad
 k = 2000, \qquad
 i_{\max} = 250, \qquad
