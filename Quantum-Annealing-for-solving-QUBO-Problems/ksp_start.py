@@ -15,7 +15,7 @@ def run_match_k_TIMES(file, n, capacity, items, _Q):
 
         with open(filepath, "a") as f:
             f.write("\nQALS\n")
-            f.write(gen_test.remove_ansi(app.app1(file, TIMES, k, _Q, n, capacity, items)))
+            f.write(gen_test.remove_ansi(app.app1(folder, TIMES, k, _Q, n, capacity, items)))
 
             f.write("\nNO QALS\n")
             f.write(gen_test.remove_ansi(app.app2(TIMES, k, _Q, items)))

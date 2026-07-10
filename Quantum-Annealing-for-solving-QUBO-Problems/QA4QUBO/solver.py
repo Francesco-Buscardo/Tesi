@@ -193,7 +193,7 @@ def csv_write(DIR, l):
 def now():
     return datetime.datetime.now().strftime("%H:%M:%S")
 
-def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim):
+def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim):
     
     try:
         if (not sim):  # ? REAL QUANTUM MODE
@@ -254,8 +254,10 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         Z.append(z_one)
         Z.append(z_two)
 
-        solutions_matrix_star      = []
-        solutions_matrix_zaccepted = []
+        solutions_matrix_star        = []
+        solutions_matrix_zaccepted   = []
+        solutions_matrix_zopt_zprop  = []
+        solutions_matrix_zopt_zstar  = []
 
         f_one = function_f(Q, z_one).item()
         f_two = function_f(Q, z_two).item()
@@ -303,6 +305,18 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
         z_star.copy(), 
         function_f(Q, z_star).item(),
         0, 
+        np.zeros(n)
+    ])
+    solutions_matrix_zopt_zprop.append([
+        z_opt.copy(),
+        function_f(Q, z_opt).item(),
+        0,
+        np.zeros(n)
+    ])
+    solutions_matrix_zopt_zstar.append([
+        z_opt.copy(),
+        function_f(Q, z_opt).item(),
+        0,
         np.zeros(n)
     ])
 
@@ -360,6 +374,13 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
                 hamm_d_star, 
                 hamm_vec_star.copy()
             ])
+            hamm_d_zopt_zprop, hamm_vec_zopt_zprop = hamming.hamming_distance(z_opt, z_prime) 
+            solutions_matrix_zopt_zprop.append([
+                z_prime.copy(), 
+                f_prime,
+                hamm_d_zopt_zprop, 
+                hamm_vec_zopt_zprop.copy()
+            ])
             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             z_tmp = z_star
 
@@ -388,9 +409,16 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
             hamm_d_zaccepted, hamm_vec_zaccepted = hamming.hamming_distance(z_tmp, z_star)
             solutions_matrix_zaccepted.append([
                 z_star.copy(), 
-                function_f(Q, z_star).item(),
+                f_star,
                 hamm_d_zaccepted, 
                 hamm_vec_zaccepted.copy()
+            ])
+            hamm_d_zopt_zstar, hamm_vec_zopt_zstar = hamming.hamming_distance(z_opt, z_star) 
+            solutions_matrix_zopt_zstar.append([
+                z_star.copy(), 
+                f_star,
+                hamm_d_zopt_zstar, 
+                hamm_vec_zopt_zstar.copy()
             ])
             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -427,4 +455,4 @@ def solve(d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, 
     
     print(now() + " [" + colors.BOLD + colors.OKGREEN + "TIME" + colors.ENDC + "] Average time for iteration: " + str(conv) + "\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "TIME" + colors.ENDC + "] Total time: " + str(converted) + "\n")
 
-    return np.atleast_2d(np.atleast_2d(z_star).T).T[0], f_star, z_best, f_best, conv, Z, solutions_matrix_zaccepted, solutions_matrix_star
+    return np.atleast_2d(np.atleast_2d(z_star).T).T[0], f_star, z_best, f_best, conv, Z, solutions_matrix_zaccepted, solutions_matrix_star, solutions_matrix_zopt_zprop, solutions_matrix_zopt_zstar

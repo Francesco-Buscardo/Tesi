@@ -1,4 +1,5 @@
 import datetime
+from os import path
 import time
 import math
 
@@ -16,7 +17,7 @@ def log_write(tpe, var):
     return "[" + colors.BOLD + str(tpe) + colors.ENDC + "]\t" + str(var) + "\n"
 
 # QALS
-def app1(file, TIMES, k, _Q, n, capacity, items):
+def app1(folder, TIMES, k, _Q, n, capacity, items):
     zz      = []
     fz      = []
     r_times = [] 
@@ -29,7 +30,7 @@ def app1(file, TIMES, k, _Q, n, capacity, items):
     D_min = ksp_config.QALS_PARAMS.d_min
 
     # string += colors.BOLD + colors.HEADER + "\nKnapsack Solution" + colors.ENDC + "\n"
-    # ksp_dp_profit, ksp_dp_weight, z_opt = ksp.ksp_dp(n=n, p=[item[1] for item in items], w=[item[0] for item in items], C=capacity)
+    ksp_dp_profit, ksp_dp_weight, z_opt = ksp.ksp_dp(n=n, p=[item[1] for item in items], w=[item[0] for item in items], C=capacity)
     # string += log_write("Profit", ksp_dp_profit)
     # string += log_write("Weight", ksp_dp_weight)
 
@@ -52,7 +53,8 @@ def app1(file, TIMES, k, _Q, n, capacity, items):
                 - p_delta:     prob modifica permutazione
                 - q:           prob di perturbazione della soluz candidata  
             """ 
-            z_star, f_star, z_best, f_best, r_time, Z, solutions_matrix_zacc, solutions_matrix_star = solver.solve(
+            z_star, f_star, z_best, f_best, r_time, Z, solutions_matrix_zacc, solutions_matrix_star, solutions_matrix_zopt_zprop, solutions_matrix_zopt_zstar = solver.solve(
+                z_opt       = z_opt,
                 n           = n,
                 Q           = _Q,
                 topology    = 'pegasus',
@@ -70,7 +72,9 @@ def app1(file, TIMES, k, _Q, n, capacity, items):
 
             D = hamming.build_pairwise_hamming_matrix(Z)
 
-            labels, cluster_sizes = hamming.cluster_qals_solutions(D=D, n=n)
+            labels, cluster_sizes, dendogram = hamming.cluster_qals_solutions(D=D, n=n)
+           
+            dendogram.savefig(path.join(folder, f"dendrogram_{k}_{TIMES}.png"), dpi=300, bbox_inches="tight")
 
             cluster_max, cluster_max_size = max(cluster_sizes.items(), key=lambda kv: kv[1])
             # indici degli elementi che appartengono al cluster più grande
@@ -106,15 +110,27 @@ def app1(file, TIMES, k, _Q, n, capacity, items):
 
             gen_test.save_plot_solution_matrix(
                 matrix=solutions_matrix_zacc,
-                title=f"{k}_{TIMES}_HD(z_star_old, z_star_new)",
-                y_label="Hamming distance",
-                file=file
+                title_dh=f"{k}_{TIMES}_HD(z_star_old, z_star_new)",
+                title_fq=f"{k}_{TIMES}_FQ(z_star_old, z_star_new)",
+                folder=folder
             )
             gen_test.save_plot_solution_matrix(
                 matrix=solutions_matrix_star,
-                title=f"{k}_{TIMES}_HD(z_t, z_star)",
-                y_label="Hamming distance",
-                file=file
+                title_dh=f"{k}_{TIMES}_HD(z_t, z_star)",
+                title_fq=f"{k}_{TIMES}_FQ(z_t, z_star)",
+                folder=folder
+            )
+            gen_test.save_plot_solution_matrix(
+                matrix=solutions_matrix_zopt_zstar,
+                title_dh=f"{k}_{TIMES}_HD(z_opt, z_star)",
+                title_fq=f"{k}_{TIMES}_FQ(z_opt, z_star)",
+                folder=folder
+            )
+            gen_test.save_plot_solution_matrix(
+                matrix=solutions_matrix_zopt_zprop,
+                title_dh=f"{k}_{TIMES}_HD(z_opt, z_prop)",
+                title_fq=f"{k}_{TIMES}_FQ(z_opt, z_prop)",
+                folder=folder
             )
           
             zz.append(z_best)

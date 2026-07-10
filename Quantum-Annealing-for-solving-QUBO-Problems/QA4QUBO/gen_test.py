@@ -60,27 +60,18 @@ def moving_average(values, window=10):
 
     return smoothed
 
-def save_plot_solution_matrix(matrix, title, y_label, file):
-    folder = get_folder_path(file)
-    plot_path = Path(folder) / title
-
-    ham_distances = [item[2] for item in matrix]
-    window        = max(5, len(ham_distances) // 20)
-    t_values      = list(range(len(ham_distances)))
-
-    ham_distances_smooth = moving_average(ham_distances, window=window)
-
+def gen_plot(t_values, val, title, y_label, smooth, window, plot_path):
     plt.figure(figsize=(10, 5))
 
     plt.plot(
         t_values,
-        ham_distances,
+        val,
         alpha=0.35,
-        label="Hamming distance"
+        label=y_label
     )
     plt.plot(
         t_values,
-        ham_distances_smooth,
+        smooth,
         linewidth=1,
         linestyle="--",
         label=f"Moving average (window={window})"
@@ -94,4 +85,21 @@ def save_plot_solution_matrix(matrix, title, y_label, file):
     plt.tight_layout()
     plt.savefig(plot_path, dpi=300, bbox_inches="tight")
     plt.close()
-    
+
+def save_plot_solution_matrix(matrix, title_dh, title_fq, folder):
+    plot_path_dh = Path(folder) / title_dh
+    plot_path_fq = Path(folder) / title_fq
+
+    fQ            = [item[1] for item in matrix]
+    ham_distances = [item[2] for item in matrix]
+
+    window        = max(5, len(ham_distances) // 20)
+    t_values      = list(range(len(ham_distances)))
+
+    ham_distances_smooth = moving_average(ham_distances, window=window)
+    fQ_smooth = moving_average(fQ, window=window)
+
+    # plot DH
+    gen_plot(t_values, ham_distances, title_dh, "DH", ham_distances_smooth, window, plot_path_dh)
+    # plot fQ
+    gen_plot(t_values, fQ, title_fq, "fQ", fQ_smooth, window, plot_path_fq)
