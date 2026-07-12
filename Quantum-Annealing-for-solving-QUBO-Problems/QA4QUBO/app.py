@@ -110,26 +110,26 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
 
             gen_test.save_plot_solution_matrix(
                 matrix=solutions_matrix_zacc,
-                title_dh=f"{k}_{TIMES}_HD(z_star_old, z_star_new)",
-                title_fq=f"{k}_{TIMES}_FQ(z_star_old, z_star_new)",
+                title_dh=f"{k}_{TIMES}_HD_z_star_old_z_star_new",
+                title_fq=f"{k}_{TIMES}_FQ_z_star_old_z_star_new",
                 folder=folder
             )
             gen_test.save_plot_solution_matrix(
                 matrix=solutions_matrix_star,
-                title_dh=f"{k}_{TIMES}_HD(z_t, z_star)",
-                title_fq=f"{k}_{TIMES}_FQ(z_t, z_star)",
+                title_dh=f"{k}_{TIMES}_HD_z_t_z_star",
+                title_fq=f"{k}_{TIMES}_FQ_z_t_z_star",
                 folder=folder
             )
             gen_test.save_plot_solution_matrix(
                 matrix=solutions_matrix_zopt_zstar,
-                title_dh=f"{k}_{TIMES}_HD(z_opt, z_star)",
-                title_fq=f"{k}_{TIMES}_FQ(z_opt, z_star)",
+                title_dh=f"{k}_{TIMES}_HD_z_opt_z_star",
+                title_fq=f"{k}_{TIMES}_FQ_z_opt_z_star",
                 folder=folder
             )
             gen_test.save_plot_solution_matrix(
                 matrix=solutions_matrix_zopt_zprop,
-                title_dh=f"{k}_{TIMES}_HD(z_opt, z_prop)",
-                title_fq=f"{k}_{TIMES}_FQ(z_opt, z_prop)",
+                title_dh=f"{k}_{TIMES}_HD_z_opt_z_prop",
+                title_fq=f"{k}_{TIMES}_FQ_z_opt_z_prop",
                 folder=folder
             )
           

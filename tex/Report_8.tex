@@ -98,7 +98,7 @@ Prima si raccolgono tutte le soluzioni $z$ generate durante l'esecuzione di QALS
 I valori ottenuti vengono inseriti in una matrice simmetrica $D$, dove l'elemento $D[i][j]$ rappresenta la distanza tra la soluzione $z_i$ e la soluzione $z_j$.
 
 Una volta ottenuta la matrice delle distanze, viene applicato un algoritmo di clustering agglomerativo. Il clustering prevede di identificare dei cluster basandosi 
-sulla distanza fra soluzioni, in particolare è stato impostato per far in modo che le soluzioni di un cluster abbiamo al più una distanza di hamming del \(40\%\). 
+sulla distanza fra soluzioni, in particolare è stato impostato per far in modo che le soluzioni di un cluster abbiamo al più una distanza media di hamming del \(40\%\). 
 L'algoritmo assegna quindi ogni soluzione a uno dei cluster individuati. 
 Infine, una volta calcolato il numero di soluzioni appartenenti a ciascun cluster si considera solo il cluster con cardinalità maggiore da cui 
 si estrae il medoid. Il medoid è la soluzione appartenente al cluster che minimizza la distanza media di Hamming rispetto a tutte le 
@@ -158,18 +158,18 @@ d_{\min} = 88.
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 5 & 12 \\
-Dimensione cluster massimo & 238 & 120 \\
+Numero cluster & 9 & 8 \\
+Dimensione cluster massimo & 224 & 136 \\
 Medoid cluster massimo & 
-\([1\,1\,0\,1\,1\,1\,1\,1\,1\,0]\) &
-\([1\,1\,0\,1\,0\,1\,1\,1\,0\,1]\) \\
-\(f_Q\) medoid & 220.38 & 3064569.00 \\
-Profit medoid & 360 & 339 \\
-Weight medoid & 416 & 279 \\
+\([0\,1\,1\,1\,1\,1\,1\,1\,1\,1]\) &
+\([1\,1\,0\,1\,0\,0\,1\,1\,1\,1]\) \\
+\(f_Q\) medoid & 503.29 & 5139129.0 \\
+Profit medoid & 347 & 295 \\
+Weight medoid & 476 & 316 \\
 \hline
-\(f_Q\) Min Found QALS & -225.26 & -1441170.00 \\
-Profit Found QALS & 248 & 94 \\
-Weight Found QALS & 218 & 111 \\
+\(f_Q\) Min Found QALS & -306.32 & -1404079.0 \\
+Profit Found QALS & 261 & 239 \\
+Weight Found QALS & 158 & 120 \\
 \hline
 \(f_Q\) Min Found NO QALS & -330.85 & -1455540.67 \\
 Profit Found NO QALS & 302 & 198 \\
@@ -185,14 +185,14 @@ Weight Found NO QALS & 177 & 101 \\
 \centering
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
     \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_1\)}
     \label{fig:hd-zstarold-zstarnew-lambda1}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
     \caption{\(d_H(z_t, z_\star)\) con \(\lambda_1\)}
     \label{fig:hd-zt-zstar-lambda1}
 \end{subfigure}
@@ -201,20 +201,102 @@ Weight Found NO QALS & 177 & 101 \\
 
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png}
+    \caption{\(d_H(z_{opt}, z_\star)\) con \(\lambda_1\)}
+    \label{fig:hd-zopt-zstar-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png}
+    \caption{\(d_H(z_{opt}, z_t)\) con \(\lambda_1\)}
+    \label{fig:hd-zopt-zprop-lambda1}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png}
+    \caption{\(f_Q(z_\star)\) con \(\lambda_1\)}
+    \label{fig:fQ-zstar-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png}
+    \caption{\(f_Q(z_t)\) con \(\lambda_1\)}
+    \label{fig:fQ-zt-lambda1}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp11}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png}
+\caption{Agglomerative Clustering Dendogram}
+\label{fig:AgglomerativeClustering-ksp1}
+\end{figure}
+\clearpage
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
     \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_2\)}
     \label{fig:hd-zstarold-zstarnew-lambda2}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png}
     \caption{\(d_H(z_t, z_\star)\) con \(\lambda_2\)}
     \label{fig:hd-zt-zstar-lambda2}
 \end{subfigure}
-\label{fig:confronto-hamming-ksp1}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_star.png}
+    \caption{\(d_H(z_{opt}, z_\star)\) con \(\lambda_2\)}
+    \label{fig:hd-zopt-zstar-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png}
+    \caption{\(d_H(z_{opt}, z_t)\) con \(\lambda_2\)}
+    \label{fig:hd-zopt-zprop-lambda2}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png}
+    \caption{\(f_Q(z_\star)\) con \(\lambda_2\)}
+    \label{fig:fQ-zstar-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png}
+    \caption{\(f_Q(z_t)\) con \(\lambda_2\)}
+    \label{fig:fQ-zt-lambda2}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp12}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/dendrogram_2000_1.png}
+\caption{Agglomerative Clustering Dendogram}
+\label{fig:AgglomerativeClustering-ksp1}
+\end{figure}
+
+\clearpage
 \subsection{ksp\_3}
 
 \begin{table}[h]
@@ -223,21 +305,21 @@ Weight Found NO QALS & 177 & 101 \\
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 28 & 37 \\
-Dimensione cluster massimo & 133 & 92 \\
+Numero cluster & 37 & 32 \\
+Dimensione cluster massimo & 79 & 100 \\
 Medoid cluster massimo & 
-\([1\,0\,0\,0\,1\,0\,1\,1\,1\,1\,1\,0\,1\,0\,1]\) &
-\([1\,0\,1\,1\,0\,1\,1\,1\,0\,0\,0\,1\,1\,1\,1]\) \\
+\([0\,0\,0\,1\,0\,1\,1\,1\,1\,1\,0\,1\,0\,1\,1]\) &
+\([0\,0\,1\,0\,0\,0\,1\,1\,1\,1\,1\,0\,1\,1\,1]\) \\
 &
-\([1\,1\,1\,1\,1\,0\,0\,1\,0\,1\,0\,1\,0\,0\,0]\) &
-\([0\,0\,0\,0\,1\,0\,1\,1\,1\,1\,1\,1\,0\,0\,0]\) \\
-\(f_Q\) medoid & 436802.61 & 35350570832.67 \\
-Profit medoid & 3985 & 5055 \\
-Weight medoid & 4632 & 4061 \\
+\([1\,0\,0\,1\,1\,1\,0\,0\,0\,0\,1\,0\,1\,0\,1]\) &
+\([0\,0\,1\,1\,0\,1\,0\,1\,0\,0\,0\,1\,1\,1\,0]\) \\
+\(f_Q\) medoid & 320829.96 & 50443988075.67 \\
+Profit medoid & 4272 & 3812 \\
+Weight medoid & 4058 & 4741 \\
 \hline
-\(f_Q\) Min Found QALS & 91308.49 & 7577574645.00 \\
-Profit Found QALS & 3747 & 3147 \\
-Weight Found QALS & 2470 & 2208 \\
+\(f_Q\) Min Found QALS & 54570.94 & 12624011894.67 \\
+Profit Found QALS & 3467 & 2868 \\
+Weight Found QALS & 2071 & 2666 \\
 \hline
 \(f_Q\) Min Found NO QALS & -9424.80 & -714267662.00 \\
 Profit Found NO QALS & 2936 & 2483 \\
@@ -252,14 +334,14 @@ Weight Found NO QALS & 560 & 501 \\
 \centering
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
     \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_1\)}
     \label{fig:hd-zstarold-zstarnew-lambda1}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
     \caption{\(d_H(z_t, z_\star)\) con \(\lambda_1\)}
     \label{fig:hd-zt-zstar-lambda1}
 \end{subfigure}
@@ -268,20 +350,102 @@ Weight Found NO QALS & 560 & 501 \\
 
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png}
+    \caption{\(d_H(z_{opt}, z_\star)\) con \(\lambda_1\)}
+    \label{fig:hd-zopt-zstar-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png}
+    \caption{\(d_H(z_{opt}, z_t)\) con \(\lambda_1\)}
+    \label{fig:hd-zopt-zt-lambda1}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png}
+    \caption{\(f_Q(z_\star)\) con \(\lambda_1\)}
+    \label{fig:fQ-zstar-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png}
+    \caption{\(f_Q(z_t)\) con \(\lambda_1\)}
+    \label{fig:fQ-zt-lambda1}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp31}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png}
+\caption{Agglomerative Clustering Dendogram}
+\label{fig:AgglomerativeClustering-ksp3}
+\end{figure}
+
+\clearpage
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
     \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_2\)}
     \label{fig:hd-zstarold-zstarnew-lambda2}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png}
     \caption{\(d_H(z_t, z_\star)\) con \(\lambda_2\)}
     \label{fig:hd-zt-zstar-lambda2}
 \end{subfigure}
-\label{fig:confronto-hamming-ksp3}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_star.png}
+    \caption{\(d_H(z_{opt}, z_\star)\) con \(\lambda_2\)}
+    \label{fig:hd-zopt-zstar-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png}
+    \caption{\(d_H(z_{opt}, z_t)\) con \(\lambda_2\)}
+    \label{fig:hd-zopt-zt-lambda2}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png}
+    \caption{\(f_Q(z_\star)\) con \(\lambda_2\)}
+    \label{fig:fQ-zstar-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png}
+    \caption{\(f_Q(z_t)\) con \(\lambda_2\)}
+    \label{fig:fQ-zt-lambda2}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp32}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/dendrogram_2000_1.png}
+\caption{Agglomerative Clustering Dendogram}
+\label{fig:AgglomerativeClustering-ksp3}
+\end{figure}
+
+\clearpage
 \subsection{ksp\_2}
 
 \begin{table}[h]
@@ -290,15 +454,15 @@ Weight Found NO QALS & 560 & 501 \\
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 40 & 50 \\
-Dimensione cluster massimo & 50 & 85 \\
-\(f_Q\) medoid & 6615379.89 & 1243440229295.67 \\
-Profit medoid & 18206 & 17947 \\
-Weight medoid & 12931 & 12098 \\
+Numero cluster & 49 & 43 \\
+Dimensione cluster massimo & 108 & 77 \\
+\(f_Q\) medoid & 8722714.33 & 1705778847401.0 \\
+Profit medoid & 18423 & 16535 \\
+Weight medoid & 14684 & 13984 \\
 \hline
-\(f_Q\) Min Found QALS & 1179048.12 & 479838224209.0 \\
-Profit Found QALS & 9695 & 8812 \\
-Weight Found QALS & 6132 & 7939 \\
+\(f_Q\) Min Found QALS & 2074250.86 & 511262925924.0 \\
+Profit Found QALS & 14850 & 10932 \\
+Weight Found QALS & 7747 & 8158 \\
 \hline
 \(f_Q\) Min Found NO QALS & -54748.31 & -10200709849.33 \\
 Profit Found NO QALS & 7740 & 5669 \\
@@ -314,14 +478,14 @@ Weight Found NO QALS & 978 & 1001 \\
 \centering
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png}
     \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_1\)}
     \label{fig:hd-zstarold-zstarnew-lambda1}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png}
     \caption{\(d_H(z_t, z_\star)\) con \(\lambda_1\)}
     \label{fig:hd-zt-zstar-lambda1}
 \end{subfigure}
@@ -330,18 +494,99 @@ Weight Found NO QALS & 978 & 1001 \\
 
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png}
+    \caption{\(d_H(z_{opt}, z_\star)\) con \(\lambda_1\)}
+    \label{fig:hd-zopt-zstar-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png}
+    \caption{\(d_H(z_{opt}, z_t)\) con \(\lambda_1\)}
+    \label{fig:hd-zopt-zt-lambda1}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png}
+    \caption{\(f_Q(z_\star)\) con \(\lambda_1\)}
+    \label{fig:fQ-zstar-lambda1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png}
+    \caption{\(f_Q(z_t)\) con \(\lambda_1\)}
+    \label{fig:fQ-zt-lambda1}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp21}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png}
+\caption{Agglomerative Clustering Dendogram}
+\label{fig:AgglomerativeClustering-ksp2}
+\end{figure}
+
+\clearpage
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png}
     \caption{\(d_H(z_\star^{old}, z_\star^{new})\) con \(\lambda_2\)}
     \label{fig:hd-zstarold-zstarnew-lambda2}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.495\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png}
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png}
     \caption{\(d_H(z_t, z_\star)\) con \(\lambda_2\)}
     \label{fig:hd-zt-zstar-lambda2}
 \end{subfigure}
-\label{fig:confronto-hamming-ksp2}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_star.png}
+    \caption{\(d_H(z_{opt}, z_\star)\) con \(\lambda_2\)}
+    \label{fig:hd-zopt-zstar-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png}
+    \caption{\(d_H(z_{opt}, z_t)\) con \(\lambda_2\)}
+    \label{fig:hd-zopt-zt-lambda2}
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png}
+    \caption{\(f_Q(z_\star)\) con \(\lambda_2\)}
+    \label{fig:fQ-zstar-lambda2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png}
+    \caption{\(f_Q(z_t)\) con \(\lambda_2\)}
+    \label{fig:fQ-zt-lambda2}
+\end{subfigure}
+\label{fig:confronto-hamming-ksp22}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/dendrogram_2000_1.png}
+\caption{Agglomerative Clustering Dendogram}
+\label{fig:AgglomerativeClustering-ksp2}
 \end{figure}
 
 \subsection{Interpretazione risultati}
@@ -354,5 +599,7 @@ Tale comportamento è più evidente nella versione con soft constraints.
 
 Si noti inoltre come cambiando la dimensione del problema il numero di cluster aumenti e il la dimensione del cluster massimo dimuisca il che coincide con quello che ci si aspetta:
 più il problema diventa grande, più configurazioni ci possono essere e quindi più cluster possono essere individuati il che pilota la dimensione del cluster massimo a diminuire.
+
+\section{Decay Factor}
 
 \end{document}
