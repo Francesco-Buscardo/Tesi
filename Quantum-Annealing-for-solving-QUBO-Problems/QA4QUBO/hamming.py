@@ -94,10 +94,7 @@ def cluster_qals_solutions(D, n):
     dendogram = plot_dendogram(
         model,
         color_threshold=th,
-        truncate_mode="lastp",
-        p=30,
-        show_contracted=True,
-        no_labels=True
+        show_contracted=True
     )
 
     return labels, cluster_sizes, dendogram

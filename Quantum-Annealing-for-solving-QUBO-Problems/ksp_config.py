@@ -7,12 +7,12 @@ class QALSParams:
     N_max: list[int]
     d_min: list[int]
 
-TEST_FOLDER  = Path("test/Diagnostica_QALS/2/")
+TEST_FOLDER  = Path("test/Diagnostica_QALS/2/Decay_factor/")
 
 KSP_EXAMPLES = [
     #Path("QA4QUBO/ksp/ksp_1.txt")
-    #Path("QA4QUBO/ksp/ksp_2.txt")
-    Path("QA4QUBO/ksp/ksp_3.txt")
+    Path("QA4QUBO/ksp/ksp_2.txt")
+    #Path("QA4QUBO/ksp/ksp_3.txt")
 ]
 
 # i_max=[10, 50, 100, 250, 500, 1000]
@@ -32,9 +32,9 @@ MATCH_K_T = [
 
 SCALE_QUBO = 1
 
-LAMBDA_VALUE = "lambda_div_3"
-#LAMBDA_VALUE = "lambda_650_dot_C"
+#LAMBDA_VALUE = "lambda_div_3"
+LAMBDA_VALUE = "lambda_650_dot_C"
 # LAMBDA_VALUE = "lambda_6500_dot_C"
 # LAMBDA_VALUE = "lambda_div_C"
 
-DECAY_FACTOR = 1
+DECAY_FACTOR = 50
