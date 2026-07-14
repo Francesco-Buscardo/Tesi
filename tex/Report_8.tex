@@ -55,8 +55,7 @@ mentre un valore basso indica che le due configurazioni sono simili.
 \section{Possibili confronti tramite distanza di Hamming}
 
 \subsection{Distanza rispetto alla soluzione corrente accettata}
-
-Il primo confronto consiste nel calcolare la distanza tra la soluzione candidata \(z_t\) e la soluzione corrente accettata dall'algoritmo, indicata con \(z_{\text{star}}\):
+I primi confronti consistono nel calcolare la distanza tra la soluzione candidata \(z_t\) e la soluzione corrente accettata dall'algoritmo, indicata con \(z_{\text{star}}\):
 \[
 d_H(z_t, z_{\text{star}}).
 \]
@@ -67,9 +66,14 @@ Questa distanza misura l'ampiezza della mossa proposta nello spazio delle soluzi
 Valori elevati indicano che l'algoritmo sta proponendo salti ampi nello spazio delle soluzioni, e quindi un comportamento più esplorativo. Valori bassi indicano invece che la nuova soluzione candidata 
 è simile alla soluzione corrente, suggerendo una ricerca più locale attorno alla configurazione accettata.
 
+Un' interpratzione simile si può adottare per:
+\[
+d_H(z_t, z_{\text{opt}}).
+\]
+
 \subsection{Distanza rispetto soluzioni accettate consecutive}
 
-Nel secondo confronto si stima la distanza tra la soluzione accettate nell'iterazione precedente \(z_{\text{starOld}}\) e la soluzione corrente accettata dall'algoritmo, indicata con \(z_{\text{starNew}}\):
+Nel terzo confronto si stima la distanza tra la soluzione accettate nell'iterazione precedente \(z_{\text{starOld}}\) e la soluzione corrente accettata dall'algoritmo, indicata con \(z_{\text{starNew}}\):
 \[
 d_H(z_{\text{starOld}}, z_{\text{starNew}}).
 \]
@@ -78,11 +82,21 @@ Come prima \(z_{\text{starNew}}\) non deve essere interpretata come la soluzione
 Questa distanza misura quanto la nuova soluzione accettata da QALS si discosti da quella precedente. \(z_{\text{star}}\) può essere interpretato come la posizione di QALS
 e ad ogni nuova soluzione proposta si confronta con la nuova soluzione accettata.
 
+\subsection{Distanza fra soluzione ottima e soluzione accettata}
+Ed infine come ultima distanza si è presa in considerazione:
+\[
+d_H(z_{\text{opt}}, z_{\text{star}}).
+\]
+L'obbiettivo di questa misurazione è quello di stimare quanto la slouzione correntemente accettata da QALS
+si distanzi dalla soluzione ottima. 
+
 \section{Interpretazione generale}
 
 \begin{itemize}
     \item \(d_H(z_t, z_{\text{star}})\) misura l'ampiezza della mossa proposta rispetto alla soluzione corrente accettata;
+    \item \(d_H(z_t. z_{\text{opt}})\), similmente alla precedente, misura l'ampiezza della soluzione proposta rispetto alla soluzione ottima;
     \item \(d_H(z_{\text{starOld}}, z_{\text{starNew}})\) permette di misurare la variazione delle soluzioni accettate
+    \item \(d_H(z_{\text{opt}}, z_{\text{star}})\) ci permette di capire quanto la soluzione accettata si distanzi da quella ottima.
 \end{itemize}
 
 \section{Clustering}
@@ -150,6 +164,7 @@ N_{\max} = 125, \qquad
 d_{\min} = 88.
 \].
 
+\clearpage
 \subsection{ksp\_1}
 
 \begin{table}[h]
@@ -1076,7 +1091,33 @@ Weight Found NO QALS & 978 & 1001 \\
 \end{figure}
 
 \subsection{Interpretazione dei risultati con Decay Factor}
+L' introduzione del decay factor nella matrice tabù ha lo scopo di ridurre progressivamente il contributo delle penalizzazioni associate alle soluzioni visitate
+nelle iterazioni precedenti. In questo modo, le informazioni più recenti mantengono un peso maggiore, mentre quelle più vecchie vengono gradualmente dimenticate. 
+L' obiettivo è evitare che l' accumulo delle penalizzazioni nella matrice S condizioni eccessivamente la ricerca nelle fasi avanzate dell' algoritmo.
 
-\section{Confronto}
+L' interpretazione di:
+\[
+d_H(z_{\text{starOld}}, z_{\text{starNew}})
+\qquad
+d_H(z_{\text{opt}}, z_{\text{star}})
+\qquad
+f_Q(z_{\text{star}})
+\]
+rimane la medesima. \(z_{\text{opt}}\) cambia raramente ma sempre a diminuire. Ad accezione del test case
+\texttt{ksp\_2} con \(\lambda_1\) che presenta un numero di cambiamenti maggiore rispetto agli altri test case.
+
+Sono imili anche i risultati di:
+\[
+d_H(z_t, z_{\text{star}})
+\qquad
+d_H(z_{\text{opt}}, z_t)
+\qquad 
+Numero Cluster.
+\]
+Cambiano però:
+\begin{itemize}
+    \item dimensioni dei cluster, risultano essere più omogenee il che permette di far pensare ad un' esplorazione migliore rispetto al non usare il decay factor;
+    \item \(f_Q(z_t)\) la quale tende a decrescere, specialmente nei casi in cui si utilizza \(\lambda_1\).
+\end{itemize}
 
 \end{document}
