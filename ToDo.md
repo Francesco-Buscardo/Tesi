@@ -1,5 +1,6 @@
-1) rappresentazione albero clustering  # DONE
-2) DH(z_opt, z_prop)                   # DONE
-3) DH(z_opt, z_star)                   # DONE
-4) graficare fQ con DH                 # DONE
-5) ins decay_factor 50                 # DONE
+1) vedere dove sta la soluzione migliore nel dendogram   #DONE
+2) quante soluzioni singole ci sono nel dendogram        #DONE
+3) riportare tabella finale dei risultati                #DONE
+    fQ, num cluster, dim cluster max 
+
+4) inizia a pensare a come modificare QALS -> modifica lambda in base al andamento 

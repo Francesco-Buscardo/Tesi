@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  14 JUL 2026 15:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  19 JUL 2026 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -568,6 +568,9 @@ LaTeX Warning: Label `sub@fig:fQ-zt-lambda2' multiply defined.
 LaTeX Warning: Label `fig:AgglomerativeClustering-ksp2' multiply defined.
 
 
+LaTeX Warning: Label `tab:clustering-lambda1' multiply defined.
+
+
 LaTeX Warning: Label `tab:confronto-qals-noqals' multiply defined.
 
 
@@ -943,7 +946,7 @@ LaTeX Warning: Command \` invalid in math mode on input line 159.
 Missing character: There is no ò in font cmr12!
 [4]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=110, 715.2321pt x 353.1
+ambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=118, 715.2321pt x 353.1
 594pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png
@@ -952,83 +955,85 @@ p_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png
 _1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png  us
-ed on input line 203.
+ed on input line 205.
 (pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=112, 715.2321pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=120, 715.2321pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  used on input
- line 210.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+ line 212.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=113, 715.2321pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=121, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png  used on inp
-ut line 219.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+ut line 221.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=114, 715.2321pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=122, 715.2321pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png  used on inp
-ut line 226.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+ut line 228.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=115, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=123, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png  used on inp
-ut line 235.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ut line 237.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=116, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=124, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png  used on inp
-ut line 242.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ut line 244.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
+ [5
+
+]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_650_dot_C/dendrogram_2000_1.png, id=117, 1004.3121pt x 498.4221pt>
+ambda_650_dot_C/dendrogram_2000_1.png, id=131, 1004.3121pt x 498.4221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_650_dot_C/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png  used on input li
-ne 251.
+ne 253.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [5
-
- <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/
-lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing-for
--solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD
-_z_t_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnosti
-ca_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png> <../Quantum-Anneal
-ing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/20
-00_1_HD_z_opt_z_prop.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/
-Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Quant
-um-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650
-_dot_C/2000_1_FQ_z_opt_z_prop.png>] [6 <../Quantum-Annealing-for-solving-QUBO-P
-roblems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png>]
+ [6 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
+_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing-
+for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1
+_HD_z_t_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagno
+stica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png> <../Quantum-Ann
+ealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C
+/2000_1_HD_z_opt_z_prop.png> <../Quantum-Annealing-for-solving-QUBO-Problems/te
+st/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Qu
+antum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_
+650_dot_C/2000_1_FQ_z_opt_z_prop.png>] [7 <../Quantum-Annealing-for-solving-QUB
+O-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png
+>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=140, 715.2321pt x 353.1594p
+ambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=153, 715.2321pt x 353.1594p
 t>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
@@ -1036,69 +1041,69 @@ p_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
 _1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png  used o
-n input line 261.
+n input line 263.
 (pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_div_3/2000_1_HD_z_t_z_star.png, id=141, 715.2321pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_t_z_star.png, id=154, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_div_3/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png  used on input lin
-e 268.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+e 270.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_div_3/2000_1_HD_z_opt_z_star.png, id=142, 715.2321pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_opt_z_star.png, id=155, 715.2321pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_div_3/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_star.png  used on input l
-ine 277.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+ine 279.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_div_3/2000_1_HD_z_opt_z_prop.png, id=143, 715.2321pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_opt_z_prop.png, id=156, 715.2321pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_div_3/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png  used on input l
-ine 284.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+ine 286.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_div_3/2000_1_FQ_z_opt_z_star.png, id=144, 715.2321pt x 353.1594pt>
+ambda_div_3/2000_1_FQ_z_opt_z_star.png, id=157, 715.2321pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_div_3/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png  used on input l
-ine 293.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+ine 295.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=145, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=158, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png  used on input l
-ine 300.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ine 302.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/l
-ambda_div_3/dendrogram_2000_1.png, id=146, 1004.3121pt x 498.4221pt>
+ambda_div_3/dendrogram_2000_1.png, id=159, 1004.3121pt x 498.4221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_1/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _1/lambda_div_3/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_1/lambda_div_3/dendrogram_2000_1.png  used on input line 3
-09.
+11.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [7
+ [8
 
  <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/
 lambda_div_3/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing-for-sol
@@ -1109,11 +1114,11 @@ ing-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_
 prop.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS
 /2/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png> <../Quantum-Annealing-for-sol
 ving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z
-_prop.png>] [8 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica
+_prop.png>] [9 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica
 _QALS/2/ksp_1/lambda_div_3/dendrogram_2000_1.png>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=165, 715.473pt x 353.15
-94pt>
+ambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=177, 715.2321pt x 353.1
+594pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png
 )
@@ -1121,72 +1126,72 @@ p_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png
 _3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png  us
-ed on input line 352.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ed on input line 350.
+(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=166, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=178, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  used on input
- line 359.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ line 357.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=167, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=179, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png  used on inp
-ut line 368.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ut line 366.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=168, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=180, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png  used on inp
-ut line 375.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ut line 373.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=169, 715.7139pt x 353.1594pt>
+ambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=181, 715.7139pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png  used on inp
-ut line 384.
-(pdftex.def)             Requested size: 239.42758pt x 118.14342pt.
+ut line 382.
+(pdftex.def)             Requested size: 239.42758pt x 118.06284pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=170, 715.7139pt x 353.1594pt>
+ambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=182, 715.7139pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png  used on inp
-ut line 391.
-(pdftex.def)             Requested size: 239.42758pt x 118.14342pt.
- [9
+ut line 389.
+(pdftex.def)             Requested size: 239.42758pt x 118.06284pt.
+ [10
 
 ]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_650_dot_C/dendrogram_2000_1.png, id=176, 1004.3121pt x 498.4221pt>
+ambda_650_dot_C/dendrogram_2000_1.png, id=188, 1004.3121pt x 498.4221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_650_dot_C/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png  used on input li
-ne 400.
+ne 398.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [10 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
+ [11 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing
 -for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_
 1_HD_z_t_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagn
@@ -1195,81 +1200,82 @@ nealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_
 C/2000_1_HD_z_opt_z_prop.png> <../Quantum-Annealing-for-solving-QUBO-Problems/t
 est/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Q
 uantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda
-_650_dot_C/2000_1_FQ_z_opt_z_prop.png>] [11 <../Quantum-Annealing-for-solving-Q
+_650_dot_C/2000_1_FQ_z_opt_z_prop.png>] [12 <../Quantum-Annealing-for-solving-Q
 UBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_650_dot_C/dendrogram_2000_1.p
 ng>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=194, 715.2321pt x 353.1594p
-t>
+ambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=206, 715.473pt x 353.1594pt
+>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png  used o
-n input line 410.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+n input line 408.
+(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_div_3/2000_1_HD_z_t_z_star.png, id=195, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_t_z_star.png, id=207, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_div_3/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png  used on input lin
-e 417.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+e 415.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_div_3/2000_1_HD_z_opt_z_star.png, id=196, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_opt_z_star.png, id=208, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_div_3/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_star.png  used on input l
-ine 426.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ine 424.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_div_3/2000_1_HD_z_opt_z_prop.png, id=197, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_opt_z_prop.png, id=209, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_div_3/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png  used on input l
-ine 433.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ine 431.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_div_3/2000_1_FQ_z_opt_z_star.png, id=198, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_FQ_z_opt_z_star.png, id=210, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_div_3/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png  used on input l
-ine 442.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+ine 440.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=199, 715.2321pt x 353.1594pt>
+ambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=211, 715.2321pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png  used on input l
-ine 449.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+ine 447.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/l
-ambda_div_3/dendrogram_2000_1.png, id=200, 1004.3121pt x 498.4221pt>
+ambda_div_3/dendrogram_2000_1.png, id=212, 1004.3121pt x 498.4221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_3/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
 _3/lambda_div_3/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_3/lambda_div_3/dendrogram_2000_1.png  used on input line 4
-58.
+56.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [12
+
+[13
 
  <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/
 lambda_div_3/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing-for-sol
@@ -1280,10 +1286,10 @@ ing-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_
 prop.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS
 /2/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png> <../Quantum-Annealing-for-sol
 ving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z
-_prop.png>] [13 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostic
+_prop.png>] [14 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostic
 a_QALS/2/ksp_3/lambda_div_3/dendrogram_2000_1.png>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=219, 715.473pt x 353.15
+ambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=231, 715.473pt x 353.15
 94pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png
@@ -1295,7 +1301,7 @@ agnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png  us
 ed on input line 496.
 (pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=220, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=232, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1303,9 +1309,9 @@ _2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  used on input
  line 503.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=221, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=233, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1313,9 +1319,9 @@ _2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png  used on inp
 ut line 512.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=222, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=234, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1323,9 +1329,9 @@ _2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png  used on inp
 ut line 519.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=223, 715.2321pt x 353.1594pt>
+ambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=235, 715.2321pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1333,9 +1339,9 @@ _2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png  used on inp
 ut line 528.
-(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=224, 715.473pt x 353.1594pt>
+ambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=236, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1343,9 +1349,12 @@ _2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png  used on inp
 ut line 535.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
+ [15
+
+]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_650_dot_C/dendrogram_2000_1.png, id=225, 1004.3121pt x 498.4221pt>
+ambda_650_dot_C/dendrogram_2000_1.png, id=242, 1004.3121pt x 498.4221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1354,21 +1363,20 @@ Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png  used on input li
 ne 544.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [14
-
- <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/
-lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing-for
--solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD
-_z_t_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnosti
-ca_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png> <../Quantum-Anneal
-ing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/20
-00_1_HD_z_opt_z_prop.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/
-Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Quant
-um-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650
-_dot_C/2000_1_FQ_z_opt_z_prop.png>] [15 <../Quantum-Annealing-for-solving-QUBO-
-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png>]
+ [16 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
+p_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing
+-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_
+1_HD_z_t_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagn
+ostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png> <../Quantum-An
+nealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_
+C/2000_1_HD_z_opt_z_prop.png> <../Quantum-Annealing-for-solving-QUBO-Problems/t
+est/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Q
+uantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda
+_650_dot_C/2000_1_FQ_z_opt_z_prop.png>] [17 <../Quantum-Annealing-for-solving-Q
+UBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_650_dot_C/dendrogram_2000_1.p
+ng>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=244, 715.473pt x 353.1594pt
+ambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=260, 715.473pt x 353.1594pt
 >
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file (type png)
@@ -1379,7 +1387,7 @@ agnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png  used o
 n input line 554.
 (pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_div_3/2000_1_HD_z_t_z_star.png, id=245, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_t_z_star.png, id=261, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1387,9 +1395,9 @@ _2/lambda_div_3/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png  used on input lin
 e 561.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_div_3/2000_1_HD_z_opt_z_star.png, id=246, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_opt_z_star.png, id=262, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1397,9 +1405,9 @@ _2/lambda_div_3/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_star.png  used on input l
 ine 570.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_div_3/2000_1_HD_z_opt_z_prop.png, id=247, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_HD_z_opt_z_prop.png, id=263, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1407,9 +1415,9 @@ _2/lambda_div_3/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png  used on input l
 ine 577.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_div_3/2000_1_FQ_z_opt_z_star.png, id=248, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_FQ_z_opt_z_star.png, id=264, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1417,9 +1425,9 @@ _2/lambda_div_3/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png  used on input l
 ine 586.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=249, 715.473pt x 353.1594pt>
+ambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=265, 715.473pt x 352.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1427,9 +1435,9 @@ _2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png  used on input l
 ine 593.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/l
-ambda_div_3/dendrogram_2000_1.png, id=250, 1004.3121pt x 498.4221pt>
+ambda_div_3/dendrogram_2000_1.png, id=266, 1004.3121pt x 498.4221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ks
 p_2/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
@@ -1438,7 +1446,7 @@ Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/ksp_2/lambda_div_3/dendrogram_2000_1.png  used on input line 6
 02.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [16
+ [18
 
  <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/
 lambda_div_3/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Annealing-for-sol
@@ -1449,10 +1457,11 @@ ing-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_
 prop.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS
 /2/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png> <../Quantum-Annealing-for-sol
 ving-QUBO-Problems/test/Diagnostica_QALS/2/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z
-_prop.png>] [17 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostic
-a_QALS/2/ksp_2/lambda_div_3/dendrogram_2000_1.png>]
+_prop.png>]
+[19 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/ksp
+_2/lambda_div_3/dendrogram_2000_1.png>] [20]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=268, 715.2
+actor/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=296, 715.2
 321pt x 353.1594pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic f
@@ -1461,11 +1470,11 @@ ile (type png)
 ay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_sta
-r_new.png  used on input line 688.
+r_new.png  used on input line 741.
 (pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=269, 715.473pt x 352.
-9185pt>
+actor/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=297, 715.2321pt x 352
+.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type p
 ng)
@@ -1473,10 +1482,10 @@ ng)
 ay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  
-used on input line 695.
-(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
+used on input line 748.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=270, 715.2321pt x 3
+actor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=298, 715.2321pt x 3
 52.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type
@@ -1485,10 +1494,10 @@ cay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type
 ay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png
-  used on input line 704.
+  used on input line 757.
 (pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=271, 715.2321pt x 3
+actor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=299, 715.2321pt x 3
 52.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type
@@ -1497,10 +1506,10 @@ cay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type
 ay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png
-  used on input line 711.
+  used on input line 764.
 (pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=272, 715.473pt x 35
+actor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=300, 715.473pt x 35
 2.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type
@@ -1509,10 +1518,10 @@ cay_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type
 ay_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png
-  used on input line 720.
+  used on input line 773.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=273, 715.473pt x 35
+actor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=301, 715.473pt x 35
 2.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type
@@ -1521,11 +1530,13 @@ cay_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type
 ay_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png
-  used on input line 727.
+  used on input line 780.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
- [18]
+ [21
+
+]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png, id=281, 1004.3121pt x 498.4
+actor/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png, id=307, 1004.3121pt x 498.4
 221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
@@ -1534,9 +1545,9 @@ cay_factor/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
 ay_factor/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/dendrogram_2000_1.png  use
-d on input line 736.
+d on input line 789.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [19 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
+ [22 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quan
 tum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ks
 p_1/lambda_650_dot_C/2000_1_HD_z_t_z_star.png> <../Quantum-Annealing-for-solvin
@@ -1546,11 +1557,11 @@ iagnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.pn
 g> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Deca
 y_factor/ksp_1/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Quantum-Anneali
 ng-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_1/lambda_
-650_dot_C/2000_1_FQ_z_opt_z_prop.png>] [20 <../Quantum-Annealing-for-solving-QU
+650_dot_C/2000_1_FQ_z_opt_z_prop.png>] [23 <../Quantum-Annealing-for-solving-QU
 BO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_1/lambda_650_dot_C/dendrog
 ram_2000_1.png>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=300, 715.2321p
+actor/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=325, 715.2321p
 t x 353.1594pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file 
@@ -1559,22 +1570,22 @@ cay_factor/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file
 ay_factor/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_ne
-w.png  used on input line 746.
+w.png  used on input line 799.
 (pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png, id=301, 715.2321pt x 352.918
-5pt>
+actor/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png, id=326, 715.473pt x 352.9185
+pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
 <use ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Dec
 ay_factor/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_div_3/2000_1_HD_z_t_z_star.png  used
- on input line 753.
-(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
+ on input line 806.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_star.png, id=302, 715.2321pt x 352.9
-185pt>
+actor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_star.png, id=327, 715.473pt x 352.91
+85pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png
 )
@@ -1582,10 +1593,10 @@ cay_factor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png
 ay_factor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_star.png  us
-ed on input line 762.
-(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
+ed on input line 815.
+(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png, id=303, 715.2321pt x 352.9
+actor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png, id=328, 715.2321pt x 352.9
 185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png
@@ -1594,10 +1605,10 @@ cay_factor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png
 ay_factor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_div_3/2000_1_HD_z_opt_z_prop.png  us
-ed on input line 769.
+ed on input line 822.
 (pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png, id=304, 715.473pt x 352.91
+actor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png, id=329, 715.473pt x 352.91
 85pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png
@@ -1606,10 +1617,10 @@ cay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png
 ay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_star.png  us
-ed on input line 778.
+ed on input line 831.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=305, 715.473pt x 352.91
+actor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=330, 715.473pt x 352.91
 85pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png
@@ -1618,10 +1629,10 @@ cay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png
 ay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_prop.png  us
-ed on input line 785.
+ed on input line 838.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_1/lambda_div_3/dendrogram_2000_1.png, id=306, 1004.3121pt x 498.4221p
+actor/ksp_1/lambda_div_3/dendrogram_2000_1.png, id=331, 1004.3121pt x 498.4221p
 t>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_1/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
@@ -1629,9 +1640,9 @@ cay_factor/ksp_1/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
 ay_factor/ksp_1/lambda_div_3/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_1/lambda_div_3/dendrogram_2000_1.png  used on
- input line 794.
+ input line 847.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [21
+ [24
 
  <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_
 factor/ksp_1/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Anne
@@ -1643,11 +1654,11 @@ tar.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/
 ling-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_1/lambd
 a_div_3/2000_1_FQ_z_opt_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Prob
 lems/test/Diagnostica_QALS/2/Decay_factor/ksp_1/lambda_div_3/2000_1_FQ_z_opt_z_
-prop.png>] [22 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica
+prop.png>] [25 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica
 _QALS/2/Decay_factor/ksp_1/lambda_div_3/dendrogram_2000_1.png>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=324, 715.4
-73pt x 353.1594pt>
+actor/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=350, 715.2
+321pt x 353.1594pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic f
 ile (type png)
@@ -1655,10 +1666,10 @@ ile (type png)
 ay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_sta
-r_new.png  used on input line 838.
-(pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
+r_new.png  used on input line 887.
+(pdftex.def)             Requested size: 239.42758pt x 118.21886pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=325, 715.473pt x 352.
+actor/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=351, 715.473pt x 352.
 9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type p
@@ -1667,11 +1678,11 @@ ng)
 ay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  
-used on input line 845.
+used on input line 894.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=326, 715.473pt x 35
-2.9185pt>
+actor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=352, 715.2321pt x 3
+52.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type
  png)
@@ -1679,10 +1690,10 @@ cay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type
 ay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png
-  used on input line 854.
-(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
+  used on input line 903.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=327, 715.473pt x 35
+actor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=353, 715.473pt x 35
 2.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type
@@ -1691,10 +1702,10 @@ cay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type
 ay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png
-  used on input line 861.
+  used on input line 910.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=328, 715.7139pt x 3
+actor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=354, 715.7139pt x 3
 52.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type
@@ -1703,10 +1714,10 @@ cay_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type
 ay_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png
-  used on input line 870.
+  used on input line 919.
 (pdftex.def)             Requested size: 239.42758pt x 118.06284pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=329, 715.7139pt x 3
+actor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=355, 715.7139pt x 3
 52.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type
@@ -1715,14 +1726,14 @@ cay_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type
 ay_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png
-  used on input line 877.
+  used on input line 926.
 (pdftex.def)             Requested size: 239.42758pt x 118.06284pt.
- [23
+ [26
 
 ]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png, id=335, 1004.3121pt x 497.9
-403pt>
+actor/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png, id=361, 1004.3121pt x 498.4
+221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
 
@@ -1730,9 +1741,9 @@ cay_factor/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
 ay_factor/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png  use
-d on input line 886.
-(pdftex.def)             Requested size: 483.69687pt x 239.82161pt.
- [24 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
+d on input line 935.
+(pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
+ [27 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quan
 tum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ks
 p_3/lambda_650_dot_C/2000_1_HD_z_t_z_star.png> <../Quantum-Annealing-for-solvin
@@ -1742,11 +1753,11 @@ iagnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.pn
 g> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Deca
 y_factor/ksp_3/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Quantum-Anneali
 ng-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_3/lambda_
-650_dot_C/2000_1_FQ_z_opt_z_prop.png>]
-[25 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Dec
-ay_factor/ksp_3/lambda_650_dot_C/dendrogram_2000_1.png>]
+650_dot_C/2000_1_FQ_z_opt_z_prop.png>] [28 <../Quantum-Annealing-for-solving-QU
+BO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_3/lambda_650_dot_C/dendrog
+ram_2000_1.png>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=354, 715.473pt
+actor/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=379, 715.473pt
  x 353.1594pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file 
@@ -1755,10 +1766,10 @@ cay_factor/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file
 ay_factor/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_ne
-w.png  used on input line 896.
+w.png  used on input line 945.
 (pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png, id=355, 715.473pt x 352.9185
+actor/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png, id=380, 715.473pt x 352.9185
 pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
@@ -1766,11 +1777,11 @@ cay_factor/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
 ay_factor/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_div_3/2000_1_HD_z_t_z_star.png  used
- on input line 903.
+ on input line 952.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_star.png, id=356, 715.473pt x 352.91
-85pt>
+actor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_star.png, id=381, 715.2321pt x 352.9
+185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png
 )
@@ -1778,10 +1789,10 @@ cay_factor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png
 ay_factor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_star.png  us
-ed on input line 912.
-(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
+ed on input line 961.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png, id=357, 715.473pt x 352.91
+actor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png, id=382, 715.473pt x 352.91
 85pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png
@@ -1790,10 +1801,10 @@ cay_factor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png
 ay_factor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_div_3/2000_1_HD_z_opt_z_prop.png  us
-ed on input line 919.
+ed on input line 968.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png, id=358, 715.473pt x 352.91
+actor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png, id=383, 715.473pt x 352.91
 85pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png
@@ -1802,10 +1813,10 @@ cay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png
 ay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_star.png  us
-ed on input line 928.
+ed on input line 977.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=359, 715.2321pt x 352.9
+actor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=384, 715.2321pt x 352.9
 185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png
@@ -1814,10 +1825,10 @@ cay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png
 ay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_prop.png  us
-ed on input line 935.
+ed on input line 984.
 (pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_3/lambda_div_3/dendrogram_2000_1.png, id=360, 1004.3121pt x 498.4221p
+actor/ksp_3/lambda_div_3/dendrogram_2000_1.png, id=385, 1004.3121pt x 498.4221p
 t>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_3/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
@@ -1825,9 +1836,10 @@ cay_factor/ksp_3/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
 ay_factor/ksp_3/lambda_div_3/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_3/lambda_div_3/dendrogram_2000_1.png  used on
- input line 944.
+ input line 993.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [26
+
+[29
 
  <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_
 factor/ksp_3/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Anne
@@ -1839,10 +1851,10 @@ tar.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/
 ling-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_3/lambd
 a_div_3/2000_1_FQ_z_opt_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Prob
 lems/test/Diagnostica_QALS/2/Decay_factor/ksp_3/lambda_div_3/2000_1_FQ_z_opt_z_
-prop.png>] [27 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica
+prop.png>] [30 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica
 _QALS/2/Decay_factor/ksp_3/lambda_div_3/dendrogram_2000_1.png>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=378, 715.4
+actor/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png, id=403, 715.4
 73pt x 353.1594pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png Graphic f
@@ -1851,10 +1863,10 @@ ile (type png)
 ay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_sta
-r_new.png  used on input line 982.
+r_new.png  used on input line 1033.
 (pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=379, 715.473pt x 352.
+actor/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png, id=404, 715.473pt x 352.
 9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png Graphic file (type p
@@ -1863,10 +1875,10 @@ ng)
 ay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png  
-used on input line 989.
+used on input line 1040.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=380, 715.473pt x 35
+actor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png, id=405, 715.473pt x 35
 2.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type
@@ -1875,10 +1887,10 @@ cay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png Graphic file (type
 ay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_star.png
-  used on input line 998.
+  used on input line 1049.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=381, 715.473pt x 35
+actor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png, id=406, 715.473pt x 35
 2.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type
@@ -1887,10 +1899,10 @@ cay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png Graphic file (type
 ay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png
-  used on input line 1005.
+  used on input line 1056.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=382, 715.2321pt x 3
+actor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png, id=407, 715.2321pt x 3
 52.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type
@@ -1899,10 +1911,10 @@ cay_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png Graphic file (type
 ay_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png
-  used on input line 1014.
+  used on input line 1065.
 (pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=383, 715.473pt x 35
+actor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png, id=408, 715.473pt x 35
 2.9185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type
@@ -1911,10 +1923,13 @@ cay_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png Graphic file (type
 ay_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_prop.png
-  used on input line 1021.
+  used on input line 1072.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
+ [31
+
+]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png, id=384, 1004.3121pt x 498.4
+actor/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png, id=415, 1004.3121pt x 498.4
 221pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
@@ -1923,25 +1938,24 @@ cay_factor/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png Graphic file (type png)
 ay_factor/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/dendrogram_2000_1.png  use
-d on input line 1030.
+d on input line 1081.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [28
 
- <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_
-factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-
-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/
-lambda_650_dot_C/2000_1_HD_z_t_z_star.png> <../Quantum-Annealing-for-solving-QU
-BO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_
-HD_z_opt_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagn
-ostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png> <
-../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_fa
-ctor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Quantum-Annealing-f
-or-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/lambda_650_
-dot_C/2000_1_FQ_z_opt_z_prop.png>] [29 <../Quantum-Annealing-for-solving-QUBO-P
-roblems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/dendrogram_
-2000_1.png>]
+[32 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Dec
+ay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_star_old_z_star_new.png> <../Quant
+um-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp
+_2/lambda_650_dot_C/2000_1_HD_z_t_z_star.png> <../Quantum-Annealing-for-solving
+-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000
+_1_HD_z_opt_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
+agnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/2000_1_HD_z_opt_z_prop.png
+> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay
+_factor/ksp_2/lambda_650_dot_C/2000_1_FQ_z_opt_z_star.png> <../Quantum-Annealin
+g-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/lambda_6
+50_dot_C/2000_1_FQ_z_opt_z_prop.png>] [33 <../Quantum-Annealing-for-solving-QUB
+O-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/lambda_650_dot_C/dendrogr
+am_2000_1.png>]
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=403, 715.473pt
+actor/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png, id=433, 715.473pt
  x 353.1594pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file 
@@ -1950,10 +1964,10 @@ cay_factor/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png Graphic file
 ay_factor/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_ne
-w.png  used on input line 1040.
+w.png  used on input line 1091.
 (pdftex.def)             Requested size: 239.42758pt x 118.18114pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png, id=404, 715.473pt x 352.9185
+actor/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png, id=434, 715.473pt x 352.9185
 pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
@@ -1961,10 +1975,10 @@ cay_factor/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png Graphic file (type png)
 ay_factor/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_div_3/2000_1_HD_z_t_z_star.png  used
- on input line 1047.
+ on input line 1098.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_star.png, id=405, 715.473pt x 352.91
+actor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_star.png, id=435, 715.473pt x 352.91
 85pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png
@@ -1973,10 +1987,10 @@ cay_factor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_star.png Graphic file (type png
 ay_factor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_star.png  us
-ed on input line 1056.
+ed on input line 1107.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png, id=406, 715.473pt x 352.91
+actor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png, id=436, 715.473pt x 352.91
 85pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png
@@ -1985,11 +1999,11 @@ cay_factor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png Graphic file (type png
 ay_factor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_div_3/2000_1_HD_z_opt_z_prop.png  us
-ed on input line 1063.
+ed on input line 1114.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png, id=407, 715.473pt x 352.91
-85pt>
+actor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png, id=437, 715.2321pt x 352.9
+185pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png
 )
@@ -1997,10 +2011,10 @@ cay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png Graphic file (type png
 ay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_star.png  us
-ed on input line 1072.
-(pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
+ed on input line 1123.
+(pdftex.def)             Requested size: 239.42758pt x 118.13823pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=408, 715.473pt x 352.91
+actor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png, id=438, 715.473pt x 352.91
 85pt>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png
@@ -2009,10 +2023,10 @@ cay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png Graphic file (type png
 ay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_prop.png  us
-ed on input line 1079.
+ed on input line 1130.
 (pdftex.def)             Requested size: 239.42758pt x 118.10052pt.
 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_f
-actor/ksp_2/lambda_div_3/dendrogram_2000_1.png, id=409, 1004.3121pt x 498.4221p
+actor/ksp_2/lambda_div_3/dendrogram_2000_1.png, id=439, 1004.3121pt x 498.4221p
 t>
 File: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/De
 cay_factor/ksp_2/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
@@ -2020,9 +2034,9 @@ cay_factor/ksp_2/lambda_div_3/dendrogram_2000_1.png Graphic file (type png)
 ay_factor/ksp_2/lambda_div_3/dendrogram_2000_1.png>
 Package pdftex.def Info: ../Quantum-Annealing-for-solving-QUBO-Problems/test/Di
 agnostica_QALS/2/Decay_factor/ksp_2/lambda_div_3/dendrogram_2000_1.png  used on
- input line 1088.
+ input line 1139.
 (pdftex.def)             Requested size: 483.69687pt x 240.05365pt.
- [30
+ [34
 
  <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_
 factor/ksp_2/lambda_div_3/2000_1_HD_z_star_old_z_star_new.png> <../Quantum-Anne
@@ -2034,9 +2048,9 @@ tar.png> <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/
 ling-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/lambd
 a_div_3/2000_1_FQ_z_opt_z_star.png> <../Quantum-Annealing-for-solving-QUBO-Prob
 lems/test/Diagnostica_QALS/2/Decay_factor/ksp_2/lambda_div_3/2000_1_FQ_z_opt_z_
-prop.png>]
-[31 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica_QALS/2/Dec
-ay_factor/ksp_2/lambda_div_3/dendrogram_2000_1.png>] (Report_8.aux)
+prop.png>] [35 <../Quantum-Annealing-for-solving-QUBO-Problems/test/Diagnostica
+_QALS/2/Decay_factor/ksp_2/lambda_div_3/dendrogram_2000_1.png>] [36] (Report_8.
+aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -2046,16 +2060,16 @@ L3 programming layer <2025-12-24>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Report_8.out' has not changed.
-(rerunfilecheck)             Checksum: 3272101948901BECA45DA1B5AE5AFA91;3050.
+(rerunfilecheck)             Checksum: AF99997E36087E1ACE5325CDD9EBF35E;3312.
  ) 
 Here is how much of TeX's memory you used:
- 14412 strings out of 467871
- 297281 string characters out of 5418860
- 646407 words of memory out of 5000000
- 43037 multiletter control sequences out of 15000+600000
- 646098 words of font info for 91 fonts, out of 8000000 for 9000
+ 14438 strings out of 467871
+ 297624 string characters out of 5418860
+ 645624 words of memory out of 5000000
+ 43048 multiletter control sequences out of 15000+600000
+ 647939 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,380b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,79p,380b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
 095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 ecbx1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
@@ -2067,24 +2081,29 @@ jfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\
 fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\User\AppData\Local\Mi
 KTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/User/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/U
-ser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
-><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmmi12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Use
-rs/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Report_8.pdf (31 pages, 17497873 bytes).
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/User/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/
+User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:
+/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10
+.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+mextra/cmex8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/User/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/
+User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.
+pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Report_8.pdf (36 pages, 17127625 bytes).
 PDF statistics:
- 741 PDF objects out of 1000 (max. 8388607)
- 80 named destinations out of 1000 (max. 500000)
- 565 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 797 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
+ 581 words of extra memory for PDF output out of 10000 (max. 10000000)
 

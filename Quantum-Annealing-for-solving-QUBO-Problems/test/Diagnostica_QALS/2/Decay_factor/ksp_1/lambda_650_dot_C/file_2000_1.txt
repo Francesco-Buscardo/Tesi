@@ -3,16 +3,17 @@ TIMES = 1
 
 QALS
 [i_max, N_max, d_min]	250, 125, 88
-[n clusters         ]	6
-[clusters found     ]	cluster 0: 221, cluster 1: 17, cluster 2: 5, cluster 3: 2, cluster 4: 1, cluster 5: 6
-[max cluster size   ]	221
-[medoid max cluster ]	[0 0 1 0 0 0 0 0 0 0]
-[medoid fQ          ]	-115.4
-[Profit             ]	56
+[n clusters         ]	8
+[max cluster size   ]	225
+[cluster best z     ]	3
+[single cluster     ]	0
+[medoid max cluster ]	[0 0 0 1 0 0 0 0 0 0]
+[medoid fQ          ]	-84.4
+[Profit             ]	25
 [Weight             ]	68
-[fQ Min Found       ]	-318.97
-[Profit Found       ]	260
-[Weight Found       ]	135
+[fQ Min Found       ]	-267.3
+[Profit Found       ]	214
+[Weight Found       ]	146
 
 NO QALS
 [fQ Min Found     ]	-330.85

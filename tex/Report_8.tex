@@ -173,18 +173,20 @@ d_{\min} = 88.
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 9 & 8 \\
-Dimensione cluster massimo & 224 & 136 \\
+Numero cluster & 9 & 10 \\
+Dimensione cluster massimo & 226 & 160 \\
+Cluster z best & 5 & 2 \\
+Single cluster & 4 & 0 \\
 Medoid cluster massimo & 
-\([0\,1\,1\,1\,1\,1\,1\,1\,1\,1]\) &
-\([1\,1\,0\,1\,0\,0\,1\,1\,1\,1]\) \\
-\(f_Q\) medoid & 503.29 & 5139129.0 \\
-Profit medoid & 347 & 295 \\
-Weight medoid & 476 & 316 \\
+\([1\,1\,1\,1\,1\,1\,1\,1\,1\,1]\) &
+\([0\,1\,0\,1\,1\,1\,0\,0\,1\,1]\) \\
+\(f_Q\) medoid & 639.15 & 9022065.0 \\
+Profit medoid & 428 & 175 \\
+Weight medoid & 518 & 372 \\
 \hline
-\(f_Q\) Min Found QALS & -306.32 & -1404079.0 \\
-Profit Found QALS & 261 & 239 \\
-Weight Found QALS & 158 & 120 \\
+\(f_Q\) Min Found QALS & -301.62 & -1454230.67 \\
+Profit Found QALS & 314 & 172 \\
+Weight Found QALS & 211 & 104 \\
 \hline
 \(f_Q\) Min Found NO QALS & -330.85 & -1455540.67 \\
 Profit Found NO QALS & 302 & 198 \\
@@ -320,21 +322,17 @@ Weight Found NO QALS & 177 & 101 \\
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 37 & 32 \\
-Dimensione cluster massimo & 79 & 100 \\
-Medoid cluster massimo & 
-\([0\,0\,0\,1\,0\,1\,1\,1\,1\,1\,0\,1\,0\,1\,1]\) &
-\([0\,0\,1\,0\,0\,0\,1\,1\,1\,1\,1\,0\,1\,1\,1]\) \\
-&
-\([1\,0\,0\,1\,1\,1\,0\,0\,0\,0\,1\,0\,1\,0\,1]\) &
-\([0\,0\,1\,1\,0\,1\,0\,1\,0\,0\,0\,1\,1\,1\,0]\) \\
-\(f_Q\) medoid & 320829.96 & 50443988075.67 \\
-Profit medoid & 4272 & 3812 \\
-Weight medoid & 4058 & 4741 \\
+Numero cluster & 29 & 30 \\
+Dimensione cluster massimo & 73 & 110 \\
+Cluster z best & 15 & 17 \\
+Single clusters & 1 & 0 \\
+\(f_Q\) medoid & 396906.49 & 50443988075.67 \\
+Profit medoid & 5330 & 4928 \\
+Weight medoid & 4450 & 2830 \\
 \hline
-\(f_Q\) Min Found QALS & 54570.94 & 12624011894.67 \\
-Profit Found QALS & 3467 & 2868 \\
-Weight Found QALS & 2071 & 2666 \\
+\(f_Q\) Min Found QALS & 89157.79 & 4487337042.67 \\
+Profit Found QALS & 2621 & 3261 \\
+Weight Found QALS & 2438 & 1853 \\
 \hline
 \(f_Q\) Min Found NO QALS & -9424.80 & -714267662.00 \\
 Profit Found NO QALS & 2936 & 2483 \\
@@ -469,15 +467,17 @@ Weight Found NO QALS & 560 & 501 \\
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 49 & 43 \\
-Dimensione cluster massimo & 108 & 77 \\
-\(f_Q\) medoid & 8722714.33 & 1705778847401.0 \\
-Profit medoid & 18423 & 16535 \\
-Weight medoid & 14684 & 13984 \\
+Numero cluster & 46 & 47 \\
+Dimensione cluster massimo & 90 & 68 \\
+Cluster z best & 0 & 26 \\
+Single clusters & 5 & 3 \\
+\(f_Q\) medoid & 8491845.63 & 1813962265458.67 \\
+Profit medoid & 18328 & 17973 \\
+Weight medoid & 14503 & 14387 \\
 \hline
-\(f_Q\) Min Found QALS & 2074250.86 & 511262925924.0 \\
-Profit Found QALS & 14850 & 10932 \\
-Weight Found QALS & 7747 & 8158 \\
+\(f_Q\) Min Found QALS & 828636.47 & 496218019323.67 \\
+Profit Found QALS & 10497 & 13719 \\
+Weight Found QALS & 5346 & 8054 \\
 \hline
 \(f_Q\) Min Found NO QALS & -54748.31 & -10200709849.33 \\
 Profit Found NO QALS & 7740 & 5669 \\
@@ -604,6 +604,56 @@ Weight Found NO QALS & 978 & 1001 \\
 \label{fig:AgglomerativeClustering-ksp2}
 \end{figure}
 
+\subsection{Riassunto dati}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc|ccc}
+\hline
+& \multicolumn{3}{c|}{\(\boldsymbol{\lambda_1}\)}
+& \multicolumn{3}{c}{\(\boldsymbol{\lambda_2}\)} \\
+\cline{2-7}
+
+\textbf{Istanza}
+& \(\boldsymbol{f_Q}\)
+& \(\boldsymbol{N_{\mathrm{cluster}}}\)
+& \(\boldsymbol{|C_{\max}|}\)
+& \(\boldsymbol{f_Q}\)
+& \(\boldsymbol{N_{\mathrm{cluster}}}\)
+& \(\boldsymbol{|C_{\max}|}\) \\
+\hline
+
+\texttt{ksp\_1}
+& -301.62
+& 9
+& 226
+& -1454230.67
+& 10
+& 160 \\
+
+\texttt{ksp\_3}
+& 89157.79
+& 29
+& 73
+& 4487337042.67
+& 30
+& 110 \\
+
+\texttt{ksp\_2}
+& 828636.47
+& 46
+& 90
+& 496218019323.67
+& 47
+& 68 \\
+
+\hline
+\end{tabular}
+\caption{Confronto del valore obiettivo e delle caratteristiche del
+clustering utilizzando \(\lambda_1\) e \(\lambda_2\).}
+\label{tab:clustering-lambda-confronto-2}
+\end{table}
+
 \subsection{Interpretazione dei risultati}
 I risultati mostrano che QALS mantiene una certa capacità di generare configurazioni differenti, ma tale esplorazione non si traduce necessariamente in 
 un miglioramento della soluzione corrente o nell'avvicinamento alla soluzione ottima.
@@ -648,6 +698,7 @@ Nel complesso, la diagnostica mostra quindi che QALS non è privo di esplorazion
 risultano esere più distribuite tra cluster. Il problema principale non sembra essere l'assenza di movimento nello spazio delle soluzioni, bensì la scarsa efficacia della direzione seguita
 dalla ricerca. QALS esplora molte configurazioni, ma tende a concentrarsi nelle stesse regioni e distanti dall'ottimo; inoltre, dopo le prime iterazioni, modifica raramente la soluzione corrente.
 
+\clearpage
 \section{Decay Factor}
 
 \subsection{ksp\_1}
@@ -658,18 +709,20 @@ dalla ricerca. QALS esplora molte configurazioni, ma tende a concentrarsi nelle 
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 6 & 14 \\
-Dimensione cluster massimo & 221 & 99 \\
+Numero cluster & 8 & 13 \\
+Dimensione cluster massimo & 225 & 140 \\
+Cluster z best & 3 & 9 \\
+Single clusters & 0 & 0 \\
 Medoid cluster massimo & 
-\([0\,0\,1\,0\,0\,0\,0\,0\,0\,0]\) &
-\([1\,0\,0\,0\,0\,0\,1\,1\,0\,1]\) \\
-\(f_Q\) medoid & -115.4 & -1438289.0 \\
-Profit medoid & 56 & 209 \\
-Weight medoid & 68 & 112 \\
+\([0\,0\,0\,1\,0\,0\,0\,0\,0\,0]\) &
+\([1\,1\,0\,1\,1\,1\,0\,0\,1\,1]\) \\
+\(f_Q\) medoid & -84.4 & 12521312.0 \\
+Profit medoid & 25 & 256 \\
+Weight medoid & 68 & 414 \\
 \hline
-\(f_Q\) Min Found QALS & -318.97 & -1455268.0 \\
-Profit Found QALS & 260 & 68 \\
-Weight Found QALS & 135 & 102 \\
+\(f_Q\) Min Found QALS & -267.3 & -1454230.67 \\
+Profit Found QALS & 214 & 172 \\
+Weight Found QALS & 146 & 104 \\
 \hline
 \(f_Q\) Min Found NO QALS & -330.85 & -1455540.67 \\
 Profit Found NO QALS & 302 & 198 \\
@@ -805,21 +858,17 @@ Weight Found NO QALS & 177 & 101 \\
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 37 & 27 \\
-Dimensione cluster massimo & 88 & 111 \\
-Medoid cluster massimo & 
-\([0\,1\,0\,1\,0\,1\,0\,1\,0\,0\,0\,1\,1\,1\,1]\) &
-\([1\,0\,1\,0\,1\,1\,1\,0\,1\,1\,1\,1\,0\,0\,1]\) \\
-&
-\([1\,0\,0\,0\,1\,0\,1\,0\,0\,1\,0\,0\,0\,1\,1]\) &
-\([1\,0\,1\,1\,0\,0\,0\,0\,1\,0\,0\,1\,0\,1\,0]\) \\
-\(f_Q\) medoid & 224789.03 & 48318846396.67 \\
-Profit medoid & 4411 & 4470 \\
-Weight medoid &3500  & 4652 \\
+Numero cluster & 34 & 36 \\
+Dimensione cluster massimo & 74 & 89 \\
+Cluster z best & 27 & 3 \\
+Single clusters & 1 & 0 \\
+\(f_Q\) medoid & 307680.74 & 9569403810.67 \\
+Profit medoid & 4495 & 4056 \\
+Weight medoid & 3988 & 2402 \\
 \hline
-\(f_Q\) Min Found QALS & 12282.1 & 10374371657.0 \\
-Profit Found QALS & 2514 & 4168 \\
-Weight Found QALS & 1404 & 2475 \\
+\(f_Q\) Min Found QALS & 31096.64 & 6043281857.67 \\
+Profit Found QALS & 3613 & 3529 \\
+Weight Found QALS & 1756 & 2042 \\
 \hline
 \(f_Q\) Min Found NO QALS & -9424.8 & -714267360.0 \\
 Profit Found NO QALS & 2936 & 2181 \\
@@ -955,15 +1004,17 @@ Weight Found NO QALS & 560 & 501 \\
 \hline
 \textbf{Metrica} & \(\lambda_1\) & \(\lambda_2\) \\
 \hline
-Numero cluster & 45 & 46 \\
-Dimensione cluster massimo & 43 & 80 \\
-\(f_Q\) medoid & 859908.48 & 1458700681384.67 \\
-Profit medoid & 12573 & 16403 \\
-Weight medoid & 5427 & 13013 \\
+Numero cluster & 49 & 50 \\
+Dimensione cluster massimo & 102 & 105 \\
+Cluster z best & 31 & 20 \\
+Single clusters & 11 & 5 \\
+\(f_Q\) medoid & 7997845.02 & 967718038887.67 \\
+Profit medoid & 17741 & 14979 \\
+Weight medoid & 14107 & 10802 \\
 \hline
-\(f_Q\) Min Found QALS & 739961.93 & 566573490515.67 \\
-Profit Found QALS & 11705 & 11767 \\
-Weight Found QALS & 5126 & 8528 \\
+\(f_Q\) Min Found QALS & 2232153.7 & 417407498726.0 \\
+Profit Found QALS & 10988 & 13194 \\
+Weight Found QALS & 7986 & 7482 \\
 \hline
 \(f_Q\) Min Found NO QALS &	-54748.31 & -10200710054.33 \\
 Profit Found NO QALS & 7740 & 5874 \\
@@ -1090,6 +1141,56 @@ Weight Found NO QALS & 978 & 1001 \\
 \label{fig:AgglomerativeClustering-ksp2}
 \end{figure}
 
+\subsection{Riassunto dati}
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc|ccc}
+\hline
+& \multicolumn{3}{c|}{\(\boldsymbol{\lambda_1}\)}
+& \multicolumn{3}{c}{\(\boldsymbol{\lambda_2}\)} \\
+\cline{2-7}
+
+\textbf{Istanza}
+& \(\boldsymbol{f_Q}\)
+& \(\boldsymbol{N_{\mathrm{cluster}}}\)
+& \(\boldsymbol{|C_{\max}|}\)
+& \(\boldsymbol{f_Q}\)
+& \(\boldsymbol{N_{\mathrm{cluster}}}\)
+& \(\boldsymbol{|C_{\max}|}\) \\
+\hline
+
+\texttt{ksp\_1}
+& -267.3
+& 8
+& 225
+& -1454230.67
+& 13
+& 140 \\
+
+\texttt{ksp\_3}
+& 31096.64
+& 34
+& 74
+& 6043281857.67
+& 36
+& 89 \\
+
+\texttt{ksp\_2}
+& 2232153.7
+& 49
+& 102
+& 417407498726.0
+& 0
+& 105 \\
+
+\hline
+\end{tabular}
+
+\caption{Confronto del valore obiettivo e delle caratteristiche del
+clustering utilizzando \(\lambda_1\) e \(\lambda_2\).}
+\label{tab:clustering-lambda-confronto}
+\end{table}
+
 \subsection{Interpretazione dei risultati con Decay Factor}
 L' introduzione del decay factor nella matrice tabù ha lo scopo di ridurre progressivamente il contributo delle penalizzazioni associate alle soluzioni visitate
 nelle iterazioni precedenti. In questo modo, le informazioni più recenti mantengono un peso maggiore, mentre quelle più vecchie vengono gradualmente dimenticate. 
@@ -1106,7 +1207,7 @@ f_Q(z_{\text{star}})
 rimane la medesima. \(z_{\text{opt}}\) cambia raramente ma sempre a diminuire. Ad accezione del test case
 \texttt{ksp\_2} con \(\lambda_1\) che presenta un numero di cambiamenti maggiore rispetto agli altri test case.
 
-Sono imili anche i risultati di:
+Sono simili anche i risultati di:
 \[
 d_H(z_t, z_{\text{star}})
 \qquad

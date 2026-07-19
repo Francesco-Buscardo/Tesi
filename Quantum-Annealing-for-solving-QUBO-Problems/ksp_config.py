@@ -11,8 +11,8 @@ TEST_FOLDER  = Path("test/Diagnostica_QALS/2/Decay_factor/")
 
 KSP_EXAMPLES = [
     #Path("QA4QUBO/ksp/ksp_1.txt")
-    Path("QA4QUBO/ksp/ksp_2.txt")
-    #Path("QA4QUBO/ksp/ksp_3.txt")
+    #Path("QA4QUBO/ksp/ksp_2.txt")
+    Path("QA4QUBO/ksp/ksp_3.txt")
 ]
 
 # i_max=[10, 50, 100, 250, 500, 1000]

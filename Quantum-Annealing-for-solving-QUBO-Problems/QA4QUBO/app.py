@@ -53,7 +53,7 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
                 - p_delta:     prob modifica permutazione
                 - q:           prob di perturbazione della soluz candidata  
             """ 
-            z_star, f_star, z_best, f_best, r_time, Z, solutions_matrix_zacc, solutions_matrix_star, solutions_matrix_zopt_zprop, solutions_matrix_zopt_zstar = solver.solve(
+            z_best, f_best, r_time, Z, solutions_matrix_zacc, solutions_matrix_star, solutions_matrix_zopt_zprop, solutions_matrix_zopt_zstar = solver.solve(
                 z_opt       = z_opt,
                 n           = n,
                 Q           = _Q,
@@ -72,7 +72,7 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
 
             D = hamming.build_pairwise_hamming_matrix(Z)
 
-            labels, cluster_sizes, dendogram = hamming.cluster_qals_solutions(D=D, n=n)
+            labels, cluster_sizes, dendogram, cluster_best_z = hamming.cluster_qals_solutions(D=D, n=n, Q=_Q, Z=Z, f_best=f_best)
            
             dendogram.savefig(path.join(folder, f"dendrogram_{k}_{TIMES}.png"), dpi=300, bbox_inches="tight")
 
@@ -100,9 +100,13 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
                 for j in range(len(cluster_max_medoid))
             )
 
+            single_clusters = [c for c, s in cluster_sizes.items() if s == 1]
+
             string += log_write("n clusters         ", len(cluster_sizes))
-            string += log_write("clusters found     ", cluster_string)
+            # string += log_write("clusters found     ", cluster_string)
             string += log_write("max cluster size   ", cluster_max_size)
+            string += log_write("cluster best z     ", cluster_best_z)
+            string += log_write("single cluster     ", len(single_clusters))
             string += log_write("medoid max cluster ", cluster_max_medoid)
             string += log_write("medoid fQ          ", medoid_fQ)
             string += log_write("Profit             ", medoid_profit)

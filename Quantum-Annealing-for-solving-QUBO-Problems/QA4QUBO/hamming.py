@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import dendrogram
 from sklearn.cluster import AgglomerativeClustering
 
+from QA4QUBO import solver
+
 
 def hamming_distance(a, b):
     bits = np.zeros(len(a), dtype=int)
@@ -69,7 +71,8 @@ def plot_dendogram(model, **kwargs):
 
     return fig
 
-def cluster_qals_solutions(D, n):
+
+def cluster_qals_solutions(D, n, Q, Z, f_best):
     th = compute_threshold(n=n)
 
     model = AgglomerativeClustering(
@@ -83,6 +86,9 @@ def cluster_qals_solutions(D, n):
 
     labels = model.fit_predict(D)
 
+    fz_array  = [solver.function_f(Q, i) for i in Z]
+    min_index = np.argmin(fz_array)
+    
     cluster_sizes = {}
 
     for l in labels:
@@ -90,6 +96,8 @@ def cluster_qals_solutions(D, n):
             cluster_sizes[l] = 0
 
         cluster_sizes[l] += 1
+    
+    cluster_best_z = labels[min_index]
 
     dendogram = plot_dendogram(
         model,
@@ -97,7 +105,7 @@ def cluster_qals_solutions(D, n):
         show_contracted=True
     )
 
-    return labels, cluster_sizes, dendogram
+    return labels, cluster_sizes, dendogram, cluster_best_z
 
 def find_cluster_medoid(cluster):
     medoid  = None

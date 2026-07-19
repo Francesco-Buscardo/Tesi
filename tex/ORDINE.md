@@ -6,3 +6,4 @@ Report_5_i_max - test_i_max
 Report_6 - SCALE_QUBO
 Report_7 - Decay Factor 
 Report_8 - test Diagnostica/2/ con imgs
+Report_9
