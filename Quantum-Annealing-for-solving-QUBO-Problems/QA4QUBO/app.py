@@ -40,18 +40,18 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
         for _ in range(TIMES):
             """
                 Params:
-                - n:           è la dimensione del problema
-                - topology:    topologia hardware
-                - sim:         False indica che non sta usando la modalità simulata del solver QALS
-                - k:           numero di soluzioni candidate generate ad ogni iterazione all'annealing
-                - I_max:       iterazioni massime
-                - N_max:       numero massimo di iterazioni se l'alg non migliora
-                - d_min:       conta quante volte trovi una soluzione diversa ma peggiore della migliore corrente
-                - eta:         controlla quanto velocemente decresce p_delta
-                - N:           numero di iterazioni per cui p rimane costante 
-                - lambda_zero: fattore di penalita iniziale della tabu matrix
-                - p_delta:     prob modifica permutazione
-                - q:           prob di perturbazione della soluz candidata  
+                - n           = è la dimensione del problema
+                - topology    = topologia hardware
+                - sim         = False indica che non sta usando la modalità simulata del solver QALS
+                - k           = numero di soluzioni candidate generate ad ogni iterazione all'annealing
+                - I_max       = iterazioni massime
+                - N_max       = numero massimo di iterazioni se l'alg non migliora
+                - d_min       = conta quante volte trovi una soluzione diversa ma peggiore della migliore corrente
+                - eta         = controlla quanto velocemente decresce p_delta
+                - N           = numero di iterazioni per cui p rimane costante 
+                - lambda_zero = fattore di penalita iniziale della tabu matrix
+                - p_delta     = prob modifica permutazione
+                - q           = prob di perturbazione della soluz candidata
             """ 
             z_best, f_best, r_time, Z, solutions_matrix_zacc, solutions_matrix_star, solutions_matrix_zopt_zprop, solutions_matrix_zopt_zstar = solver.solve(
                 z_opt       = z_opt,
@@ -68,6 +68,8 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
                 lambda_zero = 1.5,
                 p_delta     = 0.1,
                 q           = 0.2,
+                r_min       = ksp_config.R_MIN,
+                r_max       = ksp_config.R_MAX
             )
 
             D = hamming.build_pairwise_hamming_matrix(Z)

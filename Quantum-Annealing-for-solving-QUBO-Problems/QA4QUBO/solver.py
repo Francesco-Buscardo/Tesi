@@ -185,15 +185,10 @@ def counter(vector):
     
     return count
 
-def csv_write(DIR, l):
-    with open(DIR, 'a') as file:
-        writer = csv.writer(file)
-        writer.writerow(l)
-
 def now():
     return datetime.datetime.now().strftime("%H:%M:%S")
 
-def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim):
+def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim, r_min, r_max):
     
     try:
         if (not sim):  # ? REAL QUANTUM MODE
