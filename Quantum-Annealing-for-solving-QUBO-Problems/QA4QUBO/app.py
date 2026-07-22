@@ -105,9 +105,9 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
             single_clusters = [c for c, s in cluster_sizes.items() if s == 1]
 
             string += log_write("n clusters         ", len(cluster_sizes))
-            # string += log_write("clusters found     ", cluster_string)
+            string += log_write("clusters found     ", cluster_string)
             string += log_write("max cluster size   ", cluster_max_size)
-            string += log_write("cluster best z     ", cluster_best_z)
+            string += log_write("cluster best z     ", [int(cluster_best_z), cluster_sizes[cluster_best_z]])
             string += log_write("single cluster     ", len(single_clusters))
             string += log_write("medoid max cluster ", cluster_max_medoid)
             string += log_write("medoid fQ          ", medoid_fQ)
@@ -150,8 +150,6 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
                 fz_min_found = f
                 z_min_found  = z 
 
-        # counter_fz_min = sum(1 for f in fz if math.isclose(f, fz_min_found))
-
         print("\t\t\t" + colors.BOLD + colors.OKGREEN + "RESULTS" + colors.ENDC + "\n")
 
         conv = datetime.timedelta(seconds = int(time.time() - start))
@@ -159,12 +157,9 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
         p_best_found = sum(items[i][1] * z_min_found[i] for i in range(len(z_min_found)))
         w_best_found = sum(items[i][0] * z_min_found[i] for i in range(len(z_min_found)))
 
-        # string += log_write("i_max, N_max, d_min ", f"{I_max[i]}, {N_max[i]}, {D_min[i]}")
         string += log_write("fQ Min Found       ", round(fz_min_found, 2))
         string += log_write("Profit Found       ", p_best_found)
         string += log_write("Weight Found       ", w_best_found)
-        # string += log_write("n of fQ Min Found   ", counter_fz_min)
-        # string += log_write("Items               ", itms)
 
     return string
 
