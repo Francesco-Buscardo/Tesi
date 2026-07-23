@@ -69,7 +69,8 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
                 p_delta     = 0.1,
                 q           = 0.2,
                 r_min       = ksp_config.R_MIN,
-                r_max       = ksp_config.R_MAX
+                r_max       = ksp_config.R_MAX,
+                M           = ksp_config.PAR_M
             )
 
             D = hamming.build_pairwise_hamming_matrix(Z)

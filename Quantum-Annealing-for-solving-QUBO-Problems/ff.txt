@@ -1,0 +1,250 @@
+i=  1 | event=none        | impr=False | counter=  1 | f_prime=6178037.722593 | f_star=6100464.220441 | lamb_old=1.500000->1.500000
+i=  2 | event=none        | impr=False | counter=  2 | f_prime=9461285.466509 | f_star=6100464.220441 | lamb_old=1.500000->1.500000
+i=  3 | event=none        | impr=False | counter=  3 | f_prime=7155859.641205 | f_star=6100464.220441 | lamb_old=1.500000->1.500000
+i=  4 | event=none        | impr=False | counter=  4 | f_prime=6857435.011555 | f_star=6100464.220441 | lamb_old=1.500000->1.500000
+i=  5 | event=improvement | impr=True  | counter=  0 | f_prime=5991092.320495 | f_star=5991092.320495 | lamb_old=1.500000->1170.777552
+i=  6 | event=improvement | impr=True  | counter=  0 | f_prime=5091608.458300 | f_star=5091608.458300 | lamb_old=1170.777552->1170.777552
+i=  7 | event=none        | impr=False | counter=  1 | f_prime=6903513.070995 | f_star=5091608.458300 | lamb_old=1170.777552->1170.777552
+i=  8 | event=improvement | impr=True  | counter=  0 | f_prime=4769118.942571 | f_star=4769118.942571 | lamb_old=1170.777552->1170.777552
+i=  9 | event=none        | impr=False | counter=  1 | f_prime=9167265.116998 | f_star=4769118.942571 | lamb_old=1170.777552->1170.777552
+i= 10 | event=none        | impr=False | counter=  2 | f_prime=5128680.138182 | f_star=4769118.942571 | lamb_old=1170.777552->1170.777552
+i= 11 | event=none        | impr=False | counter=  3 | f_prime=5891580.864809 | f_star=4769118.942571 | lamb_old=1170.777552->1170.777552
+i= 12 | event=none        | impr=False | counter=  4 | f_prime=4862683.001205 | f_star=4769118.942571 | lamb_old=1170.777552->1170.777552
+i= 13 | event=improvement | impr=True  | counter=  0 | f_prime=4163679.598806 | f_star=4163679.598806 | lamb_old=1170.777552->1170.777552
+i= 14 | event=none        | impr=False | counter=  1 | f_prime=6513969.687294 | f_star=4163679.598806 | lamb_old=1170.777552->1170.777552
+i= 15 | event=none        | impr=False | counter=  2 | f_prime=5957926.111662 | f_star=4163679.598806 | lamb_old=1170.777552->1170.777552
+i= 16 | event=none        | impr=False | counter=  3 | f_prime=7716142.928607 | f_star=4163679.598806 | lamb_old=1170.777552->1170.777552
+i= 17 | event=none        | impr=False | counter=  4 | f_prime=7257502.036439 | f_star=4163679.598806 | lamb_old=1170.777552->1170.777552
+i= 18 | event=none        | impr=False | counter=  5 | f_prime=5476001.887951 | f_star=4163679.598806 | lamb_old=1170.777552->1170.777552
+i= 19 | event=stagnation  | impr=False | counter=  0 | f_prime=6620970.518182 | f_star=4163679.598806 | lamb_old=1170.777552->2038.442115
+i= 20 | event=none        | impr=False | counter=  1 | f_prime=6307832.417827 | f_star=4163679.598806 | lamb_old=2038.442115->2038.442115
+i= 21 | event=none        | impr=False | counter=  2 | f_prime=5557061.560775 | f_star=4163679.598806 | lamb_old=2038.442115->2038.442115
+i= 22 | event=none        | impr=False | counter=  3 | f_prime=4626487.307208 | f_star=4163679.598806 | lamb_old=2038.442115->2038.442115
+i= 23 | event=none        | impr=False | counter=  4 | f_prime=5081984.186649 | f_star=4163679.598806 | lamb_old=2038.442115->2038.442115
+i= 24 | event=none        | impr=False | counter=  5 | f_prime=5687314.223098 | f_star=4163679.598806 | lamb_old=2038.442115->2038.442115
+i= 25 | event=stagnation  | impr=False | counter=  0 | f_prime=5121775.911350 | f_star=4163679.598806 | lamb_old=2038.442115->3549.133863
+i= 26 | event=improvement | impr=True  | counter=  0 | f_prime=3460013.458956 | f_star=3460013.458956 | lamb_old=3549.133863->2038.442115
+i= 27 | event=none        | impr=False | counter=  1 | f_prime=6255209.580818 | f_star=3460013.458956 | lamb_old=2038.442115->2038.442115
+i= 28 | event=none        | impr=False | counter=  2 | f_prime=4827681.970134 | f_star=3460013.458956 | lamb_old=2038.442115->2038.442115
+i= 29 | event=none        | impr=False | counter=  3 | f_prime=4657871.717741 | f_star=3460013.458956 | lamb_old=2038.442115->2038.442115
+i= 30 | event=none        | impr=False | counter=  4 | f_prime=6111382.443572 | f_star=3460013.458956 | lamb_old=2038.442115->2038.442115
+i= 31 | event=improvement | impr=True  | counter=  0 | f_prime=2861204.543163 | f_star=2861204.543163 | lamb_old=2038.442115->1170.777552
+i= 32 | event=none        | impr=False | counter=  1 | f_prime=6465366.047058 | f_star=2861204.543163 | lamb_old=1170.777552->1170.777552
+i= 33 | event=none        | impr=False | counter=  2 | f_prime=7572475.328187 | f_star=2861204.543163 | lamb_old=1170.777552->1170.777552
+i= 34 | event=none        | impr=False | counter=  3 | f_prime=6047493.028370 | f_star=2861204.543163 | lamb_old=1170.777552->1170.777552
+i= 35 | event=none        | impr=False | counter=  4 | f_prime=4872071.281377 | f_star=2861204.543163 | lamb_old=1170.777552->1170.777552
+i= 36 | event=none        | impr=False | counter=  5 | f_prime=7783026.963098 | f_star=2861204.543163 | lamb_old=1170.777552->1170.777552
+i= 37 | event=stagnation  | impr=False | counter=  0 | f_prime=4984685.489909 | f_star=2861204.543163 | lamb_old=1170.777552->2038.442115
+i= 38 | event=none        | impr=False | counter=  1 | f_prime=5135490.166971 | f_star=2861204.543163 | lamb_old=2038.442115->2038.442115
+i= 39 | event=none        | impr=False | counter=  2 | f_prime=5602844.752394 | f_star=2861204.543163 | lamb_old=2038.442115->2038.442115
+i= 40 | event=none        | impr=False | counter=  3 | f_prime=6099489.514459 | f_star=2861204.543163 | lamb_old=2038.442115->2038.442115
+i= 41 | event=none        | impr=False | counter=  4 | f_prime=4993762.425110 | f_star=2861204.543163 | lamb_old=2038.442115->2038.442115
+i= 42 | event=none        | impr=False | counter=  5 | f_prime=5833513.454750 | f_star=2861204.543163 | lamb_old=2038.442115->2038.442115
+i= 43 | event=stagnation  | impr=False | counter=  0 | f_prime=3642074.934900 | f_star=2861204.543163 | lamb_old=2038.442115->3549.133863
+i= 44 | event=none        | impr=False | counter=  1 | f_prime=4737404.315051 | f_star=2861204.543163 | lamb_old=3549.133863->3549.133863
+i= 45 | event=none        | impr=False | counter=  2 | f_prime=3140061.814545 | f_star=2861204.543163 | lamb_old=3549.133863->3549.133863
+i= 46 | event=none        | impr=False | counter=  3 | f_prime=5073348.435578 | f_star=2861204.543163 | lamb_old=3549.133863->3549.133863
+i= 47 | event=none        | impr=False | counter=  4 | f_prime=7510162.787918 | f_star=2861204.543163 | lamb_old=3549.133863->3549.133863
+i= 48 | event=none        | impr=False | counter=  5 | f_prime=2981098.084454 | f_star=2861204.543163 | lamb_old=3549.133863->3549.133863
+i= 49 | event=stagnation  | impr=False | counter=  0 | f_prime=3624812.143991 | f_star=2861204.543163 | lamb_old=3549.133863->6179.400968
+i= 50 | event=none        | impr=False | counter=  1 | f_prime=5487580.534427 | f_star=2861204.543163 | lamb_old=6179.400968->6179.400968
+i= 51 | event=none        | impr=False | counter=  2 | f_prime=8844886.173341 | f_star=2861204.543163 | lamb_old=6179.400968->6179.400968
+i= 52 | event=none        | impr=False | counter=  3 | f_prime=4079263.211070 | f_star=2861204.543163 | lamb_old=6179.400968->6179.400968
+i= 53 | event=improvement | impr=True  | counter=  0 | f_prime=2694606.380204 | f_star=2694606.380204 | lamb_old=6179.400968->3549.133863
+i= 54 | event=none        | impr=False | counter=  1 | f_prime=4310137.874524 | f_star=2694606.380204 | lamb_old=3549.133863->3549.133863
+i= 55 | event=none        | impr=False | counter=  2 | f_prime=4931823.273362 | f_star=2694606.380204 | lamb_old=3549.133863->3549.133863
+i= 56 | event=none        | impr=False | counter=  3 | f_prime=5254607.493480 | f_star=2694606.380204 | lamb_old=3549.133863->3549.133863
+i= 57 | event=none        | impr=False | counter=  4 | f_prime=4958285.499839 | f_star=2694606.380204 | lamb_old=3549.133863->3549.133863
+i= 58 | event=none        | impr=False | counter=  5 | f_prime=5876087.723636 | f_star=2694606.380204 | lamb_old=3549.133863->3549.133863
+i= 59 | event=stagnation  | impr=False | counter=  0 | f_prime=7625172.785229 | f_star=2694606.380204 | lamb_old=3549.133863->6179.400968
+i= 60 | event=none        | impr=False | counter=  1 | f_prime=4054688.270134 | f_star=2694606.380204 | lamb_old=6179.400968->6179.400968
+i= 61 | event=none        | impr=False | counter=  2 | f_prime=6090722.944637 | f_star=2694606.380204 | lamb_old=6179.400968->6179.400968
+i= 62 | event=none        | impr=False | counter=  3 | f_prime=2924898.247574 | f_star=2694606.380204 | lamb_old=6179.400968->6179.400968
+i= 63 | event=none        | impr=False | counter=  4 | f_prime=4082595.786928 | f_star=2694606.380204 | lamb_old=6179.400968->6179.400968
+i= 64 | event=none        | impr=False | counter=  5 | f_prime=9700350.220818 | f_star=2694606.380204 | lamb_old=6179.400968->6179.400968
+i= 65 | event=stagnation  | impr=False | counter=  0 | f_prime=5424857.291662 | f_star=2694606.380204 | lamb_old=6179.400968->10758.961986
+i= 66 | event=improvement | impr=True  | counter=  0 | f_prime=2222625.866380 | f_star=2222625.866380 | lamb_old=10758.961986->6179.400968
+i= 67 | event=none        | impr=False | counter=  1 | f_prime=4114067.600538 | f_star=2222625.866380 | lamb_old=6179.400968->6179.400968
+i= 68 | event=none        | impr=False | counter=  2 | f_prime=3903903.654545 | f_star=2222625.866380 | lamb_old=6179.400968->6179.400968
+i= 69 | event=none        | impr=False | counter=  3 | f_prime=8066719.396557 | f_star=2222625.866380 | lamb_old=6179.400968->6179.400968
+i= 70 | event=none        | impr=False | counter=  4 | f_prime=4887215.176062 | f_star=2222625.866380 | lamb_old=6179.400968->6179.400968
+i= 71 | event=none        | impr=False | counter=  5 | f_prime=3711991.602571 | f_star=2222625.866380 | lamb_old=6179.400968->6179.400968
+i= 72 | event=stagnation  | impr=False | counter=  0 | f_prime=2706030.608166 | f_star=2222625.866380 | lamb_old=6179.400968->10758.961986
+i= 73 | event=none        | impr=False | counter=  1 | f_prime=3790662.174879 | f_star=2222625.866380 | lamb_old=10758.961986->10758.961986
+i= 74 | event=none        | impr=False | counter=  2 | f_prime=8335937.973373 | f_star=2222625.866380 | lamb_old=10758.961986->10758.961986
+i= 75 | event=none        | impr=False | counter=  3 | f_prime=5000518.480893 | f_star=2222625.866380 | lamb_old=10758.961986->10758.961986
+i= 76 | event=none        | impr=False | counter=  4 | f_prime=3417666.990909 | f_star=2222625.866380 | lamb_old=10758.961986->10758.961986
+i= 77 | event=none        | impr=False | counter=  5 | f_prime=3417903.990909 | f_star=2222625.866380 | lamb_old=10758.961986->10758.961986
+i= 78 | event=stagnation  | impr=False | counter=  0 | f_prime=4780167.031942 | f_star=2222625.866380 | lamb_old=10758.961986->18732.440835
+i= 79 | event=none        | impr=False | counter=  1 | f_prime=4371861.455460 | f_star=2222625.866380 | lamb_old=18732.440835->18732.440835
+i= 80 | event=none        | impr=False | counter=  2 | f_prime=3964045.419785 | f_star=2222625.866380 | lamb_old=18732.440835->18732.440835
+i= 81 | event=none        | impr=False | counter=  3 | f_prime=7872333.159645 | f_star=2222625.866380 | lamb_old=18732.440835->18732.440835
+i= 82 | event=improvement | impr=True  | counter=  0 | f_prime=1918231.919946 | f_star=1918231.919946 | lamb_old=18732.440835->10758.961986
+i= 83 | event=none        | impr=False | counter=  1 | f_prime=5288311.279494 | f_star=1918231.919946 | lamb_old=10758.961986->10758.961986
+i= 84 | event=none        | impr=False | counter=  2 | f_prime=3846436.809726 | f_star=1918231.919946 | lamb_old=10758.961986->10758.961986
+i= 85 | event=none        | impr=False | counter=  3 | f_prime=2538601.300000 | f_star=1918231.919946 | lamb_old=10758.961986->10758.961986
+i= 86 | event=none        | impr=False | counter=  4 | f_prime=2637819.600000 | f_star=1918231.919946 | lamb_old=10758.961986->10758.961986
+i= 87 | event=none        | impr=False | counter=  5 | f_prime=3865053.643615 | f_star=1918231.919946 | lamb_old=10758.961986->10758.961986
+i= 88 | event=stagnation  | impr=False | counter=  0 | f_prime=2477555.359279 | f_star=1918231.919946 | lamb_old=10758.961986->18732.440835
+i= 89 | event=none        | impr=False | counter=  1 | f_prime=4091917.444809 | f_star=1918231.919946 | lamb_old=18732.440835->18732.440835
+i= 90 | event=none        | impr=False | counter=  2 | f_prime=2967602.867886 | f_star=1918231.919946 | lamb_old=18732.440835->18732.440835
+i= 91 | event=none        | impr=False | counter=  3 | f_prime=4473314.536708 | f_star=1918231.919946 | lamb_old=18732.440835->18732.440835
+i= 92 | event=none        | impr=False | counter=  4 | f_prime=3061267.908273 | f_star=1918231.919946 | lamb_old=18732.440835->18732.440835
+i= 93 | event=none        | impr=False | counter=  5 | f_prime=3551325.341797 | f_star=1918231.919946 | lamb_old=18732.440835->18732.440835
+i= 94 | event=improvement | impr=True  | counter=  0 | f_prime=1800601.550016 | f_star=1800601.550016 | lamb_old=18732.440835->10758.961986
+i= 95 | event=none        | impr=False | counter=  1 | f_prime=4610508.052846 | f_star=1800601.550016 | lamb_old=10758.961986->10758.961986
+i= 96 | event=none        | impr=False | counter=  2 | f_prime=4369588.513341 | f_star=1800601.550016 | lamb_old=10758.961986->10758.961986
+i= 97 | event=none        | impr=False | counter=  3 | f_prime=8764498.735169 | f_star=1800601.550016 | lamb_old=10758.961986->10758.961986
+i= 98 | event=none        | impr=False | counter=  4 | f_prime=4331904.703335 | f_star=1800601.550016 | lamb_old=10758.961986->10758.961986
+i= 99 | event=none        | impr=False | counter=  5 | f_prime=5365340.374341 | f_star=1800601.550016 | lamb_old=10758.961986->10758.961986
+i=100 | event=stagnation  | impr=False | counter=  0 | f_prime=4946655.479602 | f_star=1800601.550016 | lamb_old=10758.961986->18732.440835
+i=101 | event=none        | impr=False | counter=  1 | f_prime=2019246.034427 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=102 | event=none        | impr=False | counter=  2 | f_prime=8674049.724637 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=103 | event=none        | impr=False | counter=  3 | f_prime=3356242.625820 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=104 | event=none        | impr=False | counter=  4 | f_prime=2569463.748725 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=105 | event=none        | impr=False | counter=  5 | f_prime=5301167.731684 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=106 | event=stagnation  | impr=False | counter=  0 | f_prime=4820998.492781 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=107 | event=none        | impr=False | counter=  1 | f_prime=6870384.732372 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=108 | event=none        | impr=False | counter=  2 | f_prime=3086818.773631 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=109 | event=none        | impr=False | counter=  3 | f_prime=2004910.223636 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=110 | event=none        | impr=False | counter=  4 | f_prime=8017771.138999 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=111 | event=none        | impr=False | counter=  5 | f_prime=4669733.383970 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=112 | event=stagnation  | impr=False | counter=  0 | f_prime=2851277.194879 | f_star=1800601.550016 | lamb_old=18732.440835->18732.440835
+i=113 | event=improvement | impr=True  | counter=  0 | f_prime=1542624.626347 | f_star=1542624.626347 | lamb_old=18732.440835->10758.961986
+i=114 | event=none        | impr=False | counter=  1 | f_prime=6156020.214524 | f_star=1542624.626347 | lamb_old=10758.961986->10758.961986
+i=115 | event=none        | impr=False | counter=  2 | f_prime=2769616.448467 | f_star=1542624.626347 | lamb_old=10758.961986->10758.961986
+i=116 | event=none        | impr=False | counter=  3 | f_prime=3155576.873362 | f_star=1542624.626347 | lamb_old=10758.961986->10758.961986
+i=117 | event=none        | impr=False | counter=  4 | f_prime=5043897.596170 | f_star=1542624.626347 | lamb_old=10758.961986->10758.961986
+i=118 | event=none        | impr=False | counter=  5 | f_prime=7624334.785229 | f_star=1542624.626347 | lamb_old=10758.961986->10758.961986
+i=119 | event=stagnation  | impr=False | counter=  0 | f_prime=3425909.039666 | f_star=1542624.626347 | lamb_old=10758.961986->18732.440835
+i=120 | event=none        | impr=False | counter=  1 | f_prime=2974077.549424 | f_star=1542624.626347 | lamb_old=18732.440835->18732.440835
+i=121 | event=none        | impr=False | counter=  2 | f_prime=7086153.438300 | f_star=1542624.626347 | lamb_old=18732.440835->18732.440835
+i=122 | event=none        | impr=False | counter=  3 | f_prime=2980710.641743 | f_star=1542624.626347 | lamb_old=18732.440835->18732.440835
+i=123 | event=none        | impr=False | counter=  4 | f_prime=2133240.099139 | f_star=1542624.626347 | lamb_old=18732.440835->18732.440835
+i=124 | event=improvement | impr=True  | counter=  0 | f_prime=626889.869016 | f_star=626889.869016 | lamb_old=18732.440835->10758.961986
+i=125 | event=none        | impr=False | counter=  1 | f_prime=3415656.120086 | f_star=626889.869016 | lamb_old=10758.961986->10758.961986
+i=126 | event=none        | impr=False | counter=  2 | f_prime=1458384.418063 | f_star=626889.869016 | lamb_old=10758.961986->10758.961986
+i=127 | event=none        | impr=False | counter=  3 | f_prime=3283550.812372 | f_star=626889.869016 | lamb_old=10758.961986->10758.961986
+i=128 | event=none        | impr=False | counter=  4 | f_prime=4435704.689177 | f_star=626889.869016 | lamb_old=10758.961986->10758.961986
+i=129 | event=none        | impr=False | counter=  5 | f_prime=2803410.127058 | f_star=626889.869016 | lamb_old=10758.961986->10758.961986
+i=130 | event=stagnation  | impr=False | counter=  0 | f_prime=3643109.779075 | f_star=626889.869016 | lamb_old=10758.961986->18732.440835
+i=131 | event=none        | impr=False | counter=  1 | f_prime=4478873.176278 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=132 | event=none        | impr=False | counter=  2 | f_prime=1919506.109252 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=133 | event=none        | impr=False | counter=  3 | f_prime=1819537.245820 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=134 | event=none        | impr=False | counter=  4 | f_prime=2543303.859645 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=135 | event=none        | impr=False | counter=  5 | f_prime=2224799.837816 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=136 | event=stagnation  | impr=False | counter=  0 | f_prime=1359538.102604 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=137 | event=none        | impr=False | counter=  1 | f_prime=3321308.163636 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=138 | event=none        | impr=False | counter=  2 | f_prime=6313152.903658 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=139 | event=none        | impr=False | counter=  3 | f_prime=8424037.562711 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=140 | event=none        | impr=False | counter=  4 | f_prime=2608097.518128 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=141 | event=none        | impr=False | counter=  5 | f_prime=8977883.213868 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=142 | event=stagnation  | impr=False | counter=  0 | f_prime=3095604.651824 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=143 | event=none        | impr=False | counter=  1 | f_prime=1436064.046928 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=144 | event=none        | impr=False | counter=  2 | f_prime=3264913.786767 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=145 | event=none        | impr=False | counter=  3 | f_prime=2572173.392254 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=146 | event=none        | impr=False | counter=  4 | f_prime=2396135.868585 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=147 | event=none        | impr=False | counter=  5 | f_prime=1726699.944917 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=148 | event=stagnation  | impr=False | counter=  0 | f_prime=5046550.231684 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=149 | event=none        | impr=False | counter=  1 | f_prime=1970016.134632 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=150 | event=none        | impr=False | counter=  2 | f_prime=3577230.912803 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=151 | event=none        | impr=False | counter=  3 | f_prime=2730991.228478 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=152 | event=none        | impr=False | counter=  4 | f_prime=2286582.576869 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=153 | event=none        | impr=False | counter=  5 | f_prime=2870180.931684 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=154 | event=stagnation  | impr=False | counter=  0 | f_prime=3314449.517698 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=155 | event=none        | impr=False | counter=  1 | f_prime=1636802.574879 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=156 | event=none        | impr=False | counter=  2 | f_prime=2510981.000538 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=157 | event=none        | impr=False | counter=  3 | f_prime=3024458.913448 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=158 | event=none        | impr=False | counter=  4 | f_prime=3564794.888757 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=159 | event=none        | impr=False | counter=  5 | f_prime=4886622.875729 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=160 | event=stagnation  | impr=False | counter=  0 | f_prime=2939577.632727 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=161 | event=none        | impr=False | counter=  1 | f_prime=2038499.608230 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=162 | event=none        | impr=False | counter=  2 | f_prime=3892708.374072 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=163 | event=none        | impr=False | counter=  3 | f_prime=3918746.495826 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=164 | event=none        | impr=False | counter=  4 | f_prime=2867539.748833 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=165 | event=none        | impr=False | counter=  5 | f_prime=2353391.222152 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=166 | event=stagnation  | impr=False | counter=  0 | f_prime=2062235.178720 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=167 | event=none        | impr=False | counter=  1 | f_prime=2485869.872889 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=168 | event=none        | impr=False | counter=  2 | f_prime=4045857.063518 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=169 | event=none        | impr=False | counter=  3 | f_prime=2077696.655611 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=170 | event=none        | impr=False | counter=  4 | f_prime=5115673.918182 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=171 | event=none        | impr=False | counter=  5 | f_prime=2364489.409457 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=172 | event=stagnation  | impr=False | counter=  0 | f_prime=2997896.738182 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=173 | event=none        | impr=False | counter=  1 | f_prime=2849107.136945 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=174 | event=none        | impr=False | counter=  2 | f_prime=2239144.531953 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=175 | event=none        | impr=False | counter=  3 | f_prime=2500820.063636 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=176 | event=none        | impr=False | counter=  4 | f_prime=1964589.991555 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=177 | event=none        | impr=False | counter=  5 | f_prime=2009876.457127 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=178 | event=stagnation  | impr=False | counter=  0 | f_prime=2382754.892254 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=179 | event=none        | impr=False | counter=  1 | f_prime=2367162.226358 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=180 | event=none        | impr=False | counter=  2 | f_prime=3322631.163636 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=181 | event=none        | impr=False | counter=  3 | f_prime=1994920.627918 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=182 | event=none        | impr=False | counter=  4 | f_prime=2254584.206240 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=183 | event=none        | impr=False | counter=  5 | f_prime=1558505.701183 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=184 | event=stagnation  | impr=False | counter=  0 | f_prime=3312562.517698 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=185 | event=none        | impr=False | counter=  1 | f_prime=1945388.700204 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=186 | event=none        | impr=False | counter=  2 | f_prime=2530349.509812 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=187 | event=none        | impr=False | counter=  3 | f_prime=1686628.907359 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=188 | event=none        | impr=False | counter=  4 | f_prime=3031657.745939 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=189 | event=none        | impr=False | counter=  5 | f_prime=1575982.203281 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=190 | event=stagnation  | impr=False | counter=  0 | f_prime=1798742.820000 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=191 | event=none        | impr=False | counter=  1 | f_prime=2704312.634879 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=192 | event=none        | impr=False | counter=  2 | f_prime=1799857.291684 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=193 | event=none        | impr=False | counter=  3 | f_prime=2731501.021614 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=194 | event=none        | impr=False | counter=  4 | f_prime=3013619.796557 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=195 | event=none        | impr=False | counter=  5 | f_prime=2816875.799882 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=196 | event=stagnation  | impr=False | counter=  0 | f_prime=2098308.453868 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=197 | event=none        | impr=False | counter=  1 | f_prime=2462381.404841 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=198 | event=none        | impr=False | counter=  2 | f_prime=6452202.535223 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=199 | event=none        | impr=False | counter=  3 | f_prime=4168579.176869 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=200 | event=none        | impr=False | counter=  4 | f_prime=5151603.461205 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=201 | event=none        | impr=False | counter=  5 | f_prime=3645904.593964 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=202 | event=stagnation  | impr=False | counter=  0 | f_prime=1742418.554104 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=203 | event=none        | impr=False | counter=  1 | f_prime=1693376.696708 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=204 | event=none        | impr=False | counter=  2 | f_prime=2782505.840022 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=205 | event=none        | impr=False | counter=  3 | f_prime=2152598.250834 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=206 | event=none        | impr=False | counter=  4 | f_prime=2715767.922431 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=207 | event=none        | impr=False | counter=  5 | f_prime=1922428.515331 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=208 | event=stagnation  | impr=False | counter=  0 | f_prime=3568092.029844 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=209 | event=none        | impr=False | counter=  1 | f_prime=2754713.823152 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=210 | event=none        | impr=False | counter=  2 | f_prime=1202864.974545 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=211 | event=none        | impr=False | counter=  3 | f_prime=2335674.879634 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=212 | event=none        | impr=False | counter=  4 | f_prime=2162953.351587 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=213 | event=none        | impr=False | counter=  5 | f_prime=1878575.192846 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=214 | event=stagnation  | impr=False | counter=  0 | f_prime=3747158.997708 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=215 | event=none        | impr=False | counter=  1 | f_prime=2476476.582431 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=216 | event=none        | impr=False | counter=  2 | f_prime=1424535.061054 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=217 | event=none        | impr=False | counter=  3 | f_prime=2149816.700581 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=218 | event=none        | impr=False | counter=  4 | f_prime=2085248.979666 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=219 | event=none        | impr=False | counter=  5 | f_prime=3212623.414201 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=220 | event=stagnation  | impr=False | counter=  0 | f_prime=2706082.453685 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=221 | event=none        | impr=False | counter=  1 | f_prime=4129901.564701 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=222 | event=none        | impr=False | counter=  2 | f_prime=2163592.906229 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=223 | event=none        | impr=False | counter=  3 | f_prime=2611678.438999 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=224 | event=none        | impr=False | counter=  4 | f_prime=2319914.182216 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=225 | event=none        | impr=False | counter=  5 | f_prime=2216053.123550 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=226 | event=stagnation  | impr=False | counter=  0 | f_prime=1766818.223636 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=227 | event=none        | impr=False | counter=  1 | f_prime=2451089.624691 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=228 | event=none        | impr=False | counter=  2 | f_prime=7085471.438300 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=229 | event=none        | impr=False | counter=  3 | f_prime=1703231.034287 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=230 | event=none        | impr=False | counter=  4 | f_prime=1959129.451210 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=231 | event=none        | impr=False | counter=  5 | f_prime=1441066.342604 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=232 | event=stagnation  | impr=False | counter=  0 | f_prime=2590632.110974 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=233 | event=none        | impr=False | counter=  1 | f_prime=2044185.450909 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=234 | event=none        | impr=False | counter=  2 | f_prime=1868852.713921 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=235 | event=none        | impr=False | counter=  3 | f_prime=1505708.199839 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=236 | event=none        | impr=False | counter=  4 | f_prime=2261982.704841 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=237 | event=none        | impr=False | counter=  5 | f_prime=1812060.250834 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=238 | event=stagnation  | impr=False | counter=  0 | f_prime=2109877.144562 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=239 | event=none        | impr=False | counter=  1 | f_prime=2238922.376945 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=240 | event=none        | impr=False | counter=  2 | f_prime=4074255.137267 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=241 | event=none        | impr=False | counter=  3 | f_prime=2018677.910296 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=242 | event=none        | impr=False | counter=  4 | f_prime=1459956.445508 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=243 | event=none        | impr=False | counter=  5 | f_prime=2298677.995019 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=244 | event=stagnation  | impr=False | counter=  0 | f_prime=2463153.495589 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=245 | event=none        | impr=False | counter=  1 | f_prime=2965219.664734 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=246 | event=none        | impr=False | counter=  2 | f_prime=3950948.708037 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=247 | event=none        | impr=False | counter=  3 | f_prime=4281442.281323 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=248 | event=none        | impr=False | counter=  4 | f_prime=1282922.827327 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=249 | event=none        | impr=False | counter=  5 | f_prime=1968493.131942 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835
+i=250 | event=stagnation  | impr=False | counter=  0 | f_prime=1812060.250834 | f_star=626889.869016 | lamb_old=18732.440835->18732.440835

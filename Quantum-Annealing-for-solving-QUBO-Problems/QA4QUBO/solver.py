@@ -188,7 +188,47 @@ def counter(vector):
 def now():
     return datetime.datetime.now().strftime("%H:%M:%S")
 
-def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim, r_min, r_max):
+def log_output(i, event, impr, s_counter, f_prime, f_star, old_lam, lam):
+    with open("./ff.txt", mode="a", encoding="utf-8") as file:
+        print(
+            f"i={i:3d} | "
+            f"event={event:11s} | "
+            f"impr={impr!s:5s} | "
+            f"counter={s_counter:3d} | "
+            f"f_prime={f_prime:.6f} | "
+            f"f_star={f_star:.6f} | "
+            f"lamb_old={old_lam:.6f}->{lam:.6f}",
+            file=file
+        )
+
+def compute_lambda(r_max, r_min, Q_norm, S_norm):
+    lam_max = r_max * (Q_norm / S_norm)
+    lam_min = r_min * (Q_norm / S_norm)
+
+    return lam_max, lam_min
+
+def compute_gamma(lam_max, lam_min, M):
+    if lam_min <= 0 or lam_max <= 0:
+        raise ValueError("lam_min <= 0 or lam_max <= 0")
+
+    if lam_max < lam_min:
+        raise ValueError("lam_max < lam_min")
+
+    if M <= 0:
+        raise ValueError("M <= 0")
+
+    gamma_up = (lam_max / lam_min) ** (1.0 / M)
+    gamma_down = 1.0 / gamma_up
+
+    return gamma_up, gamma_down
+
+def stagnation(counter, stg_counter):
+    return counter > stg_counter
+
+def improvement(impr):
+    return bool(impr)
+
+def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, topology, Q, sim, r_min, r_max, M):
     
     try:
         if (not sim):  # ? REAL QUANTUM MODE
@@ -283,12 +323,19 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
     except KeyboardInterrupt:
         exit("\n\n[" + colors.BOLD + colors.OKGREEN + "KeyboardInterrupt" + colors.ENDC + "] Closing program...")
 
-    e        = 0
-    d        = 0
-    i        = 1
-    lam      = lambda_zero
-    sum_time = 0
-    f_prime  = 0
+    e         = 0
+    d         = 0
+    i         = 1
+    lam       = lambda_zero
+    sum_time  = 0
+    f_prime   = 0
+    
+    s_counter = 0
+
+    STG_COUNTER = int(config.P_STG_C * n)
+
+    with open("./ff.txt", mode="w", encoding="utf-8"):
+        pass
 
     solutions_matrix_star.append([
         z_star.copy(), 
@@ -315,7 +362,25 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
         np.zeros(n)
     ])
 
+
+    S_norm = np.linalg.norm(S, ord="fro")
+    Q_norm = np.linalg.norm(Q, ord="fro")
+
+    lam_max, lam_min = compute_lambda(
+        Q_norm=Q_norm,
+        S_norm=S_norm,
+        r_min=r_min,
+        r_max=r_max
+    )
+    gamma_up, gamma_down = compute_gamma(
+        lam_max=lam_max,
+        lam_min=lam_min,
+        M=M
+    )
+
     while True:
+        impr = False
+
         print(f"---------------------------------------------------------------------------------------------------------------")
         start_time = time.time()
         
@@ -361,7 +426,7 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
                 z_best = z_prime
                 f_best = f_prime
 
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
             hamm_d_star, hamm_vec_star = hamming.hamming_distance(z_prime, z_star) 
             solutions_matrix_star.append([
                 z_prime.copy(), 
@@ -376,31 +441,61 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
                 hamm_d_zopt_zprop, 
                 hamm_vec_zopt_zprop.copy()
             ])
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            
             z_tmp = z_star
 
-            if (z_prime != z_star).any():                
-                if (f_prime < f_star):
+            if (z_prime != z_star).any(): 
+                impr = bool(f_prime < f_star)  
+
+                if impr:
                     z_prime, z_star = z_star, z_prime
                     f_star = f_prime
                     m_star = m
                     e = 0
                     d = 0
-                    S = (config.DECAY_FACTOR * S) + ((np.outer(z_prime, z_prime) - I) + np.diagflat(z_prime))
-                else: # z_prime è peggiore la accetto con una certa probabilità
+                    s_counter = 0
+
+                    S = (config.DECAY_FACTOR * S) + ((np.outer(z_prime, z_prime) - I) + np.diagflat(z_prime))            
+                else:
                     d = d + 1
+                    s_counter += 1
+
                     if make_decision((p - p_delta) ** (f_prime - f_star)):
                         z_prime, z_star = z_star, z_prime
                         f_star = f_prime
                         m_star = m
                         e = 0
-                lam = min(lambda_zero, (lambda_zero / (2 + (i-1) - e)))
+                        s_counter = 0
+
+                # lam = min(lambda_zero, (lambda_zero / (2 + (i-1) - e)))
             else:
                 e = e + 1
+                s_counter += 1
+
+            old_lam = lam
+
+            if stagnation(counter=s_counter, stg_counter=STG_COUNTER):
+                event = "stagnation"
+
+                lam = min(lam_max, gamma_up * lam)
+
+                s_counter = 0
+
+            elif impr:
+                event = "improvement"
+
+                lam = max(lam_min, gamma_down * lam)
+
+                s_counter = 0
+
+            else: 
+                event = "none"
+
+            log_output(i, event, impr, s_counter, f_prime, f_star, old_lam, lam)
 
             converted = datetime.timedelta(seconds=(time.time()-start_time))
             
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             hamm_d_zaccepted, hamm_vec_zaccepted = hamming.hamming_distance(z_tmp, z_star)
             solutions_matrix_zaccepted.append([
                 z_star.copy(), 
@@ -415,7 +510,7 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
                 hamm_d_zopt_zstar, 
                 hamm_vec_zopt_zstar.copy()
             ])
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
             try:
                 print(now() + " [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] f_prime = {round(f_prime, 2)}, f_star = {round(f_star, 2)}, p = {p}, e = {e}, d = {d} and lambda = {round(lam,5)}\n" + now() + " [" + colors.BOLD + colors.OKGREEN + "DATA" + colors.ENDC + f"] Took {converted} in total")
