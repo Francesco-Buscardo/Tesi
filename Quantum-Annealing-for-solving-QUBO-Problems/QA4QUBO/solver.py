@@ -17,6 +17,7 @@ from QA4QUBO.script import annealer, hybrid
 from QA4QUBO.colors import colors
 import QA4QUBO.hamming as hamming
 import ksp_config as config
+from QA4QUBO.lam_queue import LamQueue
 
 
 random = SystemRandom()
@@ -188,36 +189,59 @@ def counter(vector):
 def now():
     return datetime.datetime.now().strftime("%H:%M:%S")
 
-def log_output(i, event, impr, s_counter, f_prime, f_star, old_lam, lam):
+def log_output_1(i, event, s_counter, f_prime, f_star, old_lam, lam, S_norm):
     with open("./ff.txt", mode="a", encoding="utf-8") as file:
         print(
             f"i={i:3d} | "
-            f"event={event:11s} | "
-            f"impr={impr!s:5s} | "
-            f"counter={s_counter:3d} | "
-            f"f_prime={f_prime:.6f} | "
-            f"f_star={f_star:.6f} | "
-            f"lamb_old={old_lam:.6f}->{lam:.6f}",
+            f"event={event} | "
+            f"counter={s_counter} | "
+            f"f_prime={f_prime:.2f} | "
+            f"f_star={f_star:.2f} | "
+            f"{old_lam:.3f}->{lam:.3f} | ",
+            f"S_norm={S_norm:.3f}",
             file=file
         )
 
-def compute_lambda(r_max, r_min, Q_norm, S_norm):
+def log_output(i, event, s_counter, f_prime, f_star, old_lam, lam, f_min_obs, f_max_obs):
+    with open("./ff.txt", mode="a", encoding="utf-8") as file:
+        print(
+            f"i={i:3d} | "
+            f"event={event} | "
+            f"counter={s_counter} | "
+            f"f_prime={f_prime:.2f} | "
+            f"f_star={f_star:.2f} | "
+            f"{old_lam:.3f}->{lam:.3f} | "
+            f"f_range=[{f_min_obs:.2f}, {f_max_obs:.2f}]",
+            file=file
+        )
+
+def compute_lambda_1(r_max, r_min, Q_norm, S_norm):
+    if S_norm == 0:
+        return None, None
+
     lam_max = r_max * (Q_norm / S_norm)
     lam_min = r_min * (Q_norm / S_norm)
 
     return lam_max, lam_min
 
-def compute_gamma(lam_max, lam_min, M):
-    if lam_min <= 0 or lam_max <= 0:
-        raise ValueError("lam_min <= 0 or lam_max <= 0")
+def compute_lambda(r_max, r_min, f_min_obs, f_max_obs, n, beta):
+    f_range = f_max_obs - f_min_obs
+ 
+    if f_range <= 0:
+        return None, None
+ 
+    lam_ref = beta * (f_range / n)
+ 
+    lam_max = r_max * lam_ref
+    lam_min = r_min * lam_ref
+ 
+    return lam_max, lam_min
 
-    if lam_max < lam_min:
-        raise ValueError("lam_max < lam_min")
-
+def compute_gamma(r_max, r_min, M):
     if M <= 0:
         raise ValueError("M <= 0")
 
-    gamma_up = (lam_max / lam_min) ** (1.0 / M)
+    gamma_up = (r_max / r_min) ** (1.0 / M)
     gamma_down = 1.0 / gamma_up
 
     return gamma_up, gamma_down
@@ -329,10 +353,14 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
     lam       = lambda_zero
     sum_time  = 0
     f_prime   = 0
-    
-    s_counter = 0
 
-    STG_COUNTER = int(config.P_STG_C * n)
+    lam_queue = LamQueue(n=config.MOVING_AVG_PERIOD)
+    lam_queue.enqueue(lambda_zero)
+
+    s_counter        = 0
+    num_stagantions  = 0
+
+    STG_COUNTER = int(config.P_STG_COUNTER * n)
 
     with open("./ff.txt", mode="w", encoding="utf-8"):
         pass
@@ -362,19 +390,24 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
         np.zeros(n)
     ])
 
+    # S_norm = np.linalg.norm(S, ord="fro")
+    # Q_norm = np.linalg.norm(Q, ord="fro")
 
-    S_norm = np.linalg.norm(S, ord="fro")
-    Q_norm = np.linalg.norm(Q, ord="fro")
+    f_min_obs = min(f_one, f_two)
+    f_max_obs = max(f_one, f_two)
+
 
     lam_max, lam_min = compute_lambda(
-        Q_norm=Q_norm,
-        S_norm=S_norm,
         r_min=r_min,
-        r_max=r_max
+        r_max=r_max,
+        f_min_obs=f_min_obs,
+        f_max_obs=f_max_obs,
+        n=n,
+        beta=config.BETA
     )
     gamma_up, gamma_down = compute_gamma(
-        lam_max=lam_max,
-        lam_min=lam_min,
+        r_max=r_max,
+        r_min=r_min,
         M=M
     )
 
@@ -401,13 +434,6 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
             
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "ANN" + colors.ENDC + "] Working on z'...", end = ' ')
             start = time.time()
-            
-           
-            # per ottenere la config dei qubits basta chiamare annealer(Theta_prime, sampler, k) 
-            # e poi fare il mapping inverso con map_back
-            # qubit_config = annealer(Theta_prime, sampler, k)
-            # z_prime = map_back(qubit_config, m)
-            
 
             # soluzione candidata 
             z_prime = map_back(annealer(Theta_prime, sampler, k), m)
@@ -419,6 +445,11 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
             if make_decision(q):
                 z_prime = h(z_prime, p)
             f_prime = function_f(Q, z_prime).item()
+
+            if f_prime < f_min_obs:
+                f_min_obs = f_prime
+            if f_prime > f_max_obs:
+                f_max_obs = f_prime
             
             Z.append(z_prime)
             
@@ -468,31 +499,74 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
                         e = 0
                         s_counter = 0
 
-                # lam = min(lambda_zero, (lambda_zero / (2 + (i-1) - e)))
             else:
                 e = e + 1
                 s_counter += 1
 
             old_lam = lam
 
-            if stagnation(counter=s_counter, stg_counter=STG_COUNTER):
-                event = "stagnation"
+            # if lam_max is None:
+            #     S_norm = np.linalg.norm(S, ord="fro")
+            #     lam_max, lam_min = compute_lambda(
+            #         Q_norm=Q_norm,
+            #         S_norm=S_norm,
+            #         r_min=r_min,
+            #         r_max=r_max
+            #     )
 
-                lam = min(lam_max, gamma_up * lam)
+            lam_max, lam_min = compute_lambda(
+                r_min=r_min,
+                r_max=r_max,
+                f_min_obs=f_min_obs,
+                f_max_obs=f_max_obs,
+                n=n,
+                beta=config.BETA
+            )
 
-                s_counter = 0
+            lambda_bounds_ready = (lam_max is not None)
 
-            elif impr:
-                event = "improvement"
+            if impr and lambda_bounds_ready:
+                event = "IMPR"
 
                 lam = max(lam_min, gamma_down * lam)
+                lam_queue.enqueue(lam)
 
                 s_counter = 0
+                num_stagantions = 0
+
+            elif stagnation(counter=s_counter, stg_counter=STG_COUNTER) and lambda_bounds_ready:
+                event = "STAG"
+
+                lam = min(lam_max, gamma_up * lam)
+                lam_queue.enqueue(lam)
+
+                s_counter = 0
+                num_stagantions += 1
+
+            elif num_stagantions == config.NUM_S_STAGNATIONS and lambda_bounds_ready:
+                event = "S_STAG"
+
+                s_counter = 0
+                num_stagantions = 0
+
+                # S *= config.DECAY_FACTOR_2
+                # S_norm = np.linalg.norm(S, ord="fro")
+                # lam_max, lam_min = compute_lambda(
+                #     Q_norm=Q_norm,
+                #     S_norm=S_norm,
+                #     r_min=r_min,
+                #     r_max=r_max
+                # )
+                # lam = min(lam_max, lam_queue.avg())
+                
+                S *= config.AMPLIFICATION_FACTOR
+                lam = max(lam_min, min(lam_max, lam_queue.avg()))               
 
             else: 
-                event = "none"
+                event = "NONE"
+                lam_queue.enqueue(lam)
 
-            log_output(i, event, impr, s_counter, f_prime, f_star, old_lam, lam)
+            log_output(i, event, s_counter, f_prime, f_star, old_lam, lam, f_min_obs, f_max_obs)
 
             converted = datetime.timedelta(seconds=(time.time()-start_time))
             

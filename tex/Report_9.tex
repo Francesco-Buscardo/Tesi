@@ -5,7 +5,8 @@
 \geometry{margin=1in}
 \usepackage{amsmath, amssymb}  
 \usepackage{graphicx}          
-\usepackage{hyperref}          
+\usepackage{hyperref}     
+\usepackage{xcolor}     
 
 \title{Report 9 -- Proposta cambiamento}
 
@@ -29,17 +30,20 @@ maggiormente la tabù matrix aumentando $\lambda$; se invece c'è miglioramento 
 vale a dire ridurre la penalizzazione della tabù matrix diminuendo $\lambda$.
 
 L'idea si può esprimere nel seguente modo:
-\[
+\begin{equation}
 \lambda_{t+1} = 
 \begin{cases}
+    \min(\lambda_{\max}, \lambda_{avg}) & \text{if \(super\_stagnation\)} \\
     \min(\lambda_{\max}, \gamma_{\text{up}} \lambda_t) & \text{if \(stagnation\)} \\
     \max(\lambda_{\min}, \gamma_{\text{down}} \lambda_t) & \text{if \(improvement\)} \\
     \lambda_t & \text{\(otherwise\)}
 \end{cases}
-\]
+\label{eq:lambda_update}
+\end{equation}
 Dove:
 \begin{itemize}
     \item \(stagnation\): condizione in cui, per un certo numero di iterazioni consecutive, non viene trovata alcuna soluzione migliore di quella attuale;
+    \item \(super\_stagnation\): condizione che verifica se si sono avute \(t=3\) \(stagnation\) consecutive;
     \item $\lambda_{\max}$: valore massimo consentito. Impedisce che la tabù matrix domini eccessivamente il problema QUBO iniziale;
     \item $\lambda_{\min}$: valore minimo consentito. Impedisce che la tabù matrix perda completamente effetto;
     \item $\gamma_{\text{up}}$: fattore con cui si aumenta $\lambda$ quando QALS ristagna;
@@ -47,19 +51,18 @@ Dove:
 \end{itemize}
 
 \subsection{Scelta di $\lambda_{\max}$ e $\lambda_{\min}$}
-Non potendo scegliere valori costanti a causa della differenza di scala tra \(Q\) e \(S_t\) tra istanze nelle varie iterazioni, definisco quindi
-quanto il contributo della tabù matrix può pesare rispetto al problema originale:
+Definisco quindi quanto il contributo della tabù matrix può pesare rispetto al problema originale:
 \[
-r = \lambda \frac{\| S_t \|}{\| Q \|}
+r = \lambda \frac{\| S \|}{\| Q \|}
 \]
 da cui si ricava:
 \[
-\lambda =  r \frac{\| Q \|}{\| S_t \|}
+\lambda =  r \frac{\| Q \|}{\| S \|}
 \]
 \[
-\lambda_{\max} =  r_{\max} \frac{\| Q \|}{\| S_t \|},
+\lambda_{\max} =  r_{\max} \frac{\| Q \|}{\| S \|},
 \qquad
-\lambda_{\min} = r_{\min} \frac{\|  Q \|}{\| S_t \|}.
+\lambda_{\min} = r_{\min} \frac{\|  Q \|}{\| S \|}.
 \]
 
 I valori di \(r\) sono stati scelti ''arbitrariamente'' e sono rispettivamente:
@@ -97,7 +100,7 @@ al m-esimo aumento:
 \]
 da cui, imponendo che dopo \(m\) aumenti consecutivi si arrivi a $\lambda_{max}$ si conclude che:
 \[
-\gamma = (\frac{\lambda_{max}}{\lambda_{min}})^\frac{1}{m}.
+\gamma = (\frac{\lambda_{max}}{\lambda_{min}})^\frac{1}{m} = (\frac{r_{max}}{r_{min}})^\frac{1}{m}.
 \]
 In altri termini, si sceglie quanto velocemente cambia l'intensità del contributo, favorendo un 
 eventuale cambiamento dell' area esplorata:
@@ -108,5 +111,75 @@ m \uparrow
 \quad\Longrightarrow\quad
 \text{adattamento più graduale}.
 \]
+
+\subsection{Super\_stagnation}
+Nel caso avessimo una \text{super\_stagnation} allora si applica un decay factor:
+l'effetto che si ottiene è quello di dimenticare alcune le configurazioni
+già visitate. 
+
+Inoltre dopo aver appliccato il fattore di decadimento alla matrice, in accordo con quanto discusso 
+nei paragrafi precedenti, bisogna aggiornare \(\lambda_{\max}\) e \(\lambda_{\min}\) e in seguito definire 
+\(\lambda_t+1\) come nell'equazione ~\eqref{eq:lambda_update}.
+
+\section{Ricalibrazione di $\lambda_{\max}$ e $\lambda_{\min}$ tramite il range della funzione obiettivo}
+La definizione di $\lambda_{\max}$ e $\lambda_{\min}$ introdotta nella Sezione 1.1 lega la scala di \(\lambda\)
+al rapporto tra le norme di Frobenius di \(S\) e di \(Q\). In fase di sperimentazione questa scelta si è
+rivelata numericamente instabile. Poiché:
+\[
+\lambda_{\max} = r_{\max} \frac{\|Q\|}{\|S\|},
+\qquad
+\lambda_{\min} = r_{\min} \frac{\|Q\|}{\|S\|},
+\]
+
+dipendono da $\|S\|$ tramite una divisione diretta, si osservano due comportamenti agli estremi:
+\begin{itemize}
+    \item se $\|S\|$ cresce ripetutamente (ad esempio per amplificazioni successive senza un contributo
+    di decadimento sufficiente), \(\lambda_{\max} \to 0\): la tabù matrix perde ogni effetto e la ricerca
+    smette di diversificare;
+    \item se $\|S\|$ decresce ripetutamente verso lo zero, \(\lambda_{\max} \to \infty\): \(\lambda\) può
+    crescere di diversi ordini di grandezza in poche decine di iterazioni, portando \(Q'\) ad essere
+    dominato quasi interamente dal rumore della tabù matrix, indipendentemente dal contenuto di\(Q\).
+\end{itemize}
+
+\subsection{Nuova definizione}
+Per cercare eliminare la dipendenza dalla sorgente dell'instabilità numerica, quindi \(S\), si 
+ricalibra \(\lambda_{\max}\) e \(\lambda_{\min}\) su una grandezza diversa: il range dei valori osservati
+della funzione obiettivo \(f\) nel corso del run. Siano dunque:
+\[
+f_{\min}^{\text{obs}} = \min_{\tau \le t} f(z_\tau),
+\qquad
+f_{\max}^{\text{obs}} = \max_{\tau \le t} f(z_\tau),
+\]
+
+il minimo e il massimo tra tutti i valori di \(f\) osservati fino alla \(t\)-esima iterazione. 
+Si definisce quindi il \(\lambda\) di riferimento:
+\begin{equation}
+\lambda_{\text{ref}} = \beta \, \frac{f_{\max}^{\text{obs}} - f_{\min}^{\text{obs}}}{n},
+\label{eq:lambda_ref}
+\end{equation}
+
+dove \(n\) è la dimensione del problema e \(\beta\) è un parametro di scala. I nuovi bound
+diventano:
+\begin{equation}
+\lambda_{\max} = r_{\max} \, \lambda_{\text{ref}},
+\qquad
+\lambda_{\min} = r_{\min} \, \lambda_{\text{ref}},
+\label{eq:lambda_bounds_frange}
+\end{equation}
+
+mantenendo \(r_{\max}\) e \(r_{\min}\) nello stesso ruolo di moltiplicatori descritto nelle sezione precedenti,
+mentre l'aggiornamento di \(\lambda_{t+1}\) secondo l'equazione~\eqref{eq:lambda_update} resta invariato,
+così come il calcolo di \(\gamma_{\text{up}}\) e \(\gamma_{\text{down}}\), che dipendono solo
+da \(r_{\max}\), \(r_{\min}\) e \(m\).
+
+\subsection{Implicazioni}
+Questa modifica mi permette di definire, al contrario del \emph{decay factor}, un
+\emph{amplification factor}, in quanto amplificare \(S\) non ha più conseguenze
+destabilizzanti su \(\lambda_{\max}\) e \(\lambda_{\min}\): essendo questi ora calcolati
+sul range dei valori di \(f\) e non più sul rapporto tra $\|S\|$ e $\|Q\|$, un aumento di $\|S\|$ 
+non fa più collassare \(\lambda_{\max}\) verso zero né esplodere \(\lambda\) in modo incontrollato. 
+Questo rende sicuro amplificare \(S\) per intensificare la penalizzazione delle 
+soluzioni già visitate quando si verifica una \(super\_stagnation\), anziché limitarsi ad attenuarla
+con un fattore di decadimento come nella formulazione precedente.
 
 \end{document}
