@@ -15,7 +15,7 @@ QALS
 [fQ Min Found       ]	-1455540.67
 [Profit Found       ]	198
 [Weight Found       ]	101
-
+Lambda_dinamico
 NO QALS
 [fQ Min Found     ]	-1455540.67
 [Profit Found     ]	198

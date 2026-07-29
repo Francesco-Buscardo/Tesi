@@ -390,12 +390,9 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
         np.zeros(n)
     ])
 
-    # S_norm = np.linalg.norm(S, ord="fro")
-    # Q_norm = np.linalg.norm(Q, ord="fro")
 
     f_min_obs = min(f_one, f_two)
     f_max_obs = max(f_one, f_two)
-
 
     lam_max, lam_min = compute_lambda(
         r_min=r_min,
@@ -435,7 +432,7 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "ANN" + colors.ENDC + "] Working on z'...", end = ' ')
             start = time.time()
 
-            # soluzione candidata 
+            # soluzione candidata
             z_prime = map_back(annealer(Theta_prime, sampler, k), m)
 
             convert_z = datetime.timedelta(seconds = (time.time() - start))
@@ -505,15 +502,6 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
 
             old_lam = lam
 
-            # if lam_max is None:
-            #     S_norm = np.linalg.norm(S, ord="fro")
-            #     lam_max, lam_min = compute_lambda(
-            #         Q_norm=Q_norm,
-            #         S_norm=S_norm,
-            #         r_min=r_min,
-            #         r_max=r_max
-            #     )
-
             lam_max, lam_min = compute_lambda(
                 r_min=r_min,
                 r_max=r_max,
@@ -548,16 +536,6 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
 
                 s_counter = 0
                 num_stagantions = 0
-
-                # S *= config.DECAY_FACTOR_2
-                # S_norm = np.linalg.norm(S, ord="fro")
-                # lam_max, lam_min = compute_lambda(
-                #     Q_norm=Q_norm,
-                #     S_norm=S_norm,
-                #     r_min=r_min,
-                #     r_max=r_max
-                # )
-                # lam = min(lam_max, lam_queue.avg())
                 
                 S *= config.AMPLIFICATION_FACTOR
                 lam = max(lam_min, min(lam_max, lam_queue.avg()))               

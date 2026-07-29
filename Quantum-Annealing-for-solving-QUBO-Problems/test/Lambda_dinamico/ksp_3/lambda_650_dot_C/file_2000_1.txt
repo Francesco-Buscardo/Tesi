@@ -2,21 +2,3 @@ k     = 2000
 TIMES = 1
 
 QALS
-[i_max, N_max, d_min]	250, 125, 88
-[n clusters         ]	2
-[clusters found     ]	cluster 0: 1, cluster 1: 1
-[max cluster size   ]	1
-[cluster best z     ]	[0, 1]
-[single cluster     ]	2
-[medoid max cluster ]	[1 0 0 0 1 1 1 0 1 1 0 0 1 0 0 1 1 0 1 0 1 1 0 1 0 1 1 0 0 0]
-[medoid fQ          ]	240557.24
-[Profit             ]	4304
-[Weight             ]	3598
-[fQ Min Found       ]	230522.32
-[Profit Found       ]	5328
-[Weight Found       ]	3542
-
-NO QALS
-[fQ Min Found     ]	-9424.8
-[Profit Found     ]	2936
-[Weight Found     ]	560

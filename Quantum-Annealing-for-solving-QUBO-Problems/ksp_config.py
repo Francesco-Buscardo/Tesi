@@ -32,8 +32,8 @@ MATCH_K_T = [
 
 SCALE_QUBO = 1
 
-LAMBDA_VALUE = "lambda_div_3"
-# LAMBDA_VALUE = "lambda_650_dot_C"
+#LAMBDA_VALUE = "lambda_div_3"
+LAMBDA_VALUE = "lambda_650_dot_C"
 # LAMBDA_VALUE = "lambda_6500_dot_C"
 # LAMBDA_VALUE = "lambda_div_C"
 
