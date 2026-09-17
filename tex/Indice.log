@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  30 JUL 2026 14:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  17 SEP 2026 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -344,76 +344,76 @@ LaTeX Warning: No \author given.
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.33 \chapter
-             {Introduzione} [1]
 Chapter 1.
 
-Overfull \hbox (15.94466pt too wide) in paragraph at lines 36--39
+Overfull \hbox (15.94466pt too wide) in paragraph at lines 31--34
 \T1/cmr/m/n/12 con-testo dell'informatica quan-tis-tica e lim-iti dei metodi cl
 as-sici che mo-ti-vano l'approccio
  []
 
-[2
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.39 \chapter
+             {Background teorico} [1
 
 ]
 Chapter 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 48.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 48.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 48.
-[3
+[2
 
 ]
 Chapter 3.
-[4
+[3
 
 ]
 Chapter 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 75.
+(Font)              <12> on input line 58.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 58.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 58.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 61.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 75.
+(hyperref)                removing `math shift' on input line 61.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 75.
+(hyperref)                removing `\lambda' on input line 61.
 
 
-Overfull \hbox (9.84583pt too wide) in paragraph at lines 76--79
+Overfull \hbox (9.84583pt too wide) in paragraph at lines 62--65
 \T1/cmr/m/n/12 Confrontare i tre metodi di cal-colo di $\OML/cmm/m/it/12 ^^U$ \
 T1/cmr/m/n/12 uti-liz-zati nei re-port ($[] \OML/cmm/m/it/12 p[]=C$\T1/cmr/m/n/
 12 , $[] \OML/cmm/m/it/12 p[]=\OT1/cmr/m/n/12 3$\T1/cmr/m/n/12 , $[] \OML/cmm/m
 /it/12 p[]=\OT1/cmr/m/n/12 (650 \OMS/cmsy/m/n/12 ^^A
  []
 
-[5
+[4
 
 ]
 Chapter 5.
-[6
+[5
 
 ]
 Chapter 6.
-[7
+[6
 
 ]
 Chapter 7.
-[8
+[7
 
 ]
 Chapter 8.
-[9
+[8
 
 ]
 Chapter 9.
-[10
+[9
 
 ] (Indice.aux)
  ***********
@@ -421,20 +421,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `Indice.out' has not changed.
-(rerunfilecheck)             Checksum: 1CCA724E5770E716438C3F614B46B851;3728.
+(rerunfilecheck)             Checksum: E76826BD26853DDA7B0BDECB52EA735A;3475.
  ) 
 Here is how much of TeX's memory you used:
- 9921 strings out of 467871
- 156767 string characters out of 5418860
+ 9916 strings out of 467871
+ 156712 string characters out of 5418860
  585092 words of memory out of 5000000
- 38675 multiletter control sequences out of 15000+600000
+ 38673 multiletter control sequences out of 15000+600000
  638457 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,79p,304b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2
-488.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-ecrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
-i600\ecbx1728.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
+200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+ecbx1728.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
+i600\ecbx2488.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
 ec/dpi600\ecrm1440.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
 ppen/ec/dpi600\ecbx2074.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX
@@ -442,9 +442,9 @@ ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Indice.pdf (11 pages, 150673 bytes).
+Output written on Indice.pdf (10 pages, 147523 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
