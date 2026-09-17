@@ -1,0 +1,126 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian,english]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\geometry{
+    top=3cm,
+    bottom=3cm,
+    left=3cm,
+    right=3cm
+}
+
+\setstretch{1.2}
+
+\title{\textbf{Quantum Annealing Learning Search per la risoluzione di problemi QUBO} \\[0.3cm]
+\large Anteprima della struttura della tesi}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Nota}
+Il presente documento riporta la struttura che intendo seguire per la
+stesura della tesi.
+\vspace{1cm}
+
+\chapter{Introduzione}
+
+\section{Motivazioni}
+Spiegare perché studiare QALS e il quantum annealing applicato a problemi QUBO;
+contesto dell'informatica quantistica e limiti dei metodi classici che motivano
+l'approccio ibrido.
+
+\section{Obiettivi}
+Definire cosa si vuole dimostrare/verificare nella tesi: analizzare le prestazioni
+di QALS sulla variante 0/1 del Knapsack Problem e proporre miglioramenti.
+
+\chapter{Background teorico}
+
+\section{Problemi QUBO}
+Definire formalmente un problema QUBO (Quadratic Unconstrained Binary Optimization),
+la sua forma matriciale $x^TQx$ e perché è centrale nel quantum annealing.
+
+\section{Quantum Annealing}
+Descrivere il principio fisico del quantum annealing, l'hardware D-Wave e 
+le topologie (Chimera, Pegasus) con i relativi limiti di embedding.
+
+\chapter{Quantum Annealing Learning Search (QALS)}
+
+\section{Algoritmo}
+Descrivere l'idea generale e lo pseudocodice di QALS: ciclo di annealing classico
+esterno, meccanismo tabù integrato nel profilo energetico, notazione e parametri
+principali.
+
+\section{Implementazione}
+Mostrare l' iplementazione Python di QALS usata.
+
+\chapter{Knapsack Problem}
+
+\section{Formulazione QUBO}
+Definire le variante del Knapsack Problem trattata (0/1) e introdurre il 
+termine di penalità quadratico per trasformarle in problemi QUBO.
+
+\section{Derivazione della matrice Q}
+Sviluppare passo per passo il calcolo algebrico che porta dalla funzione
+obiettivo penalizzata alla matrice $Q$, distinguendo i termini lineari e
+quadratici.
+
+\section{Scelte del parametro \(\lambda\)}
+Confrontare i tre metodi di calcolo di \(\lambda\) utilizzati nei report
+(\(\sum p_i / C\), \(\sum p_i / 3\), \(\sum p_i / (650 \cdot C)\)) e il loro effetto
+sulla penalizzazione del vincolo.
+
+\chapter{Metodologia sperimentale}
+
+\section{Scaling QUBO}
+Spiegare l'effetto della moltiplicazione della matrice \(Q\) per un fattore
+\(\alpha\) sull'energia e sulla probabilità di accettazione nel simulated
+annealing, con il compromesso tra esplorazione e precisione.
+
+\section{Parametro Swap(k, TIMES)}
+Introdurre la distinzione tra il parametro \(k\) (numero di chiamate
+all'annealer) e TIMES (numero di ripetizioni di QALS/annealer), motivandone
+l'introduzione e i risultati preliminari.
+
+\section{Confronto con Gurobi}
+Presentare la validazione delle soluzioni trovate da QALS confrontandole con
+quelle ottenute da Gurobi sulle istanze di test, evidenziando corrispondenze
+e discrepanze.
+
+\chapter{Diagnostica di QALS}
+
+\section{Distanze di Hamming}
+Definire le quattro metriche di distanza di Hamming usate per analizzare il
+comportamento di QALS.
+
+\section{Clustering agglomerativo}
+Descrivere la costruzione della matrice delle distanze, il clustering
+agglomerativo delle soluzioni esplorate, l'individuazione del medoid e
+l'interpretazione in termini di concentrazione/dispersione della ricerca.
+
+\section{Decay factor}
+Presentare l'introduzione del decay factor nella matrice tabù, la sua
+formulazione matematica e gli effetti osservati sui risultati sperimentali.
+
+\chapter{Proposta di miglioramento}
+Illustrare le criticità individuate nella diagnostica, la modifica proposta 
+all'algoritmo, la sua motivazione teorica e il confronto con la versione originale.
+
+\chapter{Risultati sperimentali}
+
+\section{Riepilogo comparativo per istanza}
+Riassumere e confrontare i risultati ottenuti su tutte le istanze di test.
+
+\chapter{Conclusioni}
+Riassumere il lavoro svolto, i risultati principali, i limiti, i possibili 
+sviluppi futuri e applicazioni.
+
+
+\end{document}
