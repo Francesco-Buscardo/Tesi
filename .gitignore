@@ -1,5 +1,4 @@
 .vscode/
 *.out
 *exe
-.venv/
 __pycache__/

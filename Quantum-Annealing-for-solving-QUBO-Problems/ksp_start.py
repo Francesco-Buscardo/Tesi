@@ -1,11 +1,14 @@
 from os import system, name
-import numpy as np  
+import numpy as np  #type: ignore
 from os import path
+import time
 
-from QA4QUBO import ksp, app
+from QA4QUBO import ksp, app, gurobi_opt
 from QA4QUBO.colors import colors
 import QA4QUBO.gen_test as gen_test
+
 import ksp_config as ksp_config
+
 
 def run_match_k_TIMES(file, n, capacity, items, _Q):
     folder = gen_test.generate_folder_match_k_TIMES(file)
@@ -37,8 +40,15 @@ def main():
         # =========================
         # ESECUZIONE ALGORITMO
         # =========================
-        run_match_k_TIMES(file=file, n=n, capacity=capacity, items=items, _Q=Q_scale)
+        # run_match_k_TIMES(file=file, n=n, capacity=capacity, items=items, _Q=Q_scale)
 
+        # folder = "test/prova/"
+        # for (k, TIMES) in ksp_config.MATCH_K_T:
+        #     app.app1(folder, TIMES, k, _Q, n, capacity, items)
+
+        if ksp_config.GUROBI == True:
+            profit, weight, _, _, t = gurobi_opt.test_gurobi_optimizer(n, _Q, items) 
+            print("TIME GUROBI: ", round(t, 2))
 
 if __name__ == '__main__':
     system('cls' if name == 'nt' else 'clear')

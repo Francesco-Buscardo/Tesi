@@ -1,10 +1,10 @@
-test embbedding
+TODO:
+- tipologia zephire
 
-POI tipologia zephire
-
-non ho fatto - inzio
-ho fatto 
-sperimentale:
-  divisione domande - dopo
-
-prox incontro: 10:00 giovedì
+INDICE:
+inzio
+    non ho fatto
+dopo
+    ho fatto 
+    sperimentale:
+        divisione domande

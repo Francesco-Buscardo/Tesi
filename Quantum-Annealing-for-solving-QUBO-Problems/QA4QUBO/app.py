@@ -53,6 +53,7 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
                 - p_delta     = prob modifica permutazione
                 - q           = prob di perturbazione della soluz candidata
             """ 
+            start = time.perf_counter()
             z_best, f_best, r_time, Z, solutions_matrix_zacc, solutions_matrix_star, solutions_matrix_zopt_zprop, solutions_matrix_zopt_zstar = solver.solve(
                 z_opt       = z_opt,
                 n           = n,
@@ -72,6 +73,8 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
                 r_max       = ksp_config.R_MAX,
                 M           = ksp_config.PAR_M
             )
+            end = time.perf_counter()
+            print("TIME QALS: ", round(end - start, 2))
 
             D = hamming.build_pairwise_hamming_matrix(Z)
 

@@ -10,18 +10,22 @@ class QALSParams:
 TEST_FOLDER  = Path("test/Lambda_dinamico/")
 
 KSP_EXAMPLES = [
-    #Path("QA4QUBO/ksp/ksp_1.txt")
-    #Path("QA4QUBO/ksp/ksp_2.txt")
-    Path("QA4QUBO/ksp/ksp_3.txt")
+    # Path("QA4QUBO/ksp/ksp_1.txt")
+    # Path("QA4QUBO/ksp/ksp_2.txt")
+    # Path("QA4QUBO/ksp/ksp_3.txt")
+    # Path("QA4QUBO/ksp/ksp_4.txt")
+    # Path("QA4QUBO/ksp/ksp_5.txt")
+    # Path("QA4QUBO/ksp/ksp_6.txt")
+    Path("QA4QUBO/ksp/ksp_7.txt")
 ]
 
 # i_max=[10, 50, 100, 250, 500, 1000]
 # N_max=[5,  25, 50,  125, 250, 500 ]
 # d_min=[4,  18, 35,  88,  175, 350 ]
 QALS_PARAMS = QALSParams(       
-    i_max=[250],
-    N_max=[125],
-    d_min=[88]
+    i_max=[10],
+    N_max=[5],
+    d_min=[4]
 )
 
 # k = quante volte risolvo il problema QUBO
@@ -31,6 +35,8 @@ MATCH_K_T = [
 ]
 
 SCALE_QUBO = 1
+
+GUROBI = True
 
 #LAMBDA_VALUE = "lambda_div_3"
 LAMBDA_VALUE = "lambda_650_dot_C"
