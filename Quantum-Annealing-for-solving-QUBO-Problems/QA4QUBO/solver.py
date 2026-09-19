@@ -262,7 +262,7 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
             sampler = DWaveSampler(topology__type = topology)
             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             
-            print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.HEADER + "Using Pegasus Topology \n" + colors.ENDC)
+            print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.HEADER + f"Using {topology} Topology \n" + colors.ENDC)
             
             # topologia del sampler
             A = get_active(sampler, n)
