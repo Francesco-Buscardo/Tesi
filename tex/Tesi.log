@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  30 JUL 2026 13:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.11)  20 SEP 2026 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,18 +434,18 @@ Chapter 3.
 ]
 Chapter 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 189.
+(Font)              <17.28> on input line 174.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 189.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 189.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 189.
+(hyperref)                removing `\lambda' on input line 174.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 174.
 
 [9
 
@@ -474,13 +474,13 @@ Appendix A.
 [15
 
 ]
-Underfull \hbox (badness 7504) in paragraph at lines 318--320
+Underfull \hbox (badness 7504) in paragraph at lines 303--305
 [] \T1/cmr/m/it/12 pyso-lu-tion --- Python Knap-sack So-lu-tion\T1/cmr/m/n/12 ,
   []$\T1/cmtt/m/n/12 https : / / github . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--320
+Underfull \hbox (badness 10000) in paragraph at lines 303--305
 \T1/cmtt/m/n/12 mohitsingla123 / Dynamic-[]Programming-[]java / blob / master /
  0-[]1 %
  []
@@ -495,16 +495,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
-(rerunfilecheck)             Checksum: AAA64136693F9F7DBBDA6EE987B11F97;5060.
+(rerunfilecheck)             Checksum: 0FA60BF6424CBA9449E47CEF5E7D15AC;4651.
  ) 
 Here is how much of TeX's memory you used:
- 10862 strings out of 467871
- 171485 string characters out of 5418860
- 606959 words of memory out of 5000000
- 39549 multiletter control sequences out of 15000+600000
+ 10853 strings out of 467871
+ 171357 string characters out of 5418860
+ 605831 words of memory out of 5000000
+ 39543 multiletter control sequences out of 15000+600000
  638542 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,303b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,302b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1
 200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 ectt1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
@@ -515,9 +515,9 @@ ppen/ec/dpi600\ecbx2488.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour
 jfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/User/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-Output written on Tesi.pdf (18 pages, 189749 bytes).
+Output written on Tesi.pdf (18 pages, 187804 bytes).
 PDF statistics:
- 691 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 676 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 

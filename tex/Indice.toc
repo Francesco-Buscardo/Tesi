@@ -4,21 +4,18 @@
 \contentsline {section}{\numberline {1.2}Obiettivi}{2}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Background teorico}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Quantum Annealing}{3}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Quantum Annealing Learning Search (QALS)}{4}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Algoritmo}{4}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Knapsack Problem}{5}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Formulazione QUBO}{5}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Derivazione della matrice Q}{5}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Scelte del parametro \(\lambda \)}{5}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Metodologia sperimentale}{6}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Scaling QUBO}{6}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Parametro Swap(k, TIMES)}{6}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Confronto con Gurobi}{6}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Diagnostica di QALS}{7}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Distanze di Hamming}{7}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Clustering agglomerativo}{7}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Decay factor}{7}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Proposta di miglioramento}{8}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Risultati sperimentali}{9}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Riepilogo comparativo per istanza}{9}{section.8.1}%
-\contentsline {chapter}{\numberline {9}Conclusioni}{10}{chapter.9}%
+\contentsline {section}{\numberline {2.2}Formulazione QUBO}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Algoritmo}{3}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Knapsack Problem}{4}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Derivazione della matrice Q}{4}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Scelte del parametro \(\lambda \)}{4}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Diagnostica}{5}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Scaling QUBO}{5}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Parametro Swap(k, TIMES)}{5}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Decay factor}{5}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Distanze di Hamming}{5}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Clustering agglomerativo}{5}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Modfica QALS}{6}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Risultati sperimentali}{7}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Riepilogo comparativo per istanza}{7}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Conclusioni}{8}{chapter.7}%

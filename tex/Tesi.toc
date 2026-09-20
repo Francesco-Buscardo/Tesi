@@ -5,10 +5,7 @@
 \contentsline {section}{\numberline {1.1}Motivazioni}{6}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Obiettivi}{6}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Background teorico}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Problemi QUBO}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Quantum Annealing}{7}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Approcci ibridi}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Simulated Annealing}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.1}Quantum Annealing}{7}{section.2.1}%
 \contentsline {chapter}{\numberline {3}Quantum Annealing Learning Search (QALS)}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Algoritmo}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Dimostrazione di convergenza}{8}{section.3.2}%
