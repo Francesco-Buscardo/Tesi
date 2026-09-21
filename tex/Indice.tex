@@ -44,24 +44,22 @@ di QALS sulla variante 0/1 del Knapsack Problem e proporre miglioramenti.
 Descrivere il principio fisico del quantum annealing, l'hardware D-Wave e 
 le topologie (Chimera, Pegasus, Zephyre) usate.
 
-\section{Formulazione QUBO}
+\section{Formulazione QUBO  Knapsack 0/1}
 Definire le variante del Knapsack Problem trattata (0/1) e introdurre il 
 termine di penalità quadratico per trasformarle in problemi QUBO.
-
-\section{Algoritmo}
-Descrivere l'idea generale e lo pseudocodice di QALS (tabù matrix, parametri.)
-
-\chapter{Knapsack Problem}
 
 \section{Derivazione della matrice Q}
 Sviluppare passo per passo il calcolo algebrico che porta dalla funzione
 obiettivo penalizzata alla matrice $Q$, distinguendo i termini lineari e
 quadratici.
- 
+
 \section{Scelte del parametro \(\lambda\)}
 Confrontare i tre metodi di calcolo di \(\lambda\) utilizzati nei report
 (\(\sum p_i / C\), \(\sum p_i / 3\), \(\sum p_i / (650 \cdot C)\)) e il loro effetto
 sulla penalizzazione del vincolo.
+
+\section{Algoritmo}
+Descrivere l'idea generale e lo pseudocodice di QALS (tabù matrix, parametri).
  
 \chapter{Diagnostica}
  
@@ -87,7 +85,7 @@ Descrivere la costruzione della matrice delle distanze, il clustering
 agglomerativo delle soluzioni esplorate, l'individuazione del medoid e
 l'interpretazione in termini di concentrazione/dispersione della ricerca.
  
-\chapter{Modfica QALS}
+\chapter{Modifica QALS}
 Illustrare le criticità individuate nella diagnostica, la modifica proposta 
 all'algoritmo, la sua motivazione teorica e il confronto con la versione originale.
  
