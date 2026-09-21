@@ -1,0 +1,26 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Glossario}{vii}{}%
+\contentsline {chapter}{Nomenclature list}{vii}{}%
+\contentsline {chapter}{Introduzione}{1}{}%
+\contentsline {chapter}{\numberline {1}Background Teorico}{3}{}%
+\contentsline {section}{\numberline {1.1}Quantum Annealing}{3}{}%
+\contentsline {section}{\numberline {1.2}Formulazione QUBO Knapsack 0/1}{3}{}%
+\contentsline {section}{\numberline {1.3}Derivazione della matrice Q}{3}{}%
+\contentsline {section}{\numberline {1.4}Scelte del parametro $\lambda $}{3}{}%
+\contentsline {section}{\numberline {1.5}Algoritmo}{3}{}%
+\contentsline {chapter}{\numberline {2}Diagnostica}{5}{}%
+\contentsline {section}{\numberline {2.1}Scaling QUBO}{5}{}%
+\contentsline {section}{\numberline {2.2}Parametro Swap(k, TIMES)}{5}{}%
+\contentsline {section}{\numberline {2.3}Decay factor}{5}{}%
+\contentsline {section}{\numberline {2.4}Distanze di Hamming}{5}{}%
+\contentsline {section}{\numberline {2.5}Clustering agglomerativo}{5}{}%
+\contentsline {chapter}{\numberline {3}Modifica QALS}{7}{}%
+\contentsline {section}{\numberline {3.1}Modifica proposta}{7}{}%
+\contentsline {chapter}{\numberline {4}Confronto Gurobi}{9}{}%
+\contentsline {section}{\numberline {4.1}Confronto con ottimizzatore Gurobi}{9}{}%
+\contentsline {chapter}{\numberline {5}Risultati sperimentali}{11}{}%
+\contentsline {section}{\numberline {5.1}Riepilogo comparativo per istanza}{11}{}%
+\contentsline {chapter}{Conclusioni}{13}{}%
+\contentsline {chapter}{Bibliografia}{15}{}%
+\contentsline {chapter}{List of Figures}{15}{}%
+\contentsline {chapter}{List of Tables}{17}{}%
