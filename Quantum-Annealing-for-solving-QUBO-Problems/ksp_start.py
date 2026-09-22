@@ -42,12 +42,12 @@ def main():
         # =========================
         # run_match_k_TIMES(file=file, n=n, capacity=capacity, items=items, _Q=Q_scale)
 
-        # folder = "test/prova/"
-        # for (k, TIMES) in ksp_config.MATCH_K_T:
-        #     app.app1(folder, TIMES, k, _Q, n, capacity, items)
+        folder = "test/prova/"
+        for (k, TIMES) in ksp_config.MATCH_K_T:
+            app.app1(folder, TIMES, k, _Q, n, capacity, items)
 
         if ksp_config.GUROBI == True:
-            profit, weight, _, _, t = gurobi_opt.test_gurobi_optimizer(n, _Q, items) 
+            _, _, _, _, t = gurobi_opt.test_gurobi_optimizer(n, _Q, items) 
             print("TIME GUROBI: ", round(t, 2))
 
 if __name__ == '__main__':

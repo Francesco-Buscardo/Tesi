@@ -22,7 +22,7 @@ KSP_EXAMPLES = [
     # Path("QA4QUBO/ksp/ksp_10.txt") # 5767.69s
     # Path("QA4QUBO/ksp/ksp_11.txt") # 5779.47
     # Path("QA4QUBO/ksp/ksp_12.txt") # 6991.3
-    # Path("QA4QUBO/ksp/ksp_13.txt") # no
+    Path("QA4QUBO/ksp/ksp_13.txt") # no
 ]
 
 # i_max=[10, 50, 100, 250, 500, 1000]
@@ -42,7 +42,7 @@ MATCH_K_T = [
 
 SCALE_QUBO = 1
 
-GUROBI = True
+GUROBI = False
 
 #LAMBDA_VALUE = "lambda_div_3"
 LAMBDA_VALUE = "lambda_650_dot_C"
