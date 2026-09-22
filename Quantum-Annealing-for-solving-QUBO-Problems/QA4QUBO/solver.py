@@ -258,21 +258,15 @@ def solve(z_opt, d_min, eta, i_max, k, lambda_zero, n, N, N_max, p_delta, q, top
         if (not sim):  # ? REAL QUANTUM MODE
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.HEADER + "Started Algorithm in Quantum Mode" + colors.ENDC)
             
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             sampler = DWaveSampler(topology__type = topology)
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.HEADER + f"Using {topology} Topology \n" + colors.ENDC)
             
-            # topologia del sampler
             A = get_active(sampler, n)
         else: # ? SIMULATED MODE
             print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.OKCYAN + "Started Algorithm in Simulating Mode" + colors.ENDC)
             
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             sampler = neal.SimulatedAnnealingSampler()
-            # sampler = dimod.ExactSolver()
-            # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             
             if topology == 'chimera':
                 print(now() + " [" + colors.BOLD + colors.OKGREEN + "LOG" + colors.ENDC + "] " + colors.OKCYAN + "Using Chimera Topology \n" + colors.ENDC)
