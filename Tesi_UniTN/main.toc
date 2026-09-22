@@ -16,10 +16,10 @@
 \contentsline {section}{\numberline {2.5}Clustering agglomerativo}{5}{}%
 \contentsline {chapter}{\numberline {3}Modifica QALS}{7}{}%
 \contentsline {section}{\numberline {3.1}Modifica proposta}{7}{}%
-\contentsline {chapter}{\numberline {4}Confronto Gurobi}{9}{}%
-\contentsline {section}{\numberline {4.1}Confronto con ottimizzatore Gurobi}{9}{}%
-\contentsline {chapter}{\numberline {5}Risultati sperimentali}{11}{}%
-\contentsline {section}{\numberline {5.1}Riepilogo comparativo per istanza}{11}{}%
+\contentsline {chapter}{\numberline {4}Risultati sperimentali}{9}{}%
+\contentsline {section}{\numberline {4.1}Riepilogo comparativo per istanza}{9}{}%
+\contentsline {chapter}{\numberline {5}Confronto e limiti Gurobi}{11}{}%
+\contentsline {section}{\numberline {5.1}Confronto con ottimizzatore Gurobi}{11}{}%
 \contentsline {chapter}{Conclusioni}{13}{}%
 \contentsline {chapter}{Bibliografia}{15}{}%
 \contentsline {chapter}{List of Figures}{15}{}%
