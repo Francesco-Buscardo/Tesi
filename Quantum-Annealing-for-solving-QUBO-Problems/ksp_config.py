@@ -14,15 +14,15 @@ KSP_EXAMPLES = [
     # Path("QA4QUBO/ksp/ksp_2.txt")
     # Path("QA4QUBO/ksp/ksp_3.txt")
     # Path("QA4QUBO/ksp/ksp_4.txt")
-    # Path("QA4QUBO/ksp/ksp_5.txt") # no
-    # Path("QA4QUBO/ksp/ksp_6.txt") # si
-    # Path("QA4QUBO/ksp/ksp_7.txt") # no
-    # Path("QA4QUBO/ksp/ksp_8.txt") # 2576.09s
-    # Path("QA4QUBO/ksp/ksp_9.txt") # no
+    # Path("QA4QUBO/ksp/ksp_5.txt")  # no
+    # Path("QA4QUBO/ksp/ksp_6.txt")  # si
+    # Path("QA4QUBO/ksp/ksp_7.txt")  # no
+    # Path("QA4QUBO/ksp/ksp_8.txt")  # 2576.09s
+    # Path("QA4QUBO/ksp/ksp_9.txt")  # no
     # Path("QA4QUBO/ksp/ksp_10.txt") # 5767.69s
     # Path("QA4QUBO/ksp/ksp_11.txt") # 5779.47
     # Path("QA4QUBO/ksp/ksp_12.txt") # 6991.3
-    Path("QA4QUBO/ksp/ksp_13.txt") # 
+    # Path("QA4QUBO/ksp/ksp_13.txt") # no
 ]
 
 # i_max=[10, 50, 100, 250, 500, 1000]
