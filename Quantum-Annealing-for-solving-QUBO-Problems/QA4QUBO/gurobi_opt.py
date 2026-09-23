@@ -1,12 +1,10 @@
 import time
 
-from gurobipy import Model, GRB, quicksum #type: ignore
+from gurobipy import Model, GRB, quicksum, GurobiError #type: ignore
 
 def test_gurobi_optimizer(n_items, Q, items):
-    # create model
-    knapsack_model = Model('knapsack')
 
-    # add decision variables to model
+    knapsack_model = Model('knapsack')
     x = knapsack_model.addVars(n_items, vtype = GRB.BINARY, name = "x")
 
     #define objective function Q(x) = x^T Q x = ∑​_i(∑​_j(Qij ​xi ​xj​))
@@ -15,20 +13,19 @@ def test_gurobi_optimizer(n_items, Q, items):
 
     start = time.perf_counter()
 
-    # run
     knapsack_model.setParam('OutputFlag', False) 
     knapsack_model.optimize()
 
     end = time.perf_counter()
 
-    #print("Optimization is done:", round(knapsack_model.ObjVal, 2))
-    sol = []
-    for i in range(n_items):
-        val = int(round(x[i].X))
-        sol.append(val)
-        # print(f"x[{i}]: {val}")
+    return end - start
 
-    total_weight = sum(items[i][0] for i in range(n_items) if sol[i] == 1)
-    total_profit = sum(items[i][1] for i in range(n_items) if sol[i] == 1)
+    # sol = []
+    # for i in range(n_items):
+    #     val = int(round(x[i].X))
+    #     sol.append(val)
 
-    return total_profit, total_weight, sol, round(knapsack_model.ObjVal, 2), (end - start)
+    # total_weight = sum(items[i][0] for i in range(n_items) if sol[i] == 1)
+    # total_profit = sum(items[i][1] for i in range(n_items) if sol[i] == 1)
+
+    # return total_profit, total_weight, sol, round(knapsack_model.ObjVal, 2), (end - start)

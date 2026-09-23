@@ -171,8 +171,10 @@ def app1(folder, TIMES, k, _Q, n, capacity, items):
 def app2(TIMES, k, _Q, items):
     string = str()
 
+    start = time.perf_counter()
     sampler = neal.SimulatedAnnealingSampler()
-    
+    end = time.perf_counter()
+
     print(string)
     string = ""
     
@@ -204,4 +206,4 @@ def app2(TIMES, k, _Q, items):
     string += log_write("Profit Found     ", p_best_found)
     string += log_write("Weight Found     ", w_best_found)
 
-    return string
+    return string, (end - start)

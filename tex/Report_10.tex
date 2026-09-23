@@ -1,0 +1,53 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage[utf8]{inputenc}    
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}  
+\usepackage{graphicx}          
+\usepackage{hyperref}     
+\usepackage{xcolor}     
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage[a4paper, margin=2.0cm]{geometry}
+
+\title{Report 10 -- Confronto QALS - GUROBI}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Limiti Gurobi}
+Per quanto riguarda i limiti dell'ottimizzatore Gurobi, nella documentazione 
+ufficiale {} si può notare come, oltre alle limitazioni imposte dalle possibili licenze,
+l'unico reale limite è relativo alla potenza del dispotivo che si sta usando. Ne conviene
+che non risulta essere adeguato definire un confronto in relazione a ciò, ma piuttosto
+è necessario discutere in relazione al tempo impiegato.
+Sulla base dei seguenti risultati dati dalla media di 10 run:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{N. items} & \textbf{QALS (s)} & \textbf{Gurobi (s)} \\
+        \midrule
+        72 & \textcolor{red}{22.42} & 21.83 \\
+        73 & \textcolor{red}{21.71} & 21.40 \\
+        74 & 19.73 & \textcolor{red}{30.53} \\
+        75 & 23.12 & \textcolor{red}{25.12} \\
+        76 & 22.47 & \textcolor{red}{77.87} \\
+        77 & 24.4 &  \textcolor{red}{88.4} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Confronto dei tempi di esecuzione tra QALS e Gurobi al variare del numero di item.}
+    \label{tab:qals_vs_gurobi}
+\end{table}
+si può concludere che non sempre vale la pena eseguire QALS: come visto nei risultati
+fino a 73 items (incluso) ci converrebbe utlizzare Gurobi, dal 74-esimo in poi QALS sembra 
+impiegarci meno tempo.
+
+\end{document}
