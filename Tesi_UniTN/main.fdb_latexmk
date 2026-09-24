@@ -1,19 +1,19 @@
 # Fdb version 4
-["biber main"] 1790169110.66189 "main.bcf" "main.bbl" "main" 1790169114.36028 0
-  "main.bcf" 1790169114.24212 107697 a0a417cbca3bc4ebb95b429cb0be33da "pdflatex"
+["biber main"] 1790169110.66189 "main.bcf" "main.bbl" "main" 1790238718.40622 0
+  "main.bcf" 1790238718.30903 107697 a0a417cbca3bc4ebb95b429cb0be33da "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["makeindex main.idx"] 1789992595.54136 "main.idx" "main.ind" "main" 1790169114.36007 0
-  "main.idx" 1790169113.64388 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1789992595.54136 "main.idx" "main.ind" "main" 1790238718.40608 0
+  "main.idx" 1790238717.77799 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1790169112.8879 "/home/francesco-buscardo/uni/triennale/Tesi/Tesi_UniTN/main.tex" "main.pdf" "main" 1790169114.36057 0
+["pdflatex"] 1790238717.00355 "/home/francesco-buscardo/uni/triennale/Tesi/Tesi_UniTN/main.tex" "main.pdf" "main" 1790238718.40645 0
   "/etc/texmf/web2c/texmf.cnf" 1775214102.38668 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/francesco-buscardo/uni/triennale/Tesi/Tesi_UniTN/main.tex" 1790169110.2514 478 95c61b395e1e14ad12aa98556b4bc4f4 ""
+  "/home/francesco-buscardo/uni/triennale/Tesi/Tesi_UniTN/main.tex" 1790238715.35429 479 28790db9329c0a4e21d9b21c542a38ca ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -228,20 +228,20 @@
   "capitoli/Conclusioni.tex" 1789985186 0 d41d8cd98f00b204e9800998ecf8427e ""
   "capitoli/Confronto_gurobi.tex" 1789985186 44 5b1d1006d2b63e4d06fbb3971bc9e93a ""
   "capitoli/Diagnostica.tex" 1789985186 152 ac79ebafe9096d1577a8018115b005b2 ""
-  "capitoli/Modifica_qals.tex" 1789985186 28 a2d4dfa6b86efe1895c93ba6427ffbfa ""
+  "capitoli/Modifica_qals.tex" 1790238702.49483 52 eddc3a04f976f2989fc35683b5c8b6d6 ""
   "capitoli/Risultati_sperimentali.tex" 1789985186 44 e8cbeedece27e8cc5a23f98608b2e23c ""
   "capitoli/intro.tex" 1789985186 0 d41d8cd98f00b204e9800998ecf8427e ""
   "frontespizio.sty" 1789985186 6523 8e7b2c2b26f9da6a0e43dbc48ee17eb2 ""
-  "main.aux" 1790169114.23812 3417 c30d33f70c4885e4077fcf41da934faf "pdflatex"
+  "main.aux" 1790238718.304 3520 f6812c343d5fb3eab2f8fe48745eaa88 "pdflatex"
   "main.bbl" 1790169111.39245 466 ee04f40f768daeed26442158e95aba61 "biber main"
   "main.gls" 0 -1 0 ""
-  "main.ind" 1790169114.23312 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.lof" 1790169114.24481 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
-  "main.lot" 1790169114.24481 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
+  "main.ind" 1790238718.3 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.lof" 1790238718.30975 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
+  "main.lot" 1790238718.30975 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
   "main.nls" 0 -1 0 ""
-  "main.run.xml" 1790169114.24481 2301 fc418833f88d2cf4592b65b247893834 "pdflatex"
-  "main.tex" 1790169110.2514 478 95c61b395e1e14ad12aa98556b4bc4f4 ""
-  "main.toc" 1790169114.24481 1602 4d64271c3a253cd0d9ba647309397b2d "pdflatex"
+  "main.run.xml" 1790238718.30975 2301 fc418833f88d2cf4592b65b247893834 "pdflatex"
+  "main.tex" 1790238715.35429 479 28790db9329c0a4e21d9b21c542a38ca ""
+  "main.toc" 1790238718.30975 1664 4cd740da0edb6fd48a591d8bca393b80 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

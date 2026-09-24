@@ -50,4 +50,28 @@ si può concludere che non sempre vale la pena eseguire QALS: come visto nei ris
 fino a 73 items (incluso) ci converrebbe utlizzare Gurobi, dal 74-esimo in poi QALS sembra 
 impiegarci meno tempo.
 
+\section{Limiti Teorici Embedding}
+Si consideri ora un aspetto più quantitivo, ovvero cercare di capire quali siamo, 
+in fisici, i limiti dell'annealer. Per fare ciò è necessario ricordare
+che fino ad ora si è considerata una mappatura 1:1 sulla topologia Pegasus con 5700 qubit teorici,
+utilizzabili 5436 ossia il 3\% (ref: QALS\_implementations). Vien da se che nel momento in cui 
+cercassi di eseguire QALS con un problema di 5437 items a livello teorico fallirebbe. 
+Nella pratica . . . .
+
+Se invece si utilizzasse \texttt{EmbeddingComposite} che, anziché fare un mapping 1:1, cerca
+di trovare un minor embedding, cioè un processo (euristico) di mappatura delle variabili di un problema 
+di ottimizzazione (rappresentato come un grafo logico) sulla struttura e sulle connessioni 
+fisiche (topologia) dei qubit di un computer quantistico. Il problema principale di questo approccio è che
+il minor embedding potrebbe fallire nel caso in cui il problema sia troppo denso; inoltre il tetto massimo
+non cambia.
+
+Ma allora quali sarebbero i vantaggi di usare \texttt{EmbeddingComposite}?
+
+Utlizzando il costum il problema che si cerca di ottimizzare cambia ogni volta
+e quindi quello che si sta ottimizzando non è il vero problema ma una sua versione 
+approssimata, con \texttt{EmbeddingComposite} invece no. 
+
+\section{Limiti Reali Embedding}
+
+
 \end{document}
