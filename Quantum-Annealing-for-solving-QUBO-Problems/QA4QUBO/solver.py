@@ -154,7 +154,7 @@ def write(dir, string):
 # da usare come topologia hardware A per il mapping QALS
 def get_active(sampler, n):
     nodes = dict()
-    tmp = list(sampler.nodelist) # quibits
+    tmp = list(sampler.nodelist) # qubits
     nodelist = list()
 
     for i in range(n):
@@ -175,6 +175,7 @@ def get_active(sampler, n):
         i = 1
         while len(nodes) != n:
             nodes[tmp[n + i]] = list()
+            i++
 
     return nodes
 

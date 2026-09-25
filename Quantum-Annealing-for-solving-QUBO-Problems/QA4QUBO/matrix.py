@@ -26,7 +26,7 @@ def generate_chimera(n):
 def generate_pegasus(n):
     G = dnx.pegasus_graph(16)
 
-    tmp = nx.to_numpy_array(G)
+    tmp = nx.to_numpy_array(G) # 5760 x 5760
     
     rows = []
     cols = []

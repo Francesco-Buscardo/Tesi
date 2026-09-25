@@ -12,7 +12,7 @@ TEST_FOLDER  = Path("test/Lambda_dinamico/")
 KSP_EXAMPLES = [
     # Path("QA4QUBO/ksp/ksp_1.txt")
     # Path("QA4QUBO/ksp/ksp_2.txt")
-    # Path("QA4QUBO/ksp/ksp_3.txt")
+    Path("QA4QUBO/ksp/ksp_3.txt")
     # Path("QA4QUBO/ksp/ksp_4.txt")
     # Path("QA4QUBO/ksp/ksp_5.txt")  # no
     # Path("QA4QUBO/ksp/ksp_6.txt")  # si
@@ -26,11 +26,12 @@ KSP_EXAMPLES = [
     # Path("QA4QUBO/ksp/ksp_14.txt")
     # Path("QA4QUBO/ksp/ksp_15.txt")
     # Path("QA4QUBO/ksp/ksp_16.txt") # 75: da qui (escluso) in poi vince QALS
-    Path("QA4QUBO/ksp/ksp_17.txt")
+    # Path("QA4QUBO/ksp/ksp_17.txt")
     # Path("QA4QUBO/ksp/ksp_18.txt") 
     # Path("QA4QUBO/ksp/ksp_19.txt") 
     # Path("QA4QUBO/ksp/ksp_20.txt") 
-    # Path("QA4QUBO/ksp/ksp_21.txt") 
+    # Path("QA4QUBO/ksp/ksp_21.txt")
+    # Path("QA4QUBO/ksp/ksp_22.txt") 
 ]
 
 # i_max=[10, 50, 100, 250, 500, 1000]

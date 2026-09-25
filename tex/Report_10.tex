@@ -5,14 +5,44 @@
 \usepackage{amsmath, amssymb}  
 \usepackage{graphicx}          
 \usepackage{hyperref}     
-\usepackage{xcolor}     
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{subcaption}
 \usepackage{xcolor}
+\usepackage{listings}
+\usepackage{color}
 \usepackage[a4paper, margin=2.0cm]{geometry}
+
+\definecolor{codebg}{RGB}{248, 248, 248}      
+\definecolor{commentgreen}{RGB}{34, 139, 34}  
+\definecolor{keywordblue}{RGB}{0, 0, 255}      
+\definecolor{stringdark}{RGB}{163, 21, 21}     
+\definecolor{numbergray}{RGB}{0.87,0.07,0.56}   
+
+\lstdefinestyle{coolpython}{
+    language=Python,
+    backgroundcolor=\color{codebg},
+    commentstyle=\color{commentgreen}\itshape,
+    keywordstyle=\color{keywordblue}\bfseries,
+    numberstyle=\tiny\color{numbergray},
+    stringstyle=\color{stringdark},
+    basicstyle=\ttfamily\small,                 
+    breakatwhitespace=false,         
+    breaklines=true,                             
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                                
+    numbersep=8pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    frame=single,                                
+    rulecolor=\color{gray!30},                    
+    frameround=tttt                              
+}
 
 \title{Report 10 -- Confronto QALS - GUROBI}
 
@@ -55,23 +85,46 @@ Si consideri ora un aspetto più quantitivo, ovvero cercare di capire quali siam
 in fisici, i limiti dell'annealer. Per fare ciò è necessario ricordare
 che fino ad ora si è considerata una mappatura 1:1 sulla topologia Pegasus con 5700 qubit teorici,
 utilizzabili 5436 ossia il 3\% (ref: QALS\_implementations). Vien da se che nel momento in cui 
-cercassi di eseguire QALS con un problema di 5437 items a livello teorico fallirebbe. 
-Nella pratica . . . .
+cercassi di eseguire QALS con un problema di 5437 items fallirebbe. 
 
 Se invece si utilizzasse \texttt{EmbeddingComposite} che, anziché fare un mapping 1:1, cerca
 di trovare un minor embedding, cioè un processo (euristico) di mappatura delle variabili di un problema 
 di ottimizzazione (rappresentato come un grafo logico) sulla struttura e sulle connessioni 
-fisiche (topologia) dei qubit di un computer quantistico. Il problema principale di questo approccio è che
-il minor embedding potrebbe fallire nel caso in cui il problema sia troppo denso; inoltre il tetto massimo
-non cambia.
+fisiche (topologia) dei qubit di un computer quantistico, i problema principale che sarebbe che
+il minor embedding potrebbe fallire nel caso in cui il problema sia troppo denso.
 
-Ma allora quali sarebbero i vantaggi di usare \texttt{EmbeddingComposite}?
+Comunque utilizzare un modo e l'altro non cambia l'embedding massimo.
 
+\subsection{Ma allora quali sarebbero i vantaggi di usare \texttt{EmbeddingComposite}?}
 Utlizzando il costum il problema che si cerca di ottimizzare cambia ogni volta
 e quindi quello che si sta ottimizzando non è il vero problema ma una sua versione 
 approssimata, con \texttt{EmbeddingComposite} invece no. 
 
-\section{Limiti Reali Embedding}
+\newpage
 
+\section{Limiti Reali Embedding}
+Nella pratica usando il simulated annealing:
+\begin{lstlisting}[style=coolpython]
+def generate_pegasus(n):
+    G = dnx.pegasus_graph(16)
+
+    tmp = nx.to_numpy_array(G) # 5760 x 5760
+    
+    rows = []
+    cols = []
+        
+    for i in range(n):
+        rows.append(i)
+        cols.append(i)
+        for j in range(n):
+            if(tmp.item(i,j)):
+                rows.append(i)
+                cols.append(j)
+    
+    return list(zip(rows, cols))
+\end{lstlisting}
+si definsce una matrice di 5760 qubits, tutti utilizzabili, il che crea una differenza di
+324 qubits. Queste differenze portano grandi divergenze nel vero annealing perché di 
+quei 324 qubits è importante anche la loro locazione nella topologia e non solo la quantità.
 
 \end{document}

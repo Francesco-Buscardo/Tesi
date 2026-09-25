@@ -1,7 +1,6 @@
 from os import system, name
 import numpy as np  #type: ignore
 from os import path
-import time
 
 from QA4QUBO import ksp, app, gurobi_opt
 from QA4QUBO.colors import colors
@@ -34,7 +33,7 @@ def main():
         _Q = ksp.generate_QUBO_knapsack(n, capacity, items)
         _Q = np.array(_Q)
         
-        Q_scale =  _Q / ksp_config.SCALE_QUBO
+        # Q_scale =  _Q / ksp_config.SCALE_QUBO
         print("\t\t" + colors.BOLD + colors.OKGREEN + "   PROBLEM BUILDED" + colors.ENDC + "\n\n\t\t" + colors.BOLD + colors.OKGREEN + "   START ALGORITHM" + colors.ENDC + "\n")
 
         # =========================
@@ -42,17 +41,13 @@ def main():
         # =========================
         # run_match_k_TIMES(file=file, n=n, capacity=capacity, items=items, _Q=Q_scale)
 
-        for i in range(10):
-            print(f"{i} ##########")
-            folder = "test/prova/"
-            for (k, TIMES) in ksp_config.MATCH_K_T:
-                app.app1(folder, TIMES, k, _Q, n, capacity, items)
-                # _, t = app.app2(TIMES, k, _Q, items)
-                # print("TIME NO QALS: ", round(t, 2))
+        folder = "test/prova/"
+        for (k, TIMES) in ksp_config.MATCH_K_T:
+            app.app1(folder, TIMES, k, _Q, n, capacity, items)
 
-            if ksp_config.GUROBI == True:
-                t = gurobi_opt.test_gurobi_optimizer(n, _Q, items)
-                print("TIME GUROBI: ", round(t, 2))
+        if ksp_config.GUROBI == True:
+            t = gurobi_opt.test_gurobi_optimizer(n, _Q, items)
+            print("TIME GUROBI: ", round(t, 2))
 
 if __name__ == '__main__':
     system('cls' if name == 'nt' else 'clear')
