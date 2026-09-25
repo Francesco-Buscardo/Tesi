@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Limiti Gurobi}{2}{section.1}%
+\contentsline {section}{\numberline {2}Limiti Teorici Embedding}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Ma allora quali sarebbero i vantaggi di usare \texttt {EmbeddingComposite}?}{2}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Limiti Reali Embedding}{3}{section.3}%

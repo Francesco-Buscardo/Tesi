@@ -13,6 +13,7 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{makeidx}
 \usepackage[a4paper, margin=2.0cm]{geometry}
 
 \definecolor{codebg}{RGB}{248, 248, 248}      
@@ -50,15 +51,20 @@
 
 \maketitle
 
+\tableofcontents
 \newpage
 
 \section{Limiti Gurobi}
 Per quanto riguarda i limiti dell'ottimizzatore Gurobi, nella documentazione 
-ufficiale {} si può notare come, oltre alle limitazioni imposte dalle possibili licenze,
-l'unico reale limite è relativo alla potenza del dispotivo che si sta usando. Ne conviene
-che non risulta essere adeguato definire un confronto in relazione a ciò, ma piuttosto
-è necessario discutere in relazione al tempo impiegato.
-Sulla base dei seguenti risultati dati dalla media di 10 run:
+ufficiale si può notare come, oltre alle limitazioni imposte dalle possibili licenze,
+l'unico reale limite è relativo alla potenza del dispotivo che si sta usando. Tramite 
+test eseguiti con un processore AMD Ryzen 5 PRO 5650U with Radeon Graphics il limite 
+a cui sono arrivato è un problema con 132 items in un tempo di 5779,47", dopodichè il 
+programma va in crash.
+
+Ne conviene che non è adeguato definire un confronto in relazione a ciò, ma piuttosto
+è necessario discutere in relazione al tempo impiegato rispetto a QALS.
+Sulla base dei seguenti risultati dati dalla media su 10 esecuzioni:
 \begin{table}[H]
     \centering
     \begin{tabular}{ccc}
@@ -76,13 +82,12 @@ Sulla base dei seguenti risultati dati dalla media di 10 run:
     \caption{Confronto dei tempi di esecuzione tra QALS e Gurobi al variare del numero di item.}
     \label{tab:qals_vs_gurobi}
 \end{table}
-si può concludere che non sempre vale la pena eseguire QALS: come visto nei risultati
-fino a 73 items (incluso) ci converrebbe utlizzare Gurobi, dal 74-esimo in poi QALS sembra 
-impiegarci meno tempo.
+si può concludere che non sempre vale la pena eseguire QALS: infatti fino a 73 items (incluso)
+conviene utlizzare Gurobi, dal 74-esimo in poi QALS sembra impiegarci meno tempo.
 
 \section{Limiti Teorici Embedding}
 Si consideri ora un aspetto più quantitivo, ovvero cercare di capire quali siamo, 
-in fisici, i limiti dell'annealer. Per fare ciò è necessario ricordare
+i limiti fisici dell'annealer. Per fare ciò è necessario ricordare
 che fino ad ora si è considerata una mappatura 1:1 sulla topologia Pegasus con 5700 qubit teorici,
 utilizzabili 5436 ossia il 3\% (ref: QALS\_implementations). Vien da se che nel momento in cui 
 cercassi di eseguire QALS con un problema di 5437 items fallirebbe. 
@@ -90,10 +95,9 @@ cercassi di eseguire QALS con un problema di 5437 items fallirebbe.
 Se invece si utilizzasse \texttt{EmbeddingComposite} che, anziché fare un mapping 1:1, cerca
 di trovare un minor embedding, cioè un processo (euristico) di mappatura delle variabili di un problema 
 di ottimizzazione (rappresentato come un grafo logico) sulla struttura e sulle connessioni 
-fisiche (topologia) dei qubit di un computer quantistico, i problema principale che sarebbe che
-il minor embedding potrebbe fallire nel caso in cui il problema sia troppo denso.
-
-Comunque utilizzare un modo e l'altro non cambia l'embedding massimo.
+fisiche (topologia) dei qubit di un computer quantistico, i problema principale sarebbe che
+il minor embedding potrebbe fallire nel caso in cui il problema sia troppo denso e quindi il tetto
+reale massimo si abbassa proprio a causa della densità, non alternado però il tetto ideale.
 
 \subsection{Ma allora quali sarebbero i vantaggi di usare \texttt{EmbeddingComposite}?}
 Utlizzando il costum il problema che si cerca di ottimizzare cambia ogni volta
@@ -123,8 +127,10 @@ def generate_pegasus(n):
     
     return list(zip(rows, cols))
 \end{lstlisting}
-si definsce una matrice di 5760 qubits, tutti utilizzabili, il che crea una differenza di
-324 qubits. Queste differenze portano grandi divergenze nel vero annealing perché di 
-quei 324 qubits è importante anche la loro locazione nella topologia e non solo la quantità.
+si definsce una matrice di 5760 qubits, tutti utilizzabili, quindi le dimensioni massime
+di un problema sono 5760 items (grazie al mapping 1:1). Inoltre si crea una differenza di
+324 qubits che porta non poche differenze dal vero annealing, in quanto, di quei 324 qubits,
+non conta solo la quantità, ma anche la loro disposizione e collegamenti con altri qubits
+all'interno della topologia.
 
 \end{document}
